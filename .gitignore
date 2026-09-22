@@ -1,0 +1,19 @@
+# dependencies
+/node_modules
+/.pnpm-store
+
+# Next.js output
+/.next
+/out
+
+# local tooling and caches
+/.playwright-cli
+*.tsbuildinfo
+.DS_Store
+
+# local environment files
+.env*
+!.env.example
+
+# logs
+*.log
