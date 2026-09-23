@@ -84,21 +84,14 @@ export default function Home() {
             aria-hidden="true"
           />
           <div
-            className={`${shell} relative z-[1] grid min-h-[710px] grid-cols-[minmax(360px,.75fr)_minmax(520px,1.25fr)] items-center gap-[clamp(30px,5vw,78px)] max-[1080px]:grid-cols-[.8fr_1.2fr] max-[860px]:flex max-[860px]:min-h-0 max-[860px]:flex-col`}
+            className={`${shell} relative z-[1] grid min-h-[710px] grid-cols-[minmax(35vw,.5fr)_minmax(520px,1.25fr)] items-center gap-[clamp(30px,5vw,78px)] max-[1080px]:grid-cols-[.8fr_1.2fr] max-[860px]:flex max-[860px]:min-h-0 max-[860px]:flex-col`}
           >
             <div className="py-16 max-[860px]:w-full max-[860px]:pt-11 max-[860px]:pb-2.5 max-[620px]:pt-6">
               <FadeIn>
-                <h1 className="mb-[30px] max-w-[760px] text-[clamp(3.7rem,5.4vw,6rem)] max-[1080px]:text-[clamp(3.3rem,6vw,5rem)] max-[620px]:text-[clamp(3.1rem,15vw,4.5rem)]">
+                <h1 className="mb-[30px] max-w-[50vw] text-[clamp(3.7rem,5vw,6rem)] max-[1080px]:text-[clamp(3.3rem,6vw,5rem)] max-[620px]:text-[clamp(3.1rem,15vw,4.5rem)]">
                   Technology that moves business{" "}
                   <span className="text-orchid">forward.</span>
                 </h1>
-              </FadeIn>
-              <FadeIn delay={0.1}>
-                <p className="max-w-[610px] text-md leading-[1.52] text-[#bbb6c9]">
-                  We design and build intelligent digital ecosystems that help
-                  businesses operate smarter, scale faster, and compete
-                  stronger.
-                </p>
               </FadeIn>
               <FadeIn delay={0.2}>
                 <div className="my-[30px] mt-10 flex flex-wrap items-center gap-5 max-[620px]:flex-col max-[620px]:items-stretch">
@@ -106,7 +99,7 @@ export default function Home() {
                     className="btn"
                     href="mailto:tech@thedesertwhales.com?subject=New%20project%20enquiry"
                   >
-                    Start a conversation <ArrowUpRight  />
+                    Make an Enquiry <ArrowUpRight  />
                   </Link>
                 </div>
               </FadeIn>
