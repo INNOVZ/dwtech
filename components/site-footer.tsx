@@ -23,7 +23,7 @@ export function SiteFooter() {
           </FadeIn>
           <FadeIn delay={0.15}>
             <div>
-              <p className="max-w-[490px] text-[1.08rem] leading-[1.55] text-[#c3becb]">
+              <p className="max-w-[490px] text-[1.08rem] leading-[1.55] text-[#c3becb] mb-5">
                 Tell us where your business needs to go. We'll help shape the
                 technology to get there.
               </p>
