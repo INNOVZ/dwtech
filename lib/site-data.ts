@@ -30,13 +30,6 @@ export const services = [
     deliverables: ["Experience design", "Mobile engineering", "API integration", "Store release support"],
   },
   {
-    slug: "web-applications-portals",
-    title: "Web applications & portals",
-    short: "Secure dashboards, business portals, booking systems, and management applications.",
-    description: "We build modern web applications that simplify complex work for customers, partners, administrators, and distributed teams.",
-    deliverables: ["UX and interface design", "Frontend and backend development", "Role-based workflows", "Cloud deployment"],
-  },
-  {
     slug: "ai-automation-solutions",
     title: "AI & automation solutions",
     short: "Practical AI, assistants, and workflow automation embedded where they create business value.",
@@ -50,13 +43,7 @@ export const services = [
     description: "We turn complex requirements into coherent product flows, interface systems, and prototypes that teams can validate and engineers can build.",
     deliverables: ["User and stakeholder research", "Information architecture", "Interface and design systems", "Interactive prototypes"],
   },
-  {
-    slug: "cloud-based-solutions",
-    title: "Cloud-based solutions",
-    short: "Secure, scalable cloud foundations for applications, data, and distributed operations.",
-    description: "We design and migrate cloud environments that balance speed, resilience, observability, security, and sustainable operating cost.",
-    deliverables: ["Cloud architecture", "Application migration", "CI/CD and observability", "Security and cost optimization"],
-  },
+ 
   {
     slug: "ecommerce-marketplace-solutions",
     title: "E-commerce & marketplace solutions",
@@ -82,19 +69,16 @@ export const processSteps = [
 ] as const;
 
 export const locations = [
-  ["Dubai", "Global headquarters & Middle East operations"],
-  ["Thiruvananthapuram", "Kerala operations & business support center"],
-  ["Kozhikode", "Creative & technology operations hub"],
-  ["Riyadh", "Regional expansion & business development"],
-  ["Milan", "European business & creative collaboration network"],
+  ["Dubai, UAE", "Global headquarters & Middle East operations"],
+  ["Kerala, India", "Kerala operations & business support center"],
+  ["Riyadh, Saudi Arabia", "Regional expansion & business development"],
+  ["Milan, Italy", "European business & creative collaboration network"],
 ] as const;
 
 export const contacts = {
   email: "tech@thedesertwhales.com",
   website: "dwhalestech.com",
   phones: [
-    ["UAE", "+971 52 867 8679"],
-    ["Italy", "+39 33 9128 2519"],
-    ["India", "+91 77 366 49722"],
+    ["UAE", "+971 52 867 8679"]
   ],
 } as const;
