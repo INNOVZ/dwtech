@@ -44,7 +44,7 @@
     margin: 0;
     background: var(--color-night);
     color: white;
-    font-family: "Neue Montreal", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    
     font-size: 16px;
     line-height: 1.5;
     overflow-x: clip;
@@ -80,19 +80,26 @@
     max-width: 100%;
   }
 
-  h1,
-  h2,
-  h3,
   p {
-    margin-top: 0;
+    font-family: "Alegreya Sans", sans-serif;
   }
 
   h1,
   h2,
   h3 {
-    font-weight: 500;
+    margin-top: 0;
+    font-weight: 400;
+    font-family: "Neue Montreal", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-weight: 00;
     line-height: .98;
     letter-spacing: -.045em;
+    font-family: "Neue Montreal", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    
   }
 
   :focus-visible {
@@ -163,4 +170,4 @@
 
 .btn:hover {
   gap: 10px;
-} 
+}

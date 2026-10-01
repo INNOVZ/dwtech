@@ -11,6 +11,7 @@ import {
 import { ServiceList } from "@/components/service-list";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { TechnologyStack } from "@/components/technology-stack";
 import { locations, processSteps, services, siteUrl } from "@/lib/site-data";
 import { section, sectionHeading, sectionLabel, shell } from "@/lib/styles";
 
@@ -80,7 +81,7 @@ export default function Home() {
         <section className="relative min-h-[min(980px,100svh)] overflow-hidden bg-[radial-gradient(circle_at_70%_34%,rgba(33,74,231,.16),transparent_32%),#05040e] pt-[132px] pb-[46px] after:absolute after:bottom-0 after:left-[5%] after:h-px after:w-[90%] after:bg-[linear-gradient(90deg,transparent,rgba(176,99,255,.4),transparent)] after:content-[''] max-[860px]:min-h-0 max-[860px]:pt-[118px]">
           <SiteHeader />
           <div
-            className="absolute inset-0 bg-[radial-gradient(circle,rgba(176,99,255,.68)_0_1px,transparent_1.3px)] bg-[length:94px_94px] opacity-[.18] [mask-image:linear-gradient(to_bottom,#000,transparent_75%)]"
+            className=" inset-0 bg-[radial-gradient(circle,rgba(176,99,255,.68)_0_1px,transparent_1.3px)] bg-[length:94px_94px] opacity-[.18] [mask-image:linear-gradient(to_bottom,#000,transparent_75%)]"
             aria-hidden="true"
           />
           <div
@@ -94,12 +95,12 @@ export default function Home() {
                 </h1>
               </FadeIn>
               <FadeIn delay={0.2}>
-                <div className="my-[30px] mt-10 flex flex-wrap items-center gap-5 max-[620px]:flex-col max-[620px]:items-stretch">
+                <div className="mt-10 flex flex-wrap items-center gap-5 max-[620px]:flex-col max-[620px]:items-stretch">
                   <Link
                     className="btn"
                     href="mailto:tech@thedesertwhales.com?subject=New%20project%20enquiry"
                   >
-                    Make an Enquiry <ArrowUpRight  />
+                    Make an Enquiry <ArrowUpRight />
                   </Link>
                 </div>
               </FadeIn>
@@ -153,7 +154,7 @@ export default function Home() {
                   automation, and cloud expertise to solve real operational
                   challenges. Our work is designed around the business: the way
                   teams operate today, the experiences customers expect, and the
-                  systems growth will demand tomorrow.
+                  system growth that demand tomorrow.
                 </p>
               </div>
             </FadeIn>
@@ -162,27 +163,20 @@ export default function Home() {
 
         {/* ── Services ── */}
         <section
-          className={`${section} overflow-hidden bg-[linear-gradient(140deg,#080711,#11091e_70%,#0b0713)]`}
+          className={`${section} overflow-hidden  bg-mist text-ink`}
           id="services"
         >
-          <div
-            className="absolute top-[210px] right-[-330px] size-[540px] rounded-full border-2 border-orchid/50 shadow-[inset_20px_0_40px_rgba(33,74,231,.35),inset_-18px_0_42px_rgba(176,99,255,.35),0_0_80px_rgba(176,99,255,.12)]"
-            aria-hidden="true"
-          />
           <div className={shell}>
             <FadeIn className={sectionHeading}>
               <div>
-                <p className={sectionLabel}>Expertise</p>
+                <p className={sectionLabel}>We Excells</p>
                 <h2 className="m-0 text-[clamp(3.6rem,6vw,7rem)] max-[620px]:text-[clamp(2.8rem,13vw,4.3rem)]">
                   What we build
                 </h2>
               </div>
-              <p className="max-w-[430px] text-[1.05rem] leading-[1.55] text-[#aaa5b5] max-[860px]:max-w-[600px]">
-                From strategy to scalable technology, we help businesses turn
-                complex challenges into well-engineered solutions.
-              </p>
             </FadeIn>
             <ServiceList />
+            <TechnologyStack />
           </div>
         </section>
 
@@ -194,15 +188,11 @@ export default function Home() {
           <div className={shell}>
             <FadeIn className={sectionHeading}>
               <div>
-                <p className={sectionLabel}>Our process</p>
+                <p className={sectionLabel}>Clear and Collaborative</p>
                 <h2 className="m-0 text-[clamp(3.6rem,6vw,7rem)] max-[620px]:text-[clamp(2.8rem,13vw,4.3rem)]">
                   From discovery to scale
                 </h2>
               </div>
-              <p className="max-w-[430px] text-[1.05rem] leading-[1.55] text-[#aaa5b5] max-[860px]:max-w-[600px]">
-                A clear, collaborative path from business context to lasting
-                performance.
-              </p>
             </FadeIn>
             <StaggerContainer
               as="ol"

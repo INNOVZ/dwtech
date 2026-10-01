@@ -1,40 +1,90 @@
 "use client";
 
+import {
+  CodeXml,
+  Sparkle,
+  Workflow,
+  Rocket,
+  type LucideIcon,
+} from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
-import { ArrowUpRight, Plus } from "@/components/icons";
-import { services } from "@/lib/site-data";
+import { ArrowUpRight } from "@/components/icons";
+import { StaggerContainer, StaggerItem } from "@/components/motion";
+
+type ServiceCard = {
+  title: string;
+  description: string;
+  href: string;
+  icon: LucideIcon;
+};
+
+const featuredServices: ServiceCard[] = [
+  {
+    title: "Custom software development",
+    description:
+      "Web platforms and digital products engineered around your workflows, users, and plans for growth.",
+    href: "/services/custom-software-development",
+    icon: CodeXml,
+  },
+  {
+    title: "AI & automation",
+    description:
+      "Practical AI assistants and automated workflows that reduce repetitive work while keeping people in control.",
+    href: "/services/ai-automation-solutions",
+    icon: Workflow,
+  },
+  {
+    title: "Digital transformation",
+    description:
+      "Connected systems that bring teams, data, and operations together around measurable business outcomes.",
+    href: "/services/digital-business-transformation",
+    icon: Rocket,
+  },
+  {
+    title: "Technology strategy",
+    description:
+      "Clear architecture, platform choices, and delivery roadmaps that help you invest and build with confidence.",
+    href: "/services/it-consulting-technology-strategy",
+    icon: Sparkle,
+  },
+];
 
 export function ServiceList() {
-  const [active, setActive] = useState(0);
-
   return (
-    <div className="relative z-[1] max-w-[1040px] border-t border-white/20">
-      {services.map((service, index) => {
-        const expanded = active === index;
-        const panelId = `service-panel-${index}`;
+    <StaggerContainer
+      className="relative z-[1] grid grid-cols-4 gap-4 max-[1180px]:grid-cols-2 max-[680px]:grid-cols-1"
+      staggerDelay={0.1}
+    >
+      {featuredServices.map((service) => {
+        const ServiceIcon = service.icon;
+
         return (
-          <article className="group/row border-b border-white/20" data-expanded={expanded} key={service.slug}>
-            <button
-              className="grid min-h-[66px] w-full cursor-pointer grid-cols-[64px_1fr_40px] items-center border-0 bg-transparent p-0 text-left max-[620px]:min-h-[62px] max-[620px]:grid-cols-[44px_1fr_28px]"
-              type="button"
-              aria-expanded={expanded}
-              aria-controls={panelId}
-              onClick={() => setActive(expanded ? -1 : index)}
+          <StaggerItem as="article" key={service.href} className="h-full">
+            <Link
+              className="group flex h-full min-h-[380px] bg-white/60 flex-col rounded-3xl bg-card p-8 transition-all hover:-translate-y-1 hover:border-primary hover:shadow-[var(--shadow-warm)]"
+              href={service.href}
+              aria-label={`Explore ${service.title}`}
             >
-              <span className="text-xs text-[#8e889c]">{String(index + 1).padStart(2, "0")}</span>
-              <span className="text-[clamp(1.12rem,1.55vw,1.5rem)] tracking-[-.025em] transition-colors group-hover/row:text-orchid">{service.title}</span>
-              <Plus className="size-[18px] justify-self-end fill-none stroke-current stroke-[1.7] transition-[transform,color] duration-280 ease-fluid [stroke-linecap:round] [stroke-linejoin:round] group-data-[expanded=true]/row:rotate-45 group-data-[expanded=true]/row:text-orchid" />
-            </button>
-            <div className="grid grid-rows-[0fr] overflow-hidden transition-[grid-template-rows,padding] duration-350 ease-fluid group-data-[expanded=true]/row:grid-rows-[1fr] group-data-[expanded=true]/row:pb-[25px]" id={panelId} aria-hidden={!expanded}>
-              <p className="min-h-0 max-w-[580px] overflow-hidden pl-16 leading-[1.55] text-[#aca7b7] max-[620px]:pl-11">{service.short}</p>
-              <Link className="mt-[-24px] flex min-h-0 items-center justify-self-end gap-2 overflow-hidden text-[.85rem] text-orchid max-[620px]:mt-[18px] max-[620px]:ml-11 max-[620px]:justify-self-start [&_svg]:size-[18px] [&_svg]:fill-none [&_svg]:stroke-current [&_svg]:stroke-[1.7] [&_svg]:[stroke-linecap:round] [&_svg]:[stroke-linejoin:round]" href={`/services/${service.slug}`}>
-                View service <ArrowUpRight />
-              </Link>
-            </div>
-          </article>
+              <span className="grid size-[72px] place-items-center rounded-[22px] bg-[#f2e8ff] text-[#7c32d5] transition-[transform,background-color,color] duration-700 ease- group-hover:-rotate-3 group-hover:scale-105 group-hover:bg-orchid group-hover:text-white group-focus-visible:bg-orchid group-focus-visible:text-white">
+                <ServiceIcon aria-hidden="true" size={32} />
+              </span>
+
+              <div className="mt-auto min-h-[178px] pt-12 max-[680px]:min-h-0">
+                <h3 className="mb-4 text-[clamp(1.35rem,1.55vw,1.7rem)] leading-[1.12] tracking-[-.035em]">
+                  {service.title}
+                </h3>
+                <p className="m-0 text-[1rem] leading-[1.58] text-[#625c68]">
+                  {service.description}
+                </p>
+              </div>
+
+              <span className="mt-7 inline-flex translate-y-1 items-center gap-2 text-[.84rem] font-medium text-[#6f2bbb] opacity-0 transition-[opacity,transform] duration-300 ease-fluid group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:translate-y-0 group-focus-visible:opacity-100 max-[860px]:translate-y-0 max-[860px]:opacity-100 [&_svg]:size-4 [&_svg]:fill-none [&_svg]:stroke-current [&_svg]:stroke-[1.8] [&_svg]:[stroke-linecap:round] [&_svg]:[stroke-linejoin:round]">
+                Explore service <ArrowUpRight />
+              </span>
+            </Link>
+          </StaggerItem>
         );
       })}
-    </div>
+    </StaggerContainer>
   );
 }
