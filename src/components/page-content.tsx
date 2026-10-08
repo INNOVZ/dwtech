@@ -127,7 +127,7 @@ export default function Home() {
               </div>
               <ScaleIn delay={0.15} duration={0.9} from={0.96}>
                 <div
-                  className="relative aspect-[1.25/1] min-w-0 overflow-hidden before:pointer-events-none before:absolute before:inset-0 before:z-[2] before:bg-[linear-gradient(90deg,#05040e,transparent_16%,transparent_84%,#05040e)] before:content-[''] max-[860px]:w-full max-[620px]:aspect-[.95/1]"
+                  className="relative aspect-[1.25/1] min-w-0 overflow-hidden before:pointer-events-none before:absolute before:inset-0 before:z-[2] before:bg-[linear-gradient(90deg,#05040e,transparent_16%,transparent_84%,#05040e)] before:content-[''] max-[860px]:w-full max-[620px]:hidden"
                   aria-label="A glass whale form representing intelligent, scalable technology"
                 >
                   <img
