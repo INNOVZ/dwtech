@@ -1,0 +1,9 @@
+---
+import Layout from '../layouts/Layout.astro';
+import AboutContent from '../components/about-content';
+import { companyIdentity } from '../lib/site-data';
+---
+
+<Layout title="About DW Tech" description={companyIdentity.description}>
+  <AboutContent client:load />
+</Layout>

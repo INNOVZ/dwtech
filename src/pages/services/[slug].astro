@@ -1,0 +1,20 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ServicesContent from '../../components/services-slug-content';
+import { services } from '@/lib/site-data';
+
+export function getStaticPaths() {
+  return services.map(s => ({
+    params: { slug: s.slug }
+  }));
+}
+
+const { slug } = Astro.params;
+const service = services.find(s => s.slug === slug);
+const title = service ? `${service.title} | DW Tech` : 'DW Tech';
+const description = service ? service.description : '';
+---
+
+<Layout title={title} description={description}>
+  <ServicesContent client:load params={{ slug }} />
+</Layout>
