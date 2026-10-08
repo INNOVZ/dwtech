@@ -111,7 +111,7 @@ export default function Home() {
                 <FadeIn>
                   <h1 className="mb-[30px] max-w-[50vw] text-[clamp(3.7rem,5vw,6rem)] max-[1080px]:text-[clamp(3.3rem,6vw,5rem)] max-[620px]:text-[clamp(3.1rem,15vw,4.5rem)]">
                     Technology that moves business{" "}
-                    <span className="text-orchid">forward.</span>
+                    <span className="text-orchid">forward</span>
                   </h1>
                 </FadeIn>
                 <FadeIn delay={0.2}>
