@@ -14,5 +14,9 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
 
+  build: {
+    inlineStylesheets: 'always'
+  },
+
   adapter: vercel()
 });

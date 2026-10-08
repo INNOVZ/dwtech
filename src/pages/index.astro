@@ -19,6 +19,8 @@ import {
   siteUrl,
 } from "@/lib/site-data";
 import { section, sectionHeading, sectionLabel, shell } from "@/lib/styles";
+import { Image } from "astro:assets";
+import heroWhale from "@/assets/hero-whale.png";
 
 const organizationSchema = {
   "@context": "https://schema.org",
@@ -131,13 +133,14 @@ const faqSchema = {
               class="relative aspect-[1.25/1] min-w-0 overflow-hidden before:pointer-events-none before:absolute before:inset-0 before:z-[2] before:bg-[linear-gradient(90deg,#05040e,transparent_16%,transparent_84%,#05040e)] before:content-[''] max-[860px]:w-full max-[620px]:hidden"
               aria-label="A glass whale form representing intelligent, scalable technology"
             >
-              <img
-                class="object-cover max-[620px]:object-center"
-                src="/hero-whale.png"
+              <Image
+                class="object-cover max-[620px]:object-center w-full h-full"
+                src={heroWhale}
                 alt=""
-                priority
+                loading="eager"
+                format="webp"
+                widths={[500, 900, heroWhale.width]}
                 sizes="(max-width: 900px) 100vw, 58vw"
-                style={{ width: "100%", height: "100%" }}
               />
               <p
                 class="absolute top-7 right-[30px] z-[3] text-[.58rem] leading-[1.7] tracking-[.24em] text-white/60 uppercase before:absolute before:top-[9px] before:left-[-44px] before:h-px before:w-7 before:bg-white/55 before:content-[''] max-[620px]:hidden"
