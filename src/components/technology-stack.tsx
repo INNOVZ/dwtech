@@ -1,5 +1,4 @@
-
-import { FadeIn } from "@/components/motion";
+import { FadeIn } from "@/components/animation/motion";
 import { sectionLabel } from "@/lib/styles";
 
 type Technology = {

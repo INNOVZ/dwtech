@@ -1,4 +1,3 @@
-
 import {
   CodeXml,
   Sparkle,
@@ -8,7 +7,7 @@ import {
   Cloud,
 } from "lucide-react";
 import { ArrowUpRight } from "@/components/icons";
-import { StaggerContainer, StaggerItem } from "@/components/motion";
+import { StaggerContainer, StaggerItem } from "@/components/animation/motion";
 
 type ServiceCard = {
   title: string;

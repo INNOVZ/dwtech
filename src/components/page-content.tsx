@@ -6,10 +6,8 @@ import {
   StaggerContainer,
   StaggerItem,
   ScrollScrubReveal,
-} from "@/components/motion";
+} from "@/components/animation/motion";
 import { ServiceList } from "@/components/service-list";
-import { SiteFooter } from "@/components/site-footer";
-import { SiteHeader } from "@/components/site-header";
 import { TechnologyStack } from "@/components/technology-stack";
 import { ClientsMarquee } from "@/components/clients-marquee";
 import { Globe } from "@/components/globe";
@@ -98,7 +96,6 @@ export default function Home() {
       <main>
         {/* ── Hero ── */}
         <section className="relative min-h-[min(980px,100svh)] overflow-hidden bg-[radial-gradient(circle_at_70%_34%,rgba(33,74,231,.16),transparent_32%),#05040e] pt-[132px] pb-[46px] after:absolute after:bottom-0 after:left-[5%] after:h-px after:w-[90%] after:bg-[linear-gradient(90deg,transparent,rgba(176,99,255,.4),transparent)] after:content-[''] max-[860px]:min-h-0 max-[860px]:pt-[118px]">
-          <SiteHeader />
           <ScrollParallax offset={150}>
             <div
               className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle,rgba(176,99,255,.68)_0_1px,transparent_1.3px)] bg-[length:94px_94px] opacity-[.18] [mask-image:linear-gradient(to_bottom,#000,transparent_75%)]"
@@ -403,7 +400,6 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <SiteFooter />
     </>
   );
 }

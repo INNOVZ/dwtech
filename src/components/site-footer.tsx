@@ -1,7 +1,11 @@
 import { Logo } from "@/components/logo";
 import { Mail, Phone } from "@/components/icons";
-import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion";
-import { ArrowUpRight} from "@/components/icons";
+import {
+  FadeIn,
+  StaggerContainer,
+  StaggerItem,
+} from "@/components/animation/motion";
+import { ArrowUpRight } from "@/components/icons";
 import { contacts } from "@/lib/site-data";
 import { button, sectionLabel, shell } from "@/lib/styles";
 
@@ -31,7 +35,12 @@ export function SiteFooter() {
                 className={`flex items-center gap-3 justify-start text-[.9rem]`}
                 href="mailto:tech@thedesertwhales.com?subject=New%20project%20enquiry"
               >
-                <span className="cta-link-text" data-text="Start a Conversation">Start a Conversation</span>
+                <span
+                  className="cta-link-text"
+                  data-text="Start a Conversation"
+                >
+                  Start a Conversation
+                </span>
                 <span className={`${button}`}>
                   <ArrowUpRight />
                 </span>

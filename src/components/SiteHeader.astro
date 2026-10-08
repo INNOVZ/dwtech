@@ -1,0 +1,113 @@
+---
+import { Logo } from "@/components/logo";
+import { ArrowUpRight, Close, Menu } from "@/components/icons";
+import { button, shell } from "@/lib/styles";
+
+const links = [
+  ["Expertise", "/#services"],
+  ["Approach", "/#approach"],
+  ["Company", "/about"],
+  ["Contact", "/#contact"],
+] as const;
+---
+
+<header class="absolute top-0 left-0 z-20 w-full py-[22px]" id="site-header">
+  <div class={`${shell} relative z-[2] grid grid-cols-[1fr_auto_1fr] items-center gap-7 max-[860px]:grid-cols-[1fr_auto]`}>
+    <Logo />
+    <nav class="flex items-center gap-[clamp(22px,3vw,48px)] max-[860px]:hidden" aria-label="Primary navigation">
+      {links.map(([label, href]) => (
+        <a
+          class="relative grid min-h-11 place-items-center text-[.86rem] text-white/80 after:absolute after:bottom-1.5 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-orchid after:transition-transform after:duration-250 after:ease-fluid after:content-[''] hover:after:scale-x-100"
+          href={href}
+        >
+          {label}
+        </a>
+      ))}
+    </nav>
+    <a
+      class={`flex items-center p-1 gap-3 justify-self-end text-[.9rem] max-[860px]:hidden `}
+      href="mailto:tech@thedesertwhales.com?subject=New%20project%20enquiry"
+    >
+      <span class="cta-link-text" data-text="Start a Conversation">Start a Conversation</span>
+      <span class={`${button}`}>
+        <ArrowUpRight />
+      </span>
+    </a>
+    <button
+      id="mobile-menu-toggle"
+      class="hidden size-11 cursor-pointer place-items-center justify-self-end rounded-lg border border-white/20 bg-transparent p-2.5 max-[860px]:grid [&_svg]:size-[22px] [&_svg]:fill-none [&_svg]:stroke-current [&_svg]:stroke-[1.6] [&_svg]:[stroke-linecap:round]"
+      type="button"
+      aria-expanded="false"
+      aria-controls="mobile-navigation"
+      aria-label="Open navigation"
+    >
+      <div id="icon-menu"><Menu /></div>
+      <div id="icon-close" class="hidden"><Close /></div>
+    </button>
+  </div>
+  <div
+    id="mobile-navigation"
+    class="invisible fixed inset-0 z-[1] h-svh w-full -translate-y-full overflow-hidden bg-night pt-[88px] opacity-0 transition-[opacity,transform,visibility] duration-350 ease-fluid data-[open=true]:visible data-[open=true]:translate-y-0 data-[open=true]:opacity-100"
+    data-open="false"
+  >
+    <nav class="flex min-h-0 flex-col gap-1 overflow-hidden px-[clamp(20px,4.2vw,72px)] pb-7 max-[620px]:px-5" aria-label="Mobile navigation">
+      {links.map(([label, href]) => (
+        <a
+          class="mobile-nav-link border-b border-white/20 py-4 text-2xl"
+          href={href}
+        >
+          {label}
+        </a>
+      ))}
+      <a
+        class={`mobile-nav-link ${button} mt-4`}
+        href="mailto:tech@thedesertwhales.com?subject=New%20project%20enquiry"
+      >
+        Start a conversation <span class={`${button} mt-4`}></span>{" "}
+        <ArrowUpRight />
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const header = document.getElementById('site-header');
+  if (header) {
+    const toggleBtn = document.getElementById('mobile-menu-toggle');
+    const mobileNav = document.getElementById('mobile-navigation');
+    const iconMenu = document.getElementById('icon-menu');
+    const iconClose = document.getElementById('icon-close');
+    const links = document.querySelectorAll('.mobile-nav-link');
+
+    let isOpen = false;
+
+    function toggleMenu() {
+      isOpen = !isOpen;
+      if (toggleBtn) {
+        toggleBtn.setAttribute('aria-expanded', isOpen.toString());
+        toggleBtn.setAttribute('aria-label', isOpen ? "Close navigation" : "Open navigation");
+      }
+      if (mobileNav) {
+        mobileNav.setAttribute('data-open', isOpen.toString());
+      }
+      if (iconMenu && iconClose) {
+        iconMenu.classList.toggle('hidden', isOpen);
+        iconClose.classList.toggle('hidden', !isOpen);
+      }
+      
+      if (isOpen) {
+        document.body.dataset.menuOpen = "true";
+      } else {
+        delete document.body.dataset.menuOpen;
+      }
+    }
+
+    if (toggleBtn) toggleBtn.addEventListener('click', toggleMenu);
+    
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        if (isOpen) toggleMenu();
+      });
+    });
+  }
+</script>

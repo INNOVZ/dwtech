@@ -280,12 +280,13 @@ export function LetterReveal({ children, className, delay = 0, as = "p" }: Lette
 /* ------------------------------------------------------------------ */
 
 type ScrollScrubRevealProps = {
-  children: string;
+  children?: any;
+  text?: string;
   className?: string;
   as?: any;
 };
 
-export function ScrollScrubReveal({ children, className, as = "p" }: ScrollScrubRevealProps) {
+export function ScrollScrubReveal({ children, text, className, as = "p" }: ScrollScrubRevealProps) {
   const containerRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -293,11 +294,13 @@ export function ScrollScrubReveal({ children, className, as = "p" }: ScrollScrub
   });
 
   const shouldReduce = useReducedMotion();
-  if (shouldReduce || typeof children !== "string") {
-    return createElement(as, { className }, children);
+  const content = text || (typeof children === "string" ? children : null);
+
+  if (shouldReduce || !content) {
+    return createElement(as, { className }, children || text);
   }
 
-  const words = children.split(/\s+/).filter(Boolean);
+  const words = content.split(/\s+/).filter(Boolean);
   const Component = (motion[as as keyof typeof motion] || motion.p) as typeof motion.div;
 
   return (

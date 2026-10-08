@@ -1,17 +1,11 @@
-
 import { ArrowUpRight } from "@/components/icons";
-import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion";
-import { SiteFooter } from "@/components/site-footer";
-import { SiteHeader } from "@/components/site-header";
 import {
-  companyIdentity,
-  locations,
-  services,
-  siteUrl,
-} from "@/lib/site-data";
+  FadeIn,
+  StaggerContainer,
+  StaggerItem,
+} from "@/components/animation/motion";
+import { companyIdentity, locations, services, siteUrl } from "@/lib/site-data";
 import { button, section, sectionLabel, shell } from "@/lib/styles";
-
-
 
 const aboutSchema = {
   "@context": "https://schema.org",
@@ -32,7 +26,6 @@ export default function AboutPage() {
       />
       <main className="bg-night">
         <section className="relative min-h-[700px] bg-[radial-gradient(circle_at_78%_35%,rgba(176,99,255,.22),transparent_34%),#05040e] pt-[190px] pb-[110px] max-[620px]:min-h-0 max-[620px]:pt-[150px] max-[620px]:pb-[84px]">
-          <SiteHeader />
           <div className={`${shell} relative z-[1]`}>
             <FadeIn>
               <p className={sectionLabel}>About DW Tech</p>
@@ -148,7 +141,6 @@ export default function AboutPage() {
           </div>
         </section>
       </main>
-      <SiteFooter />
     </>
   );
 }
