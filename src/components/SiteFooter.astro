@@ -2,7 +2,7 @@
 import { Logo } from "@/components/logo";
 import { Mail, Phone, ArrowUpRight } from "@/components/icons";
 import ScrollReveal from "@/components/animation/ScrollReveal.astro";
-import { contacts } from "@/lib/site-data";
+import { contacts, services, locations } from "@/lib/site-data";
 import { button, sectionLabel, shell } from "@/lib/styles";
 ---
 
@@ -11,26 +11,35 @@ import { button, sectionLabel, shell } from "@/lib/styles";
   id="contact"
 >
   <div class={shell}>
-    <div class="relative z-[1] grid grid-cols-[1.2fr_.8fr] items-end gap-[7vw] pb-[86px] max-[860px]:grid-cols-1">
+    {/* CTA Section */}
+    <div
+      class="relative z-[1] grid grid-cols-[1.2fr_.8fr] items-end gap-[7vw] pb-[70px] max-[860px]:grid-cols-1"
+    >
       <ScrollReveal>
         <div>
           <p class={sectionLabel}>Contact</p>
-          <h2 class="text-[clamp(4rem,7.5vw,8.8rem)] max-[620px]:text-[clamp(2.8rem,13vw,4.3rem)]">
+          <h2
+            class="text-[clamp(4rem,7.5vw,8.8rem)] max-[620px]:text-[clamp(2.8rem,13vw,4.3rem)]"
+          >
             Let's build <span class="text-orchid">what's next.</span>
           </h2>
         </div>
       </ScrollReveal>
       <ScrollReveal delay={0.15}>
         <div>
-          <p class="max-w-[490px] text-[clamp(0.8rem,1vw,0.9rem)] leading-[1.55] text-[#c3becb] mb-5">
+          <p
+            class="max-w-[490px] text-[clamp(0.8rem,1vw,0.9rem)] leading-[1.55] text-[#c3becb] mb-5"
+          >
             Tell us where your business needs to go. We'll help shape the
-            technology to get there.
+            technology, architecture, and intelligent systems to get there.
           </p>
           <a
             class={`flex items-center gap-3 justify-start text-[.9rem]`}
             href="mailto:tech@thedesertwhales.com?subject=New%20project%20enquiry"
           >
-            <span class="cta-link-text" data-text="Start a Conversation">Start a Conversation</span>
+            <span class="cta-link-text" data-text="Start a Conversation"
+              >Start a Conversation</span
+            >
             <span class={`${button}`}>
               <ArrowUpRight />
             </span>
@@ -38,38 +47,100 @@ import { button, sectionLabel, shell } from "@/lib/styles";
         </div>
       </ScrollReveal>
     </div>
+
+    {/* Structured Navigation & Global Footprint for SEO/GEO */}
     <ScrollReveal delay={0.1}>
-      <div class="relative z-[1] grid grid-cols-[.55fr_.8fr_1.65fr] items-start gap-[30px] border-t border-white/20 py-[34px] max-[860px]:grid-cols-2 max-[620px]:grid-cols-1">
-        <Logo />
-        <p class="text-[.86rem] text-[#9791a3] justify-self-start items-center mt-2">
-          Technology for a more human tomorrow.
-        </p>
-        <div class="grid grid-cols-2 gap-2.5 max-[860px]:col-span-full max-[620px]:col-auto max-[620px]:grid-cols-1 [&_a]:flex [&_a]:min-h-8 [&_a]:items-center [&_a]:gap-2.5 [&_a]:text-[.84rem] [&_a_svg]:size-[18px] [&_a_svg]:fill-none [&_a_svg]:stroke-current [&_a_svg]:stroke-[1.7] [&_a_svg]:[stroke-linecap:round] [&_a_svg]:[stroke-linejoin:round]">
-          <a
-            class="row-span-3 self-start max-[620px]:row-auto"
-            href={`mailto:${contacts.email}`}
+      <div
+        class="relative z-[1] grid grid-cols-3 gap-8 border-t border-white/20 py-[40px] max-[960px]:grid-cols-2 max-[540px]:grid-cols-1"
+      >
+        {/* Brand & Mission */}
+        <div>
+          <Logo />
+          <p class="text-[.84rem] text-[#9791a3] mt-4 leading-relaxed"></p>
+          <div class="mt-4 flex flex-col gap-1 text-[.78rem] text-[#817b8f]">
+            <span>Delivering Intelligent Digital Experiences</span>
+          </div>
+        </div>
+
+        {/* Core Services Links */}
+        <div>
+          <h4
+            class="text-[.82rem] font-semibold text-orchid uppercase tracking-wider mb-3"
           >
-            <Mail />
-            {contacts.email}
-          </a>
-          {contacts.phones.map(([country, number]) => (
-            <a key={country} href={`tel:${number.replace(/\\s/g, "")}`}>
-              <Phone />
-              {number}{" "}
-              <span class="text-[.7rem] text-[#7f7988] uppercase">
-                {country}
-              </span>
+            Services
+          </h4>
+          <ul
+            class="flex flex-col gap-2 m-0 p-0 list-none text-[.84rem] text-[#b8b3c4]"
+          >
+            {
+              services.slice(0, 5).map((service) => (
+                <li>
+                  <a
+                    href={`/services/${service.slug}`}
+                    class="hover:text-white transition-colors"
+                  >
+                    {service.title}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+
+        {/* Global Locations & Direct Contact */}
+        <div>
+          <h4
+            class="text-[.82rem] font-semibold text-orchid uppercase tracking-wider mb-3"
+          >
+            Global Hubs & Contact
+          </h4>
+          <div class="flex flex-col gap-2.5 text-[.84rem] text-[#b8b3c4]">
+            <a
+              href={`mailto:${contacts.email}`}
+              class="flex items-center gap-2.5 hover:text-white transition-colors"
+            >
+              <Mail className="size-4 shrink-0 text-orchid/80" />
+              <span>{contacts.email}</span>
             </a>
-          ))}
+            {
+              contacts.phones.map(([country, number]) => (
+                <a
+                  href={`tel:${number.replace(/\s/g, "")}`}
+                  class="flex items-center gap-2.5 hover:text-white transition-colors"
+                >
+                  <Phone className="size-4 shrink-0 text-orchid/80" />
+                  <span>
+                    {number}{" "}
+                    <span class="text-[.7rem] text-[#7f7988] uppercase">
+                      ({country})
+                    </span>
+                  </span>
+                </a>
+              ))
+            }
+            <div
+              class="mt-2 pt-2 border-t border-white/10 text-[.76rem] text-[#8a8497] flex flex-wrap gap-x-3 gap-y-1"
+            >
+              {locations.map(([loc]) => <span>· {loc}</span>)}
+            </div>
+          </div>
         </div>
       </div>
     </ScrollReveal>
-    <div class="relative z-[1] flex items-center justify-between border-t border-white/20 pt-[22px] text-[.72rem] text-[#77717f] max-[620px]:flex-col max-[620px]:items-start max-[620px]:gap-3.5">
+
+    {/* Footer Bottom Copyright */}
+    <div
+      class="relative z-[1] flex items-center justify-between border-t border-white/20 pt-[22px] text-[.74rem] text-[#77717f] max-[620px]:flex-col max-[620px]:items-start max-[620px]:gap-3.5"
+    >
       <p class="m-0">
-        © {new Date().getFullYear()} DW Tech. A Desert Whales initiative.
+        © {new Date().getFullYear()} DW Tech. A Desert Whales Marketing Services LLC
+        initiative.
       </p>
       <div class="flex gap-5">
-        <a href="/sitemap.xml">Privacy policy</a>
+        <a href="/services" class="hover:text-white">Services</a>
+        <a href="/portfolio" class="hover:text-white">Portfolio</a>
+        <a href="/blogs" class="hover:text-white">Blogs</a>
+        <a href="/about" class="hover:text-white">Company</a>
       </div>
     </div>
   </div>

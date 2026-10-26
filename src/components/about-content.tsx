@@ -29,24 +29,24 @@ export default function AboutPage() {
           <div className={`${shell} relative z-[1]`}>
             <FadeIn>
               <p className={sectionLabel}>About DW Tech</p>
-              <h1 className="mb-9 max-w-[1100px] text-[clamp(4rem,8vw,9rem)]">
-                Technology built from Dubai for ambitious businesses.
+              <h1 className="mb-9 max-w-[1100px] text-[clamp(3rem,8vw,4.75rem)]">
+                Technology Solutions built for the digital future
               </h1>
             </FadeIn>
             <FadeIn delay={0.14}>
-              <p className="max-w-[820px] text-[clamp(1.1rem,1.6vw,1.45rem)] leading-[1.6] text-[#bcb7c7]">
-                {companyIdentity.description} We plan, design, build, integrate,
-                and support digital products and business systems for clients
-                across the Middle East, India, and Europe.
+              <p className="max-w-[820px] text-[clamp(1rem,1.6vw,1rem)] leading-[1.6] text-[#bcb7c7]">
+                {companyIdentity.description}
               </p>
             </FadeIn>
             <FadeIn delay={0.22}>
-              <a
-                className={`${button} mt-6`}
-                href="mailto:tech@thedesertwhales.com?subject=New%20project%20enquiry"
-              >
-                Discuss your project <ArrowUpRight />
-              </a>
+              <div className="mt-10 flex flex-wrap items-center gap-5 max-[620px]:flex-col max-[620px]:items-stretch">
+                <a
+                  className="btn"
+                  href="mailto:tech@thedesertwhales.com?subject=New%20project%20enquiry"
+                >
+                  Make an Enquiry <ArrowUpRight />
+                </a>
+              </div>
             </FadeIn>
           </div>
         </section>
@@ -57,7 +57,6 @@ export default function AboutPage() {
           >
             <FadeIn>
               <div>
-                <p className={sectionLabel}>Company identity</p>
                 <h2 className="text-[clamp(3rem,5vw,5.6rem)]">
                   DW Tech by Desert Whales.
                 </h2>
@@ -67,8 +66,7 @@ export default function AboutPage() {
               <div className="grid gap-6 text-[1.08rem] leading-[1.65] text-[#5d5867]">
                 <p>
                   DW Tech is headquartered in Dubai, United Arab Emirates, and
-                  is the technology and digital-transformation division of
-                  Desert Whales Marketing Services LLC.
+                  is the technology and digital-transformation company with clients across the globe.
                 </p>
                 <p>
                   Our teams combine business strategy, product design,

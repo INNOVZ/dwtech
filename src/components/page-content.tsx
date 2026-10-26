@@ -131,7 +131,8 @@ export default function Home() {
                     className="object-cover max-[620px]:object-center"
                     src="/hero-whale.png"
                     alt=""
-                    priority
+                    fetchPriority="high"
+                    loading="eager"
                     sizes="(max-width: 900px) 100vw, 58vw"
                     style={{ width: "100%", height: "100%" }}
                   />

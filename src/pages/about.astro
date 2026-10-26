@@ -4,6 +4,13 @@ import AboutContent from '../components/about-content';
 import { companyIdentity } from '../lib/site-data';
 ---
 
-<Layout title="About DW Tech" description={companyIdentity.description}>
+<Layout
+  title="About DW Tech | Technology & Digital Transformation Division Dubai"
+  description={companyIdentity.description}
+  breadcrumbs={[
+    { name: "Home", item: "/" },
+    { name: "About", item: "/about" },
+  ]}
+>
   <AboutContent client:load />
 </Layout>

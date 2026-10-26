@@ -11,10 +11,18 @@ export function getStaticPaths() {
 
 const { slug } = Astro.params;
 const service = services.find(s => s.slug === slug);
-const title = service ? `${service.title} | DW Tech` : 'DW Tech';
-const description = service ? service.description : '';
+const title = service ? `${service.title} | DW Tech Dubai` : 'DW Tech';
+const description = service ? `${service.title}: ${service.description} Tailored technology engineering for UAE and global enterprises by DW Tech.` : '';
 ---
 
-<Layout title={title} description={description}>
+<Layout
+  title={title}
+  description={description}
+  breadcrumbs={[
+    { name: "Home", item: "/" },
+    { name: "Services", item: "/services" },
+    { name: service ? service.title : "Service", item: `/services/${slug}` },
+  ]}
+>
   <ServicesContent client:load params={{ slug }} />
 </Layout>

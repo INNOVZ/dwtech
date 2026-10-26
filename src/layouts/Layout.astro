@@ -2,32 +2,129 @@
 import '../styles/global.css';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
+import { companyIdentity, siteUrl } from '@/lib/site-data';
 
 interface Props {
   title?: string;
   description?: string;
+  canonical?: string;
+  ogType?: 'website' | 'article' | 'profile';
+  ogImage?: string;
+  schema?: Record<string, any> | Array<Record<string, any>>;
+  breadcrumbs?: Array<{ name: string; item: string }>;
 }
 
-const defaultTitle = "DW Tech | AI, Software & Digital Transformation";
-const defaultDescription = "DW Tech designs and builds custom software, AI automation, ERP and CRM systems, cloud platforms, mobile apps, AI Automations and digital transformation programs for growing businesses.";
+const defaultTitle = "DW Tech | AI, Software & Digital Transformation Dubai & Global";
+const defaultDescription = "DW Tech is a premier Dubai-headquartered technology partner designing custom software, AI automation, ERP/CRM solutions, cloud architecture, and high-performance mobile apps for enterprises in UAE, GCC, and worldwide.";
 
-const { title = defaultTitle, description = defaultDescription } = Astro.props;
+const {
+  title = defaultTitle,
+  description = defaultDescription,
+  canonical,
+  ogType = 'website',
+  ogImage = `${siteUrl}/hero-whale.png`,
+  schema,
+  breadcrumbs,
+} = Astro.props;
+
+const currentUrl = canonical || new URL(Astro.url.pathname, siteUrl).toString();
+
+// Primary Site Navigation Schema for SEO, GEO, and AEO
+const navigationSchema = {
+  "@context": "https://schema.org",
+  "@type": "SiteNavigationElement",
+  "name": "DW Tech Primary Navigation",
+  "hasPart": [
+    {
+      "@type": "SiteNavigationElement",
+      "name": "Services",
+      "url": `${siteUrl}/services`,
+      "description": "Comprehensive custom software, enterprise AI, ERP & CRM, mobile apps, and cloud engineering services."
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "name": "Portfolio",
+      "url": `${siteUrl}/portfolio`,
+      "description": "Case studies and delivered projects across logistics, healthcare, luxury e-commerce, real estate, and finance."
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "name": "Blogs & Insights",
+      "url": `${siteUrl}/blogs`,
+      "description": "Thought leadership on GCC AI adoption, custom software architecture, and modern digital engineering."
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "name": "Company",
+      "url": `${siteUrl}/about`,
+      "description": "About DW Tech, leadership, operating philosophy, and global delivery centers."
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "name": "Contact",
+      "url": `${siteUrl}/#contact`,
+      "description": "Connect with DW Tech technology leaders for new project inquiries."
+    }
+  ]
+};
+
+// Breadcrumb Schema
+const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": breadcrumbs.map((b, idx) => ({
+    "@type": "ListItem",
+    "position": idx + 1,
+    "name": b.name,
+    "item": b.item.startsWith("http") ? b.item : `${siteUrl}${b.item}`
+  }))
+} : null;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={currentUrl} />
     <link rel="icon" type="image/svg+xml" href="/icon.svg" />
     <meta name="generator" content={Astro.generator} />
-    
+
+    {/* GEO Meta Tags for Location & Localized Engine Discovery */}
+    <meta name="geo.region" content="AE-DU" />
+    <meta name="geo.placename" content="Dubai" />
+    <meta name="geo.position" content={`${companyIdentity.headquarters.latitude};${companyIdentity.headquarters.longitude}`} />
+    <meta name="ICBM" content={`${companyIdentity.headquarters.latitude}, ${companyIdentity.headquarters.longitude}`} />
+
+    {/* AEO / Generative Engine & Social Graph */}
+    <meta property="og:site_name" content="DW Tech" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={currentUrl} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="en_US" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    {/* Fonts */}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Manrope:wght@400;700&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
-    
-    <title>{title}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Manrope:wght@400;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+
+    {/* Structural Navigation Schema */}
+    <script type="application/ld+json" set:html={JSON.stringify(navigationSchema)} />
+    {breadcrumbSchema && (
+      <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    )}
+    {schema && (
+      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    )}
 
     <style is:global>
       :root {

@@ -203,7 +203,7 @@
 }
 
 /* Parent link hover triggers the weight change */
-a:hover > .cta-link-text,
+/* a:hover > .cta-link-text,
 .cta-link-text:hover {
   font-weight: 700;
-}
+} */
