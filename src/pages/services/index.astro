@@ -1,38 +1,43 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { services, serviceCategories, companyIdentity, siteUrl } from "@/lib/site-data";
+import {
+  services,
+  serviceCategories,
+  companyIdentity,
+  siteUrl,
+} from "@/lib/site-data";
 import { section, sectionLabel, shell, button } from "@/lib/styles";
-import { ArrowUpRight, ArrowRight } from "@/components/icons";
+import { ArrowUpRight, ArrowRight } from "@/components/layout/icons";
 import {
   CodeXml,
   Workflow,
-  Sparkles,
   Smartphone,
-  Cloud,
   Layers,
   CheckCircle2,
-  Cpu,
-  Globe2,
-  ShieldCheck,
-  Zap,
 } from "lucide-react";
 
 const pageTitle = "Enterprise Technology & AI Services Dubai | DW Tech";
-const pageDescription = "Explore DW Tech's specialized technology services: custom software development, enterprise AI & workflow automation, ERP & CRM integration, cloud architecture, and mobile engineering for UAE and global enterprises.";
+const pageDescription =
+  "Explore DW Tech's specialized technology services: custom software development, enterprise AI & workflow automation, ERP & CRM integration, cloud architecture, and mobile engineering for UAE and global enterprises.";
 
 // AEO FAQ for Services
 const servicesFaq = [
   {
     question: "What core technology services does DW Tech provide?",
-    answer: "DW Tech provides 10 core technology disciplines including Custom Software Development, AI & Automation Solutions, ERP & CRM Integration, Cloud & DevOps, Mobile App Development, UI/UX Design, and Digital Transformation Strategy.",
+    answer:
+      "DW Tech provides 10 core technology disciplines including Custom Software Development, AI & Automation Solutions, ERP & CRM Integration, Cloud & DevOps, Mobile App Development, UI/UX Design, and Digital Transformation Strategy.",
   },
   {
-    question: "Does DW Tech serve businesses in Dubai, UAE, and the wider GCC region?",
-    answer: "Yes, DW Tech is headquartered in Dubai, United Arab Emirates, and engineers solutions across the UAE, Saudi Arabia (Riyadh), India, and Europe, adhering to regional regulations including UAE FTA VAT and local data residency standards.",
+    question:
+      "Does DW Tech serve businesses in Dubai, UAE, and the wider GCC region?",
+    answer:
+      "Yes, DW Tech is headquartered in Dubai, United Arab Emirates, and engineers solutions across the UAE, Saudi Arabia (Riyadh), India, and Europe, adhering to regional regulations including UAE FTA VAT and local data residency standards.",
   },
   {
-    question: "How does DW Tech approach custom software and enterprise AI projects?",
-    answer: "We employ a composable, agile methodology starting with thorough business discovery, solution architecture, rapid prototyping, and scalable full-stack implementation with ongoing optimization.",
+    question:
+      "How does DW Tech approach custom software and enterprise AI projects?",
+    answer:
+      "We employ a composable, agile methodology starting with thorough business discovery, solution architecture, rapid prototyping, and scalable full-stack implementation with ongoing optimization.",
   },
 ];
 
@@ -41,39 +46,39 @@ const servicesPageSchema = [
   {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": "DW Tech Technology & AI Services",
-    "url": `${siteUrl}/services`,
-    "description": pageDescription,
-    "provider": {
+    name: "DW Tech Technology & AI Services",
+    url: `${siteUrl}/services`,
+    description: pageDescription,
+    provider: {
       "@type": "ProfessionalService",
-      "name": companyIdentity.name,
-      "url": siteUrl,
-      "address": {
+      name: companyIdentity.name,
+      url: siteUrl,
+      address: {
         "@type": "PostalAddress",
-        "addressLocality": "Dubai",
-        "addressCountry": "AE",
+        addressLocality: "Dubai",
+        addressCountry: "AE",
       },
     },
-    "mainEntity": {
+    mainEntity: {
       "@type": "ItemList",
-      "itemListElement": services.map((service, index) => ({
+      itemListElement: services.map((service, index) => ({
         "@type": "ListItem",
-        "position": index + 1,
-        "name": service.title,
-        "url": `${siteUrl}/services/${service.slug}`,
-        "description": service.description,
+        position: index + 1,
+        name: service.title,
+        url: `${siteUrl}/services/${service.slug}`,
+        description: service.description,
       })),
     },
   },
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": servicesFaq.map((item) => ({
+    mainEntity: servicesFaq.map((item) => ({
       "@type": "Question",
-      "name": item.question,
-      "acceptedAnswer": {
+      name: item.question,
+      acceptedAnswer: {
         "@type": "Answer",
-        "text": item.answer,
+        text: item.answer,
       },
     })),
   },
@@ -82,6 +87,7 @@ const servicesPageSchema = [
 const categoryIcons = {
   "Engineering & Cloud": CodeXml,
   "AI & Enterprise": Workflow,
+  "AI & Enterprise Systems": Workflow,
   "Product & Mobile": Smartphone,
 } as const;
 ---
@@ -97,12 +103,20 @@ const categoryIcons = {
 >
   <main class="bg-night text-white overflow-hidden">
     {/* ── Hero Section ── */}
-    <section class="relative pt-[160px] pb-[90px] bg-[radial-gradient(ellipse_at_80%_20%,rgba(176,99,255,0.22),transparent_50%),#05040e]">
-      <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle,rgba(176,99,255,.3)_0_1px,transparent_1.3px)] bg-[length:64px_64px] opacity-15"></div>
-      
+    <section
+      class="relative pt-[160px] pb-[90px] bg-[radial-gradient(ellipse_at_80%_20%,rgba(176,99,255,0.22),transparent_50%),#05040e]"
+    >
+      <div
+        class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle,rgba(176,99,255,.3)_0_1px,transparent_1.3px)] bg-[length:64px_64px] opacity-15"
+      >
+      </div>
+
       <div class={`${shell} relative z-[1]`}>
         {/* Breadcrumb nav */}
-        <nav aria-label="Breadcrumb" class="mb-6 flex items-center gap-2 text-xs text-[#a19bad]">
+        <nav
+          aria-label="Breadcrumb"
+          class="mb-6 flex items-center gap-2 text-xs text-[#a19bad]"
+        >
           <a href="/" class="hover:text-white transition-colors">Home</a>
           <span>/</span>
           <span class="text-orchid">Services</span>
@@ -110,123 +124,166 @@ const categoryIcons = {
 
         <p class={sectionLabel}>Dubai Headquarters · Global Delivery</p>
 
-        <h1 class="text-[clamp(3.2rem,6.8vw,7.4rem)] leading-[0.98] tracking-tight max-w-[1100px] mb-8">
-          Technology shaped for <span class="text-orchid">tangible outcomes.</span>
+        <h1
+          class="text-[clamp(3.2rem,6.8vw,7.4rem)] leading-[0.98] tracking-tight max-w-[1100px] mb-8"
+        >
+          Technology shaped for <span class="text-orchid"
+            >tangible outcomes.</span
+          >
         </h1>
 
-        <p class="max-w-[820px] text-[clamp(1.05rem,1.4vw,1.3rem)] leading-[1.65] text-[#cfcad8] mb-10">
-          From custom cloud software and intelligent workflow automation to unified ERP ecosystems and intuitive mobile applications, DW Tech partners with ambitious enterprises to modernize operations and accelerate growth across the UAE, Middle East, and worldwide.
+        <p
+          class="max-w-[820px] text-[clamp(1.05rem,1.4vw,1.3rem)] leading-[1.65] text-[#cfcad8] mb-10"
+        >
+          From custom cloud software and intelligent workflow automation to
+          unified ERP ecosystems and intuitive mobile applications, DW Tech
+          partners with ambitious enterprises to modernize operations and
+          accelerate growth across the UAE, Middle East, and worldwide.
         </p>
 
         {/* Value Metrics Grid */}
-        <div class="grid grid-cols-4 gap-4 border-t border-white/15 pt-8 max-[900px]:grid-cols-2 max-[500px]:grid-cols-1">
-          <div class="rounded-xl border border-white/8 bg-white/[0.03] p-4 backdrop-blur-md">
+        <div
+          class="grid grid-cols-4 gap-4 border-t border-white/15 pt-8 max-[900px]:grid-cols-2 max-[500px]:grid-cols-1"
+        >
+          <div
+            class="rounded-xl border border-white/8 bg-white/[0.03] p-4 backdrop-blur-md"
+          >
             <span class="text-2xl lg:text-3xl font-bold text-white">10</span>
-            <p class="mt-1 text-xs text-[#9d97a9]">Specialized Engineering Disciplines</p>
+            <p class="mt-1 text-xs text-[#9d97a9]">
+              Specialized Engineering Disciplines
+            </p>
           </div>
-          <div class="rounded-xl border border-white/8 bg-white/[0.03] p-4 backdrop-blur-md">
+          <div
+            class="rounded-xl border border-white/8 bg-white/[0.03] p-4 backdrop-blur-md"
+          >
             <span class="text-2xl lg:text-3xl font-bold text-white">100%</span>
-            <p class="mt-1 text-xs text-[#9d97a9]">UAE & GCC Regulatory Compliance</p>
+            <p class="mt-1 text-xs text-[#9d97a9]">
+              UAE & GCC Regulatory Compliance
+            </p>
           </div>
-          <div class="rounded-xl border border-white/8 bg-white/[0.03] p-4 backdrop-blur-md">
-            <span class="text-2xl lg:text-3xl font-bold text-white">&lt; 4 wks</span>
-            <p class="mt-1 text-xs text-[#9d97a9]">Rapid Proof-of-Concept Turnaround</p>
+          <div
+            class="rounded-xl border border-white/8 bg-white/[0.03] p-4 backdrop-blur-md"
+          >
+            <span class="text-2xl lg:text-3xl font-bold text-white"
+              >&lt; 4 wks</span
+            >
+            <p class="mt-1 text-xs text-[#9d97a9]">
+              Rapid Proof-of-Concept Turnaround
+            </p>
           </div>
-          <div class="rounded-xl border border-white/8 bg-white/[0.03] p-4 backdrop-blur-md">
-            <span class="text-2xl lg:text-3xl font-bold text-white">4 Hubs</span>
-            <p class="mt-1 text-xs text-[#9d97a9]">Dubai · Riyadh · Milan · Kerala</p>
+          <div
+            class="rounded-xl border border-white/8 bg-white/[0.03] p-4 backdrop-blur-md"
+          >
+            <span class="text-2xl lg:text-3xl font-bold text-white">4 Hubs</span
+            >
+            <p class="mt-1 text-xs text-[#9d97a9]">
+              Dubai · Riyadh · Milan · Kerala
+            </p>
           </div>
         </div>
       </div>
     </section>
 
     {/* ── Services Catalog by Category ── */}
-    <section class={`${section} bg-[#080614] border-t border-white/10`} id="catalog">
+    <section
+      class={`${section} bg-[#080614] border-t border-white/10`}
+      id="catalog"
+    >
       <div class={shell}>
         <div class="mb-14">
           <p class={sectionLabel}>Full Capabilities Spectrum</p>
           <h2 class="text-[clamp(2.5rem,4.5vw,5rem)] tracking-tight">
             Explore our specialized practices
           </h2>
-          <p class="text-[clamp(0.9rem,1.1vw,1.05rem)] text-[#a39db0] max-w-[650px] mt-3">
-            Every practice is led by seasoned software engineers, AI researchers, and solutions architects committed to dependable, scalable execution.
+          <p
+            class="text-[clamp(0.9rem,1.1vw,1.05rem)] text-[#a39db0] max-w-[650px] mt-3"
+          >
+            Every practice is led by seasoned software engineers, AI
+            researchers, and solutions architects committed to dependable,
+            scalable execution.
           </p>
         </div>
 
         <div class="space-y-16">
-          {serviceCategories.map((category, catIndex) => {
-            const CategoryIcon = categoryIcons[category.title as keyof typeof categoryIcons] || Layers;
-            const categoryServices = services.filter((s) => category.slugs.includes(s.slug as any));
+          {
+            serviceCategories.map((category, catIndex) => {
+              const CategoryIcon =
+                categoryIcons[category.title as keyof typeof categoryIcons] ||
+                Layers;
+              const categoryServices = services.filter((s) =>
+                (category.slugs as readonly string[]).includes(s.slug),
+              );
 
-            return (
-              <div class="rounded-3xl border border-white/10 bg-white/[0.02] p-8 lg:p-10 backdrop-blur-md">
-                <div class="flex items-start justify-between gap-6 border-b border-white/10 pb-6 mb-8 max-[700px]:flex-col">
-                  <div class="flex items-center gap-3.5">
-                    <span class="grid size-12 place-items-center rounded-2xl bg-orchid/20 text-orchid border border-orchid/30">
-                      <CategoryIcon className="size-6" />
-                    </span>
-                    <div>
-                      <h3 class="text-2xl lg:text-3xl font-bold text-white m-0">
-                        {category.title}
-                      </h3>
-                      <p class="text-xs text-orchid uppercase tracking-wider font-semibold mt-1">
-                        Practice 0{catIndex + 1}
-                      </p>
-                    </div>
-                  </div>
-                  <p class="text-sm text-[#a8a2b5] max-w-[420px] m-0">
-                    {category.description}
-                  </p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {categoryServices.map((service) => (
-                    <a
-                      href={`/services/${service.slug}`}
-                      class="group relative flex flex-col justify-between rounded-2xl border border-white/10 bg-[#0d0a21]/80 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-orchid/60 hover:bg-[#130f30] hover:shadow-[0_12px_30px_rgba(176,99,255,0.12)]"
-                    >
+              return (
+                <div class="rounded-3xl border border-white/10 bg-white/[0.02] p-8 lg:p-10 backdrop-blur-md">
+                  <div class="flex items-start justify-between gap-6 border-b border-white/10 pb-6 mb-8 max-[700px]:flex-col">
+                    <div class="flex items-center gap-3.5">
+                      <span class="grid size-12 place-items-center rounded-2xl bg-orchid/20 text-orchid border border-orchid/30">
+                        <CategoryIcon className="size-6" />
+                      </span>
                       <div>
-                        <div class="flex items-center justify-between mb-4">
-                          <span class="inline-flex items-center gap-1.5 rounded-full bg-orchid/15 px-2.5 py-1 text-[.72rem] font-semibold text-orchid">
-                            {service.category}
-                          </span>
-                          <span class="size-7 rounded-full bg-white/5 grid place-items-center text-white/60 transition-transform duration-300 group-hover:bg-orchid group-hover:text-white group-hover:rotate-45">
-                            <ArrowUpRight />
-                          </span>
-                        </div>
-                        <h4 class="text-xl font-bold text-white mb-2.5 group-hover:text-orchid transition-colors">
-                          {service.title}
-                        </h4>
-                        <p class="text-sm leading-relaxed text-[#9e98ab] mb-6">
-                          {service.short}
+                        <h3 class="text-2xl lg:text-3xl font-bold text-white m-0">
+                          {category.title}
+                        </h3>
+                        <p class="text-xs text-orchid uppercase tracking-wider font-semibold mt-1">
+                          Practice 0{catIndex + 1}
                         </p>
                       </div>
+                    </div>
+                    <p class="text-sm text-[#a8a2b5] max-w-[420px] m-0">
+                      {category.description}
+                    </p>
+                  </div>
 
-                      <div>
-                        <div class="border-t border-white/8 pt-4">
-                          <p class="text-[.72rem] uppercase tracking-wider font-semibold text-white/50 mb-2">
-                            Key Deliverables
+                  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {categoryServices.map((service) => (
+                      <a
+                        href={`/services/${service.slug}`}
+                        class="group relative flex flex-col justify-between rounded-2xl border border-white/10 bg-[#0d0a21]/80 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-orchid/60 hover:bg-[#130f30] hover:shadow-[0_12px_30px_rgba(176,99,255,0.12)]"
+                      >
+                        <div>
+                          <div class="flex items-center justify-between mb-4">
+                            <span class="inline-flex items-center gap-1.5 rounded-full bg-orchid/15 px-2.5 py-1 text-[.72rem] font-semibold text-orchid">
+                              {service.category}
+                            </span>
+                            <span class="size-7 rounded-full bg-white/5 grid place-items-center text-white/60 transition-transform duration-300 group-hover:bg-orchid group-hover:text-white group-hover:rotate-45">
+                              <ArrowUpRight />
+                            </span>
+                          </div>
+                          <h4 class="text-xl font-bold text-white mb-2.5 group-hover:text-orchid transition-colors">
+                            {service.title}
+                          </h4>
+                          <p class="text-sm leading-relaxed text-[#9e98ab] mb-6">
+                            {service.short}
                           </p>
-                          <div class="flex flex-wrap gap-1.5">
-                            {service.deliverables.slice(0, 3).map((item) => (
-                              <span class="rounded bg-white/5 px-2 py-0.5 text-[.72rem] text-[#c2bdcd]">
-                                {item}
-                              </span>
-                            ))}
+                        </div>
+
+                        <div>
+                          <div class="border-t border-white/8 pt-4">
+                            <p class="text-[.72rem] uppercase tracking-wider font-semibold text-white/50 mb-2">
+                              Key Deliverables
+                            </p>
+                            <div class="flex flex-wrap gap-1.5">
+                              {service.deliverables.slice(0, 3).map((item) => (
+                                <span class="rounded bg-white/5 px-2 py-0.5 text-[.72rem] text-[#c2bdcd]">
+                                  {item}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+
+                          <div class="mt-5 flex items-center gap-2 text-xs font-semibold text-orchid">
+                            <span>View discipline details</span>
+                            <ArrowRight className="size-3.5 transition-transform duration-200 group-hover:translate-x-1" />
                           </div>
                         </div>
-
-                        <div class="mt-5 flex items-center gap-2 text-xs font-semibold text-orchid">
-                          <span>View discipline details</span>
-                          <ArrowRight className="size-3.5 transition-transform duration-200 group-hover:translate-x-1" />
-                        </div>
-                      </div>
-                    </a>
-                  ))}
+                      </a>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })
+          }
         </div>
       </div>
     </section>
@@ -237,54 +294,81 @@ const categoryIcons = {
         <div class="grid grid-cols-2 gap-12 max-[860px]:grid-cols-1">
           <div>
             <p class={sectionLabel}>Regional Excellence & Standards</p>
-            <h2 class="text-[clamp(2.6rem,4.5vw,5rem)] leading-tight tracking-tight">
+            <h2
+              class="text-[clamp(2.6rem,4.5vw,5rem)] leading-tight tracking-tight"
+            >
               Engineered for the UAE, GCC, and International Standards.
             </h2>
             <p class="text-base leading-relaxed text-[#4d4855] mt-6">
-              Modern enterprises operating across Dubai, Abu Dhabi, Riyadh, and Milan require digital architectures that unite speed with stringent regulatory adherence. DW Tech integrates local tax workflows, multilingual natural language models, and sovereign cloud infrastructure directly into our engineering delivery.
+              Modern enterprises operating across Dubai, Abu Dhabi, Riyadh, and
+              Milan require digital architectures that unite speed with
+              stringent regulatory adherence. DW Tech integrates local tax
+              workflows, multilingual natural language models, and sovereign
+              cloud infrastructure directly into our engineering delivery.
             </p>
 
             <div class="mt-8 space-y-4">
               <div class="flex items-start gap-3.5">
                 <CheckCircle2 className="size-5 text-orchid shrink-0 mt-0.5" />
                 <div>
-                  <h4 class="text-base font-bold text-ink">UAE FTA Tax & VAT Automation</h4>
-                  <p class="text-sm text-[#5a5463] m-0">Seamless integration with UAE Federal Tax Authority rules and electronic invoicing standards.</p>
+                  <h4 class="text-base font-bold text-ink">
+                    UAE FTA Tax & VAT Automation
+                  </h4>
+                  <p class="text-sm text-[#5a5463] m-0">
+                    Seamless integration with UAE Federal Tax Authority rules
+                    and electronic invoicing standards.
+                  </p>
                 </div>
               </div>
               <div class="flex items-start gap-3.5">
                 <CheckCircle2 className="size-5 text-orchid shrink-0 mt-0.5" />
                 <div>
-                  <h4 class="text-base font-bold text-ink">Sovereign Data Protection</h4>
-                  <p class="text-sm text-[#5a5463] m-0">In-region data residency adhering to UAE Federal Decree-Law No. 45 and Saudi NDMO data regulations.</p>
+                  <h4 class="text-base font-bold text-ink">
+                    Sovereign Data Protection
+                  </h4>
+                  <p class="text-sm text-[#5a5463] m-0">
+                    In-region data residency adhering to UAE Federal Decree-Law
+                    No. 45 and Saudi NDMO data regulations.
+                  </p>
                 </div>
               </div>
               <div class="flex items-start gap-3.5">
                 <CheckCircle2 className="size-5 text-orchid shrink-0 mt-0.5" />
                 <div>
-                  <h4 class="text-base font-bold text-ink">Bilingual Arabic & English Architecture</h4>
-                  <p class="text-sm text-[#5a5463] m-0">First-class bidirectional (RTL) interfaces and multilingual AI models tuned for Gulf dialects.</p>
+                  <h4 class="text-base font-bold text-ink">
+                    Bilingual Arabic & English Architecture
+                  </h4>
+                  <p class="text-sm text-[#5a5463] m-0">
+                    First-class bidirectional (RTL) interfaces and multilingual
+                    AI models tuned for Gulf dialects.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Direct Answer Engine / AEO Questions */}
-          <div class="rounded-2xl bg-white p-8 border border-black/10 shadow-lg">
-            <h3 class="text-xl font-bold text-ink mb-6 pb-3 border-b border-black/10">
+          <div
+            class="rounded-2xl bg-white p-8 border border-black/10 shadow-lg"
+          >
+            <h3
+              class="text-xl font-bold text-ink mb-6 pb-3 border-b border-black/10"
+            >
               Frequently Asked Questions (AEO & Search)
             </h3>
             <div class="space-y-6">
-              {servicesFaq.map((faq) => (
-                <div>
-                  <h4 class="text-base font-bold text-ink mb-2">
-                    {faq.question}
-                  </h4>
-                  <p class="text-sm leading-relaxed text-[#595361] m-0">
-                    {faq.answer}
-                  </p>
-                </div>
-              ))}
+              {
+                servicesFaq.map((faq) => (
+                  <div>
+                    <h4 class="text-base font-bold text-ink mb-2">
+                      {faq.question}
+                    </h4>
+                    <p class="text-sm leading-relaxed text-[#595361] m-0">
+                      {faq.answer}
+                    </p>
+                  </div>
+                ))
+              }
             </div>
           </div>
         </div>
@@ -292,14 +376,19 @@ const categoryIcons = {
     </section>
 
     {/* ── Consultation CTA ── */}
-    <section class="relative py-20 bg-[radial-gradient(circle_at_50%_50%,rgba(176,99,255,0.18),transparent_60%),#070512] text-center border-t border-white/10">
+    <section
+      class="relative py-20 bg-[radial-gradient(circle_at_50%_50%,rgba(176,99,255,0.18),transparent_60%),#070512] text-center border-t border-white/10"
+    >
       <div class={`${shell} max-w-[800px]`}>
         <p class={sectionLabel}>Get Started</p>
-        <h2 class="text-[clamp(2.8rem,5vw,5.5rem)] text-white tracking-tight mb-6">
+        <h2
+          class="text-[clamp(2.8rem,5vw,5.5rem)] text-white tracking-tight mb-6"
+        >
           Ready to engineer your next advantage?
         </h2>
         <p class="text-base lg:text-lg text-[#bfb9ca] mb-8 leading-relaxed">
-          Book an architectural discovery consultation with our technical leadership in Dubai to evaluate your software and AI opportunities.
+          Book an architectural discovery consultation with our technical
+          leadership in Dubai to evaluate your software and AI opportunities.
         </p>
         <div class="flex flex-wrap items-center justify-center gap-4">
           <a

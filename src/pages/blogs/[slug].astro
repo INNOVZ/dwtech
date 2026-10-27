@@ -2,7 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import { blogPosts, companyIdentity, siteUrl } from "@/lib/site-data";
 import { section, sectionLabel, shell, button } from "@/lib/styles";
-import { ArrowUpRight, ArrowRight } from "@/components/icons";
+import { ArrowUpRight, ArrowRight } from "@/components/layout/icons";
 import {
   Calendar,
   Clock,
@@ -35,43 +35,43 @@ const articleSchema = [
   {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "headline": post.title,
-    "description": post.excerpt,
-    "datePublished": post.publishedDate,
-    "dateModified": post.publishedDate,
-    "mainEntityOfPage": `${siteUrl}/blogs/${post.slug}`,
-    "author": {
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: post.publishedDate,
+    dateModified: post.publishedDate,
+    mainEntityOfPage: `${siteUrl}/blogs/${post.slug}`,
+    author: {
       "@type": "Person",
-      "name": post.author,
-      "jobTitle": post.authorRole,
+      name: post.author,
+      jobTitle: post.authorRole,
     },
-    "publisher": {
+    publisher: {
       "@type": "Organization",
-      "name": companyIdentity.name,
-      "url": siteUrl,
-      "logo": {
+      name: companyIdentity.name,
+      url: siteUrl,
+      logo: {
         "@type": "ImageObject",
-        "url": `${siteUrl}/icon.svg`,
+        url: `${siteUrl}/icon.svg`,
       },
     },
-    "about": {
+    about: {
       "@type": "Thing",
-      "name": post.category,
+      name: post.category,
     },
-    "spatialCoverage": {
+    spatialCoverage: {
       "@type": "Place",
-      "name": post.geoRegion,
+      name: post.geoRegion,
     },
   },
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": post.faq.map((item) => ({
+    mainEntity: post.faq.map((item) => ({
       "@type": "Question",
-      "name": item.question,
-      "acceptedAnswer": {
+      name: item.question,
+      acceptedAnswer: {
         "@type": "Answer",
-        "text": item.answer,
+        text: item.answer,
       },
     })),
   },
@@ -94,20 +94,33 @@ const otherPosts = blogPosts.filter((p) => p.slug !== slug);
   <main class="bg-night text-white overflow-hidden">
     {/* ── Article Header ── */}
     <article>
-      <header class="relative pt-[160px] pb-[70px] bg-[radial-gradient(ellipse_at_80%_20%,rgba(176,99,255,0.2),transparent_50%),#05040e]">
-        <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle,rgba(176,99,255,.3)_0_1px,transparent_1.3px)] bg-[length:64px_64px] opacity-15"></div>
+      <header
+        class="relative pt-[160px] pb-[70px] bg-[radial-gradient(ellipse_at_80%_20%,rgba(176,99,255,0.2),transparent_50%),#05040e]"
+      >
+        <div
+          class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle,rgba(176,99,255,.3)_0_1px,transparent_1.3px)] bg-[length:64px_64px] opacity-15"
+        >
+        </div>
 
         <div class={`${shell} relative z-[1] max-w-[900px]`}>
-          <nav aria-label="Breadcrumb" class="mb-6 flex flex-wrap items-center gap-2 text-xs text-[#a19bad]">
+          <nav
+            aria-label="Breadcrumb"
+            class="mb-6 flex flex-wrap items-center gap-2 text-xs text-[#a19bad]"
+          >
             <a href="/" class="hover:text-white transition-colors">Home</a>
             <span>/</span>
-            <a href="/blogs" class="hover:text-white transition-colors">Blogs</a>
+            <a href="/blogs" class="hover:text-white transition-colors">Blogs</a
+            >
             <span>/</span>
             <span class="text-orchid line-clamp-1">{post.title}</span>
           </nav>
 
-          <div class="flex flex-wrap items-center gap-3 mb-6 text-xs text-[#a59eb0]">
-            <span class="rounded-full bg-orchid/20 px-3 py-1 font-semibold text-orchid border border-orchid/30">
+          <div
+            class="flex flex-wrap items-center gap-3 mb-6 text-xs text-[#a59eb0]"
+          >
+            <span
+              class="rounded-full bg-orchid/20 px-3 py-1 font-semibold text-orchid border border-orchid/30"
+            >
               {post.category}
             </span>
             <span class="inline-flex items-center gap-1.5">
@@ -122,22 +135,34 @@ const otherPosts = blogPosts.filter((p) => p.slug !== slug);
             <span class="text-white/70">{post.geoRegion}</span>
           </div>
 
-          <h1 class="text-[clamp(2.5rem,5.2vw,5.5rem)] leading-[1.05] tracking-tight mb-6">
+          <h1
+            class="text-[clamp(2.5rem,5.2vw,5.5rem)] leading-[1.05] tracking-tight mb-6"
+          >
             {post.title}
           </h1>
 
-          <p class="text-[clamp(1.1rem,1.5vw,1.4rem)] leading-relaxed text-[#c9c4d5] mb-8">
+          <p
+            class="text-[clamp(1.1rem,1.5vw,1.4rem)] leading-relaxed text-[#c9c4d5] mb-8"
+          >
             {post.subtitle}
           </p>
 
-          <div class="flex items-center justify-between border-t border-white/10 pt-6">
+          <div
+            class="flex items-center justify-between border-t border-white/10 pt-6"
+          >
             <div class="flex items-center gap-3">
-              <div class="size-10 rounded-full bg-orchid/20 border border-orchid/40 grid place-items-center text-orchid font-bold text-sm">
+              <div
+                class="size-10 rounded-full bg-orchid/20 border border-orchid/40 grid place-items-center text-orchid font-bold text-sm"
+              >
                 DW
               </div>
               <div>
-                <p class="m-0 text-sm font-semibold text-white">{post.author}</p>
-                <p class="m-0 text-xs text-[#90899d]">{post.authorRole} · Dubai HQ</p>
+                <p class="m-0 text-sm font-semibold text-white">
+                  {post.author}
+                </p>
+                <p class="m-0 text-xs text-[#90899d]">
+                  {post.authorRole} · Dubai HQ
+                </p>
               </div>
             </div>
             <a
@@ -154,18 +179,26 @@ const otherPosts = blogPosts.filter((p) => p.slug !== slug);
       {/* ── Key Takeaways Box (AEO Direct Answers) ── */}
       <section class="py-10 bg-[#090716] border-y border-white/10">
         <div class={`${shell} max-w-[900px]`}>
-          <div class="rounded-2xl border border-orchid/30 bg-orchid/10 p-6 lg:p-8">
-            <h2 class="text-sm uppercase font-bold tracking-wider text-orchid mb-4 flex items-center gap-2">
+          <div
+            class="rounded-2xl border border-orchid/30 bg-orchid/10 p-6 lg:p-8"
+          >
+            <h2
+              class="text-sm uppercase font-bold tracking-wider text-orchid mb-4 flex items-center gap-2"
+            >
               <Sparkles className="size-4" />
               <span>Key Takeaways & Executive Overview (AEO Summary)</span>
             </h2>
-            <ul class="space-y-3 m-0 p-0 list-none text-sm lg:text-base text-[#e0dce9]">
-              {post.keyTakeaways.map((takeaway) => (
-                <li class="flex items-start gap-3">
-                  <CheckCircle2 className="size-4 text-orchid shrink-0 mt-1" />
-                  <span class="leading-relaxed">{takeaway}</span>
-                </li>
-              ))}
+            <ul
+              class="space-y-3 m-0 p-0 list-none text-sm lg:text-base text-[#e0dce9]"
+            >
+              {
+                post.keyTakeaways.map((takeaway) => (
+                  <li class="flex items-start gap-3">
+                    <CheckCircle2 className="size-4 text-orchid shrink-0 mt-1" />
+                    <span class="leading-relaxed">{takeaway}</span>
+                  </li>
+                ))
+              }
             </ul>
           </div>
         </div>
@@ -175,45 +208,53 @@ const otherPosts = blogPosts.filter((p) => p.slug !== slug);
       <section class="py-16 bg-[#05040e]">
         <div class={`${shell} max-w-[900px]`}>
           <div class="space-y-12">
-            {post.contentSections.map((sec) => (
-              <div>
-                <h2 class="text-2xl lg:text-3xl font-bold text-white tracking-tight mb-4">
-                  {sec.heading}
-                </h2>
-                <p class="text-base lg:text-lg leading-[1.75] text-[#b8b3c4] m-0">
-                  {sec.body}
-                </p>
-              </div>
-            ))}
+            {
+              post.contentSections.map((sec) => (
+                <div>
+                  <h2 class="text-2xl lg:text-3xl font-bold text-white tracking-tight mb-4">
+                    {sec.heading}
+                  </h2>
+                  <p class="text-base lg:text-lg leading-[1.75] text-[#b8b3c4] m-0">
+                    {sec.body}
+                  </p>
+                </div>
+              ))
+            }
           </div>
 
           {/* ── Embedded FAQ Section for Answer Engines ── */}
-          {post.faq && post.faq.length > 0 && (
-            <div class="mt-16 rounded-2xl border border-white/10 bg-white/[0.02] p-8">
-              <h3 class="text-xl font-bold text-white mb-6 pb-3 border-b border-white/10 flex items-center gap-2">
-                <ShieldCheck className="size-5 text-orchid" />
-                <span>Frequently Asked Questions</span>
-              </h3>
-              <div class="space-y-6">
-                {post.faq.map((item) => (
-                  <div>
-                    <h4 class="text-base font-semibold text-white mb-2">
-                      {item.question}
-                    </h4>
-                    <p class="text-sm leading-relaxed text-[#a8a2b5] m-0">
-                      {item.answer}
-                    </p>
-                  </div>
-                ))}
+          {
+            post.faq && post.faq.length > 0 && (
+              <div class="mt-16 rounded-2xl border border-white/10 bg-white/[0.02] p-8">
+                <h3 class="text-xl font-bold text-white mb-6 pb-3 border-b border-white/10 flex items-center gap-2">
+                  <ShieldCheck className="size-5 text-orchid" />
+                  <span>Frequently Asked Questions</span>
+                </h3>
+                <div class="space-y-6">
+                  {post.faq.map((item) => (
+                    <div>
+                      <h4 class="text-base font-semibold text-white mb-2">
+                        {item.question}
+                      </h4>
+                      <p class="text-sm leading-relaxed text-[#a8a2b5] m-0">
+                        {item.answer}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-          )}
+            )
+          }
 
           {/* ── Regional Regulatory Context ── */}
-          <div class="mt-12 rounded-xl border border-white/8 bg-white/[0.01] p-5 text-xs text-[#8c8599] flex items-center gap-3">
+          <div
+            class="mt-12 rounded-xl border border-white/8 bg-white/[0.01] p-5 text-xs text-[#8c8599] flex items-center gap-3"
+          >
             <Building className="size-5 text-orchid shrink-0" />
             <span>
-              This analysis applies to operational and legal environments across the United Arab Emirates (Dubai, Abu Dhabi) and the Kingdom of Saudi Arabia (Riyadh).
+              This analysis applies to operational and legal environments across
+              the United Arab Emirates (Dubai, Abu Dhabi) and the Kingdom of
+              Saudi Arabia (Riyadh).
             </span>
           </div>
         </div>
@@ -221,35 +262,37 @@ const otherPosts = blogPosts.filter((p) => p.slug !== slug);
     </article>
 
     {/* ── Related Articles ── */}
-    {otherPosts.length > 0 && (
-      <section class="py-16 bg-[#090716] border-t border-white/10">
-        <div class={`${shell} max-w-[900px]`}>
-          <p class={sectionLabel}>Further Reading</p>
-          <h2 class="text-2xl lg:text-3xl font-bold text-white mb-8">
-            Related Insights & Engineering Playbooks
-          </h2>
+    {
+      otherPosts.length > 0 && (
+        <section class="py-16 bg-[#090716] border-t border-white/10">
+          <div class={`${shell} max-w-[900px]`}>
+            <p class={sectionLabel}>Further Reading</p>
+            <h2 class="text-2xl lg:text-3xl font-bold text-white mb-8">
+              Related Insights & Engineering Playbooks
+            </h2>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {otherPosts.slice(0, 2).map((other) => (
-              <a
-                href={`/blogs/${other.slug}`}
-                class="group block rounded-2xl border border-white/10 bg-white/[0.02] p-6 transition-all duration-300 hover:border-orchid hover:bg-white/[0.04]"
-              >
-                <span class="text-xs font-semibold text-orchid mb-2 block">
-                  {other.category} · {other.readTime}
-                </span>
-                <h3 class="text-lg font-bold text-white group-hover:text-orchid transition-colors mb-2">
-                  {other.title}
-                </h3>
-                <p class="text-xs text-[#a29cb0] line-clamp-2">
-                  {other.excerpt}
-                </p>
-              </a>
-            ))}
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {otherPosts.slice(0, 2).map((other) => (
+                <a
+                  href={`/blogs/${other.slug}`}
+                  class="group block rounded-2xl border border-white/10 bg-white/[0.02] p-6 transition-all duration-300 hover:border-orchid hover:bg-white/[0.04]"
+                >
+                  <span class="text-xs font-semibold text-orchid mb-2 block">
+                    {other.category} · {other.readTime}
+                  </span>
+                  <h3 class="text-lg font-bold text-white group-hover:text-orchid transition-colors mb-2">
+                    {other.title}
+                  </h3>
+                  <p class="text-xs text-[#a29cb0] line-clamp-2">
+                    {other.excerpt}
+                  </p>
+                </a>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
-    )}
+        </section>
+      )
+    }
 
     {/* ── Bottom CTA ── */}
     <section class="py-16 bg-[#05040e] text-center border-t border-white/10">
@@ -259,7 +302,8 @@ const otherPosts = blogPosts.filter((p) => p.slug !== slug);
           Ready to put these architectures to work?
         </h2>
         <p class="text-sm text-[#b8b2c4] mb-6">
-          Schedule an engineering discussion with our solutions architects in Dubai.
+          Schedule an engineering discussion with our solutions architects in
+          Dubai.
         </p>
         <a
           href="mailto:tech@thedesertwhales.com?subject=Strategic%20Engineering%20Inquiry"

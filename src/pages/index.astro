@@ -1,11 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { TechnologyStack } from "../components/technology-stack";
-import { Globe } from "../components/globe";
-import ServiceList from "../components/ServiceList.astro";
+import TechnologyStack from "../components/TechnologyStack.astro";
+import { Globe } from "../components/layout/globe";
+import ServiceList from "../components/home/ServiceList.astro";
 import { ClientsMarquee } from "../components/clients-marquee";
 import ScrollReveal from "../components/animation/ScrollReveal.astro";
-import { ArrowRight, ArrowUpRight } from "@/components/icons";
+import { ArrowRight, ArrowUpRight } from "@/components/layout/icons";
 import {
   ScrollParallax,
   ScrollScrubReveal,
@@ -198,7 +198,6 @@ const faqSchema = {
       <div class={shell}>
         <ScrollReveal class={sectionHeading}>
           <div>
-            <p class={sectionLabel}>We Excells</p>
             <h2
               class="m-0 text-[clamp(3.6rem,6vw,5rem)] max-[620px]:text-[clamp(2.8rem,13vw,4.3rem)]"
             >
@@ -220,7 +219,6 @@ const faqSchema = {
         <div class={`{shell} bg-night lg:mx-10 p-10 lg:rounded-2xl`}>
           <ScrollReveal class={sectionHeading}>
             <div>
-              <p class={sectionLabel}>Clear and Collaborative</p>
               <h2
                 class="m-0 text-[clamp(3.6rem,6vw,7rem)] max-[620px]:text-[clamp(2.8rem,13vw,4.3rem)]"
               >
@@ -265,7 +263,6 @@ const faqSchema = {
       >
         <ScrollReveal>
           <div>
-            <p class={sectionLabel}>Cross-industry experience</p>
             <h2
               class="m-0 max-w-[760px] text-[clamp(3rem,5.3vw,6.3rem)] max-[620px]:text-[clamp(2.8rem,13vw,4.3rem)]"
               id="industries-title"
@@ -320,7 +317,6 @@ const faqSchema = {
       >
         <div>
           <ScrollReveal>
-            <p class={sectionLabel}>Global presence</p>
             <h2
               class="mb-[38px] max-w-[820px] text-[clamp(3rem,7vw,6rem)] max-[620px]:text-[clamp(2.8rem,13vw,4.3rem)]"
               id="presence-title"
@@ -362,7 +358,6 @@ const faqSchema = {
       >
         <ScrollReveal>
           <div>
-            <p class={sectionLabel}>Common questions</p>
             <h2
               class="max-w-[590px] text-[clamp(2.8rem,4.5vw,5.2rem)]"
               id="faq-title"

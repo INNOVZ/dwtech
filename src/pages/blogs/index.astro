@@ -2,7 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import { blogPosts, companyIdentity, siteUrl } from "@/lib/site-data";
 import { section, sectionLabel, shell, button } from "@/lib/styles";
-import { ArrowUpRight, ArrowRight } from "@/components/icons";
+import { ArrowUpRight, ArrowRight } from "@/components/layout/icons";
 import {
   Calendar,
   Clock,
@@ -14,28 +14,29 @@ import {
 } from "lucide-react";
 
 const pageTitle = "Insights & Technology Blog | DW Tech Dubai & GCC";
-const pageDescription = "Technical perspectives, enterprise AI adoption playbooks, custom software architecture, and digital transformation insights from DW Tech engineers in Dubai and Riyadh.";
+const pageDescription =
+  "Technical perspectives, enterprise AI adoption playbooks, custom software architecture, and digital transformation insights from DW Tech engineers in Dubai and Riyadh.";
 
 const blogDirectorySchema = {
   "@context": "https://schema.org",
   "@type": "Blog",
-  "name": "DW Tech Insights & Technology Blog",
-  "url": `${siteUrl}/blogs`,
-  "description": pageDescription,
-  "publisher": {
+  name: "DW Tech Insights & Technology Blog",
+  url: `${siteUrl}/blogs`,
+  description: pageDescription,
+  publisher: {
     "@type": "Organization",
-    "name": companyIdentity.name,
-    "url": siteUrl,
+    name: companyIdentity.name,
+    url: siteUrl,
   },
-  "blogPost": blogPosts.map((post) => ({
+  blogPost: blogPosts.map((post) => ({
     "@type": "BlogPosting",
-    "headline": post.title,
-    "description": post.excerpt,
-    "url": `${siteUrl}/blogs/${post.slug}`,
-    "datePublished": post.publishedDate,
-    "author": {
+    headline: post.title,
+    description: post.excerpt,
+    url: `${siteUrl}/blogs/${post.slug}`,
+    datePublished: post.publishedDate,
+    author: {
       "@type": "Person",
-      "name": post.author,
+      name: post.author,
     },
   })),
 };
@@ -52,11 +53,19 @@ const blogDirectorySchema = {
 >
   <main class="bg-night text-white overflow-hidden">
     {/* ── Hero Section ── */}
-    <section class="relative pt-[160px] pb-[90px] bg-[radial-gradient(ellipse_at_80%_20%,rgba(176,99,255,0.22),transparent_50%),#05040e]">
-      <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle,rgba(176,99,255,.3)_0_1px,transparent_1.3px)] bg-[length:64px_64px] opacity-15"></div>
+    <section
+      class="relative pt-[160px] pb-[90px] bg-[radial-gradient(ellipse_at_80%_20%,rgba(176,99,255,0.22),transparent_50%),#05040e]"
+    >
+      <div
+        class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle,rgba(176,99,255,.3)_0_1px,transparent_1.3px)] bg-[length:64px_64px] opacity-15"
+      >
+      </div>
 
       <div class={`${shell} relative z-[1]`}>
-        <nav aria-label="Breadcrumb" class="mb-6 flex items-center gap-2 text-xs text-[#a19bad]">
+        <nav
+          aria-label="Breadcrumb"
+          class="mb-6 flex items-center gap-2 text-xs text-[#a19bad]"
+        >
           <a href="/" class="hover:text-white transition-colors">Home</a>
           <span>/</span>
           <span class="text-orchid">Blogs & Insights</span>
@@ -64,28 +73,52 @@ const blogDirectorySchema = {
 
         <p class={sectionLabel}>Thought Leadership · GCC & Global</p>
 
-        <h1 class="text-[clamp(3.2rem,6.8vw,7.4rem)] leading-[0.98] tracking-tight max-w-[1100px] mb-8">
-          Architectural thinking for <span class="text-orchid">intelligent business.</span>
+        <h1
+          class="text-[clamp(3.2rem,6.8vw,7.4rem)] leading-[0.98] tracking-tight max-w-[1100px] mb-8"
+        >
+          Architectural thinking for <span class="text-orchid"
+            >intelligent business.</span
+          >
         </h1>
 
-        <p class="max-w-[820px] text-[clamp(1.05rem,1.4vw,1.3rem)] leading-[1.65] text-[#cfcad8] mb-10">
-          In-depth technical guides, strategic playbooks on enterprise AI adoption, composable system architecture, and operational modernization across the United Arab Emirates, Saudi Arabia, and international markets.
+        <p
+          class="max-w-[820px] text-[clamp(1.05rem,1.4vw,1.3rem)] leading-[1.65] text-[#cfcad8] mb-10"
+        >
+          In-depth technical guides, strategic playbooks on enterprise AI
+          adoption, composable system architecture, and operational
+          modernization across the United Arab Emirates, Saudi Arabia, and
+          international markets.
         </p>
 
         {/* Categories Bar */}
-        <div class="flex flex-wrap items-center gap-2 border-t border-white/15 pt-6">
-          <span class="text-xs uppercase font-semibold text-[#8b8598] mr-2">Featured Topics:</span>
-          {["AI & Automation", "Enterprise Engineering", "E-Commerce Architecture", "GCC Data Compliance", "Mobile Engineering"].map((tag) => (
-            <span class="rounded-full bg-white/5 px-3 py-1 text-xs text-[#c6c1d1] border border-white/8 hover:border-orchid/40 transition-colors">
-              {tag}
-            </span>
-          ))}
+        <div
+          class="flex flex-wrap items-center gap-2 border-t border-white/15 pt-6"
+        >
+          <span class="text-xs uppercase font-semibold text-[#8b8598] mr-2"
+            >Featured Topics:</span
+          >
+          {
+            [
+              "AI & Automation",
+              "Enterprise Engineering",
+              "E-Commerce Architecture",
+              "GCC Data Compliance",
+              "Mobile Engineering",
+            ].map((tag) => (
+              <span class="rounded-full bg-white/5 px-3 py-1 text-xs text-[#c6c1d1] border border-white/8 hover:border-orchid/40 transition-colors">
+                {tag}
+              </span>
+            ))
+          }
         </div>
       </div>
     </section>
 
     {/* ── Articles List ── */}
-    <section class={`${section} bg-[#080614] border-t border-white/10`} id="articles">
+    <section
+      class={`${section} bg-[#080614] border-t border-white/10`}
+      id="articles"
+    >
       <div class={shell}>
         <div class="mb-14">
           <p class={sectionLabel}>Latest Research & Field Notes</p>
@@ -95,88 +128,96 @@ const blogDirectorySchema = {
         </div>
 
         <div class="space-y-12">
-          {blogPosts.map((post) => (
-            <article class="group relative overflow-hidden rounded-3xl border border-white/12 bg-gradient-to-br from-[#0f0b24] to-[#080614] p-8 lg:p-12 transition-all duration-300 hover:border-orchid/60 hover:shadow-[0_20px_50px_rgba(176,99,255,0.12)]">
-              <div class="grid grid-cols-[1.3fr_.7fr] gap-10 items-start max-[960px]:grid-cols-1">
-                {/* Left: Article Meta & Summary */}
-                <div>
-                  <div class="flex flex-wrap items-center gap-3 mb-4 text-xs text-[#a59eb0]">
-                    <span class="rounded-full bg-orchid/20 px-3 py-1 font-semibold text-orchid border border-orchid/30">
-                      {post.category}
-                    </span>
-                    <span class="inline-flex items-center gap-1.5">
-                      <Calendar className="size-3.5 text-orchid" />
-                      {post.publishedDate}
-                    </span>
-                    <span class="inline-flex items-center gap-1">
-                      <Clock className="size-3.5 text-orchid" />
-                      {post.readTime}
-                    </span>
-                    <span class="text-white/40">·</span>
-                    <span class="text-white/70">{post.geoRegion}</span>
+          {
+            blogPosts.map((post) => (
+              <article class="group relative overflow-hidden rounded-3xl border border-white/12 bg-gradient-to-br from-[#0f0b24] to-[#080614] p-8 lg:p-12 transition-all duration-300 hover:border-orchid/60 hover:shadow-[0_20px_50px_rgba(176,99,255,0.12)]">
+                <div class="grid grid-cols-[1.3fr_.7fr] gap-10 items-start max-[960px]:grid-cols-1">
+                  {/* Left: Article Meta & Summary */}
+                  <div>
+                    <div class="flex flex-wrap items-center gap-3 mb-4 text-xs text-[#a59eb0]">
+                      <span class="rounded-full bg-orchid/20 px-3 py-1 font-semibold text-orchid border border-orchid/30">
+                        {post.category}
+                      </span>
+                      <span class="inline-flex items-center gap-1.5">
+                        <Calendar className="size-3.5 text-orchid" />
+                        {post.publishedDate}
+                      </span>
+                      <span class="inline-flex items-center gap-1">
+                        <Clock className="size-3.5 text-orchid" />
+                        {post.readTime}
+                      </span>
+                      <span class="text-white/40">·</span>
+                      <span class="text-white/70">{post.geoRegion}</span>
+                    </div>
+
+                    <h3 class="text-2xl lg:text-3xl font-bold text-white tracking-tight mb-3 group-hover:text-orchid transition-colors">
+                      <a href={`/blogs/${post.slug}`}>{post.title}</a>
+                    </h3>
+
+                    <p class="text-sm font-medium text-orchid mb-4">
+                      {post.subtitle}
+                    </p>
+
+                    <p class="text-base leading-relaxed text-[#c7c2d2] mb-6">
+                      {post.excerpt}
+                    </p>
+
+                    <div class="flex items-center gap-4">
+                      <a
+                        href={`/blogs/${post.slug}`}
+                        class="inline-flex items-center gap-2 rounded-full bg-white/10 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-orchid hover:text-white"
+                      >
+                        <span>Read Full Insight</span>
+                        <ArrowRight className="size-4" />
+                      </a>
+                    </div>
                   </div>
 
-                  <h3 class="text-2xl lg:text-3xl font-bold text-white tracking-tight mb-3 group-hover:text-orchid transition-colors">
-                    <a href={`/blogs/${post.slug}`}>
-                      {post.title}
-                    </a>
-                  </h3>
+                  {/* Right: Key Takeaways Card (AEO Optimized) */}
+                  <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-6 lg:p-7 backdrop-blur-md">
+                    <p class="text-xs uppercase font-bold tracking-wider text-orchid mb-3 flex items-center gap-2">
+                      <Sparkles className="size-3.5" />
+                      <span>Executive Summary & Takeaways</span>
+                    </p>
+                    <ul class="space-y-3 m-0 p-0 list-none text-xs lg:text-sm text-[#b8b3c4]">
+                      {post.keyTakeaways.map((takeaway) => (
+                        <li class="flex items-start gap-2.5">
+                          <CheckCircle2 className="size-4 text-orchid shrink-0 mt-0.5" />
+                          <span class="leading-relaxed">{takeaway}</span>
+                        </li>
+                      ))}
+                    </ul>
 
-                  <p class="text-sm font-medium text-orchid mb-4">
-                    {post.subtitle}
-                  </p>
-
-                  <p class="text-base leading-relaxed text-[#c7c2d2] mb-6">
-                    {post.excerpt}
-                  </p>
-
-                  <div class="flex items-center gap-4">
-                    <a
-                      href={`/blogs/${post.slug}`}
-                      class="inline-flex items-center gap-2 rounded-full bg-white/10 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-orchid hover:text-white"
-                    >
-                      <span>Read Full Insight</span>
-                      <ArrowRight className="size-4" />
-                    </a>
+                    <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-[#8e879c]">
+                      <span>
+                        By: <strong class="text-white">{post.author}</strong>
+                      </span>
+                      <span>{post.authorRole}</span>
+                    </div>
                   </div>
                 </div>
-
-                {/* Right: Key Takeaways Card (AEO Optimized) */}
-                <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-6 lg:p-7 backdrop-blur-md">
-                  <p class="text-xs uppercase font-bold tracking-wider text-orchid mb-3 flex items-center gap-2">
-                    <Sparkles className="size-3.5" />
-                    <span>Executive Summary & Takeaways</span>
-                  </p>
-                  <ul class="space-y-3 m-0 p-0 list-none text-xs lg:text-sm text-[#b8b3c4]">
-                    {post.keyTakeaways.map((takeaway) => (
-                      <li class="flex items-start gap-2.5">
-                        <CheckCircle2 className="size-4 text-orchid shrink-0 mt-0.5" />
-                        <span class="leading-relaxed">{takeaway}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-[#8e879c]">
-                    <span>By: <strong class="text-white">{post.author}</strong></span>
-                    <span>{post.authorRole}</span>
-                  </div>
-                </div>
-              </div>
-            </article>
-          ))}
+              </article>
+            ))
+          }
         </div>
       </div>
     </section>
 
     {/* ── Bottom CTA ── */}
-    <section class="relative py-20 bg-[radial-gradient(circle_at_50%_50%,rgba(176,99,255,0.18),transparent_60%),#070512] text-center border-t border-white/10">
+    <section
+      class="relative py-20 bg-[radial-gradient(circle_at_50%_50%,rgba(176,99,255,0.18),transparent_60%),#070512] text-center border-t border-white/10"
+    >
       <div class={`${shell} max-w-[800px]`}>
         <p class={sectionLabel}>Strategic Advisory</p>
-        <h2 class="text-[clamp(2.8rem,5vw,5.5rem)] text-white tracking-tight mb-6">
+        <h2
+          class="text-[clamp(2.8rem,5vw,5.5rem)] text-white tracking-tight mb-6"
+        >
           Discuss these topics with our architects.
         </h2>
         <p class="text-base lg:text-lg text-[#bfb9ca] mb-8 leading-relaxed">
-          Whether evaluating private AI deployment or planning an enterprise software roadmap in Dubai, our engineering team is available for technical discussions.
+          Whether evaluating private AI deployment or planning an enterprise
+          software roadmap in Dubai, our engineering team is available for
+          technical discussions.
         </p>
         <a
           href="mailto:tech@thedesertwhales.com?subject=Strategic%20Technology%20Discussion"

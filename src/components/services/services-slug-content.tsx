@@ -1,4 +1,4 @@
-import { ArrowRight, ArrowUpRight } from "@/components/icons";
+import { ArrowRight, ArrowUpRight } from "@/components/layout/icons";
 import {
   FadeIn,
   StaggerContainer,

@@ -1,4 +1,4 @@
-import { ArrowUpRight } from "@/components/icons";
+import { ArrowUpRight } from "@/components/layout/icons";
 import {
   FadeIn,
   StaggerContainer,
@@ -25,10 +25,9 @@ export default function AboutPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSchema) }}
       />
       <main className="bg-night">
-        <section className="relative min-h-[700px] bg-[radial-gradient(circle_at_78%_35%,rgba(176,99,255,.22),transparent_34%),#05040e] pt-[190px] pb-[110px] max-[620px]:min-h-0 max-[620px]:pt-[150px] max-[620px]:pb-[84px]">
+        <section className="relative min-h-[650px] bg-[radial-gradient(circle_at_78%_35%,rgba(176,99,255,.22),transparent_34%),#05040e] pt-[190px] pb-[110px] max-[620px]:min-h-0 max-[620px]:pt-[150px] max-[620px]:pb-[84px]">
           <div className={`${shell} relative z-[1]`}>
             <FadeIn>
-              <p className={sectionLabel}>About DW Tech</p>
               <h1 className="mb-9 max-w-[1100px] text-[clamp(3rem,8vw,4.75rem)]">
                 Technology Solutions built for the digital future
               </h1>
@@ -66,7 +65,8 @@ export default function AboutPage() {
               <div className="grid gap-6 text-[1.08rem] leading-[1.65] text-[#5d5867]">
                 <p>
                   DW Tech is headquartered in Dubai, United Arab Emirates, and
-                  is the technology and digital-transformation company with clients across the globe.
+                  is the technology and digital-transformation company with
+                  clients across the globe.
                 </p>
                 <p>
                   Our teams combine business strategy, product design,
@@ -82,7 +82,6 @@ export default function AboutPage() {
         <section className={`${section} bg-white text-ink`}>
           <div className={shell}>
             <FadeIn>
-              <p className={sectionLabel}>Where we operate</p>
               <h2 className="mb-14 max-w-[920px] text-[clamp(3rem,5vw,5.6rem)]">
                 Close to clients across four markets.
               </h2>
@@ -108,7 +107,6 @@ export default function AboutPage() {
         <section className={`${section} bg-mist text-ink`}>
           <div className={shell}>
             <FadeIn>
-              <p className={sectionLabel}>Capabilities</p>
               <h2 className="mb-14 max-w-[920px] text-[clamp(3rem,5vw,5.6rem)]">
                 Strategy, engineering, and experience working as one.
               </h2>

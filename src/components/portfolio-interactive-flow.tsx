@@ -36,14 +36,15 @@ interface ShowcaseItem {
   subtitle: string;
   techLogos: TechLogo[];
   deliverables: string[];
-  leftCard: {
+  singleImage?: string;
+  leftCard?: {
     image: string;
     price: string;
     title: string;
     subtitle: string;
     rating: string;
   };
-  rightCard: {
+  rightCard?: {
     image: string;
     label: string;
     secondaryLabel: string;
@@ -54,70 +55,26 @@ interface ShowcaseItem {
 
 const showcaseData: ShowcaseItem[] = [
   {
-    slug: "omniflow-supply-chain-erp",
-    projectName: "OmniFlow",
-    badge: "Out of the box",
-    headline: "Got a complex multi-warehouse supply chain?",
-    subtitle:
-      "We have a wide range of turnkey logistics & ERP solutions available.",
-    techLogos: [
-      { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },
-      { name: "Next.js", icon: SiNextdotjs, color: "#ffffff" },
-      { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
-    ],
-    deliverables: [
-      "Real-time fleet & cargo telematics",
-      "Automated UAE FTA VAT tax engine",
-      "Multi-warehouse scanner sync",
-      "Supplier & customs API portal",
-    ],
-    leftCard: {
-      image: "/portfolio/omniflow.jpg",
-      price: "$42.500",
-      title: "OmniFlow Logistics Hub",
-      subtitle: "GCC Free Zone Distribution",
-      rating: "4.9 (84 Warehouses)",
-    },
-    rightCard: {
-      image: "/portfolio/omniflow.jpg",
-      label: "Fleet Telemetry",
-      secondaryLabel: "Live Routing",
-    },
-    avatarEmoji: "🚚",
-    avatarBg: "bg-emerald-400",
-  },
-  {
     slug: "apexhealth-ai-clinical-triage",
-    projectName: "ApexHealth",
+    projectName: "Zaakiy AI",
     badge: "Generative AI",
-    headline: "Scaling patient intake with bilingual clinical triage?",
+    headline: "Create an omichannel Chat agent?",
     subtitle:
-      "Deploy governed healthcare AI that connects patients to specialist doctors in seconds.",
+      "Deploy Ready-to-use AI Agents for your WhatsApp, Instagram, Facebook, or Web.",
     techLogos: [
       { name: "FastAPI", icon: SiFastapi, color: "#009688" },
       { name: "PyTorch AI", icon: SiPytorch, color: "#EE4C2C" },
       { name: "Python", icon: SiPython, color: "#3776AB" },
     ],
     deliverables: [
-      "Arabic & English clinical NLP",
-      "Direct FHIR / HL7 EHR sync",
-      "WhatsApp & Web triage widget",
-      "Zero-data-retention compliance",
+      "Multiligual Adaption",
+      "AI Automation",
+      "Lead Generation",
+      "Direct CRM Sync",
     ],
-    leftCard: {
-      image: "/portfolio/apexhealth.jpg",
-      price: "34.2s",
-      title: "ApexHealth Triage System",
-      subtitle: "Dubai & Abu Dhabi Clinics",
-      rating: "4.9 (250k Patients)",
-    },
-    rightCard: {
-      image: "/portfolio/apexhealth.jpg",
-      label: "AI Triage Flow",
-      secondaryLabel: "Bilingual NLP",
-    },
-    avatarEmoji: "🩺",
-    avatarBg: "bg-teal-400",
+    singleImage: "/portfolio/zaakiy-ai-chatbot.png",
+    avatarEmoji: "🤖",
+    avatarBg: "bg-indigo-500",
   },
   {
     slug: "aura-luxury-ecommerce-marketplace",
@@ -435,68 +392,80 @@ function StackingCard({ item, idx, total, progress }: CardProps) {
                 <span>⚡</span>
               </div>
 
-              {/* Side-by-side floating cards inside the stage */}
-              <div className="flex flex-wrap sm:flex-nowrap items-center justify-center gap-5 w-full">
-                {/* Floating Card 1: White Product / System Card */}
-                <div className="w-full sm:w-[220px] rounded-2xl bg-white text-black p-4 shadow-2xl transition-transform duration-300 hover:scale-[1.02]">
-                  <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-slate-100 mb-3">
-                    <img
-                      src={item.leftCard.image}
-                      alt={item.leftCard.title}
-                      className="size-full object-cover"
-                      loading="lazy"
-                    />
-                  </div>
-
-                  <div className="flex items-center justify-between mb-1">
-                    <span className="text-base font-bold text-black tracking-tight">
-                      {item.leftCard.price}
-                    </span>
-                    <Heart className="size-4 fill-rose-500 text-rose-500" />
-                  </div>
-
-                  <h4 className="text-xs font-bold text-black line-clamp-1 mb-0.5">
-                    {item.leftCard.title}
-                  </h4>
-                  <p className="text-[.7rem] text-[#6b7280] line-clamp-1 mb-2.5">
-                    {item.leftCard.subtitle}
-                  </p>
-
-                  <div className="flex items-center gap-1 text-[.72rem] font-semibold text-amber-500">
-                    <Star className="size-3 fill-amber-400 text-amber-400" />
-                    <span className="text-[#374151]">
-                      {item.leftCard.rating}
-                    </span>
-                  </div>
+              {item.singleImage ? (
+                /* Direct clean presentation: No nested card, no fake datas/price/rating */
+                <div className="relative z-10 w-full flex items-center justify-center py-2 sm:py-4">
+                  <img
+                    src={item.singleImage}
+                    alt={item.projectName}
+                    className="w-full max-h-[360px] sm:max-h-[440px] max-w-[560px] object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.7)] transition-transform duration-300 hover:scale-[1.02]"
+                    loading="lazy"
+                  />
                 </div>
+              ) : item.leftCard && item.rightCard ? (
+                /* Side-by-side floating cards inside the stage */
+                <div className="flex flex-wrap sm:flex-nowrap items-center justify-center gap-5 w-full">
+                  {/* Floating Card 1: White Product / System Card */}
+                  <div className="w-full sm:w-[220px] rounded-2xl bg-white text-black p-4 shadow-2xl transition-transform duration-300 hover:scale-[1.02]">
+                    <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-slate-100 mb-3">
+                      <img
+                        src={item.leftCard.image}
+                        alt={item.leftCard.title}
+                        className="size-full object-cover"
+                        loading="lazy"
+                      />
+                    </div>
 
-                {/* Floating Card 2: AI / Platform visual card */}
-                <div className="w-full sm:w-[245px] rounded-2xl bg-[#232130] text-white p-3.5 shadow-xl border border-white/10 transition-transform duration-300 hover:scale-[1.02]">
-                  <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl mb-3 bg-black/40">
-                    <img
-                      src={item.rightCard.image}
-                      alt={item.rightCard.label}
-                      className="size-full object-cover"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-2.5">
-                      <span className="text-xs font-bold text-white tracking-wide">
-                        {item.rightCard.label}
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="text-base font-bold text-black tracking-tight">
+                        {item.leftCard.price}
+                      </span>
+                      <Heart className="size-4 fill-rose-500 text-rose-500" />
+                    </div>
+
+                    <h4 className="text-xs font-bold text-black line-clamp-1 mb-0.5">
+                      {item.leftCard.title}
+                    </h4>
+                    <p className="text-[.7rem] text-[#6b7280] line-clamp-1 mb-2.5">
+                      {item.leftCard.subtitle}
+                    </p>
+
+                    <div className="flex items-center gap-1 text-[.72rem] font-semibold text-amber-500">
+                      <Star className="size-3 fill-amber-400 text-amber-400" />
+                      <span className="text-[#374151]">
+                        {item.leftCard.rating}
                       </span>
                     </div>
                   </div>
 
-                  <div className="flex items-center justify-between text-xs text-[#a59eb0]">
-                    <span className="text-[.72rem] font-mono text-orchid font-semibold">
-                      {item.rightCard.secondaryLabel}
-                    </span>
-                    <span className="flex items-center gap-1 text-[.7rem] text-emerald-400">
-                      <span className="size-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                      Active
-                    </span>
+                  {/* Floating Card 2: AI / Platform visual card */}
+                  <div className="w-full sm:w-[245px] rounded-2xl bg-[#232130] text-white p-3.5 shadow-xl border border-white/10 transition-transform duration-300 hover:scale-[1.02]">
+                    <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl mb-3 bg-black/40">
+                      <img
+                        src={item.rightCard.image}
+                        alt={item.rightCard.label}
+                        className="size-full object-cover"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-2.5">
+                        <span className="text-xs font-bold text-white tracking-wide">
+                          {item.rightCard.label}
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center justify-between text-xs text-[#a59eb0]">
+                      <span className="text-[.72rem] font-mono text-orchid font-semibold">
+                        {item.rightCard.secondaryLabel}
+                      </span>
+                      <span className="flex items-center gap-1 text-[.7rem] text-emerald-400">
+                        <span className="size-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                        Active
+                      </span>
+                    </div>
                   </div>
                 </div>
-              </div>
+              ) : null}
             </div>
           </div>
         </article>

@@ -1,6 +1,6 @@
 ---
-import { Logo } from "@/components/logo";
-import { ArrowUpRight, Close, Menu } from "@/components/icons";
+import { Logo } from "@/components/layout/logo";
+import { ArrowUpRight, Close, Menu } from "@/components/layout/icons";
 import { button, shell } from "@/lib/styles";
 import {
   ChevronDown,
@@ -147,7 +147,7 @@ const servicesPillars = [
                 servicesPillars.map((pillar) => {
                   const PillarIcon = pillar.icon;
                   return (
-                    <div class="group/card flex flex-col justify-between rounded-xl bg-[#faf9fc] hover:bg-[#f5eefa] border border-black/[0.05] hover:border-[#7c32d5]/30 p-5 transition-all duration-200">
+                    <div class="group/card flex flex-col justify-between rounded-xl bg-[#faf9fc] border border-black/[0.05] p-5 transition-all duration-200">
                       <div>
                         {/* Top header with Icon & Title */}
                         <a href={pillar.href} class="block mb-3.5">
@@ -176,26 +176,6 @@ const servicesPillars = [
                   );
                 })
               }
-            </div>
-
-            {/* Clean bottom strip */}
-            <div
-              class="mt-5 flex items-center justify-between rounded-xl bg-[#f2eef8] px-4 py-3 border border-black/[0.04] text-xs text-[#5e5868] max-[780px]:flex-col max-[780px]:items-start max-[780px]:gap-2"
-            >
-              <div class="flex items-center gap-2">
-                <ShieldCheck className="size-4 text-[#7c32d5]" />
-                <span
-                  >Dubai Global HQ · Serving UAE, Saudi Arabia, Europe & India
-                  with enterprise compliance</span
-                >
-              </div>
-              <a
-                href="/#contact"
-                class="inline-flex items-center gap-1 text-[.76rem] font-bold text-[#7c32d5] hover:underline"
-              >
-                <span>Consult an Architect</span>
-                <ArrowRight className="size-3" />
-              </a>
             </div>
           </div>
         </div>

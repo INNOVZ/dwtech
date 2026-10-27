@@ -1,4 +1,5 @@
-import { FadeIn } from "@/components/animation/motion";
+---
+import ScrollReveal from "@/components/animation/ScrollReveal.astro";
 import { sectionLabel } from "@/lib/styles";
 
 type Technology = {
@@ -39,33 +40,36 @@ const technologies: Technology[] = [
   { name: "LangChain", src: "https://cdn.simpleicons.org/langchain" },
 ];
 
-export function TechnologyStack() {
-  return (
-    <div className="mt-[clamp(52px,6vw,80px)]  grid grid-cols-1 lg:grid-cols-[.6fr_1.4fr] gap-10 items-center">
-      <FadeIn className="flex items-center h-full">
-        <h2 className={`${sectionLabel} !text-black !m-0`}>
-          Technology Ecosytem
-        </h2>
-      </FadeIn>
-      <div className="relative overflow-hidden w-full [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-        <div className="flex w-[max-content] animate-marquee gap-8 items-center">
-          {[...technologies, ...technologies].map((technology, index) => (
-            <div
-              className="flex-shrink-0 flex items-center justify-center w-[clamp(50px,6vw,80px)] px-4"
-              key={index}
-              title={technology.name}
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={technology.src}
-                alt={technology.name}
-                loading="lazy"
-                className="max-h-10 w-auto object-contain"
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+interface Props {
+  class?: string;
 }
+
+const { class: className = "" } = Astro.props;
+---
+
+<div class={`mt-[clamp(52px,6vw,80px)] grid grid-cols-1 lg:grid-cols-[.6fr_1.4fr] gap-10 items-center ${className}`}>
+  <ScrollReveal class="flex items-center h-full">
+    <h2 class={`${sectionLabel} !text-black !m-0`}>
+      Technology Ecosystem
+    </h2>
+  </ScrollReveal>
+  <div class="relative overflow-hidden w-full [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+    <div class="flex w-[max-content] animate-marquee gap-8 items-center hover:[animation-play-state:paused]">
+      {[...technologies, ...technologies].map((technology) => (
+        <div
+          class="flex-shrink-0 flex items-center justify-center w-[clamp(50px,6vw,80px)] px-4"
+          title={technology.name}
+        >
+          <img
+            src={technology.src}
+            alt={technology.name}
+            loading="lazy"
+            width="60"
+            height="40"
+            class="max-h-10 w-auto object-contain transition-transform duration-200 hover:scale-110"
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
