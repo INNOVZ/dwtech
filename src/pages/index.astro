@@ -200,7 +200,7 @@ const faqSchema = {
         class={`${section} bg-[radial-gradient(circle_at_78%_0,rgba(176,99,255,.18),transparent_34%),#1a0046]`}
         id="approach"
       >
-        <div class={`${shell} bg-night lg:mx-10 p-10 lg:rounded-2xl`}>
+        <div class={`${shell} bg-night p-10 lg:rounded-2xl`}>
           <ScrollReveal class={sectionHeading}>
             <div>
               <h2 class="m-0 max-w-[790px] text-[clamp(2.8rem,4.5vw,5.2rem)]">
@@ -215,7 +215,7 @@ const faqSchema = {
               processSteps.map(([title, description], index) => (
                 <ScrollReveal
                   as="li"
-                  class="relative min-h-[220px] px-[clamp(16px,2.2vw,34px)] after:absolute after:top-[46px] after:left-[-4px] after:z-[1] after:size-[7px] after:rounded-full after:bg-orchid after:content-[''] first:pl-0 first:after:left-0 lg:not-first:border-l not-first:border-white/20 nth-[3]:max-[1080px]:border-l-0 nth-[3]:max-[1080px]:pl-0 nth-[5]:max-[1080px]:border-l-0 nth-[5]:max-[1080px]:pl-0 max-[1080px]:after:hidden max-[620px]:min-h-0 max-[620px]:border-t max-[620px]:border-l-0 max-[620px]:px-0 max-[620px]:py-6 max-[620px]:pb-7"
+                  class="relative min-h-[220px] px-[clamp(16px,2.2vw,34px)] after:absolute after:top-[46px] after:left-[clamp(16px,2.2vw,34px)] after:z-[1] after:size-[7px] after:rounded-full after:bg-orchid after:content-[''] first:pl-0 first:after:left-0 lg:not-first:border-l not-first:border-white/20 nth-[3]:max-[1080px]:border-l-0 nth-[3]:max-[1080px]:pl-0 nth-[5]:max-[1080px]:border-l-0 nth-[5]:max-[1080px]:pl-0 max-[1080px]:after:hidden max-[620px]:min-h-0 max-[620px]:border-t max-[620px]:border-l-0 max-[620px]:px-0 max-[620px]:py-6 max-[620px]:pb-7"
                   delay={index * 0.1}
                 >
                   <span class="mb-[38px] block text-[2rem] font-light text-orchid max-[620px]:mb-[18px]">
