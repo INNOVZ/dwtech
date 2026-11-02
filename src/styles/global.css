@@ -101,13 +101,6 @@
   h3 {
     margin-top: 0;
     font-weight: 400;
-    font-family: "Manrope", sans-serif;
-  }
-
-  h1,
-  h2,
-  h3 {
-    font-weight: 00;
     line-height: .98;
     letter-spacing: -.045em;
     font-family: "Manrope", sans-serif;
@@ -201,9 +194,3 @@
   pointer-events: none;
   user-select: none;
 }
-
-/* Parent link hover triggers the weight change */
-/* a:hover > .cta-link-text,
-.cta-link-text:hover {
-  font-weight: 700;
-} */

@@ -4,10 +4,8 @@ import { sectionLabel } from "@/lib/styles";
 const clients = [
   { name: "Landtech Trading", src: "/clients/Landtech Trading.png" },
   { name: "TopGun", src: "/clients/TopGun_Logo_Web_Blk_1.png" },
-  { name: "Ambassadors", src: "/clients/ambassadorscentworks (1).png" },
   { name: "Crystal", src: "/clients/crystal.png" },
   { name: "Fort Financial Advisor", src: "/clients/fort fiancial advisor.png" },
-  // { name: "Sachiel", src: "/clients/sachiel.png" },
   { name: "The Cafika", src: "/clients/the-cafika-logos.png" },
 ];
 
@@ -27,7 +25,6 @@ export function ClientsMarquee() {
               key={index}
               title={client.name}
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={client.src}
                 alt={client.name}

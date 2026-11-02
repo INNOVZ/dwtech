@@ -5,7 +5,8 @@ import {
   StaggerItem,
 } from "@/components/animation/motion";
 import { companyIdentity, locations, services, siteUrl } from "@/lib/site-data";
-import { button, section, sectionLabel, shell } from "@/lib/styles";
+import { section, shell } from "@/lib/styles";
+import { ClientsMarquee } from "@/components/clients-marquee";
 
 const aboutSchema = {
   "@context": "https://schema.org",
@@ -25,15 +26,15 @@ export default function AboutPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSchema) }}
       />
       <main className="bg-night">
-        <section className="relative min-h-[650px] bg-[radial-gradient(circle_at_78%_35%,rgba(176,99,255,.22),transparent_34%),#05040e] pt-[190px] pb-[110px] max-[620px]:min-h-0 max-[620px]:pt-[150px] max-[620px]:pb-[84px]">
-          <div className={`${shell} relative z-[1]`}>
+        <section className="relative min-h-[500px] bg-[radial-gradient(circle_at_78%_35%,rgba(176,99,255,.22),transparent_34%),#05040e] pt-[190px] pb-[110px] max-[620px]:min-h-0 max-[620px]:pt-[150px] max-[620px]:pb-[84px]">
+          <div className={`${shell} relative z-1`}>
             <FadeIn>
-              <h1 className="mb-9 max-w-[1100px] text-[clamp(3rem,8vw,4.75rem)]">
+              <h1 className="mb-9 max-w-screen text-[clamp(3rem,8vw,4.75rem)]">
                 Technology Solutions built for the digital future
               </h1>
             </FadeIn>
             <FadeIn delay={0.14}>
-              <p className="max-w-[820px] text-[clamp(1rem,1.6vw,1rem)] leading-[1.6] text-[#bcb7c7]">
+              <p className="max-w-100% text-[clamp(1rem,1.6vw,1rem)] leading-[1.6] text-[#bcb7c7]">
                 {companyIdentity.description}
               </p>
             </FadeIn>
@@ -82,7 +83,7 @@ export default function AboutPage() {
         <section className={`${section} bg-white text-ink`}>
           <div className={shell}>
             <FadeIn>
-              <h2 className="mb-14 max-w-[920px] text-[clamp(3rem,5vw,5.6rem)]">
+              <h2 className="mb-14 max-w-100% text-[clamp(3rem,5vw,5.6rem)]">
                 Close to clients across four markets.
               </h2>
             </FadeIn>

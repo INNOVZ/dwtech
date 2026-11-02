@@ -2,27 +2,36 @@
 import Layout from '../../layouts/Layout.astro';
 import ServicesContent from '../../components/services/services-slug-content';
 import { services } from '@/lib/site-data';
+import { getServiceDetailData } from '@/lib/services-detail-data';
 
 export function getStaticPaths() {
-  return services.map(s => ({
+  const paths = services.map(s => ({
     params: { slug: s.slug }
   }));
+  // Also provide direct alias for ai-automation matching reference structure
+  paths.push({ params: { slug: 'ai-automation' } });
+  return paths;
 }
 
 const { slug } = Astro.params;
-const service = services.find(s => s.slug === slug);
-const title = service ? `${service.title} | DW Tech Dubai` : 'DW Tech';
-const description = service ? `${service.title}: ${service.description} Tailored technology engineering for UAE and global enterprises by DW Tech.` : '';
+const service = services.find(s => s.slug === slug || (slug === 'ai-automation' && s.slug === 'ai-automation-solutions'));
+
+const fallbackTitle = service ? service.title : 'Enterprise Technology';
+const fallbackDescription = service ? service.description : '';
+const detail = getServiceDetailData(slug || '', fallbackTitle, fallbackDescription);
+
+const pageTitle = detail.metaTitle;
+const pageDescription = detail.metaDescription;
 ---
 
 <Layout
-  title={title}
-  description={description}
+  title={pageTitle}
+  description={pageDescription}
   breadcrumbs={[
     { name: "Home", item: "/" },
     { name: "Services", item: "/services" },
-    { name: service ? service.title : "Service", item: `/services/${slug}` },
+    { name: fallbackTitle, item: `/services/${slug}` },
   ]}
 >
-  <ServicesContent client:load params={{ slug }} />
+  <ServicesContent client:load params={{ slug: slug || '' }} initialDetail={detail} />
 </Layout>

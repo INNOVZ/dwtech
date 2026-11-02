@@ -1,0 +1,1681 @@
+{
+  "ai-automation-solutions": {
+    "slug": "ai-automation-solutions",
+    "metaTitle": "Tailored AI & Automation Solutions Dubai | DW Tech",
+    "metaDescription": "Machine learning, autonomous AI agents, enterprise RAG, and workflow automation in Dubai. Built for enterprises that want measurable results, not slide decks.",
+    "badge": "Do it with an AI Agent",
+    "heroH1": "Tailored AI solutions for your business.",
+    "heroSubtitle": "Autonomous agents, predictive models, and grounded knowledge assistants built on your data, integrated with your CRM and ERP, and deployed in production across Dubai and global enterprises.",
+    "statementQuote": "Building custom AI for enterprises.",
+    "statementAuthor": "DW Tech Engineering Philosophy",
+    "trustStats": [
+      {
+        "value": "60%–80%",
+        "label": "Reduction in routine triage & manual processing time"
+      },
+      {
+        "value": "100%",
+        "label": "Sovereign compliance with UAE Federal Data Law No. 45"
+      },
+      {
+        "value": "< 4 wks",
+        "label": "Working proof-of-concept on your live operational data"
+      },
+      {
+        "value": "Sub-250ms",
+        "label": "Inference latency for real-time customer and voice channels"
+      }
+    ],
+    "featureRowsTitle": "How we put AI to work",
+    "featureRowsSubtitle": "We don't replace what you have. We make it intelligent.",
+    "featureRows": [
+      {
+        "title": "Predict the future",
+        "tagline": "Anticipate operational friction before it happens",
+        "description": "Predictive machine learning models for sales demand, warehouse inventory, cash flow, and equipment wear. Transform historical operational logs into proactive management decisions.",
+        "tags": [
+          "Time-Series Forecasting",
+          "Demand Modeling",
+          "Anomaly Detection",
+          "Automated Telemetry"
+        ]
+      },
+      {
+        "title": "Talk to your data",
+        "tagline": "Turn complex documents into clear answers, ready to act on",
+        "description": "Ask your enterprise data anything. Grounded Retrieval-Augmented Generation (RAG) that synthesizes answers strictly from internal PDFs, ERP databases, contracts, and SOPs with verifiable citations.",
+        "tags": [
+          "Enterprise RAG",
+          "Hybrid Vector Search",
+          "Zero Hallucination",
+          "Source Citations"
+        ]
+      },
+      {
+        "title": "Evolve processes",
+        "tagline": "Autonomous workflows that execute real business actions",
+        "description": "AI agents that don't just chat—they work. Automate end-to-end tasks like supplier invoice reconciliation, customs clearance validation, support triage, and CRM updates with human-in-the-loop oversight.",
+        "tags": [
+          "Agentic Workflows",
+          "API Function Calling",
+          "Human-in-the-Loop",
+          "ERP Integration"
+        ]
+      }
+    ],
+    "caseStudiesTitle": "Real client deployments & verified ROI.",
+    "caseStudies": [
+      {
+        "title": "ApexHealth: Multilingual Clinical Triage & Patient Routing",
+        "tag": "Intelligent Systems",
+        "sector": "Regional Healthcare Network · Dubai & Abu Dhabi",
+        "challenge": "Manual triage queues caused consultation delays and high administrative burden across 8 clinical branches.",
+        "solution": "Deployed a bilingual Arabic and English agentic system validating patient symptoms, verifying insurance eligibility, and routing directly to specialized doctors via WhatsApp and web.",
+        "metrics": "85% reduction in triage wait time · 250,000+ interactions handled with 99.4% booking accuracy",
+        "techStack": [
+          "FastAPI",
+          "FHIR / HL7",
+          "Bilingual NLP",
+          "WhatsApp Business API",
+          "PostgreSQL"
+        ],
+        "link": "/portfolio"
+      },
+      {
+        "title": "LogiTrack: Autonomous Freight Document Reconciliation",
+        "tag": "Enterprise AI",
+        "sector": "GCC Supply Chain & Customs Clearing · Jebel Ali Free Zone",
+        "challenge": "Customs clearance teams spent 20+ hours weekly manually transcribing bills of lading, commercial invoices, and packing lists.",
+        "solution": "Built an intelligent document processing pipeline using computer vision and LLM extraction to validate customs documentation against Dubai Trade APIs.",
+        "metrics": "74% reduction in manual processing · Zero customs tariff classification errors in 6 months",
+        "techStack": [
+          "Python",
+          "PyTorch",
+          "Dubai Trade API",
+          "OCR",
+          "Redis Queue"
+        ],
+        "link": "/portfolio"
+      }
+    ],
+    "processTitle": "From discovery to production scale.",
+    "processSubtitle": "Measurable accuracy and dependable behavior at every stage, so the system earns its place in how your business runs.",
+    "processSteps": [
+      {
+        "number": "01",
+        "title": "Opportunity & Data Audit",
+        "desc": "We pinpoint operational bottlenecks, verify data cleanliness, audit internal APIs, and define quantitative KPIs that determine success."
+      },
+      {
+        "number": "02",
+        "title": "Feasibility & Solution Design",
+        "desc": "We select the optimal model strategy, design the RAG retrieval pipeline, configure security guardrails, and build interactive prototypes."
+      },
+      {
+        "number": "03",
+        "title": "Build, Benchmark & Integrate",
+        "desc": "We engineer production code, benchmark against golden test datasets, tune latency, and integrate live connectors with your existing CRM and ERP."
+      },
+      {
+        "number": "04",
+        "title": "Deploy, Telemetry & Tuning",
+        "desc": "We deploy in your private cloud or UAE sovereign data center, establish telemetry for drift and hallucination tracking, and continuously iterate."
+      }
+    ],
+    "faqTitle": "Questions? We have answers.",
+    "faqs": [
+      {
+        "question": "What types of artificial intelligence solutions do you build?",
+        "answer": "We engineer three primary categories: 1) Autonomous agents and multilingual chatbots that interact with customers and trigger authorized database actions; 2) Enterprise RAG knowledge assistants that search and cite internal documents with zero hallucination; and 3) Intelligent document processing pipelines that extract and reconcile invoices, bills of lading, and contracts into your ERP."
+      },
+      {
+        "question": "Can AI connect to our CRM, ERP, database, or internal tools?",
+        "answer": "Yes. We specialize in building secure API connectors, webhooks, and database adapters for SAP, Oracle, Microsoft Dynamics, Salesforce, HubSpot, Zoho, Odoo, PostgreSQL, MySQL, and proprietary internal databases. The AI interacts with your existing systems securely using role-based permissions and audit logs."
+      },
+      {
+        "question": "Does our data need to be clean and organized before we start?",
+        "answer": "No. Most enterprise data starts out messy, fragmented across PDFs, email threads, spreadsheets, and shared drives. During the initial audit phase, our engineers clean, deduplicate, and structure your data, creating the necessary embeddings and indexes for high-accuracy retrieval."
+      },
+      {
+        "question": "How do you reduce incorrect or unsupported AI answers?",
+        "answer": "We employ a multi-layered guardrail architecture: strict Retrieval-Augmented Generation (forcing models to answer solely from retrieved context), semantic reranking to filter irrelevant text, system-level refusal rules when confidence thresholds are not met, deterministic JSON schema validation, and mandatory source citations."
+      },
+      {
+        "question": "Can it run in our own cloud or a private environment in Dubai?",
+        "answer": "Yes. For clients requiring strict data sovereignty—such as healthcare, banking, government, and legal organizations in the UAE—we deploy models within private VPCs in local AWS UAE / Microsoft Azure UAE regions, or directly on on-premises GPU infrastructure with zero data transmission to external third parties."
+      },
+      {
+        "question": "What is the average development time and cost structure?",
+        "answer": "A focused, working proof-of-concept on your live operational data is typically delivered within 2 to 4 weeks. Full enterprise production deployment—including security audits, legacy system integration, staff training, and automated failover—generally takes 6 to 12 weeks with transparent milestone-based pricing."
+      },
+      {
+        "question": "Where are you based, and do you work with clients outside the UAE?",
+        "answer": "DW Tech is headquartered in Dubai, United Arab Emirates, with technical delivery and engineering centers in Riyadh (Saudi Arabia), Milan (Italy), and Kerala (India). We serve enterprise clients across the UAE, the broader GCC, Europe, and North America."
+      }
+    ]
+  },
+  "custom-software-development": {
+    "slug": "custom-software-development",
+    "metaTitle": "Tailored Custom Software Development Dubai | DW Tech",
+    "metaDescription": "Bespoke web platforms, SaaS products, and enterprise software engineered in Dubai. High performance, zero bloat, full IP ownership.",
+    "badge": "Tailored Engineering",
+    "heroH1": "Software your business cannot buy off the shelf.",
+    "heroSubtitle": "We design and engineer dependable web platforms, enterprise SaaS portals, and scalable backend microservices shaped around your exact operational workflows, regulatory constraints, and growth plans.",
+    "statementQuote": "Your business is unique. Just like the software you need.",
+    "statementAuthor": "DW Tech Engineering Philosophy",
+    "trustStats": [
+      {
+        "value": "Tailored",
+        "label": "Solution developed for your business"
+      },
+      {
+        "value": "100%",
+        "label": "Source code & IP ownership handed to your business"
+      },
+      {
+        "value": "99.99%",
+        "label": "High availability SLA for mission-critical platforms"
+      },
+      {
+        "value": "Support",
+        "label": "Long-term maintenance and enhancement"
+      }
+    ],
+    "featureRowsTitle": "How we engineer software",
+    "featureRowsSubtitle": "Modern architecture engineered for dependability, security, and speed.",
+    "featureRows": [
+      {
+        "title": "Architect for scale",
+        "tagline": "Microservices and high-throughput backends",
+        "description": "Built for massive concurrency and zero downtime. We engineer modular backends with clean API gateways, database partitioning, and asynchronous event-driven messaging.",
+        "tags": [
+          "Go",
+          "Node.js",
+          "PostgreSQL",
+          "Kafka & Redis",
+          "GraphQL"
+        ]
+      },
+      {
+        "title": "Craft seamless interfaces",
+        "tagline": "Sub-second responsiveness and fluid experiences",
+        "description": "Fast, accessible web applications and client portals built with React, Next.js, and Astro that eliminate lag, elevate brand authority, and drive high user adoption.",
+        "tags": [
+          "Next.js",
+          "Astro",
+          "Tailwind CSS",
+          "TypeScript",
+          "Enterprise SSO"
+        ]
+      },
+      {
+        "title": "Modernize legacy cores",
+        "tagline": "Bridge legacy mainframes with modern cloud services",
+        "description": "Extract business logic from brittle spreadsheets and legacy databases, wrapping them in clean REST and GraphQL APIs without risky operational downtime.",
+        "tags": [
+          "API Gateways",
+          "Schema Refactoring",
+          "Zero-Downtime Migration",
+          "Automated QA"
+        ]
+      }
+    ],
+    "caseStudiesTitle": "Real client deployments & verified ROI.",
+    "caseStudies": [
+      {
+        "title": "TradeAxis: Multi-Entity Commodity Settlement Platform",
+        "tag": "Custom Platform",
+        "sector": "DMCC Free Zone Wholesale Trading · Dubai, UAE",
+        "challenge": "Commodities trading firm struggled with fragmented trade reconciliation spreadsheets and delayed bank payment clearing across three entities.",
+        "solution": "Built a centralized cloud platform handling deal intake, FX risk telemetry, trade validation, and automated SWIFT bank payment generation.",
+        "metrics": "68% faster trade reconciliation · 100% audit accuracy for DMCC reporting",
+        "techStack": [
+          "Next.js",
+          "Go",
+          "PostgreSQL",
+          "Tailwind CSS",
+          "Redis"
+        ],
+        "link": "/portfolio"
+      },
+      {
+        "title": "CoreFlow: Distributed Field Service & Maintenance System",
+        "tag": "Enterprise SaaS",
+        "sector": "Industrial Utilities & Facilities · Abu Dhabi",
+        "challenge": "Over 200 field engineers relied on paper logs, leading to dispatch delays, lost billable hours, and delayed parts procurement.",
+        "solution": "Engineered an offline-first field service portal with live GPS telemetry, automatic work-order assignment, and instant client sign-offs.",
+        "metrics": "3.2x increase in daily tickets closed per engineer · Zero paperwork loss",
+        "techStack": [
+          "React",
+          "FastAPI",
+          "PostgreSQL",
+          "Docker",
+          "Mapbox"
+        ],
+        "link": "/portfolio"
+      }
+    ],
+    "processTitle": "From discovery to production scale.",
+    "processSubtitle": "A disciplined engineering lifecycle designed for transparency, speed, and dependable outcomes.",
+    "processSteps": [
+      {
+        "number": "01",
+        "title": "Requirements & Domain Mapping",
+        "desc": "We deep-dive into your operational workflows, data schemas, security boundaries, and target user personas."
+      },
+      {
+        "number": "02",
+        "title": "Architecture & Interactive Prototype",
+        "desc": "We design system architecture diagrams, database models, API specs, and clickable Figma prototypes for user validation."
+      },
+      {
+        "number": "03",
+        "title": "Agile Sprints & Automated Testing",
+        "desc": "Two-week agile sprints with bi-weekly staging demos, continuous integration, unit testing, and automated security scanning."
+      },
+      {
+        "number": "04",
+        "title": "Production Deployment & Handover",
+        "desc": "Smooth deployment to your cloud environment, comprehensive documentation, team training, and 100% intellectual property transfer."
+      }
+    ],
+    "faqTitle": "Questions? We have answers.",
+    "faqs": [
+      {
+        "question": "Why choose custom software development over commercial off-the-shelf tools?",
+        "answer": "Off-the-shelf software forces your business into someone else's generic process, often charges recurring per-seat fees that grow unpredictably, and limits custom integrations. Custom software gives you complete intellectual property ownership, zero per-user licensing costs, and functionality engineered 100% around your competitive advantages."
+      },
+      {
+        "question": "Who owns the source code and intellectual property?",
+        "answer": "You own 100% of the custom source code, documentation, architecture blueprints, database schemas, and design assets from day one upon milestone completion. We provide full repository access with zero vendor lock-in."
+      },
+      {
+        "question": "Can custom software integrate with our existing ERP, CRM, and accounting software?",
+        "answer": "Yes. We regularly build bi-directional connectors, webhooks, and REST/GraphQL APIs that sync seamlessly with legacy databases, SAP, Oracle, Microsoft Dynamics, Salesforce, Zoho, and regional banking portals."
+      },
+      {
+        "question": "How do you ensure enterprise-grade security and data privacy in the UAE?",
+        "answer": "All systems are built following OWASP Top 10 security standards, automated static code analysis, encrypted data storage (AES-256), and secure transit (TLS 1.3). For UAE clients, we ensure full alignment with UAE Federal Decree-Law No. 45 on Personal Data Protection."
+      },
+      {
+        "question": "What is the typical timeline and engagement model for a custom software project?",
+        "answer": "Initial architectural discovery and clickable prototypes take 2 to 3 weeks. A production-ready Minimum Viable Product (MVP) typically ships in 6 to 10 weeks. We offer milestone-based fixed-scope delivery as well as dedicated agile squads."
+      },
+      {
+        "question": "Do you provide ongoing maintenance and post-launch support in Dubai?",
+        "answer": "Yes. We offer defined Service Level Agreements (SLAs) including 24/7 uptime monitoring, security patching, performance optimization, and dedicated sprint hours for continuous feature evolution."
+      }
+    ]
+  },
+  "erp-crm-solutions": {
+    "slug": "erp-crm-solutions",
+    "metaTitle": "Tailored ERP & CRM Solutions Dubai | DW Tech",
+    "metaDescription": "Custom ERP and CRM implementation in Dubai. Centralize sales, operations, inventory, and finance with UAE FTA VAT e-invoicing compliance.",
+    "badge": "Enterprise Unified Systems",
+    "heroH1": "Centralize operations, inventory, and customer relationships.",
+    "heroSubtitle": "We architect, configure, and customize unified ERP and CRM ecosystems that eliminate duplicated data entry, automate UAE FTA VAT invoicing, and give leadership a single real-time source of operational truth.",
+    "statementQuote": "Stop switching between tabs. Run your entire business from one coherent system.",
+    "statementAuthor": "DW Tech Engineering Philosophy",
+    "trustStats": [
+      {
+        "value": "100%",
+        "label": "Compliance with UAE FTA VAT e-invoicing standards"
+      },
+      {
+        "value": "3.5x",
+        "label": "Faster month-end financial close and multi-entity reconciliation"
+      },
+      {
+        "value": "360°",
+        "label": "Unified real-time customer and inventory visibility"
+      },
+      {
+        "value": "Zero",
+        "label": "Data loss during secure enterprise legacy migration"
+      }
+    ],
+    "featureRowsTitle": "How we unify enterprise operations",
+    "featureRowsSubtitle": "Connected systems that turn operational complexity into clarity and speed.",
+    "featureRows": [
+      {
+        "title": "Unify operational data",
+        "tagline": "Single source of truth across all departments",
+        "description": "Consolidate inventory tracking, procurement, warehouse logistics, sales pipeline, and HR into one connected database that eliminates spreadsheet silos.",
+        "tags": [
+          "Unified Master Data",
+          "Multi-Warehouse Sync",
+          "Real-Time Ledger",
+          "Role-Based Access"
+        ]
+      },
+      {
+        "title": "Automate regional compliance",
+        "tagline": "Seamless UAE FTA VAT and electronic invoicing",
+        "description": "Built-in tax engines configured for UAE Federal Tax Authority 5% VAT rules, automated corporate tax reporting, and bilingual Arabic/English compliant tax invoices.",
+        "tags": [
+          "FTA VAT Compliant",
+          "Corporate Tax Ready",
+          "Bilingual Invoicing",
+          "Automated Audit Trails"
+        ]
+      },
+      {
+        "title": "Custom connectors & telemetry",
+        "tagline": "Bridge disparate legacy tools and modern apps",
+        "description": "Custom bi-directional webhooks and API pipelines integrating Salesforce, Odoo, SAP, Microsoft Dynamics, Zoho, and regional corporate banking portals.",
+        "tags": [
+          "ERP Webhooks",
+          "Banking Gateways",
+          "Live BI Telemetry",
+          "Automated Workflows"
+        ]
+      }
+    ],
+    "caseStudiesTitle": "Real client deployments & verified ROI.",
+    "caseStudies": [
+      {
+        "title": "Al-Noor Retail Group: Multi-Store ERP & Central Inventory Consolidation",
+        "tag": "ERP Ecosystem",
+        "sector": "Omnichannel Retail Network · Dubai & Riyadh",
+        "challenge": "Retail group with 14 outlets suffered from inventory mismatch between physical retail POS and online e-commerce channels.",
+        "solution": "Architected a unified ERP platform integrating barcode scanners, warehouse replenishment logic, automated POs, and central finance.",
+        "metrics": "99.8% inventory accuracy · 4 hours saved per store daily in stock reconciliation",
+        "techStack": [
+          "Odoo Enterprise",
+          "PostgreSQL",
+          "Next.js POS",
+          "Redis",
+          "REST APIs"
+        ],
+        "link": "/portfolio"
+      },
+      {
+        "title": "Falcon Logistics: End-to-End Customs Brokerage & Client CRM",
+        "tag": "Custom CRM & ERP",
+        "sector": "Sea & Air Freight Operations · Dubai International Airport",
+        "challenge": "Customer support and account managers were disconnected from live customs clearance tracking, causing hundreds of daily client status calls.",
+        "solution": "Built a unified client portal and CRM pulling live shipment telemetry from Dubai Customs and port authorities with automated WhatsApp notifications.",
+        "metrics": "62% drop in incoming customer status inquiries · 100% on-time billing capture",
+        "techStack": [
+          "React",
+          "Node.js",
+          "PostgreSQL",
+          "WhatsApp API",
+          "Custom ERP Connector"
+        ],
+        "link": "/portfolio"
+      }
+    ],
+    "processTitle": "From discovery to production scale.",
+    "processSubtitle": "A disciplined engineering lifecycle designed for transparency, speed, and dependable outcomes.",
+    "processSteps": [
+      {
+        "number": "01",
+        "title": "Workflow & Ledger Mapping",
+        "desc": "We map every chart of accounts, approval chain, inventory movement, and sales touchpoint across your business."
+      },
+      {
+        "number": "02",
+        "title": "Schema Design & Customization",
+        "desc": "We configure custom fields, data models, approval rules, and automated VAT invoicing templates tailored to your operations."
+      },
+      {
+        "number": "03",
+        "title": "Data Cleansing & Migration",
+        "desc": "We sanitize legacy customer and ledger data, eliminate duplicates, and execute trial migration runs to ensure zero data discrepancy."
+      },
+      {
+        "number": "04",
+        "title": "Team Training & Phased Go-Live",
+        "desc": "Comprehensive role-based staff training, parallel ledger runs, and live on-site launch support across your Dubai offices."
+      }
+    ],
+    "faqTitle": "Questions? We have answers.",
+    "faqs": [
+      {
+        "question": "What ERP and CRM platforms does DW Tech specialize in?",
+        "answer": "We design, implement, and customize solutions across Odoo Enterprise, Salesforce, Microsoft Dynamics 365, Zoho One, and fully bespoke custom ERP platforms built on modern web frameworks when commercial platforms are too rigid."
+      },
+      {
+        "question": "Are your ERP implementations compliant with UAE Federal Tax Authority (FTA) regulations?",
+        "answer": "Yes. Every financial system we configure adheres strictly to UAE VAT Law (Federal Decree-Law No. 8), generating FTA-compliant tax invoices, credit notes, and automated VAT return reporting with dual Arabic and English localization."
+      },
+      {
+        "question": "How do you handle data migration from our existing software and spreadsheets?",
+        "answer": "We follow a multi-stage migration protocol: data extraction, automated deduplication, normalization, and sandbox trial migrations. We run parallel reconciliations to ensure financial balances match down to the exact fil before cutting over."
+      },
+      {
+        "question": "Can the ERP system connect with our e-commerce store and retail POS?",
+        "answer": "Yes. We engineer real-time bidirectional synchronization between your ERP and Shopify, WooCommerce, Magento, or custom mobile storefronts. When a sale occurs in-store or online, stock levels and accounting ledgers update instantly."
+      },
+      {
+        "question": "How long does a typical ERP/CRM implementation take?",
+        "answer": "A streamlined core deployment (finance, invoicing, inventory) typically takes 4 to 8 weeks. Larger multi-entity enterprise migrations involving extensive manufacturing or supply chain workflows usually take 10 to 16 weeks."
+      },
+      {
+        "question": "Do you provide staff training and post-launch support in the UAE?",
+        "answer": "Yes. We conduct hands-on training sessions for your accounting, sales, and warehouse teams in Dubai or remotely, providing detailed localized video guides and dedicated hypercare support through the first three month-end closes."
+      }
+    ]
+  },
+  "mobile-app-development": {
+    "slug": "mobile-app-development",
+    "metaTitle": "Tailored Mobile App Development Dubai | DW Tech",
+    "metaDescription": "High-performance iOS and Android apps built in Dubai. React Native, Flutter, and native Swift/Kotlin with sub-second speed, offline sync, and Apple Pay.",
+    "badge": "Native & Cross-Platform",
+    "heroH1": "High-performance mobile products users love.",
+    "heroSubtitle": "Native-grade iOS and Android mobile applications engineered with React Native, Flutter, Swift, and Kotlin. Built for sub-second speeds, offline resilience, secure biometric authentication, and effortless scale.",
+    "statementQuote": "Great mobile software feels effortless in the user's hand and rock-solid on the server.",
+    "statementAuthor": "DW Tech Engineering Philosophy",
+    "trustStats": [
+      {
+        "value": "4.8+",
+        "label": "Average App Store and Google Play client ratings"
+      },
+      {
+        "value": "60 FPS",
+        "label": "Butter-smooth native rendering and gesture transitions"
+      },
+      {
+        "value": "100%",
+        "label": "Native Apple Pay, Google Pay, and GCC payment gateways"
+      },
+      {
+        "value": "< 1.2s",
+        "label": "Cold app launch time across current mobile devices"
+      }
+    ],
+    "featureRowsTitle": "How we engineer mobile products",
+    "featureRowsSubtitle": "Fast, resilient apps designed for high retention and seamless daily use.",
+    "featureRows": [
+      {
+        "title": "Native performance, cross-platform speed",
+        "tagline": "Engineered for iOS and Android without compromise",
+        "description": "Flutter and React Native codebases that deliver native 60fps responsiveness with unified maintenance, reducing time-to-market by 40% across both platforms.",
+        "tags": [
+          "React Native",
+          "Flutter",
+          "Swift",
+          "Kotlin",
+          "TypeScript"
+        ]
+      },
+      {
+        "title": "Offline-first resilience",
+        "tagline": "Operate seamlessly without constant connectivity",
+        "description": "Local SQLite and WatermelonDB caching with automatic conflict-free cloud synchronization, ensuring flawless field workflows even in low-signal environments.",
+        "tags": [
+          "Offline Sync",
+          "SQLite",
+          "WatermelonDB",
+          "Background Sync",
+          "Optimistic UI"
+        ]
+      },
+      {
+        "title": "Secure GCC payment & auth",
+        "tagline": "Biometrics, UAE Pass, and localized checkout",
+        "description": "Instant FaceID/TouchID, UAE Pass federation, Apple Pay, Google Pay, Tabby, and Tamara split-payment flows tailored for Middle Eastern consumers.",
+        "tags": [
+          "Apple Pay",
+          "UAE Pass",
+          "Tabby & Tamara",
+          "Biometric Auth",
+          "PCI-DSS"
+        ]
+      }
+    ],
+    "caseStudiesTitle": "Real client deployments & verified ROI.",
+    "caseStudies": [
+      {
+        "title": "BayutConnect: Commercial Tenant Portal & Smart Building Control",
+        "tag": "Mobile Application",
+        "sector": "Luxury Real Estate Asset Management · Downtown Dubai",
+        "challenge": "Tenants in premium commercial towers experienced delays with visitor access passes, facility booking, and maintenance dispatch.",
+        "solution": "Built a native iOS and Android application with Bluetooth turnstile access, automated visitor QR passes, and instant maintenance ticketing.",
+        "metrics": "92% active tenant adoption · 4.9 App Store rating across 15,000+ monthly active users",
+        "techStack": [
+          "React Native",
+          "Node.js",
+          "IoT Bluetooth SDK",
+          "PostgreSQL",
+          "AWS UAE"
+        ],
+        "link": "/portfolio"
+      },
+      {
+        "title": "Q-Health: Teleconsultation & Prescription Delivery App",
+        "tag": "Healthcare Mobile",
+        "sector": "Private Healthcare Network · Abu Dhabi & Dubai",
+        "challenge": "Patients faced long clinic wait times for routine prescription renewals and follow-up medical consultations.",
+        "solution": "Engineered a secure, HIPAA and UAE Malaffi-compliant mobile app with WebRTC video consults, digital prescriptions, and same-day courier dispatch.",
+        "metrics": "45,000+ virtual consultations completed · 4.8-star patient satisfaction rating",
+        "techStack": [
+          "Flutter",
+          "WebRTC",
+          "Go Backend",
+          "Apple Pay",
+          "Encrypted Chat"
+        ],
+        "link": "/portfolio"
+      }
+    ],
+    "processTitle": "From discovery to production scale.",
+    "processSubtitle": "A disciplined engineering lifecycle designed for transparency, speed, and dependable outcomes.",
+    "processSteps": [
+      {
+        "number": "01",
+        "title": "UX Discovery & Wireframing",
+        "desc": "We define core user personas, analyze competitor benchmarks, and map frictionless user journeys."
+      },
+      {
+        "number": "02",
+        "title": "Clickable Figma Prototyping",
+        "desc": "We build pixel-perfect interactive prototypes with native gestures, transitions, and micro-interactions."
+      },
+      {
+        "number": "03",
+        "title": "Sprint Engineering & TestFlight Beta",
+        "desc": "Two-week agile engineering sprints with continuous TestFlight (iOS) and Internal Testing (Android) builds."
+      },
+      {
+        "number": "04",
+        "title": "Store Submission & Growth Monitoring",
+        "desc": "We handle strict Apple App Store and Google Play guidelines, configure crash telemetry, and monitor store analytics."
+      }
+    ],
+    "faqTitle": "Questions? We have answers.",
+    "faqs": [
+      {
+        "question": "Should we build a native app (Swift/Kotlin) or cross-platform (React Native/Flutter)?",
+        "answer": "For 90% of business and consumer applications, modern cross-platform frameworks (React Native or Flutter) achieve 60fps native performance while allowing a single codebase for iOS and Android, saving 35-40% in development and maintenance costs. For hardware-intensive applications (such as advanced AR, high-frequency BLE, or heavy audio DSP), we recommend pure native Swift and Kotlin."
+      },
+      {
+        "question": "Do you assist with publishing to the Apple App Store and Google Play Store?",
+        "answer": "Yes. We handle the entire submission, App Store Optimization (ASO), metadata localization, privacy manifest configuration, and Apple App Review compliance to guarantee smooth approval without rejections."
+      },
+      {
+        "question": "Can the app support Arabic with right-to-left (RTL) layout switching?",
+        "answer": "Yes. We build bilingual apps with first-class RTL layout mirroring, localized Arabic typography, and instant language switching without requiring an app restart."
+      },
+      {
+        "question": "How do you handle mobile payments in Dubai and Saudi Arabia?",
+        "answer": "We integrate native Apple Pay, Google Pay, credit cards, and popular regional Buy Now Pay Later (BNPL) providers like Tabby and Tamara, as well as Mada for Saudi consumers and local payment gateways such as Checkout.com, Stripe, and Network International."
+      },
+      {
+        "question": "What is the typical timeframe to develop a mobile application?",
+        "answer": "A polished, production-ready MVP application typically takes 8 to 12 weeks from initial UX design to app store submission. More complex platforms with heavy custom backends or IoT integrations take 12 to 16 weeks."
+      },
+      {
+        "question": "Who owns the code and intellectual property upon completion?",
+        "answer": "You own 100% of the mobile app source code, backend API code, design assets, and app store listings with complete handover and documentation."
+      }
+    ]
+  },
+  "digital-business-transformation": {
+    "slug": "digital-business-transformation",
+    "metaTitle": "Digital Business Transformation Dubai | DW Tech",
+    "metaDescription": "Modernize enterprise operations, cloud infrastructure, and workflows in Dubai. Replace legacy bottlenecks with scalable digital systems.",
+    "badge": "Enterprise Modernization",
+    "heroH1": "Modernize operations around clarity, speed, and growth.",
+    "heroSubtitle": "We guide traditional enterprises through high-impact digital modernization. Re-architecting operational models, automating manual bottlenecks, and establishing agile technology foundations that deliver measurable ROI.",
+    "statementQuote": "Transformation isn’t about adopting buzzwords. It’s about building a business that outpaces change.",
+    "statementAuthor": "DW Tech Engineering Philosophy",
+    "trustStats": [
+      {
+        "value": "40%–65%",
+        "label": "Reduction in operational cycle turnaround times"
+      },
+      {
+        "value": "12–18 mo",
+        "label": "Full payback period on modern infrastructure investments"
+      },
+      {
+        "value": "100%",
+        "label": "Elimination of single-person process dependency bottlenecks"
+      },
+      {
+        "value": "Multi-Hub",
+        "label": "Delivery across UAE, GCC, and European markets"
+      }
+    ],
+    "featureRowsTitle": "How we drive transformation",
+    "featureRowsSubtitle": "Pragmatic modernization focused on tangible operational outcomes.",
+    "featureRows": [
+      {
+        "title": "Target operating model design",
+        "tagline": "Align technology investments directly with business growth",
+        "description": "Comprehensive audit of organizational workflows, legacy software debt, and high-value automation opportunities to establish a realistic 12-month engineering roadmap.",
+        "tags": [
+          "Workflow Audit",
+          "Operating Model",
+          "Tech Stack Rationalization",
+          "ROI Modeling"
+        ]
+      },
+      {
+        "title": "Cloud migration & modernization",
+        "tagline": "De-risk infrastructure with modern cloud paradigms",
+        "description": "Move from fragile on-premise servers and legacy monoliths to scalable, auto-healing AWS/Azure cloud environments with automated security and compliance guardrails.",
+        "tags": [
+          "Cloud Migration",
+          "Microservices",
+          "Zero-Downtime Cutover",
+          "DevOps Culture"
+        ]
+      },
+      {
+        "title": "Operational enablement",
+        "tagline": "Culture, change management, and engineering playbooks",
+        "description": "Training internal teams, establishing modern CI/CD delivery practices, and embedding real-time telemetry dashboards so leadership can manage by data.",
+        "tags": [
+          "Team Enablement",
+          "Live BI Telemetry",
+          "Process Governance",
+          "Agile Playbooks"
+        ]
+      }
+    ],
+    "caseStudiesTitle": "Real client deployments & verified ROI.",
+    "caseStudies": [
+      {
+        "title": "Gulf Maritime: Modernization of 40-Year-Old Shipping Line",
+        "tag": "Digital Transformation",
+        "sector": "Global Logistics & Vessel Chartering · Dubai, UAE",
+        "challenge": "Legacy on-premise software crashed during peak freight cycles, requiring 12 full-time staff just to manually re-enter manifest data.",
+        "solution": "Re-engineered core dispatching and vessel management into a modern cloud platform with automated port API syncing and live bill-of-lading generation.",
+        "metrics": "58% faster cargo turnaround · \\$340,000 annual savings in operational software maintenance",
+        "techStack": [
+          "Next.js",
+          "PostgreSQL",
+          "AWS ECS",
+          "Kafka",
+          "Custom EDI Connector"
+        ],
+        "link": "/portfolio"
+      },
+      {
+        "title": "Emirates Construction Supplies: Paperless Procurement Overhaul",
+        "tag": "Operational Modernization",
+        "sector": "Building Materials Wholesale · Sharjah & Dubai",
+        "challenge": "Site managers used physical paper requisition forms, causing 5-day purchase order approval delays across 18 active construction sites.",
+        "solution": "Deployed a mobile-first procurement and approval platform connected to central ERP with biometric manager authorizations.",
+        "metrics": "Approval cycles reduced from 5 days to 28 minutes · 100% paperless audit trail",
+        "techStack": [
+          "React Native",
+          "FastAPI",
+          "Odoo ERP",
+          "PostgreSQL",
+          "Tailwind CSS"
+        ],
+        "link": "/portfolio"
+      }
+    ],
+    "processTitle": "From discovery to production scale.",
+    "processSubtitle": "A disciplined engineering lifecycle designed for transparency, speed, and dependable outcomes.",
+    "processSteps": [
+      {
+        "number": "01",
+        "title": "Current State Audit",
+        "desc": "We evaluate existing legacy systems, interview department heads, analyze software spend, and identify critical bottlenecks."
+      },
+      {
+        "number": "02",
+        "title": "Future-State Blueprint",
+        "desc": "We architect the target technology stack, prioritize high-ROI initiatives, and create a phased execution roadmap."
+      },
+      {
+        "number": "03",
+        "title": "Horizon Deployment",
+        "desc": "We implement modern solutions in controlled increments, validating user adoption and operational stability at every phase."
+      },
+      {
+        "number": "04",
+        "title": "Adoption & Governance",
+        "desc": "We train internal teams, establish continuous monitoring telemetry, and optimize workflows based on live operational feedback."
+      }
+    ],
+    "faqTitle": "Questions? We have answers.",
+    "faqs": [
+      {
+        "question": "What does a digital transformation engagement typically involve?",
+        "answer": "We evaluate your current operational workflows, legacy systems, and team bottlenecks. We then architect a modernized digital ecosystem, replace manual spreadsheet steps with automated platforms, migrate infrastructure to secure cloud environments, and train your staff to operate the new systems confidently."
+      },
+      {
+        "question": "How do you avoid operational downtime during enterprise migration?",
+        "answer": "We implement a phased 'strangler-fig' migration strategy. Modern digital capabilities are introduced alongside existing systems with automated dual-write synchronization, allowing teams to transition department-by-department with zero disruption to daily business operations."
+      },
+      {
+        "question": "How is return on investment (ROI) measured for digital transformation?",
+        "answer": "We define quantitative baseline metrics during discovery: operational cycle time, manual error rates, customer acquisition cost, software licensing overhead, and staff hours saved. Most DW Tech transformation initiatives achieve positive cash-flow ROI within 12 to 18 months."
+      },
+      {
+        "question": "Can our internal teams maintain the systems after the project completes?",
+        "answer": "Yes. Capability transfer is built into our engagement model. We provide comprehensive architecture documentation, video walk-throughs, engineering runbooks, and hands-on pairing sessions to empower your internal staff."
+      },
+      {
+        "question": "What industries does DW Tech serve in Dubai and the GCC?",
+        "answer": "We have delivered successful transformation programs across wholesale trade, logistics and supply chain, commercial real estate, private healthcare networks, financial services, and retail conglomerates across the UAE, Saudi Arabia, and Europe."
+      },
+      {
+        "question": "How do we get started with a transformation roadmap?",
+        "answer": "We begin with a 2-week Discovery and Architecture Audit, assessing your current workflows, interviewing key stakeholders, and delivering a clear, prioritized transformation roadmap with cost and timeline estimates."
+      }
+    ]
+  },
+  "ui-ux-design": {
+    "slug": "ui-ux-design",
+    "metaTitle": "UI/UX Design Agency Dubai | DW Tech",
+    "metaDescription": "User-centered product design in Dubai. We design B2B dashboards, SaaS platforms, and mobile apps with Figma design systems and bilingual English/Arabic UX.",
+    "badge": "Product Experience Design",
+    "heroH1": "Human-centered design engineered for conversion.",
+    "heroSubtitle": "We research, design, prototype, and test cohesive digital product interfaces. From complex B2B enterprise dashboards to frictionless B2C mobile flows, built with production-ready design systems in Figma.",
+    "statementQuote": "Intuitive software doesn’t happen by accident. It is meticulously engineered for clarity.",
+    "statementAuthor": "DW Tech Engineering Philosophy",
+    "trustStats": [
+      {
+        "value": "3.2x",
+        "label": "Increase in user activation and onboarding completion"
+      },
+      {
+        "value": "50%+",
+        "label": "Drop in user onboarding support inquiries and ticket volume"
+      },
+      {
+        "value": "100%",
+        "label": "Production-ready Figma tokens mapped to Tailwind & React"
+      },
+      {
+        "value": "Bilingual",
+        "label": "Native English & RTL Arabic typographic precision"
+      }
+    ],
+    "featureRowsTitle": "How we design digital products",
+    "featureRowsSubtitle": "Design systems and interface experiences built around real user behavior.",
+    "featureRows": [
+      {
+        "title": "User research & journey mapping",
+        "tagline": "Ground design decisions in behavioral evidence",
+        "description": "Stakeholder interviews, user observation sessions, persona development, and friction-point elimination that ensure every screen solves a genuine business problem.",
+        "tags": [
+          "User Interviews",
+          "Journey Mapping",
+          "Task Flow Analysis",
+          "Persona Modeling"
+        ]
+      },
+      {
+        "title": "Design systems & component libraries",
+        "tagline": "Speed up engineering velocity with reusable UI tokens",
+        "description": "Scalable Figma design libraries structured with atomic components, WCAG AAA accessibility, dark/light modes, and exact token mapping to Tailwind CSS and React.",
+        "tags": [
+          "Figma Design Tokens",
+          "Atomic Design",
+          "WCAG 2.1 AAA",
+          "Bilingual Typography"
+        ]
+      },
+      {
+        "title": "High-fidelity clickable prototypes",
+        "tagline": "Test and validate before writing a single line of code",
+        "description": "Hyper-realistic interactive prototypes simulating micro-interactions, animations, and data validation states for stakeholder sign-off and user testing.",
+        "tags": [
+          "Figma Prototyping",
+          "Micro-Interactions",
+          "Usability Testing",
+          "Developer Handoff"
+        ]
+      }
+    ],
+    "caseStudiesTitle": "Real client deployments & verified ROI.",
+    "caseStudies": [
+      {
+        "title": "FinPulse: Institutional Wealth & Portfolio Telemetry UI",
+        "tag": "Fintech UX Design",
+        "sector": "DIFC Asset Management Firm · Dubai, UAE",
+        "challenge": "Portfolio managers were overwhelmed by dense financial tables, missing critical risk threshold alerts during high market volatility.",
+        "solution": "Redesigned the institutional web dashboard with high-contrast data visualization, modular telemetry widgets, and sub-second keyboard shortcuts.",
+        "metrics": "4.2x faster trade risk assessment · Zero trading input errors logged in 12 months",
+        "techStack": [
+          "Figma",
+          "Design System",
+          "Tailwind CSS",
+          "React",
+          "Recharts"
+        ],
+        "link": "/portfolio"
+      },
+      {
+        "title": "Aura Living: Luxury Interior Commerce Web & Mobile Experience",
+        "tag": "E-Commerce UX",
+        "sector": "High-End Furniture & Decor · Dubai Mall & Riyadh",
+        "challenge": "High-net-worth customers experienced checkout friction on mobile, resulting in high shopping cart abandonment on high-ticket furniture pieces.",
+        "solution": "Crafted an editorial luxury shopping experience with interactive 3D room preview, simplified 2-step Apple Pay checkout, and VIP clienteling flows.",
+        "metrics": "44% lift in mobile conversion rate · 28% increase in average order value (AOV)",
+        "techStack": [
+          "Figma",
+          "Design Tokens",
+          "Next.js",
+          "Tailwind CSS",
+          "Three.js"
+        ],
+        "link": "/portfolio"
+      }
+    ],
+    "processTitle": "From discovery to production scale.",
+    "processSubtitle": "A disciplined engineering lifecycle designed for transparency, speed, and dependable outcomes.",
+    "processSteps": [
+      {
+        "number": "01",
+        "title": "User & Market Research",
+        "desc": "We interview target users, analyze customer support tickets, and map competitive market benchmarks."
+      },
+      {
+        "number": "02",
+        "title": "Information Architecture & Wireframes",
+        "desc": "We design low-fidelity wireframes and structural user flows, validating navigation hierarchy early."
+      },
+      {
+        "number": "03",
+        "title": "Visual Design & Design Systems",
+        "desc": "We establish visual typography, color tokens, dark/light modes, and atomic component libraries in Figma."
+      },
+      {
+        "number": "04",
+        "title": "Usability Testing & Handoff",
+        "desc": "We run moderated user testing sessions, refine interaction details, and provide annotated developer specifications."
+      }
+    ],
+    "faqTitle": "Questions? We have answers.",
+    "faqs": [
+      {
+        "question": "What deliverables do we receive from a UI/UX design project?",
+        "answer": "You receive complete Figma master files including component design systems, typography and color tokens, desktop and mobile responsive layouts, interactive clickable prototypes, and annotated developer handoff documentation with asset exports."
+      },
+      {
+        "question": "Do you design for right-to-left (RTL) Arabic interfaces?",
+        "answer": "Yes. We specialize in bilingual English and Arabic design, ensuring accurate layout mirroring, localized Arabic font pairings (such as IBM Plex Sans Arabic or Cairo), and culturally resonant iconography."
+      },
+      {
+        "question": "How do your designers collaborate with software engineers?",
+        "answer": "Our UI/UX designers work directly with frontend engineers. We use Figma tokens mapped 1:1 to Tailwind CSS classes and React component props, ensuring that what is designed is implemented without visual compromises."
+      },
+      {
+        "question": "Do you redesign existing software or only build new products from scratch?",
+        "answer": "We do both. We regularly conduct comprehensive UI/UX Audits on existing enterprise software and consumer apps, identifying conversion drop-offs, user confusion points, and visual inconsistencies before executing a phased redesign."
+      },
+      {
+        "question": "How long does a full UI/UX design engagement take?",
+        "answer": "A focused mobile app or SaaS web portal design typically takes 4 to 6 weeks from initial research to final developer handoff. Smaller feature redesigns or audits can be completed in 2 to 3 weeks."
+      },
+      {
+        "question": "Can you handle the frontend engineering of the designs as well?",
+        "answer": "Yes. DW Tech is a full-service technology engineering company. Our frontend engineering squads can build and launch your product in Next.js, React, Astro, React Native, or Flutter immediately following design sign-off."
+      }
+    ]
+  },
+  "ecommerce-marketplace-solutions": {
+    "slug": "ecommerce-marketplace-solutions",
+    "metaTitle": "Headless E-Commerce & Marketplace Solutions Dubai | DW Tech",
+    "metaDescription": "High-converting headless commerce storefronts, Shopify Plus, and multi-vendor marketplaces in Dubai with Apple Pay, Tabby, and ERP synchronization.",
+    "badge": "Modern Digital Commerce",
+    "heroH1": "High-converting commerce platforms built for regional scale.",
+    "heroSubtitle": "Composable headless e-commerce storefronts, multi-vendor marketplaces, and omnichannel retail platforms. Integrated with Shopify Plus, Medusa, custom React/Next.js frontends, and Middle East payment gateways.",
+    "statementQuote": "Fast storefronts convert visitors. Resilient inventory systems turn buyers into lifetime customers.",
+    "statementAuthor": "DW Tech Engineering Philosophy",
+    "trustStats": [
+      {
+        "value": "0.6s",
+        "label": "Core Web Vitals mobile page load time across GCC networks"
+      },
+      {
+        "value": "38%",
+        "label": "Average lift in checkout conversion rates after replatforming"
+      },
+      {
+        "value": "100%",
+        "label": "GCC payment integrations (Apple Pay, Tabby, Tamara, Mada)"
+      },
+      {
+        "value": "Real-time",
+        "label": "POS, ERP, and multi-warehouse inventory synchronization"
+      }
+    ],
+    "featureRowsTitle": "How we engineer digital commerce",
+    "featureRowsSubtitle": "Sub-second speed, flawless checkout, and automated back-office operations.",
+    "featureRows": [
+      {
+        "title": "Headless commerce architecture",
+        "tagline": "Decouple frontends for sub-second page performance",
+        "description": "Next.js and Astro frontends backed by headless Shopify Plus or Medusa engines, delivering near-instantaneous checkout and superior SEO rankings.",
+        "tags": [
+          "Shopify Plus Headless",
+          "Next.js Commerce",
+          "Medusa.js",
+          "Edge Caching",
+          "Sub-Second LCP"
+        ]
+      },
+      {
+        "title": "Multi-vendor marketplace infrastructure",
+        "tagline": "Vendor onboarding, split payouts, and automated commission",
+        "description": "Custom marketplace portals with automated vendor KYC, commission rules, multi-warehouse dispatching, and regional delivery carrier APIs.",
+        "tags": [
+          "Multi-Vendor Portals",
+          "Automated Payouts",
+          "Vendor KYC",
+          "Carrier API Integrations"
+        ]
+      },
+      {
+        "title": "Omnichannel retail synchronization",
+        "tagline": "Bridge physical boutiques with digital storefronts",
+        "description": "Live two-way inventory syncing with physical retail POS systems, click-and-collect across UAE branches, and automated low-stock warehouse purchase orders.",
+        "tags": [
+          "POS Live Sync",
+          "Click & Collect",
+          "ERP Inventory Feeds",
+          "Automated Reordering"
+        ]
+      }
+    ],
+    "caseStudiesTitle": "Real client deployments & verified ROI.",
+    "caseStudies": [
+      {
+        "title": "Maison de Parfum: Headless Luxury Fragrance Boutique",
+        "tag": "Headless Commerce",
+        "sector": "High-End Perfumery · UAE & Saudi Arabia",
+        "challenge": "Monolithic e-commerce platform suffered from 4.8s mobile load times, resulting in low checkout completion during major regional shopping holidays.",
+        "solution": "Replatformed to a headless Shopify Plus architecture with Next.js edge storefront, 1-click Apple Pay checkout, and Tabby split-payments.",
+        "metrics": "Mobile load time dropped to 0.7s · 52% increase in mobile conversion during Ramadan campaign",
+        "techStack": [
+          "Next.js",
+          "Shopify Plus API",
+          "Tailwind CSS",
+          "Apple Pay",
+          "Tabby SDK"
+        ],
+        "link": "/portfolio"
+      },
+      {
+        "title": "SOUQ Fleet: B2B Industrial Parts & Auto Spares Marketplace",
+        "tag": "B2B Marketplace",
+        "sector": "Heavy Machinery & Automotive · Sharjah Industrial Area",
+        "challenge": "Wholesale industrial spare parts buyers relied on phone quotes and paper purchase orders with delayed inventory availability checks.",
+        "solution": "Engineered a custom B2B marketplace featuring instant credit-term approvals, bulk SKU CSV ordering, and real-time stock feeds from 40 suppliers.",
+        "metrics": "\\$4.2M gross merchandise value processed in year one · 78% reorder rate",
+        "techStack": [
+          "Next.js",
+          "Node.js",
+          "PostgreSQL",
+          "Stripe Connect",
+          "Elasticsearch"
+        ],
+        "link": "/portfolio"
+      }
+    ],
+    "processTitle": "From discovery to production scale.",
+    "processSubtitle": "A disciplined engineering lifecycle designed for transparency, speed, and dependable outcomes.",
+    "processSteps": [
+      {
+        "number": "01",
+        "title": "Architecture & Platform Selection",
+        "desc": "We evaluate catalog complexity, multi-warehouse locations, and regional payment requirements to recommend the optimal stack."
+      },
+      {
+        "number": "02",
+        "title": "Storefront UX & Conversion Design",
+        "desc": "We design conversion-optimized desktop and mobile customer journeys, optimized for frictionless localized checkout."
+      },
+      {
+        "number": "03",
+        "title": "Integration with ERP, POS & Gateways",
+        "desc": "We engineer robust middleware connecting your storefront with SAP, Odoo, warehouse systems, and payment providers."
+      },
+      {
+        "number": "04",
+        "title": "Stress Testing & Peak-Season Launch",
+        "desc": "We execute black-box load testing simulating 10,000+ concurrent checkout sessions to guarantee rock-solid stability."
+      }
+    ],
+    "faqTitle": "Questions? We have answers.",
+    "faqs": [
+      {
+        "question": "What is headless commerce and why should our brand consider it?",
+        "answer": "Headless commerce separates the frontend customer experience (what users see) from the backend commerce engine (inventory, checkout, pricing). This architecture enables sub-second page loads, limitless custom design freedom, superior Google Core Web Vitals rankings, and seamless omnichannel deployment across web, mobile apps, and kiosks."
+      },
+      {
+        "question": "Which regional payment methods and gateways do you integrate?",
+        "answer": "We integrate Apple Pay, Google Pay, Tabby, Tamara, Mada (for Saudi Arabia), KNET (for Kuwait), and regional payment gateways including Checkout.com, Stripe, Network International, and Telr."
+      },
+      {
+        "question": "Can the platform automatically calculate UAE VAT and generate compliant tax invoices?",
+        "answer": "Yes. Our platforms automatically apply the UAE 5% VAT rate, support tax-exempt categories, and generate bilingual Arabic and English tax invoices compliant with UAE Federal Tax Authority (FTA) standards."
+      },
+      {
+        "question": "How do you handle shipping and courier logistics integration in the GCC?",
+        "answer": "We build direct API connectors with leading GCC courier services including Aramex, DHL, FedEx, SMSA Express, and local last-mile on-demand delivery fleets for automated airway bill (AWB) generation, tracking links, and dispatch."
+      },
+      {
+        "question": "Can you migrate our existing store data without losing search rankings or customer accounts?",
+        "answer": "Yes. We execute comprehensive 301 redirect mapping protocols, customer password preservation, order history migration, and SEO canonical preservation to protect your Google search rankings and maintain seamless customer logins."
+      },
+      {
+        "question": "What is the typical timeframe to launch a custom headless e-commerce store?",
+        "answer": "A streamlined headless Shopify Plus storefront typically launches in 6 to 8 weeks. Complex multi-vendor marketplaces or enterprise B2B portals with custom credit approvals require 10 to 14 weeks."
+      }
+    ]
+  },
+  "it-consulting-technology-strategy": {
+    "slug": "it-consulting-technology-strategy",
+    "metaTitle": "IT Consulting & Technology Strategy Dubai | DW Tech",
+    "metaDescription": "Strategic technology consulting and enterprise architecture in Dubai. Pragmatic IT roadmaps, cloud FinOps, vendor due diligence, and cyber-resilience.",
+    "badge": "Technology Advisory",
+    "heroH1": "Pragmatic technology advisory for decisive leadership.",
+    "heroSubtitle": "We advise C-suite executives and boards on software architecture, technical due diligence, vendor selection, cloud cost rationalization, and cyber-resilience across Dubai, Saudi Arabia, and Europe.",
+    "statementQuote": "We don't sell generic advisory decks. We deliver pragmatic technology strategies ready for execution.",
+    "statementAuthor": "DW Tech Engineering Philosophy",
+    "trustStats": [
+      {
+        "value": "35%–50%",
+        "label": "Cloud infrastructure cost reduction achieved for clients"
+      },
+      {
+        "value": "Zero",
+        "label": "Vendor kickbacks or biased platform recommendations"
+      },
+      {
+        "value": "100%",
+        "label": "Actionable technical roadmaps ready for direct engineering"
+      },
+      {
+        "value": "DIFC / ADGM",
+        "label": "Alignment with regional corporate and fintech standards"
+      }
+    ],
+    "featureRowsTitle": "How we advise enterprises",
+    "featureRowsSubtitle": "Unbiased, senior engineering expertise that aligns IT spend with business value.",
+    "featureRows": [
+      {
+        "title": "Enterprise architecture blueprints",
+        "tagline": "Eliminate technical debt and prevent costly dead ends",
+        "description": "Comprehensive audit of existing software stacks, defining scalable target architectures that support 5-year business expansion without catastrophic rewrites.",
+        "tags": [
+          "Target Architecture",
+          "Tech Debt Audit",
+          "Microservices Strategy",
+          "Scalability Blueprint"
+        ]
+      },
+      {
+        "title": "Technical due diligence for M&A",
+        "tagline": "Uncover code quality, security risks, and technical liabilities",
+        "description": "Rigorous code audits, architectural assessments, IP ownership verification, and security posture checks for private equity and venture capital funds.",
+        "tags": [
+          "M&A Code Audit",
+          "IP Verification",
+          "Security Posture",
+          "Technical Liability Matrix"
+        ]
+      },
+      {
+        "title": "Vendor & platform selection",
+        "tagline": "Objective evaluation without software vendor commissions",
+        "description": "Unbiased vendor RFP management, proof-of-concept bake-offs, contract scope scrutiny, and SLA negotiation to ensure you select the best platform at the best terms.",
+        "tags": [
+          "Vendor Evaluation",
+          "RFP Management",
+          "SLA Negotiation",
+          "Cost Rationalization"
+        ]
+      }
+    ],
+    "caseStudiesTitle": "Real client deployments & verified ROI.",
+    "caseStudies": [
+      {
+        "title": "Atlas Equity: Technical Due Diligence for $40M SaaS Acquisition",
+        "tag": "M&A Advisory",
+        "sector": "Private Equity Firm · DIFC, Dubai, UAE",
+        "challenge": "Private equity firm required an urgent 10-day technical due diligence audit on a regional logistics SaaS acquisition target prior to capital deployment.",
+        "solution": "Audited 180,000 lines of codebase, evaluated cloud hosting architecture, stress-tested security boundaries, and reviewed software license liabilities.",
+        "metrics": "Uncovered critical database scaling bottleneck, saving $2.5M in renegotiated transaction valuation",
+        "techStack": [
+          "Code Auditing",
+          "AWS Architecture Review",
+          "Security Analysis",
+          "Compliance Matrix"
+        ],
+        "link": "/portfolio"
+      },
+      {
+        "title": "Emirates Logistics Conglomerate: Cloud Consolidation & Cost Optimization",
+        "tag": "FinOps Strategy",
+        "sector": "Supply Chain & Warehousing · JAFZA, Dubai",
+        "challenge": "Over-provisioned AWS and on-premise infrastructure was burning $85,000 monthly with low server utilization and zero auto-scaling.",
+        "solution": "Restructured cloud infrastructure, containerized legacy servers, and introduced spot instance automation and reserved capacity policies.",
+        "metrics": "44% recurring monthly cloud cost reduction ($450,000+ annual run-rate savings)",
+        "techStack": [
+          "AWS FinOps",
+          "Terraform",
+          "Kubernetes",
+          "Cost Telemetry",
+          "Datadog"
+        ],
+        "link": "/portfolio"
+      }
+    ],
+    "processTitle": "From discovery to production scale.",
+    "processSubtitle": "A disciplined engineering lifecycle designed for transparency, speed, and dependable outcomes.",
+    "processSteps": [
+      {
+        "number": "01",
+        "title": "Operational Assessment",
+        "desc": "We evaluate existing systems, interview technical leadership, audit software licensing spend, and review security policies."
+      },
+      {
+        "number": "02",
+        "title": "Gap Analysis & Risk Matrix",
+        "desc": "We benchmark your systems against industry leaders, identifying operational risks, scalability bottlenecks, and cost waste."
+      },
+      {
+        "number": "03",
+        "title": "Target Architecture Blueprint",
+        "desc": "We deliver actionable technical blueprints, vendor selection scorecards, and phased implementation schedules."
+      },
+      {
+        "number": "04",
+        "title": "Execution Governance & Advisory",
+        "desc": "We provide fractional CTO / advisory oversight, reviewing engineering sprints and ensuring vendors adhere to strict SLAs."
+      }
+    ],
+    "faqTitle": "Questions? We have answers.",
+    "faqs": [
+      {
+        "question": "How is DW Tech's IT consulting different from traditional consulting firms?",
+        "answer": "Traditional consulting firms produce hundreds of generic slides written by junior analysts who have never shipped production code. DW Tech is run by seasoned software architects and engineers. Our recommendations are pragmatic, battle-tested, and ready for immediate engineering execution."
+      },
+      {
+        "question": "Do you accept commissions or referral fees from software vendors?",
+        "answer": "No. Never. We maintain strict independence. We accept zero affiliate commissions, reseller margins, or referral fees from cloud providers or software vendors, ensuring our advisory is 100% focused on what is best for your business."
+      },
+      {
+        "question": "Can you assist with hiring or restructuring an internal engineering team?",
+        "answer": "Yes. We help clients evaluate technical candidates, design engineering org charts, establish modern agile sprint rituals, and mentor internal team leads to elevate engineering velocity."
+      },
+      {
+        "question": "What is fractional CTO advisory and how does it work?",
+        "answer": "A fractional CTO provides senior technology leadership on an ongoing retainer basis (e.g., 20 to 40 hours per month). We guide high-stakes architecture decisions, represent technology to investors and boards, and oversee vendor execution without the full-time C-suite overhead."
+      },
+      {
+        "question": "How do you conduct technical due diligence for mergers and acquisitions?",
+        "answer": "We evaluate source code quality, test coverage, architectural scalability, technical debt, third-party licensing risks, cybersecurity posture, and infrastructure operating costs, delivering a clear red-flag matrix within 5 to 10 business days."
+      },
+      {
+        "question": "Where are your consultants based and what regions do you serve?",
+        "answer": "Our leadership is based in Dubai, UAE, and works with clients across Abu Dhabi, Riyadh, Doha, Milan, and London for both on-site workshops and remote advisory retainers."
+      }
+    ]
+  },
+  "product-design-development": {
+    "slug": "product-design-development",
+    "metaTitle": "Product Design & Development Dubai | DW Tech",
+    "metaDescription": "End-to-end digital product engineering in Dubai. From user research and clickable prototypes to production MVP launches and scalable cloud backends.",
+    "badge": "Full-Cycle Product Lab",
+    "heroH1": "Turn ambitious product concepts into validated reality.",
+    "heroSubtitle": "Full-lifecycle digital product development from initial market validation and user research through rapid MVP engineering, beta launch, user feedback loops, and production-grade scaling.",
+    "statementQuote": "Build software users genuinely want.",
+    "statementAuthor": "DW Tech Engineering Philosophy",
+    "trustStats": [
+      {
+        "value": "< 6 wks",
+        "label": "From initial product discovery to working production MVP"
+      },
+      {
+        "value": "100%",
+        "label": "Full IP, design system, and code repository ownership"
+      },
+      {
+        "value": "Zero",
+        "label": "Wasted development sprints through validated prototyping"
+      },
+      {
+        "value": "Enterprise",
+        "label": "Ready for compliance, telemetry, and high concurrency"
+      }
+    ],
+    "featureRowsTitle": "How we build digital products",
+    "featureRowsSubtitle": "Disciplined product strategy paired with world-class engineering execution.",
+    "featureRows": [
+      {
+        "title": "Rapid MVP engineering",
+        "tagline": "Get to market fast with core value validated",
+        "description": "Prioritize must-have features, architect clean code, and release a polished working product in weeks, testing real user appetite without burning excess capital.",
+        "tags": [
+          "MVP Development",
+          "Agile Sprints",
+          "Next.js",
+          "FastAPI",
+          "Rapid Iteration"
+        ]
+      },
+      {
+        "title": "Data-driven user feedback loops",
+        "tagline": "Instrument every interaction to guide roadmap iterations",
+        "description": "Embedded telemetry, product analytics, and automated cohort tracking that reveal exactly where users convert or drop off, replacing guesswork with hard facts.",
+        "tags": [
+          "Product Telemetry",
+          "Funnel Analytics",
+          "A/B Testing",
+          "Cohort Retention"
+        ]
+      },
+      {
+        "title": "Enterprise-ready scale architecture",
+        "tagline": "Build on foundations that handle 100x user surges",
+        "description": "Cloud-native microservices, automated CI/CD pipelines, and robust database architectures designed to absorb viral growth and enterprise procurement audits.",
+        "tags": [
+          "Microservices",
+          "PostgreSQL",
+          "Docker",
+          "Auto-Scaling",
+          "Security Audits"
+        ]
+      }
+    ],
+    "caseStudiesTitle": "Real client deployments & verified ROI.",
+    "caseStudies": [
+      {
+        "title": "Zendo: Automated Real Estate Lease & Property Management SaaS",
+        "tag": "PropTech Product",
+        "sector": "PropTech Startup · Dubai & London",
+        "challenge": "Founders had a proven manual brokerage workflow but needed a scalable SaaS platform to manage digital tenancy contracts, Ejari filing, and automated rent collections.",
+        "solution": "Designed and engineered an end-to-end web and mobile SaaS portal with instant digital lease signing, Stripe billing, and automated tenant verification.",
+        "metrics": "Launched MVP in 7 weeks · Successfully secured $1.8M seed round backed by verified platform traction",
+        "techStack": [
+          "Next.js",
+          "React Native",
+          "PostgreSQL",
+          "Stripe Billing",
+          "Ejari API"
+        ],
+        "link": "/portfolio"
+      },
+      {
+        "title": "Krypton AI: Enterprise Document Anomaly Detection Platform",
+        "tag": "Enterprise SaaS",
+        "sector": "LegalTech · DIFC Innovation Hub, Dubai",
+        "challenge": "Legal and compliance departments struggled to detect fraudulent alterations across hundreds of PDF financial disclosures.",
+        "solution": "Built a specialized document inspection platform pairing high-resolution forensic computer vision with multi-model document comparison engines.",
+        "metrics": "99.2% fraud detection accuracy on complex financial filings · Onboarded 12 institutional law firms",
+        "techStack": [
+          "FastAPI",
+          "Python",
+          "PyTorch",
+          "React",
+          "PostgreSQL"
+        ],
+        "link": "/portfolio"
+      }
+    ],
+    "processTitle": "From discovery to production scale.",
+    "processSubtitle": "A disciplined engineering lifecycle designed for transparency, speed, and dependable outcomes.",
+    "processSteps": [
+      {
+        "number": "01",
+        "title": "Product Discovery & Roadmapping",
+        "desc": "We define core value propositions, map competitive user journeys, and establish an MVP feature backlog."
+      },
+      {
+        "number": "02",
+        "title": "Prototyping & User Validation",
+        "desc": "We design high-fidelity interactive Figma prototypes and test them with real target users before engineering starts."
+      },
+      {
+        "number": "03",
+        "title": "Agile MVP Engineering Sprints",
+        "desc": "Two-week engineering sprints building test-covered, production-ready code with weekly staging releases."
+      },
+      {
+        "number": "04",
+        "title": "Launch, Telemetry & Iteration",
+        "desc": "We deploy to production, monitor user onboarding metrics, and iterate rapidly based on real user behavior."
+      }
+    ],
+    "faqTitle": "Questions? We have answers.",
+    "faqs": [
+      {
+        "question": "What is included in DW Tech's Product Design and Development service?",
+        "answer": "We provide end-to-end product delivery: product discovery workshops, market research, UI/UX design in Figma, full-stack web and mobile engineering, quality assurance testing, cloud infrastructure deployment, and post-launch iteration support."
+      },
+      {
+        "question": "How quickly can you build and launch a working Minimum Viable Product (MVP)?",
+        "answer": "A focused, production-grade MVP is typically delivered within 6 to 8 weeks. We ruthlessly prioritize the core value proposition so you can test market demand with real paying users as early as possible."
+      },
+      {
+        "question": "Who owns the product intellectual property, designs, and code?",
+        "answer": "You own 100% of all intellectual property, design assets, Figma files, source code repositories, and database schemas with complete handover from day one."
+      },
+      {
+        "question": "How do you help us decide what features belong in the MVP?",
+        "answer": "During product discovery, we run value-versus-effort scoring workshops. We identify the single core workflow that solves your user's primary pain point, pushing non-essential 'nice-to-haves' to future sprint horizons to maximize launch speed."
+      },
+      {
+        "question": "Can you help our product scale after the initial MVP launch?",
+        "answer": "Yes. All software is engineered from day one on scalable cloud-native architectures (Docker, PostgreSQL, modular APIs). As user volume increases, we scale infrastructure horizontally and provide dedicated sprint teams for ongoing feature growth."
+      },
+      {
+        "question": "Do you work with non-technical founders and early-stage ventures?",
+        "answer": "Yes. We act as your end-to-end technical co-founder team, translating business ideas into technical architecture, guiding budget optimization, and representing technology in investor meetings."
+      }
+    ]
+  },
+  "cloud-and-devops": {
+    "slug": "cloud-and-devops",
+    "metaTitle": "Cloud Architecture & DevOps Solutions Dubai | DW Tech",
+    "metaDescription": "AWS, Azure, and sovereign cloud infrastructure in Dubai. Terraform Infrastructure as Code, Kubernetes clusters, and automated CI/CD pipelines.",
+    "badge": "Cloud Resilience & DevOps",
+    "heroH1": "Resilient cloud infra and automated CI/CD.",
+    "heroSubtitle": "AWS, Microsoft Azure, Google Cloud, and sovereign UAE on-premise cloud engineering. Infrastructure as Code (Terraform), Kubernetes orchestration, automated testing pipelines, and 24/7 security monitoring.",
+    "statementQuote": "Your engineering team should ship code with confidence.",
+    "statementAuthor": "DW Tech Engineering Philosophy",
+    "trustStats": [
+      {
+        "value": "99.99%",
+        "label": "High availability uptime across mission-critical workloads"
+      },
+      {
+        "value": "15 min",
+        "label": "Average time from code commit to production deployment"
+      },
+      {
+        "value": "40%",
+        "label": "Average reduction in cloud infrastructure spending (FinOps)"
+      },
+      {
+        "value": "100%",
+        "label": "Sovereign compliance with UAE National Cybersecurity Authority"
+      }
+    ],
+    "featureRowsTitle": "How we engineer cloud systems",
+    "featureRowsSubtitle": "Automated, scalable infrastructure built for zero downtime and bulletproof security.",
+    "featureRows": [
+      {
+        "title": "Infrastructure as Code (IaC)",
+        "tagline": "Repeatable, auditable cloud environments in minutes",
+        "description": "Complete Terraform and OpenTofu templates managing VPCs, container clusters, databases, and IAM access controls with full Git version control and change tracking.",
+        "tags": [
+          "Terraform",
+          "OpenTofu",
+          "AWS CloudFormation",
+          "GitOps",
+          "Automated Auditing"
+        ]
+      },
+      {
+        "title": "Kubernetes & container orchestration",
+        "tagline": "Auto-scaling container workloads with zero downtime",
+        "description": "Production-hardened EKS, AKS, and GKE clusters with automated horizontal pod autoscaling, service mesh traffic management, and zero-downtime canary deployments.",
+        "tags": [
+          "Kubernetes (EKS/AKS)",
+          "Docker",
+          "Canary Deployments",
+          "Auto-Scaling",
+          "Helm"
+        ]
+      },
+      {
+        "title": "Continuous Integration & Delivery (CI/CD)",
+        "tagline": "Automate tests, security scans, and instant rollbacks",
+        "description": "GitHub Actions and GitLab CI pipelines that run automated unit/integration tests, static security scans (SAST), and seamless production deployments with instant 1-click rollback.",
+        "tags": [
+          "GitHub Actions",
+          "GitLab CI",
+          "Automated QA",
+          "SAST / DAST",
+          "Zero Downtime"
+        ]
+      }
+    ],
+    "caseStudiesTitle": "Real client deployments & verified ROI.",
+    "caseStudies": [
+      {
+        "title": "FinPay Middle East: PCI-DSS Compliant Sovereign Cloud on AWS UAE",
+        "tag": "Cloud & FinOps",
+        "sector": "Fintech & Payment Gateway · Dubai Internet City",
+        "challenge": "Fintech firm needed to achieve PCI-DSS Level 1 compliance and UAE data sovereignty within 60 days to launch merchant acquiring.",
+        "solution": "Built a multi-AZ sovereign cloud architecture in AWS UAE region using Terraform, automated HashiCorp Vault key rotation, and automated audit logging.",
+        "metrics": "100% PCI-DSS audit pass on first submission · 99.999% payment transaction uptime",
+        "techStack": [
+          "AWS UAE",
+          "Terraform",
+          "Kubernetes",
+          "HashiCorp Vault",
+          "Datadog"
+        ],
+        "link": "/portfolio"
+      },
+      {
+        "title": "CareFlow GCC: Multi-Region High-Availability Telehealth Infrastructure",
+        "tag": "DevOps & Cloud",
+        "sector": "Telemedicine Cloud · Dubai & Riyadh",
+        "challenge": "Frequent server crashes during peak evening consultation surges and slow 3-hour manual software deployment processes.",
+        "solution": "Containerized backend into autoscaling Kubernetes clusters with automated CI/CD pipelines deploying in under 12 minutes with zero downtime.",
+        "metrics": "Deployment time cut from 3 hours to 11 minutes · Zero crashes during 10x traffic surge",
+        "techStack": [
+          "Kubernetes",
+          "GitHub Actions",
+          "Docker",
+          "PostgreSQL Multi-AZ",
+          "CloudWatch"
+        ],
+        "link": "/portfolio"
+      }
+    ],
+    "processTitle": "From discovery to production scale.",
+    "processSubtitle": "A disciplined engineering lifecycle designed for transparency, speed, and dependable outcomes.",
+    "processSteps": [
+      {
+        "number": "01",
+        "title": "Infrastructure & Security Audit",
+        "desc": "We analyze existing cloud architecture, server utilization, security vulnerabilities, and monthly cloud spend."
+      },
+      {
+        "number": "02",
+        "title": "Cloud Architecture & IaC Design",
+        "desc": "We design secure VPC topologies, auto-scaling container clusters, and write reproducible Terraform code."
+      },
+      {
+        "number": "03",
+        "title": "Pipeline Automation & Migration",
+        "desc": "We build automated CI/CD testing pipelines and execute zero-downtime database and workload migrations."
+      },
+      {
+        "number": "04",
+        "title": "24/7 Monitoring & FinOps Tuning",
+        "desc": "We set up proactive alert monitoring, auto-scaling thresholds, and ongoing cloud cost optimization reviews."
+      }
+    ],
+    "faqTitle": "Questions? We have answers.",
+    "faqs": [
+      {
+        "question": "Which cloud platforms does DW Tech work with?",
+        "answer": "We architect and manage infrastructure across Amazon Web Services (AWS), Microsoft Azure, Google Cloud Platform (GCP), and private on-premise cloud infrastructure located within UAE sovereign data centers."
+      },
+      {
+        "question": "Can you ensure our data remains within the UAE to satisfy data residency laws?",
+        "answer": "Yes. We deploy workloads natively in the AWS UAE region (me-central-1 in Abu Dhabi and Dubai) or Microsoft Azure UAE regions (UAE North in Dubai and UAE Central in Abu Dhabi), ensuring 100% in-country data residency complying with UAE Federal Decree-Law No. 45."
+      },
+      {
+        "question": "How do you help reduce our monthly cloud infrastructure bills (FinOps)?",
+        "answer": "We conduct deep FinOps audits: right-sizing over-provisioned compute instances, eliminating unattached storage volumes, configuring spot instance pools for stateless services, and purchasing reserved instances or savings plans, typically reducing monthly cloud spend by 30% to 50%."
+      },
+      {
+        "question": "What is Infrastructure as Code (IaC) and why is it important?",
+        "answer": "Infrastructure as Code means managing servers, databases, and networks via version-controlled code files (using Terraform or OpenTofu) rather than clicking in cloud dashboards. This ensures exact, repeatable environments, instant disaster recovery, and eliminates human error during infrastructure changes."
+      },
+      {
+        "question": "How do you achieve zero-downtime deployments?",
+        "answer": "We implement blue-green and canary deployment strategies with container orchestrators like Kubernetes. New versions are deployed and health-checked alongside the live version before traffic is shifted instantly, ensuring zero interruption to active users."
+      },
+      {
+        "question": "Do you provide 24/7 cloud monitoring and emergency incident support?",
+        "answer": "Yes. We offer continuous infrastructure monitoring SLAs with automated paging for critical incidents, proactive security patching, daily automated backups, and guaranteed response times."
+      }
+    ]
+  },
+  "ai-automation": {
+    "slug": "ai-automation",
+    "metaTitle": "Tailored AI & Automation Solutions Dubai | DW Tech",
+    "metaDescription": "Machine learning, autonomous AI agents, enterprise RAG, and workflow automation in Dubai. Built for enterprises that want measurable results, not slide decks.",
+    "badge": "Do it with an AI Agent",
+    "heroH1": "Tailored AI solutions for your business.",
+    "heroSubtitle": "Autonomous agents, predictive models, and grounded knowledge assistants built on your data, integrated with your CRM and ERP, and deployed in production across Dubai and global enterprises.",
+    "statementQuote": "Building custom AI for enterprises that want measurable operational results, not slide decks.",
+    "statementAuthor": "DW Tech Engineering Philosophy",
+    "trustStats": [
+      {
+        "value": "60%–80%",
+        "label": "Reduction in routine triage & manual processing time"
+      },
+      {
+        "value": "100%",
+        "label": "Sovereign compliance with UAE Federal Data Law No. 45"
+      },
+      {
+        "value": "< 4 wks",
+        "label": "Working proof-of-concept on your live operational data"
+      },
+      {
+        "value": "Sub-250ms",
+        "label": "Inference latency for real-time customer and voice channels"
+      }
+    ],
+    "featureRowsTitle": "How we put AI to work",
+    "featureRowsSubtitle": "We don't replace what you have. We make it intelligent.",
+    "featureRows": [
+      {
+        "title": "Predict the future",
+        "tagline": "Anticipate operational friction before it happens",
+        "description": "Predictive machine learning models for sales demand, warehouse inventory, cash flow, and equipment wear. Transform historical operational logs into proactive management decisions.",
+        "tags": [
+          "Time-Series Forecasting",
+          "Demand Modeling",
+          "Anomaly Detection",
+          "Automated Telemetry"
+        ]
+      },
+      {
+        "title": "Talk to your data",
+        "tagline": "Turn complex documents into clear answers, ready to act on",
+        "description": "Ask your enterprise data anything. Grounded Retrieval-Augmented Generation (RAG) that synthesizes answers strictly from internal PDFs, ERP databases, contracts, and SOPs with verifiable citations.",
+        "tags": [
+          "Enterprise RAG",
+          "Hybrid Vector Search",
+          "Zero Hallucination",
+          "Source Citations"
+        ]
+      },
+      {
+        "title": "Evolve processes",
+        "tagline": "Autonomous workflows that execute real business actions",
+        "description": "AI agents that don't just chat—they work. Automate end-to-end tasks like supplier invoice reconciliation, customs clearance validation, support triage, and CRM updates with human-in-the-loop oversight.",
+        "tags": [
+          "Agentic Workflows",
+          "API Function Calling",
+          "Human-in-the-Loop",
+          "ERP Integration"
+        ]
+      }
+    ],
+    "caseStudiesTitle": "Real client deployments & verified ROI.",
+    "caseStudies": [
+      {
+        "title": "ApexHealth: Multilingual Clinical Triage & Patient Routing",
+        "tag": "Intelligent Systems",
+        "sector": "Regional Healthcare Network · Dubai & Abu Dhabi",
+        "challenge": "Manual triage queues caused consultation delays and high administrative burden across 8 clinical branches.",
+        "solution": "Deployed a bilingual Arabic and English agentic system validating patient symptoms, verifying insurance eligibility, and routing directly to specialized doctors via WhatsApp and web.",
+        "metrics": "85% reduction in triage wait time · 250,000+ interactions handled with 99.4% booking accuracy",
+        "techStack": [
+          "FastAPI",
+          "FHIR / HL7",
+          "Bilingual NLP",
+          "WhatsApp Business API",
+          "PostgreSQL"
+        ],
+        "link": "/portfolio"
+      },
+      {
+        "title": "LogiTrack: Autonomous Freight Document Reconciliation",
+        "tag": "Enterprise AI",
+        "sector": "GCC Supply Chain & Customs Clearing · Jebel Ali Free Zone",
+        "challenge": "Customs clearance teams spent 20+ hours weekly manually transcribing bills of lading, commercial invoices, and packing lists.",
+        "solution": "Built an intelligent document processing pipeline using computer vision and LLM extraction to validate customs documentation against Dubai Trade APIs.",
+        "metrics": "74% reduction in manual processing · Zero customs tariff classification errors in 6 months",
+        "techStack": [
+          "Python",
+          "PyTorch",
+          "Dubai Trade API",
+          "OCR",
+          "Redis Queue"
+        ],
+        "link": "/portfolio"
+      }
+    ],
+    "processTitle": "From discovery to production scale.",
+    "processSubtitle": "Measurable accuracy and dependable behavior at every stage, so the system earns its place in how your business runs.",
+    "processSteps": [
+      {
+        "number": "01",
+        "title": "Opportunity & Data Audit",
+        "desc": "We pinpoint operational bottlenecks, verify data cleanliness, audit internal APIs, and define quantitative KPIs that determine success."
+      },
+      {
+        "number": "02",
+        "title": "Feasibility & Solution Design",
+        "desc": "We select the optimal model strategy, design the RAG retrieval pipeline, configure security guardrails, and build interactive prototypes."
+      },
+      {
+        "number": "03",
+        "title": "Build, Benchmark & Integrate",
+        "desc": "We engineer production code, benchmark against golden test datasets, tune latency, and integrate live connectors with your existing CRM and ERP."
+      },
+      {
+        "number": "04",
+        "title": "Deploy, Telemetry & Tuning",
+        "desc": "We deploy in your private cloud or UAE sovereign data center, establish telemetry for drift and hallucination tracking, and continuously iterate."
+      }
+    ],
+    "faqTitle": "Questions? We have answers.",
+    "faqs": [
+      {
+        "question": "What types of artificial intelligence solutions do you build?",
+        "answer": "We engineer three primary categories: 1) Autonomous agents and multilingual chatbots that interact with customers and trigger authorized database actions; 2) Enterprise RAG knowledge assistants that search and cite internal documents with zero hallucination; and 3) Intelligent document processing pipelines that extract and reconcile invoices, bills of lading, and contracts into your ERP."
+      },
+      {
+        "question": "Can AI connect to our CRM, ERP, database, or internal tools?",
+        "answer": "Yes. We specialize in building secure API connectors, webhooks, and database adapters for SAP, Oracle, Microsoft Dynamics, Salesforce, HubSpot, Zoho, Odoo, PostgreSQL, MySQL, and proprietary internal databases. The AI interacts with your existing systems securely using role-based permissions and audit logs."
+      },
+      {
+        "question": "Does our data need to be clean and organized before we start?",
+        "answer": "No. Most enterprise data starts out messy, fragmented across PDFs, email threads, spreadsheets, and shared drives. During the initial audit phase, our engineers clean, deduplicate, and structure your data, creating the necessary embeddings and indexes for high-accuracy retrieval."
+      },
+      {
+        "question": "How do you reduce incorrect or unsupported AI answers?",
+        "answer": "We employ a multi-layered guardrail architecture: strict Retrieval-Augmented Generation (forcing models to answer solely from retrieved context), semantic reranking to filter irrelevant text, system-level refusal rules when confidence thresholds are not met, deterministic JSON schema validation, and mandatory source citations."
+      },
+      {
+        "question": "Can it run in our own cloud or a private environment in Dubai?",
+        "answer": "Yes. For clients requiring strict data sovereignty—such as healthcare, banking, government, and legal organizations in the UAE—we deploy models within private VPCs in local AWS UAE / Microsoft Azure UAE regions, or directly on on-premises GPU infrastructure with zero data transmission to external third parties."
+      },
+      {
+        "question": "What is the average development time and cost structure?",
+        "answer": "A focused, working proof-of-concept on your live operational data is typically delivered within 2 to 4 weeks. Full enterprise production deployment—including security audits, legacy system integration, staff training, and automated failover—generally takes 6 to 12 weeks with transparent milestone-based pricing."
+      },
+      {
+        "question": "Where are you based, and do you work with clients outside the UAE?",
+        "answer": "DW Tech is headquartered in Dubai, United Arab Emirates, with technical delivery and engineering centers in Riyadh (Saudi Arabia), Milan (Italy), and Kerala (India). We serve enterprise clients across the UAE, the broader GCC, Europe, and North America."
+      }
+    ]
+  }
+}
