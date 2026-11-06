@@ -51,7 +51,7 @@ export const POST: APIRoute = async ({ request }) => {
     const recipientEmail =
       process.env.CONTACT_RECIPIENT_EMAIL ||
       import.meta.env.CONTACT_RECIPIENT_EMAIL ||
-      "tech@thedesertwhales.com";
+      "tech.desertwhales@gmail.com";
 
     const fromEmail =
       process.env.RESEND_FROM_EMAIL ||

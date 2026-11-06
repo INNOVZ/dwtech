@@ -42,7 +42,7 @@ export default function AboutPage() {
               <div className="mt-10 flex flex-wrap items-center gap-5 max-[620px]:flex-col max-[620px]:items-stretch">
                 <a
                   className="btn"
-                  href="mailto:tech@thedesertwhales.com?subject=New%20project%20enquiry"
+                  href="/contact"
                 >
                   Make an Enquiry <ArrowUpRight />
                 </a>

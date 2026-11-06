@@ -158,7 +158,7 @@ export default function ServicePage({ params, initialDetail }: Props) {
               <div className="flex flex-wrap items-center gap-5 mb-14 max-[620px]:flex-col max-[620px]:items-stretch">
                 <a
                   className="btn"
-                  href={`mailto:tech@thedesertwhales.com?subject=Enquiry%20regarding%20${encodeURIComponent(fallbackTitle)}`}
+                  href="/contact"
                 >
                   Make an Enquiry <ArrowUpRight />
                 </a>

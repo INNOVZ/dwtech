@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { CheckCircle2, ArrowRight, AlertCircle, Loader2 } from "lucide-react";
+import { CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
+import { ArrowUpRight } from "@/components/layout/icons";
 
 const branches = [
   "Dubai, UAE (Global HQ)",
@@ -40,7 +41,9 @@ export default function ContactForm() {
     honeypot: "",
   });
 
-  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [status, setStatus] = useState<
+    "idle" | "submitting" | "success" | "error"
+  >("idle");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -53,14 +56,22 @@ export default function ContactForm() {
 
     const payload = {
       name: (formValues.get("name") as string)?.trim() || formData.name.trim(),
-      email: (formValues.get("email") as string)?.trim() || formData.email.trim(),
-      phone: (formValues.get("phone") as string)?.trim() || formData.phone.trim(),
-      company: (formValues.get("company") as string)?.trim() || formData.company.trim(),
+      email:
+        (formValues.get("email") as string)?.trim() || formData.email.trim(),
+      phone:
+        (formValues.get("phone") as string)?.trim() || formData.phone.trim(),
+      company:
+        (formValues.get("company") as string)?.trim() ||
+        formData.company.trim(),
       branch: (formValues.get("branch") as string)?.trim() || formData.branch,
       service: formData.service,
       budget: formData.budget,
-      message: (formValues.get("message") as string)?.trim() || formData.message.trim(),
-      honeypot: (formValues.get("honeypot") as string)?.trim() || formData.honeypot.trim(),
+      message:
+        (formValues.get("message") as string)?.trim() ||
+        formData.message.trim(),
+      honeypot:
+        (formValues.get("honeypot") as string)?.trim() ||
+        formData.honeypot.trim(),
     };
 
     try {
@@ -80,29 +91,33 @@ export default function ContactForm() {
     } catch (err: any) {
       setStatus("error");
       setErrorMessage(
-        err.message || "An error occurred while dispatching your inquiry. Please try again or email us directly."
+        err.message ||
+          "An error occurred while dispatching your inquiry. Please try again or email us directly.",
       );
     }
   };
 
   if (status === "success") {
     return (
-      <div className="rounded-[24px] bg-white border border-[#e2dded] p-8 sm:p-12 text-center max-w-[680px] mx-auto shadow-none">
-        <div className="size-16 rounded-full bg-[#f4effc] border border-[#311959]/20 grid place-items-center mx-auto mb-6 text-[#311959]">
-          <CheckCircle2 className="size-8" />
+      <div className="rounded-[28px] bg-white border border-[#e2dded] p-8 sm:p-12 text-center max-w-[680px] mx-auto shadow-none">
+        <div className="size-14 rounded-full bg-[#f4effc] border border-[#311959]/20 grid place-items-center mx-auto mb-5 text-[#311959]">
+          <CheckCircle2 className="size-7" />
         </div>
-        <span className="inline-block px-3 py-1 rounded-full text-xs font-mono tracking-wider uppercase font-semibold text-[#311959] bg-[#f4effc] mb-4">
+        <span className="inline-block px-2.5 py-1 rounded-md text-[11px] font-mono tracking-wider uppercase font-semibold text-[#311959] bg-[#f4effc] border border-[#311959]/20 mb-4">
           Inquiry Dispatched
         </span>
         <h3 className="text-2xl sm:text-3xl font-bold text-[#05040e] mb-3 tracking-tight font-manrope">
           Thank you, {formData.name.split(" ")[0]}!
         </h3>
         <p className="text-base text-[#5e5868] leading-relaxed max-w-[500px] mx-auto mb-8">
-          Your project inquiry has been delivered directly to our technical strategy team for{" "}
-          <strong className="text-[#311959]">{formData.branch}</strong>. We review requirements thoroughly and typically reply within 1 business day.
+          Your project inquiry has been delivered directly to our technical
+          strategy team for{" "}
+          <strong className="text-[#311959]">{formData.branch}</strong>. We
+          review requirements thoroughly and typically reply within 1 business
+          day.
         </p>
 
-        <div className="pt-6 border-t border-black/[0.08] flex flex-wrap items-center justify-center gap-4">
+        <div className="pt-6 border-t border-black/[0.08] flex flex-wrap items-center justify-center gap-4 text-xs">
           <button
             type="button"
             onClick={() => {
@@ -119,14 +134,14 @@ export default function ContactForm() {
               });
               setStatus("idle");
             }}
-            className="text-xs font-semibold uppercase tracking-wider text-[#311959] hover:underline"
+            className="font-semibold uppercase font-mono tracking-wider text-[#311959] hover:underline cursor-pointer"
           >
             ← Send another message
           </button>
           <span className="text-black/20">·</span>
           <a
             href="mailto:tech@thedesertwhales.com"
-            className="text-xs text-[#6e677c] hover:text-[#311959]"
+            className="text-[#6e677c] hover:text-[#311959]"
           >
             Direct: tech@thedesertwhales.com
           </a>
@@ -138,7 +153,7 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="rounded-[24px] bg-white border border-[#e2dded] p-7 sm:p-10 lg:p-12 shadow-none"
+      className="rounded-[28px] bg-white border border-[#e2dded] p-7 sm:p-10 lg:p-12 shadow-none"
     >
       {/* Invisible Honeypot Spam Field */}
       <input
@@ -160,7 +175,10 @@ export default function ContactForm() {
             <p className="m-0 mt-1">{errorMessage}</p>
             <p className="m-0 mt-2 text-xs">
               Direct fallback:{" "}
-              <a href="mailto:tech@thedesertwhales.com" className="underline font-medium">
+              <a
+                href="mailto:tech@thedesertwhales.com"
+                className="underline font-medium"
+              >
                 tech@thedesertwhales.com
               </a>
             </p>
@@ -171,7 +189,10 @@ export default function ContactForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
         {/* Full Name */}
         <div>
-          <label htmlFor="contact-name" className="block text-xs font-semibold text-[#1a0046] uppercase font-mono tracking-wider mb-2">
+          <label
+            htmlFor="contact-name"
+            className="block text-xs font-semibold text-[#1a0046] uppercase font-mono tracking-wider mb-2"
+          >
             Your Name <span className="text-[#311959]">*</span>
           </label>
           <input
@@ -188,7 +209,10 @@ export default function ContactForm() {
 
         {/* Work Email */}
         <div>
-          <label htmlFor="contact-email" className="block text-xs font-semibold text-[#1a0046] uppercase font-mono tracking-wider mb-2">
+          <label
+            htmlFor="contact-email"
+            className="block text-xs font-semibold text-[#1a0046] uppercase font-mono tracking-wider mb-2"
+          >
             Work Email <span className="text-[#311959]">*</span>
           </label>
           <input
@@ -198,14 +222,19 @@ export default function ContactForm() {
             required
             placeholder="e.g. sarah@company.com"
             value={formData.email}
-            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, email: e.target.value })
+            }
             className="w-full rounded-xl border border-[#d8d0e5] bg-[#faf9fd] px-4 py-3 text-sm text-[#05040e] placeholder-[#9c95a6] transition-colors focus:border-[#311959] focus:bg-white focus:outline-none"
           />
         </div>
 
         {/* Phone / WhatsApp */}
         <div>
-          <label htmlFor="contact-phone" className="block text-xs font-semibold text-[#1a0046] uppercase font-mono tracking-wider mb-2">
+          <label
+            htmlFor="contact-phone"
+            className="block text-xs font-semibold text-[#1a0046] uppercase font-mono tracking-wider mb-2"
+          >
             Phone / WhatsApp
           </label>
           <input
@@ -214,14 +243,19 @@ export default function ContactForm() {
             type="tel"
             placeholder="e.g. +971 50 123 4567"
             value={formData.phone}
-            onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, phone: e.target.value })
+            }
             className="w-full rounded-xl border border-[#d8d0e5] bg-[#faf9fd] px-4 py-3 text-sm text-[#05040e] placeholder-[#9c95a6] transition-colors focus:border-[#311959] focus:bg-white focus:outline-none"
           />
         </div>
 
         {/* Company Name */}
         <div>
-          <label htmlFor="contact-company" className="block text-xs font-semibold text-[#1a0046] uppercase font-mono tracking-wider mb-2">
+          <label
+            htmlFor="contact-company"
+            className="block text-xs font-semibold text-[#1a0046] uppercase font-mono tracking-wider mb-2"
+          >
             Company / Organization
           </label>
           <input
@@ -230,7 +264,9 @@ export default function ContactForm() {
             type="text"
             placeholder="e.g. Horizon Logistics LLC"
             value={formData.company}
-            onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, company: e.target.value })
+            }
             className="w-full rounded-xl border border-[#d8d0e5] bg-[#faf9fd] px-4 py-3 text-sm text-[#05040e] placeholder-[#9c95a6] transition-colors focus:border-[#311959] focus:bg-white focus:outline-none"
           />
         </div>
@@ -238,8 +274,11 @@ export default function ContactForm() {
 
       {/* Target Branch Location */}
       <div className="mb-6">
-        <label htmlFor="contact-branch" className="block text-xs font-semibold text-[#1a0046] uppercase font-mono tracking-wider mb-2">
-          Target Branch / Operational Region
+        <label
+          htmlFor="contact-branch"
+          className="block text-xs font-semibold text-[#1a0046] uppercase font-mono tracking-wider mb-2"
+        >
+          Target Branch / Regional Hub
         </label>
         <select
           id="contact-branch"
@@ -256,7 +295,7 @@ export default function ContactForm() {
         </select>
       </div>
 
-      {/* Service of Interest */}
+      {/* Service Focus */}
       <div className="mb-6">
         <label className="block text-xs font-semibold text-[#1a0046] uppercase font-mono tracking-wider mb-2">
           Service Focus
@@ -269,10 +308,10 @@ export default function ContactForm() {
                 type="button"
                 key={svc}
                 onClick={() => setFormData({ ...formData, service: svc })}
-                className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
+                className={`px-3 py-1.5 rounded-md text-[11px] font-mono tracking-wider uppercase font-semibold transition-all cursor-pointer ${
                   isSelected
-                    ? "bg-[#311959] text-white shadow-sm"
-                    : "bg-[#f4effc] text-[#4d425f] hover:bg-[#eae2f7] border border-[#311959]/15"
+                    ? "bg-[#311959] text-white shadow-none"
+                    : "bg-[#f4effc] text-[#311959] hover:bg-[#ebe1f8] border border-[#311959]/20"
                 }`}
               >
                 {svc}
@@ -295,10 +334,10 @@ export default function ContactForm() {
                 type="button"
                 key={opt}
                 onClick={() => setFormData({ ...formData, budget: opt })}
-                className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
+                className={`px-3 py-1.5 rounded-md text-[11px] font-mono tracking-wider uppercase font-semibold transition-all cursor-pointer ${
                   isSelected
-                    ? "bg-[#311959] text-white shadow-sm"
-                    : "bg-[#f4effc] text-[#4d425f] hover:bg-[#eae2f7] border border-[#311959]/15"
+                    ? "bg-[#311959] text-white shadow-none"
+                    : "bg-[#f4effc] text-[#311959] hover:bg-[#ebe1f8] border border-[#311959]/20"
                 }`}
               >
                 {opt}
@@ -310,42 +349,49 @@ export default function ContactForm() {
 
       {/* Project Details Message */}
       <div className="mb-8">
-        <label htmlFor="contact-message" className="block text-xs font-semibold text-[#1a0046] uppercase font-mono tracking-wider mb-2">
-          Project Overview & Objectives <span className="text-[#311959]">*</span>
+        <label
+          htmlFor="contact-message"
+          className="block text-xs font-semibold text-[#1a0046] uppercase font-mono tracking-wider mb-2"
+        >
+          Project Overview & Objectives{" "}
+          <span className="text-[#311959]">*</span>
         </label>
         <textarea
           id="contact-message"
           name="message"
           required
           rows={4}
-          placeholder="Briefly describe your systems, requirements, goals, or timeline..."
+          placeholder="Briefly describe your systems, operational goals, or project scope..."
           value={formData.message}
-          onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+          onChange={(e) =>
+            setFormData({ ...formData, message: e.target.value })
+          }
           className="w-full rounded-xl border border-[#d8d0e5] bg-[#faf9fd] px-4 py-3 text-sm text-[#05040e] placeholder-[#9c95a6] transition-colors focus:border-[#311959] focus:bg-white focus:outline-none"
         />
       </div>
 
-      {/* Submit Button */}
+      {/* Submit Button (DW Tech Pill with Arrow) */}
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-full bg-[#311959] px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-[#311959]/90 disabled:opacity-60 cursor-pointer shadow-none"
+        className="inline-flex items-center gap-3 bg-[#311959] text-white hover:bg-[#311959]/90 transition-colors px-8 py-3.5 rounded-full text-base font-semibold shadow-none cursor-pointer disabled:opacity-60"
       >
         {status === "submitting" ? (
           <>
             <Loader2 className="size-4 animate-spin" />
-            <span>Sending Inquiry...</span>
+            <span>Dispatching inquiry...</span>
           </>
         ) : (
           <>
             <span>Submit Project Inquiry</span>
-            <ArrowRight className="size-4" />
+            <ArrowUpRight className="size-4" />
           </>
         )}
       </button>
 
       <p className="mt-4 text-[11px] text-[#837b90] leading-relaxed">
-        Strict privacy: Your contact information is never shared. Handled under UAE Federal Law No. 45 and international confidentiality standards.
+        Strict confidentiality: Handled under UAE Federal Decree-Law No. 45 and
+        international enterprise security standards.
       </p>
     </form>
   );
