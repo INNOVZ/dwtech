@@ -1,4 +1,4 @@
-export const siteUrl = "https://www.dwhalestech.com";
+export const siteUrl = "https://www.desertwhales.tech";
 
 export const companyIdentity = {
   name: "DW Tech",
@@ -516,7 +516,7 @@ export const locations = [
 
 export const contacts = {
   email: "tech@thedesertwhales.com",
-  website: "dwhalestech.com",
+  website: "desertwhales.tech",
   phones: [
     ["UAE", "+971 52 867 8679"],
   ],
