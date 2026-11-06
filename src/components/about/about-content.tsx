@@ -65,9 +65,10 @@ export default function AboutPage() {
             <FadeIn delay={0.12}>
               <div className="grid gap-6 text-[1.08rem] leading-[1.65] text-[#5d5867]">
                 <p>
-                  DW Tech is headquartered in Dubai, United Arab Emirates, and
-                  is the technology and digital-transformation company with
-                  clients across the globe.
+                  DW Tech is headquartered in Dubai, United Arab Emirates, with
+                  established branches and engineering centers across Saudi Arabia
+                  (Riyadh), India (Kerala), and Italy (Milan), delivering digital
+                  transformation and technology solutions to clients across the globe.
                 </p>
                 <p>
                   Our teams combine business strategy, product design,

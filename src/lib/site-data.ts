@@ -509,6 +509,8 @@ export const processSteps = [
 
 export const locations = [
   ["Dubai, UAE", "Global headquarters & Middle East operations"],
+  ["Riyadh, Saudi Arabia", "Regional expansion & GCC operations"],
+  ["Kerala, India", "Engineering hub & business operations center"],
   ["Milan, Italy", "European business & creative collaboration network"],
 ] as const;
 

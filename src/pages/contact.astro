@@ -1,0 +1,166 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { companyIdentity, contacts, locations, siteUrl } from "@/lib/site-data";
+import { section, shell } from "@/lib/styles";
+import ContactForm from "@/components/contact/contact-form";
+import { Mail, Phone, MapPin, ShieldCheck, Clock, CheckCircle2 } from "lucide-react";
+
+const pageTitle = "Start a Conversation | DW Tech Dubai, Riyadh, Kerala & Milan";
+const pageDescription =
+  "Connect directly with DW Tech engineering leadership for custom software development, enterprise AI automation, and digital systems architecture across Dubai, Riyadh, Kerala, and Milan.";
+
+const contactSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  name: pageTitle,
+  url: `${siteUrl}/contact`,
+  description: pageDescription,
+  mainEntity: {
+    "@type": "Organization",
+    name: companyIdentity.name,
+    telephone: contacts.phones[0]?.[1] || "+971 52 867 8679",
+    email: contacts.email,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Dubai",
+      addressCountry: "AE",
+    },
+    areaServed: ["United Arab Emirates", "Saudi Arabia", "India", "Italy"],
+  },
+};
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  schema={contactSchema}
+  headerTheme="light"
+  breadcrumbs={[
+    { name: "Home", item: "/" },
+    { name: "Contact", item: "/contact" },
+  ]}
+>
+  <main class="bg-[#faf9fd] text-[#05040e]">
+    {/* ── Hero Section (Light Theme) ── */}
+    <section
+      class="relative pt-[160px] pb-[70px] bg-[radial-gradient(circle_at_80%_25%,rgba(49,25,89,0.08),transparent_44%),#faf9fd] border-b border-black/5"
+    >
+      <div
+        class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle,rgba(49,25,89,.08)_0_1px,transparent_1.3px)] bg-[length:48px_48px] opacity-40"
+      >
+      </div>
+
+      <div class={`${shell} relative z-1`}>
+        <nav
+          aria-label="Breadcrumb"
+          class="mb-6 flex items-center gap-2 text-xs text-[#6b6477]"
+        >
+          <a href="/" class="hover:text-[#311959] transition-colors">Home</a>
+          <span class="text-[#888194]">/</span>
+          <span class="text-[#311959] font-semibold">Contact & Advisory</span>
+        </nav>
+
+        <h1
+          class="text-[clamp(3.2rem,5.4vw,5.5rem)] leading-[0.98] tracking-tight max-w-[1000px] mb-6 text-[#05040e]"
+        >
+          Let's engineer <span class="text-[#311959]">what's next.</span>
+        </h1>
+
+        <p
+          class="max-w-[800px] text-[clamp(1.05rem,1.35vw,1.18rem)] leading-[1.65] text-[#5e5868]"
+        >
+          Whether evaluating private AI agent deployment, planning custom enterprise software,
+          or modernizing high-scale operations across Dubai, Riyadh, Kerala, or Milan, our technical
+          strategists are ready to collaborate.
+        </p>
+      </div>
+    </section>
+
+    {/* ── Main Form & Regional Hubs Grid ── */}
+    <section class={`${section} relative`}>
+      <div class={shell}>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+          {/* Left Column: Interactive Contact Form (7 cols) */}
+          <div class="lg:col-span-7">
+            <div class="mb-6">
+              <span class="text-xs font-mono font-semibold uppercase tracking-wider text-[#311959] bg-[#f4effc] px-3 py-1 rounded-md border border-[#311959]/15">
+                Direct Engineering Inquiry
+              </span>
+              <h2 class="text-2xl sm:text-3xl font-bold text-[#05040e] mt-3 tracking-tight font-manrope">
+                Project Scope & Requirements
+              </h2>
+              <p class="text-sm text-[#635c6e] mt-1.5">
+                Fill in your details below and an engineering partner will review your inquiry.
+              </p>
+            </div>
+
+            <ContactForm client:load />
+          </div>
+
+          {/* Right Column: Global Branches, Direct Contacts & Guarantees (5 cols) */}
+          <div class="lg:col-span-5 space-y-6">
+            {/* Quick Contact Card */}
+            <div class="rounded-[24px] bg-white border border-[#e2dded] p-7 sm:p-8">
+              <h3 class="text-lg font-bold text-[#05040e] mb-4 font-manrope tracking-tight">
+                Direct Contact Channels
+              </h3>
+
+              <div class="space-y-4 text-sm text-[#463f52]">
+                <a
+                  href="mailto:tech@thedesertwhales.com"
+                  class="flex items-center gap-3 p-3 rounded-xl bg-[#faf9fd] hover:bg-[#f4effc] transition-colors group border border-black/5"
+                >
+                  <span class="size-10 rounded-lg bg-[#311959]/10 text-[#311959] grid place-items-center shrink-0">
+                    <Mail className="size-5" />
+                  </span>
+                  <div>
+                    <span class="text-xs text-[#837b90] uppercase font-mono block">Strategy Email</span>
+                    <strong class="text-sm text-[#05040e] group-hover:text-[#311959] transition-colors">
+                      tech@thedesertwhales.com
+                    </strong>
+                  </div>
+                </a>
+
+                <a
+                  href="tel:+971528678679"
+                  class="flex items-center gap-3 p-3 rounded-xl bg-[#faf9fd] hover:bg-[#f4effc] transition-colors group border border-black/5"
+                >
+                  <span class="size-10 rounded-lg bg-[#311959]/10 text-[#311959] grid place-items-center shrink-0">
+                    <Phone className="size-5" />
+                  </span>
+                  <div>
+                    <span class="text-xs text-[#837b90] uppercase font-mono block">Direct Hotline / WhatsApp</span>
+                    <strong class="text-sm text-[#05040e] group-hover:text-[#311959] transition-colors">
+                      +971 52 867 8679 (UAE)
+                    </strong>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            {/* Global Branches & Operational Hubs */}
+            <div class="rounded-[24px] bg-white border border-[#e2dded] p-7 sm:p-8">
+              <div class="flex items-center gap-2 mb-4">
+                <MapPin className="size-4 text-[#311959]" />
+                <h3 class="text-lg font-bold text-[#05040e] font-manrope tracking-tight">
+                  Global Presence & Hubs
+                </h3>
+              </div>
+
+              <div class="divide-y divide-black/8 text-sm">
+                {locations.map(([city, role]) => (
+                  <div class="py-3.5 first:pt-0 last:pb-0">
+                    <h4 class="font-bold text-[#05040e] text-[0.95rem]">{city}</h4>
+                    <p class="text-xs text-[#635c6e] mt-0.5 m-0">{role}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+           
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
