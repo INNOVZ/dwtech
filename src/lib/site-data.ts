@@ -231,6 +231,8 @@ export interface BlogPost {
   title: string;
   subtitle: string;
   category: string;
+  badge?: string;
+  tags?: string[];
   publishedDate: string;
   readTime: string;
   author: string;
@@ -250,10 +252,145 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "beyond-the-ai-demo",
+    title: "Beyond the AI Demo: What Production Really Requires",
+    subtitle: "Why 85% of enterprise AI proofs-of-concept stall before deployment, and the architectural discipline needed to turn fragile prompts into mission-critical systems.",
+    category: "AI Systems Engineering",
+    badge: "DRAFT PERSPECTIVE",
+    tags: ["OPERATIONAL SAFETY", "EVALUATION PIPELINES"],
+    publishedDate: "2026-03-15",
+    readTime: "6 min read",
+    author: "Jithin K",
+    authorRole: "Chief Innovation Officer",
+    excerpt: "Why 85% of enterprise AI proofs-of-concept stall before deployment, and the architectural discipline needed to turn fragile prompts into mission-critical systems.",
+    geoRegion: "Dubai, UAE · Riyadh, KSA · Europe",
+    keyTakeaways: [
+      "Nondeterministic models require deterministic system boundaries.",
+      "Offline benchmarks do not predict production failure modes; continuous evaluation is essential.",
+      "Human supervision should be designed as an intrinsic control layer, not an emergency afterthought.",
+    ],
+    contentSections: [
+      {
+        heading: "The Architectural Chasm Between Prototype and Production",
+        body: "In the early days of generative AI adoption, the barrier to astonishment was remarkably low. A well-crafted prompt inside a chat interface could summarize complex legal filings or draft marketing strategy in seconds. But between an astonishing prototype and a resilient enterprise system lies an architectural chasm.",
+      },
+      {
+        heading: "The Predictability Paradox in Enterprise Workflows",
+        body: "Production AI systems fail not because models are insufficiently creative, but because they are nondeterministic in environments that demand absolute predictability. When an enterprise workflow processes millions of transactions, a 95% accuracy rate is not a triumph—it represents thousands of unaccounted errors that erode institutional trust.",
+      },
+      {
+        heading: "From Prompt Engineering to Systems Engineering",
+        body: "To cross this chasm, CIOs must pivot from prompt engineering to system engineering: establishing automated regression suites, continuous latency and cost monitoring, clear escalation thresholds, and zero-trust permission boundaries.",
+      },
+    ],
+    faq: [
+      {
+        question: "Why do 85% of enterprise AI proofs-of-concept fail before production?",
+        answer: "Most AI prototypes succeed in controlled demos because prompts are evaluated informally on happy-path scenarios. Production fails when nondeterministic model behaviors meet legacy IT systems without deterministic boundaries, regression test suites, latency controls, and automated guardrails.",
+      },
+      {
+        question: "How can enterprise teams establish deterministic system boundaries around LLMs?",
+        answer: "By enforcing structured JSON schemas (function calling / type-safe IO), strict permission boundaries, deterministic pre- and post-processing validation, fallback rule-based handlers, and continuous evaluation pipelines that measure drift against gold-standard benchmarks.",
+      },
+      {
+        question: "What role should human supervision play in production AI systems?",
+        answer: "Human-in-the-loop shouldn't be an emergency rescue when systems crash; it must be an intrinsic architectural control layer with explicit confidence scoring, friction-free triage UI, and comprehensive audit trails for regulatory compliance.",
+      },
+    ],
+  },
+  {
+    slug: "agents-need-boundaries",
+    title: "Agents Need Boundaries, Not Just Better Prompts",
+    subtitle: "Autonomous multi-agent architectures promise unprecedented automation, but without deterministic state machines and sandboxed tooling, they invite cascading operational risk.",
+    category: "Multi-Agent Architecture",
+    badge: "DRAFT PERSPECTIVE",
+    tags: ["MULTI-AGENT ARCHITECTURE", "AUTONOMOUS SYSTEMS"],
+    publishedDate: "2026-03-15",
+    readTime: "5 min read",
+    author: "Jithin K",
+    authorRole: "Chief Innovation Officer",
+    excerpt: "Autonomous multi-agent architectures promise unprecedented automation, but without deterministic state machines and sandboxed tooling, they invite cascading operational risk.",
+    geoRegion: "Dubai, UAE · Riyadh, KSA · Europe",
+    keyTakeaways: [
+      "Tool authorization must reside in code, never in LLM system prompts.",
+      "Multi-agent loops must implement circuit breakers and timeout policies to avoid infinite recursion.",
+      "Idempotency guarantees are non-negotiable for any external state-modifying action.",
+    ],
+    contentSections: [
+      {
+        heading: "The Risk of Unconstrained Agency in Enterprise Systems",
+        body: "The current industry narrative around AI agents envisions autonomous entities executing end-to-end business workflows with minimal oversight. While compelling, deploying unconstrained agents with direct write access to enterprise databases or financial ledgers represents unacceptable institutional exposure.",
+      },
+      {
+        heading: "Code-Enforced Authorization Over Prompt Constraints",
+        body: "A reliable agent is not one that has been given a more sophisticated persona prompt; it is one whose operational environment is constrained by deterministic code. An agent should never decide whether it has permission to execute an action—that determination must be made by an independent authorization gateway.",
+      },
+      {
+        heading: "Idempotency and Sovereign Control",
+        body: "By enforcing idempotent execution, scoped credentials, and explicit human sign-off for actions exceeding defined impact thresholds, organizations can capture the leverage of autonomous agents while maintaining sovereign control.",
+      },
+    ],
+    faq: [
+      {
+        question: "Why shouldn't agent authorization be managed inside system prompts?",
+        answer: "Prompt-based boundaries are vulnerable to prompt injection, hallucination, and semantic drift. Deterministic API middleware and least-privilege tokens must strictly govern what tools and data an agent can execute.",
+      },
+      {
+        question: "How do you prevent infinite loops in multi-agent collaboration?",
+        answer: "Every multi-agent graph must define hard step quotas, budget caps, cyclic dependency checks, and deterministic circuit breakers that halt execution and request human triage upon anomaly detection.",
+      },
+    ],
+  },
+  {
+    slug: "enterprise-knowledge-advantage",
+    title: "The Enterprise Knowledge Advantage",
+    subtitle: "Commoditized foundation models level the algorithmic playing field. The durable enterprise moat lies in high-fidelity contextual retrieval, provenance tracking, and proprietary knowledge synthesis.",
+    category: "RAG Architecture",
+    badge: "DRAFT PERSPECTIVE",
+    tags: ["RAG ARCHITECTURE", "ENTERPRISE KNOWLEDGE"],
+    publishedDate: "2026-03-15",
+    readTime: "7 min read",
+    author: "Jithin K",
+    authorRole: "Chief Innovation Officer",
+    excerpt: "Commoditized foundation models level the algorithmic playing field. The durable enterprise moat lies in high-fidelity contextual retrieval, provenance tracking, and proprietary knowledge synthesis.",
+    geoRegion: "Dubai, UAE · Riyadh, KSA · Europe",
+    keyTakeaways: [
+      "Foundation models are commodities; contextual knowledge architecture is the moat.",
+      "Temporal freshness and dynamic ACL filtering are non-negotiable in enterprise RAG.",
+      "Hybrid search (dense vector + sparse lexical + knowledge graph) outclasses naive vector retrieval.",
+    ],
+    contentSections: [
+      {
+        heading: "The Convergence of Frontier Model Reasoning",
+        body: "As frontier foundation models converge in baseline reasoning benchmarks, enterprise differentiation shifts dramatically from the underlying model weight to the fidelity of contextual data injected into the inference window.",
+      },
+      {
+        heading: "The Limitations of Naive Vector Similarity",
+        body: "Naive vector similarity search is fundamentally insufficient for mission-critical enterprise workflows. Real-world organizational knowledge is hierarchical, temporal, and permission-gated. A standard vector embedding has no intrinsic comprehension of whether a document from 2022 has been superseded by an executive policy update published last week.",
+      },
+      {
+        heading: "Hybrid Retrieval and Provenance Synthesis",
+        body: "Advanced retrieval architectures combine semantic embeddings with BM25 lexical precision, temporal weighting, and graph-based entity relationships. This ensures that when an executive or client interacts with the system, responses are not merely plausible, but demonstrably grounded in current corporate truth.",
+      },
+    ],
+    faq: [
+      {
+        question: "Why is naive RAG insufficient for large enterprises?",
+        answer: "Standard vector search lacks awareness of document recency, organizational permissions (ACLs), and structured tabular relationships, often surfacing outdated or unauthorized documentation.",
+      },
+      {
+        question: "What is hybrid retrieval in enterprise context engines?",
+        answer: "Hybrid retrieval merges dense semantic vector search with sparse BM25 keyword matching and knowledge graphs, re-ranked dynamically with cross-encoders to ensure maximum factual precision.",
+      },
+    ],
+  },
+  {
     slug: "ai-automation-in-gcc-enterprises",
     title: "AI & Workflow Automation in the GCC: The Enterprise Playbook for Dubai & Riyadh",
     subtitle: "How forward-thinking enterprises in the UAE and Saudi Arabia are moving beyond basic chatbots to mission-critical operational intelligence.",
     category: "AI & Automation",
+    badge: "GCC PLAYBOOK",
+    tags: ["ENTERPRISE AI", "SOVEREIGN WORKFLOWS"],
     publishedDate: "2026-03-20",
     readTime: "6 min read",
     author: "DW Tech AI Research Group",
@@ -295,6 +432,8 @@ export const blogPosts: BlogPost[] = [
     title: "Custom Software vs. Off-The-Shelf ERP: What Scalable UAE Businesses Must Know",
     subtitle: "A practical guide to evaluating when ready-made enterprise software succeeds and when custom digital engineering delivers 10x ROI.",
     category: "Enterprise Engineering",
+    badge: "ARCHITECTURE",
+    tags: ["COMPOSABLE CORE", "CUSTOM ERP"],
     publishedDate: "2026-02-18",
     readTime: "8 min read",
     author: "Enterprise Solutions Team",
@@ -328,6 +467,8 @@ export const blogPosts: BlogPost[] = [
     title: "Modern Headless E-Commerce: Driving High-Conversion Retail in the Middle East",
     subtitle: "Sub-second load times, localized payment checkout, and omnichannel clienteling for luxury and retail brands.",
     category: "E-Commerce Architecture",
+    badge: "COMMERCE",
+    tags: ["HEADLESS FRONTEND", "OMNICHANNEL RETAIL"],
     publishedDate: "2026-01-28",
     readTime: "5 min read",
     author: "Digital Commerce Lab",

@@ -1,17 +1,27 @@
 
-export function Logo({ light = true }: { light?: boolean }) {
+export function Logo({
+  light = true,
+  className = "",
+}: {
+  light?: boolean;
+  className?: string;
+}) {
   return (
     <a
       href="/"
-      className={`relative z-[2] inline-flex flex-col leading-none ${light ? "text-white" : "text-midnight"}`}
+      className={`relative z-[2] inline-flex items-center ${className}`}
       aria-label="DW Tech home"
     >
-      <span className="text-[1.72rem] font-medium tracking-[-.07em] max-[620px]:text-[1.46rem]">
-        dw&lt;<strong className="font-medium text-orchid">tech</strong>&gt;
-      </span>
-      <span className="mt-[7px] text-[.42rem] tracking-[.31em] uppercase max-[620px]:text-[.36rem]">
-        A DesertWhales initiative
-      </span>
+      <img
+        src="/desertwhales_tech.svg"
+        alt="DW Tech - Digital Business Transformation"
+        width="177"
+        height="40"
+        className={`h-9 sm:h-10 w-auto object-contain transition-opacity duration-200 hover:opacity-90 ${
+          light ? "brightness-0 invert" : ""
+        }`}
+        loading="eager"
+      />
     </a>
   );
 }

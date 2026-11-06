@@ -12,6 +12,7 @@ interface Props {
   ogImage?: string;
   schema?: Record<string, any> | Array<Record<string, any>>;
   breadcrumbs?: Array<{ name: string; item: string }>;
+  headerTheme?: 'dark' | 'light';
 }
 
 const defaultTitle = "DW Tech | AI, Software & Digital Transformation Dubai & Global";
@@ -25,6 +26,7 @@ const {
   ogImage = `${siteUrl}/hero-whale.png`,
   schema,
   breadcrumbs,
+  headerTheme = 'dark',
 } = Astro.props;
 
 const currentUrl = canonical || new URL(Astro.url.pathname, siteUrl).toString();
@@ -135,7 +137,7 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
     </style>
   </head>
   <body>
-    <SiteHeader />
+    <SiteHeader theme={headerTheme} />
     <slot />
     <SiteFooter />
   </body>

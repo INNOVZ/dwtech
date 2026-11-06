@@ -78,14 +78,21 @@ const servicesPillars = [
     ],
   },
 ];
+
+interface Props {
+  theme?: "dark" | "light";
+}
+
+const { theme = "dark" } = Astro.props;
+const isLight = theme === "light";
 ---
 
-<header class="absolute top-0 left-0 z-30 w-full py-[20px]" id="site-header">
+<header class={`absolute top-0 left-0 z-30 w-full py-[20px] ${isLight ? "text-[#311959]" : "text-white"}`} id="site-header">
   <div
     class={`${shell} relative z-[2] grid grid-cols-[auto_1fr_auto] items-center gap-6 max-[1020px]:grid-cols-[1fr_auto]`}
   >
     {/* Logo */}
-    <Logo />
+    <Logo light={!isLight} />
 
     {/* Desktop Navigation - Centered, with Services right in the middle */}
     <nav
@@ -94,7 +101,9 @@ const servicesPillars = [
     >
       {/* 1. Home */}
       <a
-        class="relative grid min-h-11 place-items-center text-[.88rem] text-white/80 transition-colors duration-200 hover:text-white after:absolute after:bottom-1.5 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-orchid after:transition-transform after:duration-250 after:ease-fluid after:content-[''] hover:after:scale-x-100"
+        class={`relative grid min-h-11 place-items-center text-[.88rem] transition-colors duration-200 after:absolute after:bottom-1.5 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-orchid after:transition-transform after:duration-250 after:ease-fluid after:content-[''] hover:after:scale-x-100 ${
+          isLight ? "text-[#311959]/80 hover:text-[#311959]" : "text-white/80 hover:text-white"
+        }`}
         href="/"
       >
         Home
@@ -102,7 +111,9 @@ const servicesPillars = [
 
       {/* 2. Company */}
       <a
-        class="relative grid min-h-11 place-items-center text-[.88rem] text-white/80 transition-colors duration-200 hover:text-white after:absolute after:bottom-1.5 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-orchid after:transition-transform after:duration-250 after:ease-fluid after:content-[''] hover:after:scale-x-100"
+        class={`relative grid min-h-11 place-items-center text-[.88rem] transition-colors duration-200 after:absolute after:bottom-1.5 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-orchid after:transition-transform after:duration-250 after:ease-fluid after:content-[''] hover:after:scale-x-100 ${
+          isLight ? "text-[#311959]/80 hover:text-[#311959]" : "text-white/80 hover:text-white"
+        }`}
         href="/about"
       >
         Company
@@ -115,7 +126,11 @@ const servicesPillars = [
         <button
           type="button"
           id="services-menu-trigger"
-          class="relative flex items-center gap-1.5 py-2.5 text-[.88rem] font-medium text-white/80 transition-colors duration-200 hover:text-white focus:outline-none focus-visible:text-orchid aria-expanded:text-white group-hover:text-white"
+          class={`relative flex items-center gap-1.5 py-2.5 text-[.88rem] font-medium transition-colors duration-200 focus:outline-none focus-visible:text-orchid ${
+            isLight
+              ? "text-[#311959]/80 hover:text-[#311959] group-hover:text-[#311959] aria-expanded:text-[#311959]"
+              : "text-white/80 hover:text-white group-hover:text-white aria-expanded:text-white"
+          }`}
           aria-expanded="false"
           aria-haspopup="true"
           aria-controls="services-dropdown-panel"
@@ -123,7 +138,9 @@ const servicesPillars = [
           <span>Services</span>
           <ChevronDown
             id="services-caret"
-            className="size-3.5 text-white/60 transition-transform duration-300 group-hover:rotate-180 group-focus-within:rotate-180 [aria-expanded=true]:rotate-180"
+            className={`size-3.5 transition-transform duration-300 group-hover:rotate-180 group-focus-within:rotate-180 [aria-expanded=true]:rotate-180 ${
+              isLight ? "text-[#311959]/60" : "text-white/60"
+            }`}
             aria-hidden="true"
           />
         </button>
@@ -150,10 +167,10 @@ const servicesPillars = [
                       <div>
                         {/* Top header with Icon & Title */}
                         <a href={pillar.href} class="block mb-3.5">
-                          <span class="grid size-10 place-items-center rounded-xl bg-[#f2e8ff] text-[#7c32d5] mb-3 transition-transform duration-300 group-hover/card:scale-105 group-hover/card:-rotate-3">
+                          <span class="grid size-10 place-items-center rounded-xl bg-[#f2e8ff] text-[#311959] mb-3 transition-transform duration-300 group-hover/card:scale-105 group-hover/card:-rotate-3">
                             <PillarIcon aria-hidden="true" size={20} />
                           </span>
-                          <h4 class="text-[.98rem] font-bold text-ink leading-tight tracking-[-0.02em] min-h-[38px] group-hover/card:text-[#7c32d5] transition-colors">
+                          <h4 class="text-[.98rem] font-bold text-ink leading-tight tracking-[-0.02em] min-h-[38px] group-hover/card:text-[#311959] transition-colors">
                             {pillar.title}
                           </h4>
                         </a>
@@ -163,7 +180,7 @@ const servicesPillars = [
                           <ul class="flex flex-col gap-1.5 m-0 p-0 list-none text-[.78rem] font-bold text-[#8b8496]">
                             {pillar.subItems.map((sub) => (
                               <li class="leading-snug" title={sub.label}>
-                                <span class="truncate block font-medium hover:text-[#7c32d5] transition-colors">
+                                <span class="truncate block font-medium hover:text-[#311959] transition-colors">
                                   {sub.label}
                                 </span>
                               </li>
@@ -182,15 +199,19 @@ const servicesPillars = [
 
       {/* 4. Portfolios */}
       <a
-        class="relative grid min-h-11 place-items-center text-[.88rem] text-white/80 transition-colors duration-200 hover:text-white after:absolute after:bottom-1.5 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-orchid after:transition-transform after:duration-250 after:ease-fluid after:content-[''] hover:after:scale-x-100"
+        class={`relative grid min-h-11 place-items-center text-[.88rem] transition-colors duration-200 after:absolute after:bottom-1.5 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-orchid after:transition-transform after:duration-250 after:ease-fluid after:content-[''] hover:after:scale-x-100 ${
+          isLight ? "text-[#311959]/80 hover:text-[#311959]" : "text-white/80 hover:text-white"
+        }`}
         href="/portfolio"
       >
-        Portfolios
+       Case Studies
       </a>
 
       {/* 5. Blogs */}
       <a
-        class="relative grid min-h-11 place-items-center text-[.88rem] text-white/80 transition-colors duration-200 hover:text-white after:absolute after:bottom-1.5 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-orchid after:transition-transform after:duration-250 after:ease-fluid after:content-[''] hover:after:scale-x-100"
+        class={`relative grid min-h-11 place-items-center text-[.88rem] transition-colors duration-200 after:absolute after:bottom-1.5 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-orchid after:transition-transform after:duration-250 after:ease-fluid after:content-[''] hover:after:scale-x-100 ${
+          isLight ? "text-[#311959] font-semibold" : "text-white/80 hover:text-white"
+        }`}
         href="/blogs"
       >
         Blogs
@@ -199,13 +220,15 @@ const servicesPillars = [
 
     {/* Action CTA */}
     <a
-      class="hidden min-[1020px]:flex items-center p-1 gap-3 justify-self-end text-[.9rem]"
+      class={`hidden min-[1020px]:flex items-center p-1 gap-3 justify-self-end text-[.9rem] ${
+        isLight ? "text-[#311959]" : "text-white"
+      }`}
       href="mailto:tech@thedesertwhales.com?subject=New%20project%20enquiry"
     >
       <span class="cta-link-text" data-text="Start a Conversation"
         >Start a Conversation</span
       >
-      <span class={`${button}`}>
+      <span class={`${button} ${isLight ? "!border-[#311959] !text-[#311959]" : ""}`}>
         <ArrowUpRight />
       </span>
     </a>
@@ -213,7 +236,9 @@ const servicesPillars = [
     {/* Mobile Hamburger Toggle Button */}
     <button
       id="mobile-menu-toggle"
-      class="hidden size-11 cursor-pointer place-items-center justify-self-end rounded-lg border border-white/20 bg-transparent p-2.5 max-[1020px]:grid [&_svg]:size-[22px] [&_svg]:fill-none [&_svg]:stroke-current [&_svg]:stroke-[1.6] [&_svg]:[stroke-linecap:round]"
+      class={`hidden size-11 cursor-pointer place-items-center justify-self-end rounded-lg border bg-transparent p-2.5 max-[1020px]:grid [&_svg]:size-[22px] [&_svg]:fill-none [&_svg]:stroke-current [&_svg]:stroke-[1.6] [&_svg]:[stroke-linecap:round] ${
+        isLight ? "border-[#311959]/20 text-[#311959]" : "border-white/20 text-white"
+      }`}
       type="button"
       aria-expanded="false"
       aria-controls="mobile-navigation"
@@ -309,7 +334,7 @@ const servicesPillars = [
         class="mobile-nav-link border-b border-white/20 py-4 text-2xl font-light text-white"
         href="/portfolio"
       >
-        Portfolios
+        Case Studies
       </a>
 
       {/* 5. Mobile Blogs */}

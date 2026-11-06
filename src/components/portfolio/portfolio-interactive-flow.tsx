@@ -55,7 +55,7 @@ interface ShowcaseItem {
 
 const showcaseData: ShowcaseItem[] = [
   {
-    slug: "apexhealth-ai-clinical-triage",
+    slug: "zaakiy-ai-chatbot",
     projectName: "Zaakiy AI",
     badge: "Generative AI",
     headline: "Create an omichannel Chat agent?",
@@ -72,15 +72,15 @@ const showcaseData: ShowcaseItem[] = [
       "Lead Generation",
       "Direct CRM Sync",
     ],
-    singleImage: "/portfolio/zaakiy-ai-chatbot.png",
+    singleImage: "/portfolio/zaakiy.png",
     avatarEmoji: "🤖",
     avatarBg: "bg-indigo-500",
   },
   {
-    slug: "aura-luxury-ecommerce-marketplace",
-    projectName: "Aura Commerce",
+    slug: "restaurant-ordering-system",
+    projectName: "Le Cafio",
     badge: "Headless E-Commerce",
-    headline: "Got a common specific need for luxury commerce?",
+    headline: "How to create a restaurant ordering system?",
     subtitle:
       "We have a wide range of turnkey headless commerce solutions available.",
     techLogos: [
@@ -89,31 +89,20 @@ const showcaseData: ShowcaseItem[] = [
       { name: "Tailwind CSS", icon: SiTailwindcss, color: "#38BDF8" },
     ],
     deliverables: [
-      "Sub-second mobile speed (0.6s)",
-      "Apple Pay, Tabby & Tamara checkout",
-      "Omnichannel retail POS sync",
-      "VIP private clienteling portal",
+      "Dynamic Menu",
+      "Whatsapp ordering",
+      "Delivery and Pickup customization",
+      "Loyalty programs",
     ],
-    leftCard: {
-      image: "/portfolio/aura.jpg",
-      price: "$1.660",
-      title: "Oscar della Renta",
-      subtitle: "Orecchini Flower Garden",
-      rating: "4.8 (72 Reviews)",
-    },
-    rightCard: {
-      image: "/portfolio/aura.jpg",
-      label: "AI Model",
-      secondaryLabel: "Studio Lookbook",
-    },
+    singleImage: "/portfolio/le-cafio.png",
     avatarEmoji: "✨",
     avatarBg: "bg-purple-400",
   },
   {
-    slug: "finpulse-wealth-telemetry-engine",
-    projectName: "FinPulse",
-    badge: "Institutional Fintech",
-    headline: "Demanding sub-80ms portfolio risk & wealth telemetry?",
+    slug: "real-estate-agency",
+    projectName: "Alfa Immobiliare",
+    badge: "Real Estate Agency",
+    headline: "A complete property management solution?",
     subtitle:
       "Turnkey institutional dashboards for hedge funds, family offices, and private equity.",
     techLogos: [
@@ -122,58 +111,14 @@ const showcaseData: ShowcaseItem[] = [
       { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
     ],
     deliverables: [
-      "Real-time TimescaleDB streaming",
-      "Algorithmic portfolio stress tests",
-      "Automated LP capital call reporting",
-      "DIFC regulatory audit matrix",
+      "Real time property management",
+      "Property listing with maps",
+      "Client portfolio management",
+      "Automated rental agreements",
     ],
-    leftCard: {
-      image: "/portfolio/finpulse.jpg",
-      price: "$1.4B+",
-      title: "FinPulse Asset Telemetry",
-      subtitle: "DIFC Capital Management",
-      rating: "5.0 (DFSA Logged)",
-    },
-    rightCard: {
-      image: "/portfolio/finpulse.jpg",
-      label: "Risk Matrix",
-      secondaryLabel: "Live WebSocket",
-    },
+    singleImage: "/portfolio/alfa.png",
     avatarEmoji: "📈",
     avatarBg: "bg-sky-400",
-  },
-  {
-    slug: "proppulse-smart-property-cloud",
-    projectName: "PropPulse",
-    badge: "Company & IoT",
-    headline: "You've come to the right place for smart properties!",
-    subtitle:
-      "We transform complex commercial real estate into connected digital experiences.",
-    techLogos: [
-      { name: "AWS Serverless", icon: FaAws, color: "#FF9900" },
-      { name: "React Native", icon: SiReact, color: "#61DAFB" },
-      { name: "GraphQL", icon: SiGraphql, color: "#E10098" },
-    ],
-    deliverables: [
-      "Digital tenant NFC keycard pass",
-      "Automated facility ticket dispatch",
-      "Smart building energy IoT meters",
-      "Online lease execution & rent pay",
-    ],
-    leftCard: {
-      image: "/portfolio/proppulse.jpg",
-      price: "Suite 1201",
-      title: "PropPulse Commercial",
-      subtitle: "Riyadh & Dubai Towers",
-      rating: "4.9 (15k Tenants)",
-    },
-    rightCard: {
-      image: "/portfolio/proppulse.jpg",
-      label: "Tenant Pass",
-      secondaryLabel: "IoT Gateway",
-    },
-    avatarEmoji: "🏢",
-    avatarBg: "bg-rose-400",
   },
 ];
 
@@ -337,7 +282,7 @@ function StackingCard({ item, idx, total, progress }: CardProps) {
         style={{ scale }}
         className="w-full max-w-[1240px] origin-top transition-shadow duration-300"
       >
-        <article className="group relative overflow-hidden rounded-[28px] sm:rounded-[36px] bg-[#0d0c15] pt-16 sm:pt-20 lg:pt-24 pb-8 sm:pb-12 px-6 sm:px-10 lg:px-12 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5),0_0_0_1px_rgba(255,255,255,0.08)]">
+        <article className="group relative overflow-hidden rounded-[28px] sm:rounded-[36px] bg-[#0d0c15] pt-10 sm:pt-20 lg:pt-18 pb-8 sm:pb-12 px-6 sm:px-10 lg:px-12 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5),0_0_0_1px_rgba(255,255,255,0.08)]">
           {/* Top edge highlight shine */}
           <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/25 to-transparent" />
 
@@ -378,29 +323,42 @@ function StackingCard({ item, idx, total, progress }: CardProps) {
               </ul>
             </div>
 
-            {/* ── RIGHT COLUMN (60%): Dark rounded stage with dual floating cards ── */}
-            <div className="relative rounded-[26px] sm:rounded-[32px] bg-[#16151f] border border-white/5 p-5 sm:p-7 min-h-[360px] lg:min-h-[440px] flex items-center justify-center overflow-hidden">
-              {/* Floating Avatar 1 (top-left) */}
-              <div
-                className={`absolute top-4 left-4 z-20 flex size-9 items-center justify-center rounded-full ${item.avatarBg} text-base shadow-md border-2 border-white/20`}
-              >
-                <span>{item.avatarEmoji}</span>
-              </div>
-
-              {/* Floating Avatar 2 (top-right) */}
-              <div className="absolute top-10 right-4 z-20 hidden sm:flex size-9 items-center justify-center rounded-full bg-purple-400 text-sm shadow-md border-2 border-white/20">
-                <span>⚡</span>
-              </div>
+            {/* ── RIGHT COLUMN (60%): Elevated Glass & Browser Stage ── */}
+            <div
+              className={`relative from-[#1c1929] via-[#14121e] to-[#0e0d16] flex items-center justify-center overflow-hidden ${
+                item.singleImage
+                  ? "p-1"
+                  : "p-2 sm:p-7 min-h-[360px] lg:min-h-[440px]"
+              }`}
+            >
+              {/* Ambient glowing backlight behind the showcase */}
+              <div className="pointer-events-none absolute -top-20 left-1/2 -translate-x-1/2 w-3/4 h-44 rounded-full bg-orchid/20 blur-3xl opacity-75 transition-opacity duration-500 group-hover:opacity-100" />
+              <div className="pointer-events-none absolute -bottom-20 right-10 w-1/2 h-40 rounded-xl bg-sky-500/15 blur-3xl opacity-60" />
 
               {item.singleImage ? (
-                /* Direct clean presentation: No nested card, no fake datas/price/rating */
-                <div className="relative z-10 w-full flex items-center justify-center py-2 sm:py-4">
-                  <img
-                    src={item.singleImage}
-                    alt={item.projectName}
-                    className="w-full max-h-[360px] sm:max-h-[440px] max-w-[560px] object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.7)] transition-transform duration-300 hover:scale-[1.02]"
-                    loading="lazy"
-                  />
+                /* Double-bezel glassmorphic macOS / Arc browser frame */
+                <div className="relative z-10 w-full rounded-[18px] sm:rounded-[22px] bg-white/[0.04] p-1.5 sm:p-2 border border-white/10 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.85)] transition-all duration-500 ease-out group-hover:-translate-y-1 group-hover:shadow-[0_30px_70px_-12px_rgba(176,99,255,0.22)]">
+                  <div className="overflow-hidden rounded-[13px] sm:rounded-[16px] bg-[#111019] border border-white/10">
+                    {/* Sleek Browser Top Bar */}
+                    <div className="flex items-center justify-between px-3.5 py-2.5 bg-[#181624] border-b border-white/[0.08]">
+                      {/* Traffic light controls */}
+                      <div className="flex items-center gap-1.5">
+                        <span className="size-2.5 rounded-full bg-[#ff5f56]/85" />
+                        <span className="size-2.5 rounded-full bg-[#ffbd2e]/85" />
+                        <span className="size-2.5 rounded-full bg-[#27c93f]/85" />
+                      </div>
+                    </div>
+
+                    {/* Full uncropped viewport image */}
+                    <div className="relative w-full overflow-hidden bg-[#0d0c15]">
+                      <img
+                        src={item.singleImage}
+                        alt={item.projectName}
+                        className="w-full h-auto block object-contain transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
                 </div>
               ) : item.leftCard && item.rightCard ? (
                 /* Side-by-side floating cards inside the stage */
