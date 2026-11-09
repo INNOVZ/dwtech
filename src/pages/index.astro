@@ -23,13 +23,21 @@ import heroWhale from "@/assets/hero-whale.png";
 
 const organizationSchema = {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
+  "@type": ["Organization", "ProfessionalService", "LocalBusiness"],
   "@id": `${siteUrl}/#organization`,
   name: companyIdentity.name,
-  alternateName: [companyIdentity.alternateName, "Desert Whales Tech"],
+  alternateName: [companyIdentity.alternateName, "Desert Whales Tech", "DW Tech"],
+  legalName: companyIdentity.parentName,
   url: siteUrl,
+  logo: `${siteUrl}/icon.svg`,
+  image: `${siteUrl}/hero-whale.png`,
   email: contacts.email,
+  priceRange: "$$",
   description: companyIdentity.description,
+  sameAs: [
+    "https://www.linkedin.com/company/desert-whales-technologies",
+    "https://github.com/desert-whales",
+  ],
   parentOrganization: {
     "@type": "Organization",
     name: companyIdentity.parentName,
@@ -37,16 +45,31 @@ const organizationSchema = {
   address: {
     "@type": "PostalAddress",
     addressLocality: companyIdentity.headquarters.city,
+    addressRegion: companyIdentity.headquarters.region,
     addressCountry: companyIdentity.headquarters.countryCode,
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: companyIdentity.headquarters.latitude,
+    longitude: companyIdentity.headquarters.longitude,
   },
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "sales",
     email: contacts.email,
     telephone: contacts.phones[0][1],
-    areaServed: ["AE", "IN", "SA", "IT"],
+    areaServed: ["AE", "SA", "QA", "KW", "BH", "OM", "IN", "IT"],
+    availableLanguage: ["en", "ar"],
   },
-  areaServed: ["United Arab Emirates", "India", "Saudi Arabia", "Italy"],
+  areaServed: [
+    { "@type": "Country", name: "United Arab Emirates" },
+    { "@type": "Country", name: "Saudi Arabia" },
+    { "@type": "Country", name: "Qatar" },
+    { "@type": "Country", name: "Kuwait" },
+    { "@type": "Country", name: "Bahrain" },
+    { "@type": "Country", name: "Oman" },
+    { "@type": "Place", name: "Worldwide" },
+  ],
   telephone: contacts.phones.map(([, number]) => number.replace(/\s/g, "")),
   knowsAbout: services.map((service) => service.title),
 };
@@ -57,26 +80,26 @@ const faqSchema = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "What does DW Tech do?",
+      name: "What does Desert Whales Technologies do?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "DW Tech plans, designs, builds, integrates, and supports custom software, AI automation, ERP and CRM platforms, mobile and web applications, cloud infrastructure, and digital transformation programs.",
+        text: "Desert Whales Technologies plans, designs, builds, integrates, and supports custom software, enterprise AI automation, WhatsApp business bots, ERP and CRM platforms, mobile apps, and cloud infrastructure for businesses in Dubai, UAE and worldwide.",
       },
     },
     {
       "@type": "Question",
-      name: "Where does DW Tech operate?",
+      name: "Where does Desert Whales Technologies operate?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "DW Tech operates through teams and business networks in Dubai, Thiruvananthapuram, Kozhikode, Riyadh, and Milan.",
+        text: "Desert Whales Technologies is headquartered in Dubai, UAE, operating through engineering teams and business networks across the United Arab Emirates, Saudi Arabia (Riyadh), India, and Europe (Milan).",
       },
     },
     {
       "@type": "Question",
-      name: "How does a DW Tech project begin?",
+      name: "How does a Desert Whales Technologies project begin?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Projects begin with discovery of the business model, workflows, pain points, users, and growth goals, followed by strategy, design and development, integration, and ongoing optimization.",
+        text: "Projects begin with discovery of the business model, operational workflows, pain points, and growth goals, followed by solution architecture, rapid prototyping, full-stack engineering, and ongoing support.",
       },
     },
   ],
@@ -135,7 +158,7 @@ const faqSchema = {
               <Image
                 class="object-cover max-[620px]:object-center w-full h-full"
                 src={heroWhale}
-                alt=""
+                alt="Desert Whales Technologies - Enterprise Software and AI Engineering in Dubai"
                 loading="eager"
                 format="webp"
                 widths={[500, 900, heroWhale.width]}
@@ -353,7 +376,7 @@ const faqSchema = {
         >
           <ScrollReveal>
             <details open>
-              <summary>What does DW Tech do?</summary>
+              <summary>What does Desert Whales Technologies do?</summary>
               <p class="text-[clamp(0.8rem,1vw,0.9rem)]">
                 We plan, design, build, integrate, and support custom software,
                 AI automation, ERP and CRM platforms, mobile and web

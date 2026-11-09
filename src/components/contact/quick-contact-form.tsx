@@ -58,7 +58,11 @@ export default function QuickContactForm() {
 
   if (status === "success") {
     return (
-      <div className="w-full rounded-2xl border border-orchid/35 bg-white/[0.03] backdrop-blur-md p-6 text-center">
+      <div
+        role="status"
+        aria-live="polite"
+        className="w-full rounded-2xl border border-orchid/35 bg-white/[0.03] backdrop-blur-md p-6 text-center"
+      >
         <CheckCircle2 className="mx-auto size-9 text-orchid mb-2.5" />
         <h4 className="text-base font-semibold text-white mb-1">
           Enquiry Received
@@ -88,7 +92,11 @@ export default function QuickContactForm() {
 
   return (
     <div className="w-full rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-md p-5 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.45)]">
-      <form onSubmit={handleSubmit} className="space-y-3.5">
+      <form
+        onSubmit={handleSubmit}
+        aria-label="Quick project enquiry form"
+        className="space-y-3.5"
+      >
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div>
             <label htmlFor="quick-name" className="sr-only">
@@ -99,6 +107,8 @@ export default function QuickContactForm() {
               type="text"
               name="name"
               required
+              aria-required="true"
+              autoComplete="name"
               value={formData.name}
               onChange={(e) =>
                 setFormData({ ...formData, name: e.target.value })
@@ -116,6 +126,8 @@ export default function QuickContactForm() {
               type="email"
               name="email"
               required
+              aria-required="true"
+              autoComplete="email"
               value={formData.email}
               onChange={(e) =>
                 setFormData({ ...formData, email: e.target.value })
@@ -134,6 +146,7 @@ export default function QuickContactForm() {
             id="quick-phone"
             type="tel"
             name="phone"
+            autoComplete="tel"
             value={formData.phone}
             onChange={(e) =>
               setFormData({ ...formData, phone: e.target.value })
@@ -151,6 +164,7 @@ export default function QuickContactForm() {
             id="quick-message"
             name="message"
             required
+            aria-required="true"
             rows={3}
             value={formData.message}
             onChange={(e) =>
@@ -176,7 +190,11 @@ export default function QuickContactForm() {
         </div>
 
         {errorMessage && (
-          <div className="flex items-center gap-2 rounded-xl border border-red-500/30 bg-red-500/10 p-3 text-xs text-red-300">
+          <div
+            role="alert"
+            aria-live="assertive"
+            className="flex items-center gap-2 rounded-xl border border-red-500/30 bg-red-500/10 p-3 text-xs text-red-300"
+          >
             <AlertCircle className="size-4 shrink-0 text-red-400" />
             <span>{errorMessage}</span>
           </div>

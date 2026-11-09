@@ -1,11 +1,11 @@
 export const siteUrl = "https://www.desertwhales.tech";
 
 export const companyIdentity = {
-  name: "DW Tech",
-  alternateName: "DW Tech by Desert Whales",
+  name: "Desert Whales Technologies",
+  alternateName: "Desert Whales Tech",
   parentName: "Desert Whales Marketing Services LLC",
   description:
-    "DW Tech is the Dubai-headquartered technology and digital-transformation company. We build custom software, AI-integrated business applications, and mobile platforms that turn operational complexity into clarity and speed.",
+    "Desert Whales Technologies is a premier Dubai, UAE technology partner designing custom software, enterprise AI automation, ERP & CRM solutions, cloud architecture, and high-performance mobile apps for enterprises across the UAE, GCC, and worldwide.",
   headquarters: {
     city: "Dubai",
     region: "Dubai",

@@ -99,7 +99,11 @@ export default function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="rounded-[28px] bg-white border border-[#e2dded] p-8 sm:p-12 text-center max-w-[680px] mx-auto shadow-none">
+      <div
+        role="status"
+        aria-live="polite"
+        className="rounded-[28px] bg-white border border-[#e2dded] p-8 sm:p-12 text-center max-w-[680px] mx-auto shadow-none"
+      >
         <div className="size-14 rounded-full bg-[#f4effc] border border-[#311959]/20 grid place-items-center mx-auto mb-5 text-[#311959]">
           <CheckCircle2 className="size-7" />
         </div>
@@ -153,6 +157,7 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
+      aria-label="Project inquiry form"
       className="rounded-[28px] bg-white border border-[#e2dded] p-7 sm:p-10 lg:p-12 shadow-none"
     >
       {/* Invisible Honeypot Spam Field */}
@@ -168,7 +173,11 @@ export default function ContactForm() {
       />
 
       {status === "error" && (
-        <div className="mb-8 rounded-xl bg-red-50 border border-red-200 p-4 text-sm text-red-800 flex items-start gap-3">
+        <div
+          role="alert"
+          aria-live="assertive"
+          className="mb-8 rounded-xl bg-red-50 border border-red-200 p-4 text-sm text-red-800 flex items-start gap-3"
+        >
           <AlertCircle className="size-5 shrink-0 text-red-600 mt-0.5" />
           <div>
             <p className="font-semibold m-0">Submission Failed</p>
@@ -200,6 +209,8 @@ export default function ContactForm() {
             name="name"
             type="text"
             required
+            aria-required="true"
+            autoComplete="name"
             placeholder="e.g. Sarah Al-Rashid"
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -220,6 +231,8 @@ export default function ContactForm() {
             name="email"
             type="email"
             required
+            aria-required="true"
+            autoComplete="email"
             placeholder="e.g. sarah@company.com"
             value={formData.email}
             onChange={(e) =>
@@ -241,6 +254,7 @@ export default function ContactForm() {
             id="contact-phone"
             name="phone"
             type="tel"
+            autoComplete="tel"
             placeholder="e.g. +971 50 123 4567"
             value={formData.phone}
             onChange={(e) =>
@@ -262,6 +276,7 @@ export default function ContactForm() {
             id="contact-company"
             name="company"
             type="text"
+            autoComplete="organization"
             placeholder="e.g. Horizon Logistics LLC"
             value={formData.company}
             onChange={(e) =>
@@ -360,6 +375,7 @@ export default function ContactForm() {
           id="contact-message"
           name="message"
           required
+          aria-required="true"
           rows={4}
           placeholder="Briefly describe your systems, operational goals, or project scope..."
           value={formData.message}

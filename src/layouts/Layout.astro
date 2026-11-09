@@ -37,7 +37,7 @@ const currentUrl = canonical || new URL(Astro.url.pathname, siteUrl).toString();
 const navigationSchema = {
   "@context": "https://schema.org",
   "@type": "SiteNavigationElement",
-  name: "DW Tech Primary Navigation",
+  name: "Desert Whales Technologies Primary Navigation",
   hasPart: [
     {
       "@type": "SiteNavigationElement",
@@ -45,6 +45,13 @@ const navigationSchema = {
       url: `${siteUrl}/services`,
       description:
         "Comprehensive custom software, enterprise AI, ERP & CRM, mobile apps, and cloud engineering services.",
+    },
+    {
+      "@type": "SiteNavigationElement",
+      name: "Solutions",
+      url: `${siteUrl}/solutions`,
+      description:
+        "Enterprise business solutions including WhatsApp automation, custom ERP/CRM, and AI knowledge workflows.",
     },
     {
       "@type": "SiteNavigationElement",
@@ -65,14 +72,14 @@ const navigationSchema = {
       name: "Company",
       url: `${siteUrl}/about`,
       description:
-        "About DW Tech, leadership, operating philosophy, and global delivery centers.",
+        "About Desert Whales Technologies, leadership, operating philosophy, and global delivery centers.",
     },
     {
       "@type": "SiteNavigationElement",
       name: "Contact",
-      url: `${siteUrl}/#contact`,
+      url: `${siteUrl}/contact`,
       description:
-        "Connect with DW Tech technology leaders for new project inquiries.",
+        "Connect with Desert Whales Technologies engineering leaders for new project inquiries.",
     },
   ],
 };
@@ -117,13 +124,13 @@ const breadcrumbSchema =
     />
 
     {/* AEO / Generative Engine & Social Graph */}
-    <meta property="og:site_name" content="DW Tech" />
+    <meta property="og:site_name" content="Desert Whales Technologies" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={currentUrl} />
     <meta property="og:type" content={ogType} />
     <meta property="og:image" content={ogImage} />
-    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale" content="en_AE" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />

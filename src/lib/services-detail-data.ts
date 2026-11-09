@@ -65,6 +65,11 @@ export function getServiceDetailData(
     return servicesDetailMap["ai-automation-solutions"];
   }
 
+  // Check alias for whatsapp-automation
+  if (slug === "whatsapp-automation" && servicesDetailMap["whatsapp-business-automation"]) {
+    return servicesDetailMap["whatsapp-business-automation"];
+  }
+
   // Graceful fallback for any unknown slug
   return fallbackDetail(slug, fallbackTitle, fallbackDescription);
 }
@@ -90,13 +95,13 @@ export async function fetchServiceDetailData(slug: string): Promise<ServiceDetai
 function fallbackDetail(slug: string, fallbackTitle: string, fallbackDescription: string): ServiceDetailData {
   return {
     slug,
-    metaTitle: `${fallbackTitle} Services Dubai | DW Tech`,
-    metaDescription: fallbackDescription || `${fallbackTitle} solutions engineered in Dubai for ambitious enterprises.`,
+    metaTitle: `${fallbackTitle} Services Dubai, UAE | Desert Whales Technologies`,
+    metaDescription: fallbackDescription || `${fallbackTitle} solutions engineered in Dubai, UAE by Desert Whales Technologies for ambitious enterprises.`,
     badge: "Enterprise Practice",
     heroH1: `${fallbackTitle} for modern enterprise.`,
     heroSubtitle: fallbackDescription || "Modern engineering, dependable cloud software, and tailored solutions built around your business goals.",
     statementQuote: "Technology built around your workflows, not someone else's templates.",
-    statementAuthor: "DW Tech Engineering Philosophy",
+    statementAuthor: "Desert Whales Technologies Engineering Philosophy",
     trustStats: [
       { value: "100%", label: "Source code & intellectual property ownership" },
       { value: "Sovereign", label: "UAE data residency & compliance" },

@@ -1,0 +1,105 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ServicesContent from "../../components/services/services-slug-content";
+import { services, companyIdentity, siteUrl } from "@/lib/site-data";
+import { getServiceDetailData, servicesDetailMap } from "@/lib/services-detail-data";
+
+export function getStaticPaths() {
+  const allSlugs = Array.from(
+    new Set([
+      ...services.map((s) => s.slug),
+      ...Object.keys(servicesDetailMap),
+      "ai-automation",
+      "whatsapp-business-automation",
+      "whatsapp-automation",
+    ])
+  );
+
+  return allSlugs.map((slug) => ({
+    params: { slug },
+  }));
+}
+
+const { slug } = Astro.params;
+const service = services.find(
+  (s) =>
+    s.slug === slug ||
+    (slug === "ai-automation" && s.slug === "ai-automation-solutions")
+);
+
+const fallbackTitle = service ? service.title : "Enterprise Solution";
+const fallbackDescription = service ? service.description : "";
+const detail = getServiceDetailData(
+  slug || "",
+  fallbackTitle,
+  fallbackDescription
+);
+
+const pageTitle = detail.metaTitle;
+const pageDescription = detail.metaDescription;
+
+// Specific Solution Schema for AEO & Google Rich Results
+const solutionSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: detail.heroH1 || detail.metaTitle,
+    serviceType: fallbackTitle,
+    description: pageDescription,
+    url: `${siteUrl}/solutions/${slug}`,
+    provider: {
+      "@type": ["Organization", "ProfessionalService", "LocalBusiness"],
+      name: companyIdentity.name,
+      url: siteUrl,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Dubai",
+        addressCountry: "AE",
+      },
+    },
+    areaServed: [
+      { "@type": "Country", name: "United Arab Emirates" },
+      { "@type": "Country", name: "Saudi Arabia" },
+      { "@type": "Country", name: "Qatar" },
+      { "@type": "Country", name: "Kuwait" },
+      { "@type": "Country", name: "Bahrain" },
+      { "@type": "Country", name: "Oman" },
+      { "@type": "Place", name: "Worldwide" },
+    ],
+  },
+  ...(detail.faqs && detail.faqs.length > 0
+    ? [
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: detail.faqs.map((f) => ({
+            "@type": "Question",
+            name: f.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: f.answer,
+            },
+          })),
+        },
+      ]
+    : []),
+];
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  schema={solutionSchema}
+  breadcrumbs={[
+    { name: "Home", item: "/" },
+    { name: "Solutions", item: "/solutions" },
+    { name: detail.badge || fallbackTitle, item: `/solutions/${slug}` },
+  ]}
+>
+  <ServicesContent
+    client:load
+    params={{ slug: slug || "" }}
+    initialDetail={detail}
+  />
+</Layout>
+

@@ -1,0 +1,443 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { companyIdentity, siteUrl } from "@/lib/site-data";
+import { section, sectionLabel, shell } from "@/lib/styles";
+import { ArrowUpRight, ArrowRight } from "@/components/layout/icons";
+import {
+  MessageSquareText,
+  Workflow,
+  CodeXml,
+  Database,
+  ShoppingBag,
+  Sparkles,
+  Smartphone,
+  Cloud,
+  Layers,
+  Compass,
+  CheckCircle2,
+  ShieldCheck,
+  Building,
+} from "lucide-react";
+
+const pageTitle =
+  "Enterprise Business Solutions Dubai, UAE | Desert Whales Technologies";
+const pageDescription =
+  "Explore Desert Whales Technologies business solutions in Dubai, UAE: WhatsApp automation, enterprise ERP & CRM, AI chatbots, digital transformation, and custom platforms.";
+
+const solutionsList = [
+  {
+    slug: "whatsapp-business-automation",
+    title: "WhatsApp Business Automation",
+    badge: "High Growth",
+    category: "AI & Engagement",
+    description:
+      "Deploy official Meta WhatsApp Cloud API agents that qualify leads, process orders, issue quotes, and handle 80% of customer support in Arabic and English around the clock.",
+    tags: ["Meta Cloud API", "Bilingual Arabic/English", "CRM Sync", "Lead Bot"],
+    icon: MessageSquareText,
+  },
+  {
+    slug: "ai-automation-solutions",
+    title: "AI Integrated Solutions & Automation",
+    badge: "Core Practice",
+    category: "Enterprise AI",
+    description:
+      "Autonomous AI agents, enterprise RAG systems, and intelligent workflow pipelines integrated directly into your databases, CRM, and operational backends.",
+    tags: ["Autonomous Agents", "Custom RAG", "LLM Fine-Tuning", "Workflows"],
+    icon: Workflow,
+  },
+  {
+    slug: "custom-software-development",
+    title: "Custom Software Development",
+    badge: "Bespoke Build",
+    category: "Engineering",
+    description:
+      "Bespoke web platforms, SaaS products, internal operations portals, and microservices engineered from scratch with 100% source code ownership and zero licensing bloat.",
+    tags: ["Web Applications", "SaaS Portals", "API Engineering", "Full IP"],
+    icon: CodeXml,
+  },
+  {
+    slug: "erp-crm-solutions",
+    title: "Enterprise ERP & CRM Solutions",
+    badge: "Unified Ops",
+    category: "Operations",
+    description:
+      "Tailored ERP and CRM implementations designed to centralize sales, inventory, and finance with full UAE FTA VAT and e-invoicing compliance.",
+    tags: ["FTA VAT E-Invoicing", "Multi-Warehouse", "Sales CRM", "Accounting"],
+    icon: Database,
+  },
+  {
+    slug: "ecommerce-marketplace-solutions",
+    title: "E-Commerce & Marketplaces",
+    badge: "Commerce",
+    category: "Digital Retail",
+    description:
+      "High-converting headless commerce storefronts, multi-vendor marketplaces, and custom B2B portals integrated with Apple Pay, Tabby, Tamara, and live ERP data.",
+    tags: ["Headless Commerce", "Shopify Plus", "Local Payments", "B2B Orders"],
+    icon: ShoppingBag,
+  },
+  {
+    slug: "digital-business-transformation",
+    title: "Digital Business Transformation",
+    badge: "Modernization",
+    category: "Strategy & Cloud",
+    description:
+      "Modernize legacy software, automate repetitive spreadsheets, and engineer connected digital workflows that reduce operating overhead across Dubai and GCC operations.",
+    tags: ["Legacy Migration", "Process Audit", "Digital Workflows", "Cloud"],
+    icon: Sparkles,
+  },
+  {
+    slug: "mobile-app-development",
+    title: "Mobile App Development",
+    badge: "Mobile Native",
+    category: "Product & Mobile",
+    description:
+      "Native and cross-platform mobile apps built with Flutter, React Native, Swift, and Kotlin. Sub-second performance, biometric auth, offline mode, and Apple Pay.",
+    tags: ["iOS & Android", "Flutter & React Native", "Biometric Auth", "Apple Pay"],
+    icon: Smartphone,
+  },
+  {
+    slug: "cloud-and-devops",
+    title: "Cloud Architecture & DevOps",
+    badge: "Infrastructure",
+    category: "Cloud",
+    description:
+      "Resilient cloud infrastructure on AWS, Azure, GCP, and sovereign UAE cloud providers. Infrastructure as Code (Terraform), Kubernetes clusters, and automated CI/CD.",
+    tags: ["AWS / Azure", "Terraform IaC", "Kubernetes", "CI/CD Pipelines"],
+    icon: Cloud,
+  },
+  {
+    slug: "ui-ux-design",
+    title: "UI/UX & Design Systems",
+    badge: "Product Design",
+    category: "Experience",
+    description:
+      "User-centric product design for complex enterprise software, SaaS dashboards, and customer apps. Bilingual English/Arabic design systems built in Figma.",
+    tags: ["Figma Systems", "Bilingual UX", "B2B Dashboards", "Prototypes"],
+    icon: Layers,
+  },
+  {
+    slug: "product-design-development",
+    title: "Product Design & Development",
+    badge: "Full Cycle Lab",
+    category: "Product Lab",
+    description:
+      "End-to-end product development from user research and clickable prototypes to rapid production MVP launch, beta feedback iteration, and scalable backends.",
+    tags: ["MVP Sprint", "Clickable Prototypes", "Market Validation", "Fast Track"],
+    icon: Compass,
+  },
+];
+
+const solutionsFaq = [
+  {
+    question: "What is the difference between Services and Solutions at Desert Whales Technologies?",
+    answer:
+      "Services represent our core technical engineering disciplines (such as Custom Software Development, Cloud Architecture, and AI Engineering). Solutions represent purpose-built, outcome-oriented implementations designed to solve specific operational challenges—such as WhatsApp Business Automation, Spreadsheet-to-CRM conversion, or UAE E-Invoicing ERP compliance.",
+  },
+  {
+    question: "How long does a custom solution deployment take?",
+    answer:
+      "Focused automation modules (such as WhatsApp Lead Qualification or CRM integrations) are typically delivered in 2 to 4 weeks. Full custom software builds or enterprise ERP migrations are phased across 8 to 16 weeks with continuous working milestones.",
+  },
+  {
+    question: "Does Desert Whales Technologies support UAE E-Invoicing compliance?",
+    answer:
+      "Yes. We integrate enterprise billing, custom ERPs, and accounting systems with the UAE Ministry of Finance e-invoicing framework (PINT AE standard) via accredited service providers to ensure seamless, compliant transmission.",
+  },
+  {
+    question: "Who owns the intellectual property and source code of the solutions?",
+    answer:
+      "100% of the custom source code, documentation, architecture blueprints, and design assets belong entirely to your company from day one. We never lock clients into proprietary software licenses.",
+  },
+];
+
+const solutionsPageSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Desert Whales Technologies Enterprise Solutions",
+    url: `${siteUrl}/solutions`,
+    description: pageDescription,
+    provider: {
+      "@type": ["Organization", "ProfessionalService", "LocalBusiness"],
+      name: companyIdentity.name,
+      url: siteUrl,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Dubai",
+        addressCountry: "AE",
+      },
+    },
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: solutionsList.map((sol, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: sol.title,
+        url: `${siteUrl}/solutions/${sol.slug}`,
+        description: sol.description,
+      })),
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: solutionsFaq.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  },
+];
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  schema={solutionsPageSchema}
+  breadcrumbs={[
+    { name: "Home", item: "/" },
+    { name: "Solutions", item: "/solutions" },
+  ]}
+>
+  <main class="bg-night text-white overflow-hidden">
+    {/* ── 1. Hero Section ── */}
+    <section
+      class="relative min-h-[620px] bg-[radial-gradient(circle_at_78%_35%,rgba(176,99,255,.22),transparent_34%),#05040e] pt-[190px] pb-[100px] max-[620px]:min-h-0 max-[620px]:pt-[150px] max-[620px]:pb-[70px]"
+    >
+      <div
+        class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle,rgba(176,99,255,.3)_0_1px,transparent_1.3px)] bg-[length:64px_64px] opacity-15"
+        aria-hidden="true"
+      >
+      </div>
+
+      <div class={`${shell} relative z-[1]`}>
+        <nav
+          aria-label="Breadcrumb"
+          class="mb-8 flex items-center gap-2 text-xs text-[#a19bad]"
+        >
+          <a href="/" class="hover:text-white transition-colors">Home</a>
+          <span class="opacity-40">/</span>
+          <span class="text-orchid font-medium">Solutions</span>
+        </nav>
+
+        <p class={sectionLabel}>Dubai Headquarters · GCC Enterprise Delivery</p>
+
+        <h1
+          class="mb-8 max-w-[1100px] text-[clamp(3.2rem,6.8vw,5.8rem)] leading-[0.98] tracking-tight"
+        >
+          Intelligent solutions built for <span class="text-orchid">operational impact.</span>
+        </h1>
+
+        <p
+          class="max-w-[820px] text-[clamp(1.05rem,1.4vw,1.25rem)] leading-[1.65] text-[#cfcad8] mb-10"
+        >
+          Purpose-built business platforms, WhatsApp conversational automation, custom ERP/CRM,
+          and autonomous AI knowledge systems engineered to eliminate friction and scale enterprise
+          workflows in Dubai, UAE and across the GCC.
+        </p>
+
+        <div
+          class="flex flex-wrap items-center gap-5 mb-14 max-[620px]:flex-col max-[620px]:items-stretch"
+        >
+          <a
+            class="btn"
+            href="#solutions-directory"
+          >
+            <span>Explore Solutions</span>
+            <ArrowRight className="size-4" />
+          </a>
+          <a
+            class="btn-secondary"
+            href="/contact"
+          >
+            <span>Schedule Architecture Review</span>
+            <ArrowUpRight className="size-4" />
+          </a>
+        </div>
+
+        {/* Quick Numbers Bar */}
+        <div
+          class="grid grid-cols-2 gap-4 border-t border-white/10 pt-10 sm:grid-cols-4 max-[620px]:gap-6"
+        >
+          <div>
+            <div class="text-3xl font-bold tracking-tight text-white lg:text-4xl">
+              100%
+            </div>
+            <div class="mt-1 text-xs text-[#a19bad]">
+              Source code & IP ownership
+            </div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold tracking-tight text-white lg:text-4xl">
+              Official
+            </div>
+            <div class="mt-1 text-xs text-[#a19bad]">
+              Meta WhatsApp API partner
+            </div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold tracking-tight text-white lg:text-4xl">
+              Sovereign
+            </div>
+            <div class="mt-1 text-xs text-[#a19bad]">
+              UAE data residency ready
+            </div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold tracking-tight text-white lg:text-4xl">
+              &lt; 4 wks
+            </div>
+            <div class="mt-1 text-xs text-[#a19bad]">
+              Working solution prototype
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* ── 2. Solutions Directory Grid (bg-mist text-ink) ── */}
+    <section id="solutions-directory" class={`${section} bg-mist text-ink`}>
+      <div class={shell}>
+        <div class="mb-14">
+          <p class={sectionLabel}>Operational Capabilities</p>
+          <h2
+            class="text-[clamp(2.5rem,5vw,4.5rem)] leading-tight tracking-tight max-w-[900px]"
+          >
+            Targeted solutions engineered around how your company operates.
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {
+            solutionsList.map((sol) => {
+              const Icon = sol.icon;
+              return (
+                <div class="group relative flex flex-col justify-between rounded-3xl bg-white border border-black/8 p-8 transition-all duration-300 hover:shadow-xl hover:border-orchid/40">
+                  <div>
+                    <div class="flex items-center justify-between mb-6">
+                      <div class="size-12 rounded-2xl bg-[#f4effc] text-[#311959] grid place-items-center">
+                        <Icon className="size-6 text-[#311959]" />
+                      </div>
+                      <span class="inline-block px-3 py-1 rounded-full text-[11px] font-mono uppercase tracking-wider font-semibold text-[#311959] bg-[#f4effc] border border-[#311959]/15">
+                        {sol.badge}
+                      </span>
+                    </div>
+
+                    <h3 class="text-xl font-bold text-ink mb-3 group-hover:text-[#311959] transition-colors font-manrope">
+                      {sol.title}
+                    </h3>
+
+                    <p class="text-sm text-[#5e5868] leading-relaxed mb-6">
+                      {sol.description}
+                    </p>
+
+                    <div class="flex flex-wrap gap-1.5 mb-8">
+                      {sol.tags.map((tag) => (
+                        <span class="px-2.5 py-1 rounded-md text-[11px] font-mono text-[#4b4556] bg-black/[0.04]">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <a
+                    href={`/solutions/${sol.slug}`}
+                    class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider font-mono text-[#311959] group-hover:text-orchid transition-colors"
+                  >
+                    <span>Explore Solution Architecture</span>
+                    <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </a>
+                </div>
+              );
+            })
+          }
+        </div>
+      </div>
+    </section>
+
+    {/* ── 3. Regional Compliance Section ── */}
+    <section class={`${section} bg-white text-ink border-t border-black/8`}>
+      <div class={shell}>
+        <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_.8fr] gap-12 items-center">
+          <div>
+            <p class={sectionLabel}>UAE Compliance & Integration</p>
+            <h2 class="text-[clamp(2.5rem,4.5vw,4.2rem)] leading-tight tracking-tight mb-6">
+              Built for UAE, GCC, and Sovereign Data Standards.
+            </h2>
+            <p class="text-base text-[#5d5867] leading-relaxed mb-6">
+              Operating in Dubai requires software that honors regional regulatory frameworks.
+              Desert Whales Technologies integrates UAE Federal Decree-Law No. 45 compliance,
+              Ministry of Finance e-invoicing protocols, Tabby & Apple Pay gateways, and sovereign
+              UAE cloud infrastructure directly into our solution architectures.
+            </p>
+            <div class="space-y-3">
+              <div class="flex items-center gap-3">
+                <CheckCircle2 className="size-5 text-[#311959]" />
+                <span class="text-sm font-medium text-ink">UAE FTA VAT & E-Invoicing (PINT AE Standard) Ready</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <CheckCircle2 className="size-5 text-[#311959]" />
+                <span class="text-sm font-medium text-ink">UAE Personal Data Protection Law (Federal Decree-Law No. 45) Compliance</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <CheckCircle2 className="size-5 text-[#311959]" />
+                <span class="text-sm font-medium text-ink">Bilingual Arabic & English Natural Language Processing</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <CheckCircle2 className="size-5 text-[#311959]" />
+                <span class="text-sm font-medium text-ink">Official Meta WhatsApp Cloud API Enterprise Infrastructure</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-3xl bg-[#0d0c15] p-8 text-white border border-white/10 shadow-2xl">
+            <ShieldCheck className="size-10 text-orchid mb-4" />
+            <h3 class="text-2xl font-bold mb-2">Need a Custom Scope?</h3>
+            <p class="text-xs text-[#cfcad8] leading-relaxed mb-6">
+              Share your business model, manual spreadsheets, or existing software stack.
+              Our Dubai engineering leadership will prepare an architecture blueprint and written scope.
+            </p>
+            <a
+              href="/contact"
+              class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-orchid px-5 py-3 text-sm font-semibold text-white hover:bg-orchid/90 transition-all cursor-pointer shadow-lg"
+            >
+              <span>Request Free Scope Review</span>
+              <ArrowUpRight className="size-4" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* ── 4. AEO FAQ Section ── */}
+    <section class={`${section} bg-mist text-ink border-t border-black/8`}>
+      <div class={shell}>
+        <div class="max-w-[850px] mx-auto">
+          <p class={`${sectionLabel} text-center`}>Clarifications</p>
+          <h2 class="text-[clamp(2.2rem,4vw,3.5rem)] text-center leading-tight tracking-tight mb-12">
+            Frequently Asked Questions
+          </h2>
+
+          <div class="space-y-4">
+            {
+              solutionsFaq.map((faq) => (
+                <div class="rounded-2xl bg-white border border-black/8 p-6 sm:p-8">
+                  <h3 class="text-lg font-bold text-ink mb-3 font-manrope">
+                    {faq.question}
+                  </h3>
+                  <p class="text-sm text-[#5e5868] leading-relaxed">
+                    {faq.answer}
+                  </p>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
