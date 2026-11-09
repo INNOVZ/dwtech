@@ -11,72 +11,104 @@ import {
   Cloud,
 } from "lucide-react";
 
-// 4 pillars matching the homepage services cards exactly (without long descriptions)
-const servicesPillars = [
+// Services submenu items (4 core services) styled as a vertical dropdown list
+const servicesList = [
   {
     title: "Custom software development",
     href: "/services/custom-software-development",
     icon: CodeXml,
-    subItems: [
-      {
-        label: "Web Applications & Mobile Applications Development",
-      },
-      {
-        label: "ERP & CRM Solutions",
-      },
-      {
-        label: "E-commerce platforms",
-      },
-      {
-        label: "E-Commerce & Marketplaces",
-      },
-    ],
   },
   {
     title: "AI Integrated solutions & automation",
     href: "/services/ai-automation-solutions",
     icon: Workflow,
-    subItems: [
-      {
-        label: "Generative AI & custom RAG system",
-      },
-      {
-        label: "Workflow Automation Development",
-      },
-      { label: "AI agents & Automation for business" },
-      { label: "AI chabots" },
-    ],
   },
   {
     title: "Product Design and Development",
     href: "/services/product-design-development",
     icon: Sparkle,
-    subItems: [
-      { label: "UI/UX & Design Systems" },
-      { label: "Mobile App Development" },
-      { label: "Interactive Prototyping" },
-      { label: "SaaS Product Development" },
-    ],
   },
   {
     title: "Cloud and DevOps Solutions",
     href: "/services/cloud-and-devops",
     icon: Cloud,
-    subItems: [
-      {
-        label: "Cloud Architecture & Migration",
-      },
-      {
-        label: "CI/CD & Delivery Pipelines",
-      },
-      {
-        label: "Infrastructure as Code (IaC)",
-      },
-      {
-        label: "System Reliability & Security",
-      },
-    ],
   },
+];
+
+// All sub-menu items organized in 4 columns for Solutions (without repeating the core 4 services)
+const solutionsColumns = [
+  [
+    {
+      label: "Web Applications & Mobile Applications Development",
+      href: "/services/custom-software-development",
+    },
+    {
+      label: "ERP & CRM Solutions",
+      href: "/services/erp-crm-solutions",
+    },
+    {
+      label: "E-Commerce & Marketplaces",
+      href: "/services/ecommerce-marketplace-solutions",
+    },
+    {
+      label: "Digital Business Transformation",
+      href: "/services/digital-business-transformation",
+    },
+  ],
+  [
+    {
+      label: "Generative AI & custom RAG system",
+      href: "/services/ai-automation-solutions",
+    },
+    {
+      label: "Workflow Automation Development",
+      href: "/services/ai-automation-solutions",
+    },
+    {
+      label: "AI agents & Automation for business",
+      href: "/services/ai-automation-solutions",
+    },
+    {
+      label: "AI chatbots",
+      href: "/services/ai-automation-solutions",
+    },
+  ],
+  [
+    {
+      label: "UI/UX & Design Systems",
+      href: "/services/ui-ux-design",
+    },
+    {
+      label: "Mobile App Development",
+      href: "/services/mobile-app-development",
+    },
+    {
+      label: "Interactive Prototyping",
+      href: "/services/product-design-development",
+    },
+    {
+      label: "SaaS Product Development",
+      href: "/services/product-design-development",
+    },
+  ],
+  [
+    {
+      label: "Cloud Architecture & Migration",
+      href: "/services/cloud-and-devops",
+    },
+    {
+      label: "CI/CD & Delivery Pipelines",
+      href: "/services/cloud-and-devops",
+    },
+    {
+      label: "Infrastructure as Code (IaC)",
+      href: "/services/cloud-and-devops",
+    },
+    {
+      label: "System Reliability & Security",
+      href: "/services/cloud-and-devops",
+    },
+  ],
 ];
 
 interface Props {
@@ -87,7 +119,10 @@ const { theme = "dark" } = Astro.props;
 const isLight = theme === "light";
 ---
 
-<header class={`absolute top-0 left-0 z-30 w-full py-[20px] ${isLight ? "text-[#311959]" : "text-white"}`} id="site-header">
+<header
+  class={`absolute top-0 left-0 z-30 w-full py-[20px] ${isLight ? "text-[#311959]" : "text-white"}`}
+  id="site-header"
+>
   <div
     class={`${shell} relative z-[2] grid grid-cols-[auto_1fr_auto] items-center gap-6 max-[1020px]:grid-cols-[1fr_auto]`}
   >
@@ -102,7 +137,9 @@ const isLight = theme === "light";
       {/* 1. Home */}
       <a
         class={`relative grid min-h-11 place-items-center text-[.88rem] transition-colors duration-200 after:absolute after:bottom-1.5 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-orchid after:transition-transform after:duration-250 after:ease-fluid after:content-[''] hover:after:scale-x-100 ${
-          isLight ? "text-[#311959]/80 hover:text-[#311959]" : "text-white/80 hover:text-white"
+          isLight
+            ? "text-[#311959]/80 hover:text-[#311959]"
+            : "text-white/80 hover:text-white"
         }`}
         href="/"
       >
@@ -112,16 +149,16 @@ const isLight = theme === "light";
       {/* 2. Company */}
       <a
         class={`relative grid min-h-11 place-items-center text-[.88rem] transition-colors duration-200 after:absolute after:bottom-1.5 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-orchid after:transition-transform after:duration-250 after:ease-fluid after:content-[''] hover:after:scale-x-100 ${
-          isLight ? "text-[#311959]/80 hover:text-[#311959]" : "text-white/80 hover:text-white"
+          isLight
+            ? "text-[#311959]/80 hover:text-[#311959]"
+            : "text-white/80 hover:text-white"
         }`}
         href="/about"
       >
-        Company
+        About
       </a>
 
-      {
-        /* 3. Services (In the exact center of navigation with clean light megamenu) */
-      }
+      {/* 3. Services (4 Core Services Dropdown) */}
       <div class="relative group" id="services-nav-container">
         <button
           type="button"
@@ -145,7 +182,9 @@ const isLight = theme === "light";
           />
         </button>
 
-        {/* Clean, Light Mega Menu Submenu Panel */}
+        {
+          /* Services Dropdown Panel (Vertical list matching reference image style) */
+        }
         <div
           id="services-dropdown-panel"
           class="invisible absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 transition-all duration-250 ease-fluid group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 data-[state=open]:visible data-[state=open]:opacity-100"
@@ -154,43 +193,84 @@ const isLight = theme === "light";
           aria-label="Services Submenu"
         >
           <div
-            class="w-[min(1100px,calc(100vw-36px))] overflow-hidden rounded-xl border border-black/[0.08] bg-white/98 p-6 lg:p-7 shadow-[0_25px_65px_-12px_rgba(0,0,0,0.35),0_0_1px_1px_rgba(0,0,0,0.06)] backdrop-blur-2xl text-ink"
+            class="w-[340px] overflow-hidden rounded-[20px] border border-black/[0.08] bg-white/98 p-2.5 shadow-[0_25px_65px_-12px_rgba(0,0,0,0.35),0_0_1px_1px_rgba(0,0,0,0.06)] backdrop-blur-2xl text-ink"
           >
-            <div
-              class="grid grid-cols-4 gap-4 max-[1120px]:grid-cols-2 max-[640px]:grid-cols-1"
-            >
+            <div class="flex flex-col gap-1">
               {
-                servicesPillars.map((pillar) => {
-                  const PillarIcon = pillar.icon;
+                servicesList.map((service) => {
+                  const ServiceIcon = service.icon;
                   return (
-                    <div class="group/card flex flex-col justify-between rounded-xl bg-[#faf9fc] border border-black/[0.05] p-5 transition-all duration-200">
-                      <div>
-                        {/* Top header with Icon & Title */}
-                        <a href={pillar.href} class="block mb-3.5">
-                          <span class="grid size-10 place-items-center rounded-xl bg-[#f2e8ff] text-[#311959] mb-3 transition-transform duration-300 group-hover/card:scale-105 group-hover/card:-rotate-3">
-                            <PillarIcon aria-hidden="true" size={20} />
-                          </span>
-                          <h4 class="text-[.98rem] font-bold text-ink leading-tight tracking-[-0.02em] min-h-[38px] group-hover/card:text-[#311959] transition-colors">
-                            {pillar.title}
-                          </h4>
-                        </a>
-
-                        {/* Sub-menu items for each service */}
-                        <div class="border-t border-black/[0.06] pt-3">
-                          <ul class="flex flex-col gap-1.5 m-0 p-0 list-none text-[.78rem] font-bold text-[#8b8496]">
-                            {pillar.subItems.map((sub) => (
-                              <li class="leading-snug" title={sub.label}>
-                                <span class="truncate block font-medium hover:text-[#311959] transition-colors">
-                                  {sub.label}
-                                </span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
+                    <a
+                      href={service.href}
+                      class="group/sub flex items-center gap-3.5 rounded-xl px-3.5 py-3 text-[.92rem] font-medium text-ink transition-all duration-150 hover:bg-black/[0.05] hover:text-[#311959]"
+                    >
+                      <span class="grid size-5 shrink-0 place-items-center text-ink transition-colors group-hover/sub:text-[#311959]">
+                        <ServiceIcon size={19} strokeWidth={2} />
+                      </span>
+                      <span class="whitespace-nowrap">{service.title}</span>
+                    </a>
                   );
                 })
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 4. Solutions (Full Megamenu containing all specialized submenus) */}
+      <div class="relative group" id="solutions-nav-container">
+        <button
+          type="button"
+          id="solutions-menu-trigger"
+          class={`relative flex items-center gap-1.5 py-2.5 text-[.88rem] font-medium transition-colors duration-200 focus:outline-none focus-visible:text-orchid ${
+            isLight
+              ? "text-[#311959]/80 hover:text-[#311959] group-hover:text-[#311959] aria-expanded:text-[#311959]"
+              : "text-white/80 hover:text-white group-hover:text-white aria-expanded:text-white"
+          }`}
+          aria-expanded="false"
+          aria-haspopup="true"
+          aria-controls="solutions-dropdown-panel"
+        >
+          <span>Solutions</span>
+          <ChevronDown
+            id="solutions-caret"
+            className={`size-3.5 transition-transform duration-300 group-hover:rotate-180 group-focus-within:rotate-180 [aria-expanded=true]:rotate-180 ${
+              isLight ? "text-[#311959]/60" : "text-white/60"
+            }`}
+            aria-hidden="true"
+          />
+        </button>
+
+        {/* Clean, Light Mega Menu Submenu Panel for Solutions */}
+        <div
+          id="solutions-dropdown-panel"
+          class="invisible absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 transition-all duration-250 ease-fluid group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 data-[state=open]:visible data-[state=open]:opacity-100"
+          data-state="closed"
+          role="region"
+          aria-label="Solutions Submenu"
+        >
+          <div
+            class="w-[min(1160px,calc(100vw-36px))] overflow-hidden rounded-[20px] border border-black/[0.08] bg-white/98 p-7 lg:p-8 shadow-[0_25px_65px_-12px_rgba(0,0,0,0.35),0_0_1px_1px_rgba(0,0,0,0.06)] backdrop-blur-2xl text-ink"
+          >
+            <div
+              class="grid grid-cols-4 gap-6 lg:gap-8 max-[1120px]:grid-cols-2 max-[640px]:grid-cols-1"
+            >
+              {
+                solutionsColumns.map((col) => (
+                  <div class="flex flex-col gap-2">
+                    {col.map((item) => (
+                      <a
+                        href={item.href}
+                        class="group/sub flex items-start gap-3 rounded-xl px-3 py-2.5 text-[.92rem] font-medium text-ink transition-all duration-150 hover:bg-black/[0.05] hover:text-[#311959]"
+                      >
+                        <ArrowRight className="size-4 shrink-0 mt-0.5 text-ink transition-transform duration-200 group-hover/sub:translate-x-1 group-hover/sub:text-[#311959]" />
+                        <span class="text-ink transition-colors duration-150 group-hover/sub:text-[#311959] leading-snug">
+                          {item.label}
+                        </span>
+                      </a>
+                    ))}
+                  </div>
+                ))
               }
             </div>
           </div>
@@ -200,17 +280,21 @@ const isLight = theme === "light";
       {/* 4. Portfolios */}
       <a
         class={`relative grid min-h-11 place-items-center text-[.88rem] transition-colors duration-200 after:absolute after:bottom-1.5 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-orchid after:transition-transform after:duration-250 after:ease-fluid after:content-[''] hover:after:scale-x-100 ${
-          isLight ? "text-[#311959]/80 hover:text-[#311959]" : "text-white/80 hover:text-white"
+          isLight
+            ? "text-[#311959]/80 hover:text-[#311959]"
+            : "text-white/80 hover:text-white"
         }`}
         href="/portfolio"
       >
-       Case Studies
+        Case Studies
       </a>
 
       {/* 5. Blogs */}
       <a
         class={`relative grid min-h-11 place-items-center text-[.88rem] transition-colors duration-200 after:absolute after:bottom-1.5 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-orchid after:transition-transform after:duration-250 after:ease-fluid after:content-[''] hover:after:scale-x-100 ${
-          isLight ? "text-[#311959] font-semibold" : "text-white/80 hover:text-white"
+          isLight
+            ? "text-[#311959] font-semibold"
+            : "text-white/80 hover:text-white"
         }`}
         href="/blogs"
       >
@@ -225,10 +309,10 @@ const isLight = theme === "light";
       }`}
       href="/contact"
     >
-      <span class="cta-link-text" data-text="Start a Conversation"
-        >Start a Conversation</span
+      <span class="cta-link-text" data-text="Contact US">Contact Us</span>
+      <span
+        class={`${button} ${isLight ? "!border-[#311959] !text-[#311959]" : ""}`}
       >
-      <span class={`${button} ${isLight ? "!border-[#311959] !text-[#311959]" : ""}`}>
         <ArrowUpRight />
       </span>
     </a>
@@ -237,7 +321,9 @@ const isLight = theme === "light";
     <button
       id="mobile-menu-toggle"
       class={`hidden size-11 cursor-pointer place-items-center justify-self-end rounded-lg border bg-transparent p-2.5 max-[1020px]:grid [&_svg]:size-[22px] [&_svg]:fill-none [&_svg]:stroke-current [&_svg]:stroke-[1.6] [&_svg]:[stroke-linecap:round] ${
-        isLight ? "border-[#311959]/20 text-[#311959]" : "border-white/20 text-white"
+        isLight
+          ? "border-[#311959]/20 text-[#311959]"
+          : "border-white/20 text-white"
       }`}
       type="button"
       aria-expanded="false"
@@ -272,10 +358,10 @@ const isLight = theme === "light";
         class="mobile-nav-link border-b border-white/20 py-4 text-2xl font-light text-white"
         href="/about"
       >
-        Company
+        About
       </a>
 
-      {/* 3. Mobile Services Accordion Section */}
+      {/* 3. Mobile Services Accordion Section (4 Core Services) */}
       <div class="border-b border-white/20 py-3" id="mobile-services-accordion">
         <button
           type="button"
@@ -296,33 +382,71 @@ const isLight = theme === "light";
           class="hidden pt-3 pb-2 transition-all duration-300"
         >
           <a
-            class="mobile-nav-link flex items-center justify-between rounded-xl bg-orchid/15 p-3 mb-4 text-[.92rem] font-semibold text-orchid border border-orchid/30"
+            class="mobile-nav-link flex items-center justify-between rounded-xl bg-orchid/15 p-3 mb-3 text-[.92rem] font-semibold text-orchid border border-orchid/30"
             href="/services"
           >
             <span>All Services Overview</span>
             <ArrowRight className="size-4" />
           </a>
 
-          {/* 4 Pillars in Mobile without long descriptions */}
-          <div class="space-y-3">
+          {/* Services in Mobile */}
+          <div class="space-y-1.5">
             {
-              servicesPillars.map((pillar) => (
-                <div class="rounded-xl bg-white/[0.04] p-3.5 border border-white/10">
+              servicesList.map((service) => {
+                const ServiceIcon = service.icon;
+                return (
                   <a
-                    class="mobile-nav-link flex items-center justify-between font-semibold text-white text-base mb-2"
-                    href={pillar.href}
+                    class="mobile-nav-link flex items-center gap-3 rounded-xl bg-white/[0.04] px-3.5 py-2.5 border border-white/10 hover:border-orchid/40 transition-colors"
+                    href={service.href}
                   >
-                    <span>{pillar.title}</span>
-                    <ArrowRight className="size-3.5 text-orchid" />
+                    <span class="grid size-7 shrink-0 place-items-center rounded-lg bg-orchid/20 text-orchid">
+                      <ServiceIcon size={16} />
+                    </span>
+                    <span class="font-medium text-white text-base">
+                      {service.title}
+                    </span>
                   </a>
-                  <ul class="flex flex-col gap-1.5 m-0 p-0 list-none text-xs text-[#c9c4d5]">
-                    {pillar.subItems.map((sub) => (
-                      <li class="leading-snug" title={sub.label}>
-                        <span class="truncate block">{sub.label}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                );
+              })
+            }
+          </div>
+        </div>
+      </div>
+
+      {/* 4. Mobile Solutions Accordion Section (Megamenu submenus) */}
+      <div
+        class="border-b border-white/20 py-3"
+        id="mobile-solutions-accordion"
+      >
+        <button
+          type="button"
+          id="mobile-solutions-toggle"
+          class="flex w-full items-center justify-between py-2 text-2xl font-light text-white text-left focus:outline-none"
+          aria-expanded="false"
+          aria-controls="mobile-solutions-submenu"
+        >
+          <span>Solutions</span>
+          <ChevronDown
+            id="mobile-solutions-caret"
+            className="size-5 text-orchid transition-transform duration-300"
+            aria-hidden="true"
+          />
+        </button>
+        <div
+          id="mobile-solutions-submenu"
+          class="hidden pt-3 pb-2 transition-all duration-300"
+        >
+          {/* Solutions Sub-Items in Mobile */}
+          <div class="space-y-1.5">
+            {
+              solutionsColumns.flat().map((sub) => (
+                <a
+                  class="mobile-nav-link flex items-center gap-3 rounded-xl bg-white/[0.04] px-3.5 py-2.5 border border-white/10 hover:border-orchid/40 text-white transition-colors"
+                  href={sub.href}
+                >
+                  <ArrowRight className="size-4 text-orchid shrink-0" />
+                  <span class="text-base font-medium text-white">{sub.label}</span>
+                </a>
               ))
             }
           </div>
@@ -350,7 +474,7 @@ const isLight = theme === "light";
         class={`mobile-nav-link ${button} mt-6 justify-between px-6 py-4 text-base font-semibold`}
         href="/contact"
       >
-        <span>Start a conversation</span>
+        <span>Contact Us</span>
         <ArrowUpRight />
       </a>
 
@@ -407,84 +531,107 @@ const isLight = theme === "light";
       });
     });
 
-    // Mobile Services Accordion Toggle
-    const mobileServicesToggle = document.getElementById(
-      "mobile-services-toggle",
-    );
-    const mobileServicesSubmenu = document.getElementById(
-      "mobile-services-submenu",
-    );
-    const mobileServicesCaret = document.getElementById(
-      "mobile-services-caret",
-    );
+    // Mobile Accordion helper
+    function setupMobileAccordion(
+      toggleId: string,
+      submenuId: string,
+      caretId: string,
+    ) {
+      const toggle = document.getElementById(toggleId);
+      const submenu = document.getElementById(submenuId);
+      const caret = document.getElementById(caretId);
 
-    if (mobileServicesToggle && mobileServicesSubmenu) {
-      mobileServicesToggle.addEventListener("click", (e) => {
-        e.preventDefault();
-        const expanded =
-          mobileServicesToggle.getAttribute("aria-expanded") === "true";
-        mobileServicesToggle.setAttribute(
-          "aria-expanded",
-          (!expanded).toString(),
-        );
-        mobileServicesSubmenu.classList.toggle("hidden", expanded);
-        if (mobileServicesCaret) {
-          mobileServicesCaret.classList.toggle("rotate-180", !expanded);
-        }
-      });
+      if (toggle && submenu) {
+        toggle.addEventListener("click", (e) => {
+          e.preventDefault();
+          const expanded = toggle.getAttribute("aria-expanded") === "true";
+          toggle.setAttribute("aria-expanded", (!expanded).toString());
+          submenu.classList.toggle("hidden", expanded);
+          if (caret) {
+            caret.classList.toggle("rotate-180", !expanded);
+          }
+        });
+      }
     }
 
-    // Desktop Services Dropdown Accessibility & Click/Keyboard Toggle
-    const desktopServicesTrigger = document.getElementById(
-      "services-menu-trigger",
+    setupMobileAccordion(
+      "mobile-services-toggle",
+      "mobile-services-submenu",
+      "mobile-services-caret",
     );
-    const desktopServicesPanel = document.getElementById(
-      "services-dropdown-panel",
-    );
-    const desktopServicesContainer = document.getElementById(
-      "services-nav-container",
+    setupMobileAccordion(
+      "mobile-solutions-toggle",
+      "mobile-solutions-submenu",
+      "mobile-solutions-caret",
     );
 
-    if (
-      desktopServicesTrigger &&
-      desktopServicesPanel &&
-      desktopServicesContainer
+    // Desktop Dropdown helper
+    function setupDesktopDropdown(
+      triggerId: string,
+      panelId: string,
+      containerId: string,
     ) {
-      const openDesktopMenu = () => {
-        desktopServicesTrigger.setAttribute("aria-expanded", "true");
-        desktopServicesPanel.setAttribute("data-state", "open");
+      const trigger = document.getElementById(triggerId);
+      const panel = document.getElementById(panelId);
+      const container = document.getElementById(containerId);
+
+      if (!trigger || !panel || !container) return;
+
+      const openMenu = () => {
+        // Close other panels first
+        document.querySelectorAll("[data-state='open']").forEach((el) => {
+          if (el !== panel) el.setAttribute("data-state", "closed");
+        });
+        document.querySelectorAll("[aria-expanded='true']").forEach((el) => {
+          if (el !== trigger && el.id.includes("-menu-trigger")) {
+            el.setAttribute("aria-expanded", "false");
+          }
+        });
+
+        trigger.setAttribute("aria-expanded", "true");
+        panel.setAttribute("data-state", "open");
       };
 
-      const closeDesktopMenu = () => {
-        desktopServicesTrigger.setAttribute("aria-expanded", "false");
-        desktopServicesPanel.setAttribute("data-state", "closed");
+      const closeMenu = () => {
+        trigger.setAttribute("aria-expanded", "false");
+        panel.setAttribute("data-state", "closed");
       };
 
-      desktopServicesTrigger.addEventListener("click", (e) => {
+      trigger.addEventListener("click", (e) => {
         e.stopPropagation();
-        const isExpanded =
-          desktopServicesTrigger.getAttribute("aria-expanded") === "true";
+        const isExpanded = trigger.getAttribute("aria-expanded") === "true";
         if (isExpanded) {
-          closeDesktopMenu();
+          closeMenu();
         } else {
-          openDesktopMenu();
+          openMenu();
         }
       });
 
       // Close on escape key
-      desktopServicesContainer.addEventListener("keydown", (e) => {
+      container.addEventListener("keydown", (e) => {
         if (e.key === "Escape") {
-          closeDesktopMenu();
-          desktopServicesTrigger.focus();
+          closeMenu();
+          trigger.focus();
         }
       });
 
       // Close if clicking outside
       document.addEventListener("click", (e) => {
-        if (!desktopServicesContainer.contains(e.target as Node)) {
-          closeDesktopMenu();
+        if (!container.contains(e.target as Node)) {
+          closeMenu();
         }
       });
     }
+
+    setupDesktopDropdown(
+      "services-menu-trigger",
+      "services-dropdown-panel",
+      "services-nav-container",
+    );
+    setupDesktopDropdown(
+      "solutions-menu-trigger",
+      "solutions-dropdown-panel",
+      "solutions-nav-container",
+    );
   }
 </script>

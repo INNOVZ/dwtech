@@ -37,73 +37,53 @@ const blogDirectorySchema = {
   title={pageTitle}
   description={pageDescription}
   schema={blogDirectorySchema}
-  headerTheme="light"
   breadcrumbs={[
     { name: "Home", item: "/" },
     { name: "Blogs", item: "/blogs" },
   ]}
 >
-  <main class="bg-[#faf9fd] text-[#05040e] overflow-hidden">
-    {/* ── Hero Section (Light Theme with Brand Accents) ── */}
+  <main class="bg-night text-white overflow-hidden">
+    {/* ── Hero Section (Matches About & Portfolio UI/UX) ── */}
     <section
-      class="relative pt-[170px] pb-[85px] bg-[radial-gradient(circle_at_80%_25%,rgba(176,99,255,0.12),transparent_42%),#faf9fd] text-[#05040e]"
+      class="relative pt-[160px] pb-[50px] bg-[radial-gradient(ellipse_at_80%_20%,rgba(176,99,255,0.22),transparent_50%),#05040e]"
     >
       <div
-        class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle,rgba(124,50,213,.12)_0_1px,transparent_1.3px)] bg-[length:48px_48px] opacity-40"
+        class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle,rgba(176,99,255,.3)_0_1px,transparent_1.3px)] bg-[length:64px_64px] opacity-15"
+        aria-hidden="true"
       >
       </div>
 
       <div class={`${shell} relative z-[1]`}>
         <nav
           aria-label="Breadcrumb"
-          class="mb-6 flex items-center gap-2 text-xs text-[#6b6477]"
+          class="mb-8 flex items-center gap-2 text-xs text-[#a19bad]"
         >
-          <a href="/" class="hover:text-[#311959] transition-colors">Home</a>
-          <span class="text-[#888194]">/</span>
-          <span class="text-[#311959] font-semibold">Blogs & Insights</span>
+          <a href="/" class="hover:text-white transition-colors">Home</a>
+          <span class="opacity-40">/</span>
+          <span class="text-orchid">Blogs & Insights</span>
         </nav>
 
         <h1
-          class="text-[clamp(3.5rem,5.6vw,5.8rem)] leading-[0.98] tracking-tight max-w-[1100px] mb-8 text-[#05040e]"
+          class="text-[clamp(3.7rem,5vw,6rem)] leading-[0.98] tracking-tight max-w-[1100px] mb-8 text-white"
         >
-          Architectural thinking for <span class="text-[#311959]"
+          Architectural thinking for <span class="text-orchid"
             >intelligent business.</span
           >
         </h1>
 
         <p
-          class="max-w-[820px] text-[clamp(1.05rem,1.4vw,1.15rem)] leading-[1.65] text-[#5e5868] mb-10"
+          class="max-w-[820px] text-[clamp(1.05rem,1.4vw,1rem)] leading-[1.65] text-[#cfcad8] mb-10"
         >
           Technical perspectives, systems engineering playbooks, and research on
           enterprise AI adoption, multi-agent boundaries, and high-performance
           digital platforms across Dubai, Riyadh, India, and Europe.
         </p>
-
-        {/* Aggregate Impact Numbers (Light Theme) */}
-        <div
-          class="grid grid-cols-4 gap-4 border-t border-black/10 pt-8 max-[900px]:grid-cols-2 max-[500px]:grid-cols-1"
-        >
-          <div>
-            <span class="text-2xl lg:text-3xl font-bold text-[#311959]">6+</span>
-            <p class="mt-1 text-xs text-[#736c7e]">Research Insights</p>
-          </div>
-          <div>
-            <span class="text-2xl lg:text-3xl font-bold text-[#311959]">Production AI</span>
-            <p class="mt-1 text-xs text-[#736c7e]">Core Practice</p>
-          </div>
-          <div>
-            <span class="text-2xl lg:text-3xl font-bold text-[#311959]">Deterministic</span>
-            <p class="mt-1 text-xs text-[#736c7e]">System Boundaries</p>
-          </div>
-          <div>
-            <span class="text-2xl lg:text-3xl font-bold text-[#311959]">UAE · KSA · India · EU</span>
-            <p class="mt-1 text-xs text-[#736c7e]">Jurisdiction Scope</p>
-          </div>
-        </div>
       </div>
     </section>
 
-    {/* ── Articles Section: Clean Light Theme matching /portfolio & /about ── */}
+    {
+      /* ── Articles Section: Clean Light Theme matching /portfolio & /about ── */
+    }
     <section
       class={`${section} relative bg-[#faf9fd] text-[#05040e] border-t border-black/5`}
       id="articles"
@@ -116,19 +96,23 @@ const blogDirectorySchema = {
             Read our latest perspectives
           </h2>
           <p class="mt-4 text-base lg:text-lg text-[#615a6e] leading-relaxed">
-            Executive essays and architectural field notes exploring production AI
-            reliability, multi-agent state machines, and modern digital platforms.
+            Executive essays and architectural field notes exploring production
+            AI reliability, multi-agent state machines, and modern digital
+            platforms.
           </p>
         </div>
 
         {/* ── 3-Column Clean Flat Cards Grid (ZERO SHADOWS) ── */}
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 lg:gap-8">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 lg:gap-8"
+        >
           {
             blogPosts.map((post) => {
               const badgeLabel = post.badge || "DRAFT PERSPECTIVE";
-              const tagList = post.tags && post.tags.length > 0
-                ? post.tags
-                : [post.category.toUpperCase()];
+              const tagList =
+                post.tags && post.tags.length > 0
+                  ? post.tags
+                  : [post.category.toUpperCase()];
 
               return (
                 <article class="group relative flex flex-col justify-between rounded-[24px] bg-white border border-[#e2dded] p-7 sm:p-8 hover:border-[#311959] transition-colors duration-200 shadow-none">

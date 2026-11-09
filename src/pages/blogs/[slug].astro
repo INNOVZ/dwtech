@@ -83,93 +83,93 @@ const otherPosts = blogPosts.filter((p) => p.slug !== slug);
   description={pageDescription}
   ogType="article"
   schema={articleSchema}
-  headerTheme="light"
   breadcrumbs={[
     { name: "Home", item: "/" },
     { name: "Blogs", item: "/blogs" },
     { name: post.title, item: `/blogs/${post.slug}` },
   ]}
 >
-  <main class="bg-[#faf9fd] text-[#05040e] overflow-hidden">
-    {/* ── Article Header (Light Theme) ── */}
+  <main class="bg-night text-white overflow-hidden">
+    {/* ── Article Header (Matches About & Portfolio UI/UX) ── */}
     <article>
       <header
-        class="relative pt-[170px] pb-[70px] bg-[radial-gradient(circle_at_80%_25%,rgba(176,99,255,0.12),transparent_42%),#faf9fd] text-[#05040e]"
+        class="relative pt-[160px] pb-[80px] bg-[radial-gradient(ellipse_at_80%_20%,rgba(176,99,255,0.22),transparent_50%),#05040e] text-white"
       >
         <div
-          class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle,rgba(124,50,213,.12)_0_1px,transparent_1.3px)] bg-[length:48px_48px] opacity-40"
+          class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle,rgba(176,99,255,.3)_0_1px,transparent_1.3px)] bg-[length:64px_64px] opacity-15"
+          aria-hidden="true"
         >
         </div>
 
         <div class={`${shell} relative z-[1] max-w-[900px]`}>
           <nav
             aria-label="Breadcrumb"
-            class="mb-6 flex flex-wrap items-center gap-2 text-xs text-[#6b6477]"
+            class="mb-6 flex flex-wrap items-center gap-2 text-xs text-[#a19bad]"
           >
-            <a href="/" class="hover:text-[#311959] transition-colors">Home</a>
-            <span class="text-[#888194]">/</span>
-            <a href="/blogs" class="hover:text-[#311959] transition-colors"
+            <a href="/" class="hover:text-white transition-colors">Home</a>
+            <span class="opacity-40">/</span>
+            <a href="/blogs" class="hover:text-white transition-colors"
               >Blogs</a
             >
-            <span class="text-[#888194]">/</span>
-            <span class="text-[#311959] font-semibold line-clamp-1"
+            <span class="opacity-40">/</span>
+            <span class="text-orchid line-clamp-1"
               >{post.title}</span
             >
           </nav>
 
           <div
-            class="flex flex-wrap items-center gap-3 mb-6 text-xs text-[#6e677c]"
+            class="flex flex-wrap items-center gap-3 mb-6 text-xs text-[#cfcad8]"
           >
             <span
-              class="rounded-md bg-[#f4effc] px-2.5 py-1 font-semibold text-[#311959] border border-[#311959]/20 font-mono uppercase tracking-wider text-[11px]"
+              class="rounded-md bg-orchid/20 px-2.5 py-1 font-semibold text-orchid border border-orchid/30 font-mono uppercase tracking-wider text-[11px]"
             >
               {post.badge || post.category}
             </span>
             <span class="inline-flex items-center gap-1.5">
-              <Calendar className="size-3.5 text-[#311959]" />
+              <Calendar className="size-3.5 text-orchid" />
               {post.publishedDate}
             </span>
             <span class="inline-flex items-center gap-1">
-              <Clock className="size-3.5 text-[#311959]" />
+              <Clock className="size-3.5 text-orchid" />
               {post.readTime}
             </span>
-            <span class="text-black/30">·</span>
-            <span class="text-[#615a6e] font-medium">{post.geoRegion}</span>
+            <span class="opacity-30">·</span>
+            <span class="text-[#cfcad8] font-medium">{post.geoRegion}</span>
           </div>
 
           <h1
-            class="text-[clamp(2.5rem,5vw,4.8rem)] leading-[1.05] tracking-tight mb-6 text-[#05040e]"
+            class="text-[clamp(2.5rem,5vw,4.8rem)] leading-[1.05] tracking-tight mb-6 text-white"
           >
             {post.title}
           </h1>
 
           <p
-            class="text-[clamp(1.1rem,1.5vw,1.35rem)] leading-relaxed text-[#5e5868] mb-8 font-normal"
+            class="text-[clamp(1.1rem,1.5vw,1.35rem)] leading-relaxed text-[#cfcad8] mb-8 font-normal"
           >
             {post.subtitle}
           </p>
 
           <div
-            class="flex items-center justify-between border-t border-black/10 pt-6"
+            class="flex items-center justify-between border-t border-white/15 pt-6"
           >
             <div class="flex items-center gap-3">
               <div
-                class="size-10 rounded-full bg-[#f4effc] border border-[#311959]/30 grid place-items-center text-[#311959] font-bold text-sm"
+                class="size-10 rounded-full bg-orchid/20 border border-orchid/40 grid place-items-center text-orchid font-bold text-sm"
               >
                 DW
               </div>
               <div>
-                <p class="m-0 text-sm font-semibold text-[#05040e]">
+                <p class="m-0 text-sm font-semibold text-white">
                   {post.author}
                 </p>
-                <p class="m-0 text-xs text-[#736c7e]">
+                <p class="m-0 text-xs text-[#9d97a9]">
                   {post.authorRole} · Dubai HQ
                 </p>
               </div>
             </div>
             <a
               href="/contact"
-              class="text-xs font-semibold text-[#311959] hover:underline flex items-center gap-1"
+              class="text-xs font-semibold text-orchid hover:text-white transition-colors flex items-center gap-1"
             >
               <span>Consult with author</span>
               <ArrowRight className="size-3" />

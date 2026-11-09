@@ -21,21 +21,17 @@ const { as: Tag = 'div', class: className = '', delay = 0 } = Astro.props;
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('is-revealed');
-        } else {
-          entry.target.classList.remove('is-revealed');
+          observer.unobserve(entry.target);
         }
       });
     }, { 
-      rootMargin: "0px 0px -50px 0px",
+      rootMargin: "0px 0px -20px 0px",
       threshold: 0.01 
     });
 
     reveals.forEach(el => {
       el.classList.add('is-observed');
-      // Delay observation to ensure styles & layout have fully settled
-      setTimeout(() => {
-        observer.observe(el);
-      }, 150);
+      observer.observe(el);
     });
   }
 

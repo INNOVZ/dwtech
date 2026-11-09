@@ -17,7 +17,7 @@ import { createElement, type ReactNode, useRef } from "react";
 
 const EASE: BezierDefinition = [0.2, 0.75, 0.25, 1]; // matches --ease-fluid
 const DURATION = 0.6;
-const VIEWPORT = { once: false, margin: "-80px" } as const;
+const VIEWPORT = { once: true, margin: "0px" } as const;
 
 /* ------------------------------------------------------------------ */
 /*  FadeIn                                                             */
@@ -56,7 +56,7 @@ export function FadeIn({
   return (
     <Component
       className={className}
-      initial={{ opacity: 0, [direction]: distance }}
+      initial={false}
       whileInView={{ opacity: 1, [direction]: 0 }}
       viewport={VIEWPORT}
       transition={{ duration, delay, ease: EASE }}
@@ -95,7 +95,7 @@ export function ScaleIn({
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, scale: from }}
+      initial={false}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={VIEWPORT}
       transition={{ duration, delay, ease: EASE }}
@@ -149,7 +149,7 @@ export function StaggerContainer({
     <Component
       className={className}
       variants={variants}
-      initial="hidden"
+      initial={false}
       whileInView="visible"
       viewport={VIEWPORT}
       {...rest}
@@ -180,7 +180,7 @@ export function StaggerItem({
   const Component = motion[as] as typeof motion.div;
 
   return (
-    <Component className={className} variants={staggerItemVariants} {...rest}>
+    <Component className={className} initial={false} variants={staggerItemVariants} {...rest}>
       {children}
     </Component>
   );
@@ -247,7 +247,7 @@ export function LetterReveal({ children, className, delay = 0, as = "p" }: Lette
   return (
     <Component
       className={className}
-      initial="hidden"
+      initial={false}
       whileInView="visible"
       viewport={VIEWPORT}
       variants={{

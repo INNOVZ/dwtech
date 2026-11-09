@@ -4,6 +4,7 @@ import { Mail, Phone, ArrowUpRight } from "@/components/layout/icons";
 import ScrollReveal from "@/components/animation/ScrollReveal.astro";
 import { contacts, services, locations } from "@/lib/site-data";
 import { button, sectionLabel, shell } from "@/lib/styles";
+import QuickContactForm from "@/components/contact/quick-contact-form";
 ---
 
 <footer
@@ -13,38 +14,26 @@ import { button, sectionLabel, shell } from "@/lib/styles";
   <div class={shell}>
     {/* CTA Section */}
     <div
-      class="relative z-[1] grid grid-cols-[1.2fr_.8fr] items-end gap-[7vw] pb-[70px] max-[860px]:grid-cols-1"
+      class="relative z-[1] grid grid-cols-[1.1fr_0.9fr] items-center gap-[6vw] pb-[70px] max-[960px]:grid-cols-1"
     >
       <ScrollReveal>
         <div>
           <p class={sectionLabel}>Contact</p>
           <h2
-            class="text-[clamp(4rem,7.5vw,8.8rem)] max-[620px]:text-[clamp(2.8rem,13vw,4.3rem)]"
+            class="text-[clamp(3.8rem,7vw,7.8rem)] max-[620px]:text-[clamp(2.8rem,13vw,4.3rem)] leading-[0.98] tracking-tight mb-6"
           >
             Let's build <span class="text-orchid">what's next.</span>
           </h2>
-        </div>
-      </ScrollReveal>
-      <ScrollReveal delay={0.15}>
-        <div>
           <p
-            class="max-w-[490px] text-[clamp(0.8rem,1vw,0.9rem)] leading-[1.55] text-[#c3becb] mb-5"
+            class="max-w-[490px] text-[clamp(0.95rem,1.2vw,1.05rem)] leading-[1.65] text-[#c3becb] mb-6"
           >
             Tell us where your business needs to go. We'll help shape the
             technology, architecture, and intelligent systems to get there.
           </p>
-          <a
-            class={`flex items-center gap-3 justify-start text-[.9rem]`}
-            href="mailto:tech@thedesertwhales.com?subject=New%20project%20enquiry"
-          >
-            <span class="cta-link-text" data-text="Connect with us"
-              >Connect with us</span
-            >
-            <span class={`${button}`}>
-              <ArrowUpRight />
-            </span>
-          </a>
         </div>
+      </ScrollReveal>
+      <ScrollReveal delay={0.15}>
+        <QuickContactForm client:visible />
       </ScrollReveal>
     </div>
 
