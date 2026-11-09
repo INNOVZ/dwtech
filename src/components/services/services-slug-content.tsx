@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ArrowUpRight, ArrowRight } from "@/components/layout/icons";
+import { ArrowUpRight, ArrowRight } from "lucide-react";
 import { ChevronDown, Check } from "lucide-react";
 import {
   FadeIn,
@@ -156,10 +156,7 @@ export default function ServicePage({ params, initialDetail }: Props) {
 
             <FadeIn delay={0.2}>
               <div className="flex flex-wrap items-center gap-5 mb-14 max-[620px]:flex-col max-[620px]:items-stretch">
-                <a
-                  className="btn"
-                  href="/contact"
-                >
+                <a className="btn" href="/contact">
                   Make an Enquiry <ArrowUpRight />
                 </a>
               </div>
