@@ -1,4 +1,4 @@
-import rawServicesData from "../../public/data/services-detail.json";
+import rawServicesData from "../data/services-detail.json";
 
 export interface ServiceFeatureRow {
   title: string;

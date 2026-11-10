@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const dataPath = path.join(__dirname, "../public/data/services-detail.json");
+const dataPath = path.join(__dirname, "../src/data/services-detail.json");
 const data = JSON.parse(fs.readFileSync(dataPath, "utf8"));
 
 const webDevData = {

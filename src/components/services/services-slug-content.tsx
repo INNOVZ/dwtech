@@ -81,8 +81,9 @@ export default function ServicePage({ params, initialDetail }: Props) {
       getServiceDetailData(slug, fallbackTitle, fallbackDescription),
   );
 
-  // Call the separate data JSON file in the public directory (/data/services-detail.json)
+  // If initialDetail is already provided by SSR, avoid redundant network fetch
   useEffect(() => {
+    if (initialDetail) return;
     fetch("/data/services-detail.json")
       .then((res) => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
