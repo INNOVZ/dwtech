@@ -96,16 +96,26 @@ const servicesPageSchema = [
   <main class="bg-night text-white overflow-hidden">
     {/* ── 1. Hero Section (Matches About & Portfolio UI/UX) ── */}
     <section
-      class="relative min-h-[650px] bg-[radial-gradient(circle_at_78%_35%,rgba(176,99,255,.22),transparent_34%),#05040e] pt-[190px] pb-[100px] max-[620px]:min-h-0 max-[620px]:pt-[150px] max-[620px]:pb-[70px]"
+      class="relative min-h-[650px] overflow-hidden pt-[190px] pb-[100px] max-[620px]:min-h-0 max-[620px]:pt-[150px] max-[620px]:pb-[70px]"
     >
-      {/* Subtle Dot Matrix matching Portfolio */}
+      {/* Banner image under the 90% black banner */}
+      <div class="absolute inset-0 z-0">
+        <img
+          src="/banners/services-banner.webp"
+          alt=""
+          class="w-full h-full object-cover object-center"
+          loading="eager"
+        />
+      </div>
+
+      {/* Solid black banner area with 90% opacity (no gradients) */}
       <div
-        class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle,rgba(176,99,255,.3)_0_1px,transparent_1.3px)] bg-[length:64px_64px] opacity-15"
+        class="absolute inset-0 z-[1] bg-black/90 pointer-events-none"
         aria-hidden="true"
       >
       </div>
 
-      <div class={`${shell} relative z-[1]`}>
+      <div class={`${shell} relative z-[2]`}>
         {/* Breadcrumb nav */}
         <nav
           aria-label="Breadcrumb"

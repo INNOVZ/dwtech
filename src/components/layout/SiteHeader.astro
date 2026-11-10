@@ -39,25 +39,25 @@ const servicesList = [
 const solutionsColumns = [
   [
     {
-      label: "Web Applications & Mobile Applications Development",
-      href: "/solutions/web-applications-development",
-    },
-    {
-      label: "ERP & CRM Solutions",
-      href: "/solutions/erp-crm-solutions",
+      label: "Web Development",
+      href: "/solutions/web-development",
     },
     {
       label: "E-Commerce & Marketplaces",
       href: "/solutions/ecommerce-marketplace-solutions",
     },
     {
-      label: "Digital Business Transformation",
-      href: "/solutions/digital-business-transformation",
+      label: "ERP & CRM Solutions",
+      href: "/solutions/erp-crm-solutions",
+    },
+    {
+      label: "IT Consulting",
+      href: "/solutions/it-consulting",
     },
   ],
   [
     {
-      label: "Generative AI & custom RAG system",
+      label: "Generative AI & Custom RAG System",
       href: "/solutions/generative-ai-rag-systems",
     },
     {
@@ -65,11 +65,11 @@ const solutionsColumns = [
       href: "/solutions/whatsapp-business-automation",
     },
     {
-      label: "AI agents & Automation for business",
+      label: "AI Agents & Automations",
       href: "/solutions/ai-agents-automation",
     },
     {
-      label: "AI chatbots",
+      label: "AI Chatbots",
       href: "/solutions/ai-chatbots",
     },
   ],
@@ -445,7 +445,9 @@ const isLight = theme === "light";
                   href={sub.href}
                 >
                   <ArrowRight className="size-4 text-orchid shrink-0" />
-                  <span class="text-base font-medium text-white">{sub.label}</span>
+                  <span class="text-base font-medium text-white">
+                    {sub.label}
+                  </span>
                 </a>
               ))
             }

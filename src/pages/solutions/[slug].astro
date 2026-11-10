@@ -84,12 +84,19 @@ const solutionSchema = [
       ]
     : []),
 ];
+const canonicalUrl =
+  slug === "web-applications-development"
+    ? `${siteUrl}/solutions/web-development`
+    : slug === "it-consulting-technology-strategy"
+      ? `${siteUrl}/solutions/it-consulting`
+      : undefined;
 ---
 
 <Layout
   title={pageTitle}
   description={pageDescription}
   schema={solutionSchema}
+  canonical={canonicalUrl}
   breadcrumbs={[
     { name: "Home", item: "/" },
     { name: "Solutions", item: "/solutions" },

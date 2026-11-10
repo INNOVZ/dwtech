@@ -18,6 +18,52 @@ type Props = {
   initialDetail?: ServiceDetailData;
 };
 
+// Helper to map each service/solution slug to its contextually apt banner image
+const getBannerForSlug = (slug: string): string => {
+  const s = slug.toLowerCase();
+  if (s.includes("ai") || s.includes("chatbot") || s.includes("whatsapp") || s.includes("rag")) {
+    return "/banners/ai-solutions-banner.webp";
+  }
+  if (
+    s.includes("cloud") ||
+    s.includes("devops") ||
+    s.includes("cicd") ||
+    s.includes("infrastructure") ||
+    s.includes("reliability") ||
+    s.includes("security")
+  ) {
+    return "/banners/cloud-devops-banner.webp";
+  }
+  if (s.includes("ecommerce") || s.includes("marketplace")) {
+    return "/banners/ecommerce-banner.webp";
+  }
+  if (
+    s.includes("erp") ||
+    s.includes("crm") ||
+    s.includes("transformation") ||
+    s.includes("consulting")
+  ) {
+    return "/banners/enterprise-erp-banner.webp";
+  }
+  if (
+    s.includes("design") ||
+    s.includes("ui-ux") ||
+    s.includes("prototyping") ||
+    s.includes("product")
+  ) {
+    return "/banners/ui-ux-design-banner.webp";
+  }
+  if (
+    s.includes("web") ||
+    s.includes("software") ||
+    s.includes("saas") ||
+    s.includes("mobile")
+  ) {
+    return "/banners/web-development-banner.webp";
+  }
+  return "/banners/services-banner.webp";
+};
+
 export default function ServicePage({ params, initialDetail }: Props) {
   const { slug } = params;
   const service = services.find(
@@ -50,6 +96,16 @@ export default function ServicePage({ params, initialDetail }: Props) {
           data["ai-automation-solutions"]
         ) {
           setDetail(data["ai-automation-solutions"]);
+        } else if (
+          slug === "web-applications-development" &&
+          data["web-development"]
+        ) {
+          setDetail(data["web-development"]);
+        } else if (
+          slug === "it-consulting-technology-strategy" &&
+          data["it-consulting"]
+        ) {
+          setDetail(data["it-consulting"]);
         }
       })
       .catch((err) => {
@@ -132,18 +188,28 @@ export default function ServicePage({ params, initialDetail }: Props) {
 
       <main className="bg-night text-white overflow-hidden">
         {/* ── 1. Hero Section (Matches About & Portfolio UI/UX) ── */}
-        <section className="relative min-h-[650px] bg-[radial-gradient(circle_at_78%_35%,rgba(176,99,255,.22),transparent_34%),#05040e] pt-[190px] pb-[100px] max-[620px]:min-h-0 max-[620px]:pt-[150px] max-[620px]:pb-[70px]">
-          {/* Subtle Dot Matrix matching Portfolio */}
+        <section className="relative min-h-[650px] overflow-hidden pt-[190px] pb-[100px] max-[620px]:min-h-0 max-[620px]:pt-[150px] max-[620px]:pb-[70px]">
+          {/* Banner image under the 90% black banner */}
+          <div className="absolute inset-0 z-0">
+            <img
+              src={getBannerForSlug(detail.slug)}
+              alt=""
+              className="w-full h-full object-cover object-center"
+              loading="eager"
+            />
+          </div>
+
+          {/* Solid black banner area with 90% opacity (no gradients) */}
           <div
-            className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle,rgba(176,99,255,.3)_0_1px,transparent_1.3px)] bg-[length:64px_64px] opacity-15"
+            className="absolute inset-0 z-[1] bg-black/90 pointer-events-none"
             aria-hidden="true"
           />
 
-          <div className={`${shell} relative z-[1]`}>
+          <div className={`${shell} relative z-[2]`}>
             {/* Breadcrumb nav */}
 
             <FadeIn delay={0.08}>
-              <h1 className="mb-8 max-w-[1100px] text-[clamp(3.2rem,6.8vw,5.8rem)] leading-[0.98] tracking-tight">
+              <h1 className="mb-8 max-w-[1100px] text-[clamp(3.7rem,5vw,6rem)] leading-[0.98] tracking-tight">
                 {renderHeroHeading(detail.heroH1)}
               </h1>
             </FadeIn>

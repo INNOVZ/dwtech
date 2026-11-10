@@ -81,6 +81,7 @@ const otherPosts = blogPosts.filter((p) => p.slug !== slug);
 <Layout
   title={pageTitle}
   description={pageDescription}
+  author={post.author}
   ogType="article"
   schema={articleSchema}
   breadcrumbs={[
@@ -93,15 +94,26 @@ const otherPosts = blogPosts.filter((p) => p.slug !== slug);
     {/* ── Article Header (Matches About & Portfolio UI/UX) ── */}
     <article>
       <header
-        class="relative pt-[160px] pb-[80px] bg-[radial-gradient(ellipse_at_80%_20%,rgba(176,99,255,0.22),transparent_50%),#05040e] text-white"
+        class="relative pt-[160px] pb-[80px] overflow-hidden text-white"
       >
+        {/* Banner image under the 90% black banner */}
+        <div class="absolute inset-0 z-0">
+          <img
+            src="/banners/blogs-banner.webp"
+            alt=""
+            class="w-full h-full object-cover object-center"
+            loading="eager"
+          />
+        </div>
+
+        {/* Solid black banner area with 90% opacity (no gradients) */}
         <div
-          class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle,rgba(176,99,255,.3)_0_1px,transparent_1.3px)] bg-[length:64px_64px] opacity-15"
+          class="absolute inset-0 z-[1] bg-black/90 pointer-events-none"
           aria-hidden="true"
         >
         </div>
 
-        <div class={`${shell} relative z-[1] max-w-[900px]`}>
+        <div class={`${shell} relative z-[2] max-w-[900px]`}>
           <nav
             aria-label="Breadcrumb"
             class="mb-6 flex flex-wrap items-center gap-2 text-xs text-[#a19bad]"

@@ -26,8 +26,24 @@ export default function AboutPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSchema) }}
       />
       <main className="bg-night">
-        <section className="relative min-h-[500px] bg-[radial-gradient(circle_at_78%_35%,rgba(176,99,255,.22),transparent_34%),#05040e] pt-[190px] pb-[110px] max-[620px]:min-h-0 max-[620px]:pt-[150px] max-[620px]:pb-[84px]">
-          <div className={`${shell} relative z-1`}>
+        <section className="relative min-h-[500px] overflow-hidden pt-[190px] pb-[110px] max-[620px]:min-h-0 max-[620px]:pt-[150px] max-[620px]:pb-[84px]">
+          {/* Banner image under the 90% black banner */}
+          <div className="absolute inset-0 z-0">
+            <img
+              src="/banners/about-banner.webp"
+              alt=""
+              className="w-full h-full object-cover object-center"
+              loading="eager"
+            />
+          </div>
+
+          {/* Solid black banner area with 90% opacity (no gradients) */}
+          <div
+            className="absolute inset-0 z-[1] bg-black/90 pointer-events-none"
+            aria-hidden="true"
+          />
+
+          <div className={`${shell} relative z-[2]`}>
             <FadeIn>
               <h1 className="mb-9 max-w-screen text-[clamp(3rem,8vw,4.75rem)]">
                 Technology Solutions built for the digital future

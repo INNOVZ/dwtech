@@ -1,9 +1,11 @@
 export const siteUrl = "https://www.desertwhales.tech";
+export const siteAuthor = "Jithin kaniyamparampil jacob";
 
 export const companyIdentity = {
   name: "Desert Whales Technologies",
   alternateName: "Desert Whales Tech",
   parentName: "Desert Whales Marketing Services LLC",
+  author: siteAuthor,
   description:
     "Desert Whales Technologies is a premier Dubai, UAE technology partner designing custom software, enterprise AI automation, ERP & CRM solutions, cloud architecture, and high-performance mobile apps for enterprises across the UAE, GCC, and worldwide.",
   headquarters: {
@@ -82,10 +84,10 @@ export const services: readonly ServiceItem[] = [
   {
     slug: "ecommerce-marketplace-solutions",
     title: "E-commerce & marketplace solutions",
-    short: "Connected commerce platforms across storefront, payments, inventory, and operations.",
-    description: "We create and integrate commerce experiences that keep the customer journey, catalog, orders, payments, and back-office operations in sync.",
+    short: "High-converting Shopify, WooCommerce, and custom stores with local GCC payments and ERP sync.",
+    description: "We engineer and optimize commerce platforms across Shopify, WooCommerce, and bespoke custom headless stores with seamless payment, catalog, and ERP integration.",
     category: "AI & Enterprise",
-    deliverables: ["Commerce experience design", "Shopify and custom development", "Marketplace and payment integrations", "Analytics and optimization"],
+    deliverables: ["Shopify & Shopify Plus", "WooCommerce store development", "Bespoke custom stores", "GCC payment & ERP sync"],
   },
   {
     slug: "it-consulting-technology-strategy",
@@ -260,7 +262,7 @@ export const blogPosts: BlogPost[] = [
     tags: ["OPERATIONAL SAFETY", "EVALUATION PIPELINES"],
     publishedDate: "2026-03-15",
     readTime: "6 min read",
-    author: "Jithin K",
+    author: "Jithin kaniyamparampil jacob",
     authorRole: "Chief Innovation Officer",
     excerpt: "Why 85% of enterprise AI proofs-of-concept stall before deployment, and the architectural discipline needed to turn fragile prompts into mission-critical systems.",
     geoRegion: "Dubai, UAE · Riyadh, KSA · Europe",
@@ -307,7 +309,7 @@ export const blogPosts: BlogPost[] = [
     tags: ["MULTI-AGENT ARCHITECTURE", "AUTONOMOUS SYSTEMS"],
     publishedDate: "2026-03-15",
     readTime: "5 min read",
-    author: "Jithin K",
+    author: "Jithin kaniyamparampil jacob",
     authorRole: "Chief Innovation Officer",
     excerpt: "Autonomous multi-agent architectures promise unprecedented automation, but without deterministic state machines and sandboxed tooling, they invite cascading operational risk.",
     geoRegion: "Dubai, UAE · Riyadh, KSA · Europe",
@@ -350,7 +352,7 @@ export const blogPosts: BlogPost[] = [
     tags: ["RAG ARCHITECTURE", "ENTERPRISE KNOWLEDGE"],
     publishedDate: "2026-03-15",
     readTime: "7 min read",
-    author: "Jithin K",
+    author: "Jithin kaniyamparampil jacob",
     authorRole: "Chief Innovation Officer",
     excerpt: "Commoditized foundation models level the algorithmic playing field. The durable enterprise moat lies in high-fidelity contextual retrieval, provenance tracking, and proprietary knowledge synthesis.",
     geoRegion: "Dubai, UAE · Riyadh, KSA · Europe",

@@ -96,7 +96,7 @@
 
   <!-- Specialized Business Solutions Pages (16 Mega-Menu Solutions) -->
   <url>
-    <loc>https://www.desertwhales.tech/solutions/web-applications-development</loc>
+    <loc>https://www.desertwhales.tech/solutions/web-development</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -111,7 +111,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.desertwhales.tech/solutions/digital-business-transformation</loc>
+    <loc>https://www.desertwhales.tech/solutions/it-consulting</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

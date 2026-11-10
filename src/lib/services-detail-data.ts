@@ -70,6 +70,16 @@ export function getServiceDetailData(
     return servicesDetailMap["whatsapp-business-automation"];
   }
 
+  // Check alias for web-applications-development -> web-development
+  if (slug === "web-applications-development" && servicesDetailMap["web-development"]) {
+    return servicesDetailMap["web-development"];
+  }
+
+  // Check alias for it-consulting-technology-strategy -> it-consulting
+  if (slug === "it-consulting-technology-strategy" && servicesDetailMap["it-consulting"]) {
+    return servicesDetailMap["it-consulting"];
+  }
+
   // Graceful fallback for any unknown slug
   return fallbackDetail(slug, fallbackTitle, fallbackDescription);
 }
