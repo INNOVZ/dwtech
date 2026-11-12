@@ -4,9 +4,10 @@ import { companyIdentity, contacts, locations, siteUrl } from "@/lib/site-data";
 import { section, sectionLabel, shell } from "@/lib/styles";
 import ContactForm from "@/components/contact/contact-form";
 import { Mail, Phone, ShieldCheck, CheckCircle2 } from "lucide-react";
+import { WhatsApp } from "@/components/layout/icons";
 
 const pageTitle =
-  "Contact Desert Whales Technologies | Software & AI Company Dubai, UAE";
+  "Contact DW Tech Dubai | Custom Software & Enterprise AI";
 const pageDescription =
   "Connect with Desert Whales Technologies in Dubai, UAE for custom software development, enterprise AI automation, ERP & CRM systems, and cloud architecture.";
 
@@ -23,7 +24,9 @@ const contactSchema = {
     email: contacts.email,
     address: {
       "@type": "PostalAddress",
+      streetAddress: "Bay Square, Business Bay",
       addressLocality: "Dubai",
+      addressRegion: "Dubai",
       addressCountry: "AE",
     },
     areaServed: ["United Arab Emirates", "Saudi Arabia", "India", "Italy"],
@@ -121,6 +124,31 @@ const contactSchema = {
               </a>
 
               <a
+                href="https://wa.me/971528678679?text=Hello%20Desert%20Whales%20Tech%2C%20I%20would%20like%20to%20discuss%20a%20project."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center gap-4 p-4 rounded-2xl bg-[#f0fbf4] border border-emerald-200 hover:border-emerald-500 transition-all group"
+              >
+                <span
+                  class="size-11 rounded-xl bg-emerald-100 text-emerald-700 grid place-items-center shrink-0"
+                >
+                  <WhatsApp className="size-5" />
+                </span>
+                <div>
+                  <span
+                    class="text-xs text-emerald-700 uppercase font-mono block tracking-wider font-semibold"
+                  >
+                    Instant WhatsApp Chat
+                  </span>
+                  <strong
+                    class="text-sm sm:text-base text-emerald-950 group-hover:text-emerald-700 transition-colors"
+                  >
+                    +971 52 867 8679 (Connect Now)
+                  </strong>
+                </div>
+              </a>
+
+              <a
                 href="tel:+971528678679"
                 class="flex items-center gap-4 p-4 rounded-2xl bg-white border border-black/8 hover:border-[#311959] transition-all group"
               >
@@ -133,7 +161,7 @@ const contactSchema = {
                   <span
                     class="text-xs text-[#837b90] uppercase font-mono block tracking-wider"
                   >
-                    Direct Line & WhatsApp
+                    Direct Phone Line
                   </span>
                   <strong
                     class="text-sm sm:text-base text-[#05040e] group-hover:text-[#311959] transition-colors"

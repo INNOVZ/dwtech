@@ -1,6 +1,13 @@
 ---
 import { Logo } from "@/components/layout/logo";
-import { Mail, Phone, ArrowUpRight } from "@/components/layout/icons";
+import {
+  Mail,
+  Phone,
+  ArrowUpRight,
+  LinkedIn,
+  GitHub,
+  WhatsApp,
+} from "@/components/layout/icons";
 import ScrollReveal from "@/components/animation/ScrollReveal.astro";
 import { contacts, services, locations } from "@/lib/site-data";
 import { button, sectionLabel, shell } from "@/lib/styles";
@@ -40,18 +47,37 @@ import QuickContactForm from "@/components/contact/quick-contact-form";
     {/* Structured Navigation & Global Footprint for SEO/GEO */}
     <ScrollReveal delay={0.1}>
       <div
-        class="relative z-[1] grid grid-cols-3 gap-8 border-t border-white/20 py-[40px] max-[960px]:grid-cols-2 max-[540px]:grid-cols-1"
+        class="relative z-[1] grid grid-cols-[1fr_1.3fr_1.1fr] gap-8 border-t border-white/20 py-[40px] max-[1020px]:grid-cols-2 max-[640px]:grid-cols-1"
       >
         {/* Brand & Mission */}
         <div>
           <Logo />
-          <p class="text-[.84rem] text-[#9791a3] mt-4 leading-relaxed"></p>
           <div class="mt-4 flex flex-col gap-1 text-[.78rem] text-[#817b8f]">
             <span>Delivering Intelligent Digital Experiences</span>
           </div>
+          <div class="mt-5 flex items-center gap-3">
+            <a
+              href="https://www.linkedin.com/company/desert-whales-technologies"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Desert Whales Technologies on LinkedIn"
+              class="size-8 rounded-lg bg-white/5 border border-white/10 grid place-items-center text-white/70 hover:text-white hover:border-orchid/50 transition-all"
+            >
+              <LinkedIn className="size-4" />
+            </a>
+            <a
+              href="https://github.com/desert-whales"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Desert Whales Technologies on GitHub"
+              class="size-8 rounded-lg bg-white/5 border border-white/10 grid place-items-center text-white/70 hover:text-white hover:border-orchid/50 transition-all"
+            >
+              <GitHub className="size-4" />
+            </a>
+          </div>
         </div>
 
-        {/* Core Services Links */}
+        {/* Core Services Links (Balanced 2 Columns) */}
         <div>
           <h4
             class="text-[.82rem] font-semibold text-orchid uppercase tracking-wider mb-3"
@@ -59,10 +85,10 @@ import QuickContactForm from "@/components/contact/quick-contact-form";
             Services
           </h4>
           <ul
-            class="flex flex-col gap-2 m-0 p-0 list-none text-[.84rem] text-[#b8b3c4]"
+            class="grid grid-cols-2 gap-x-6 gap-y-2.5 m-0 p-0 list-none text-[.84rem] text-[#b8b3c4] max-[480px]:grid-cols-1"
           >
             {
-              services.slice(0, 5).map((service) => (
+              services.map((service) => (
                 <li>
                   <a
                     href={`/services/${service.slug}`}
@@ -90,6 +116,15 @@ import QuickContactForm from "@/components/contact/quick-contact-form";
             >
               <Mail className="size-4 shrink-0 text-orchid/80" />
               <span>{contacts.email}</span>
+            </a>
+            <a
+              href="https://wa.me/971528678679?text=Hello%20Desert%20Whales%20Tech%2C%20I%20would%20like%20to%20inquire%20about%20your%20services."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-2.5 transition-colors font-medium"
+            >
+              <WhatsApp className="size-4 shrink-0 text-orchid/80" />
+              <span>WhatsApp: +971 52 867 8679</span>
             </a>
             {
               contacts.phones.map(([country, number]) => (
@@ -127,6 +162,7 @@ import QuickContactForm from "@/components/contact/quick-contact-form";
       </p>
       <div class="flex gap-5">
         <a href="/services" class="hover:text-white">Services</a>
+        <a href="/solutions" class="hover:text-white">Solutions</a>
         <a href="/portfolio" class="hover:text-white">Portfolio</a>
         <a href="/blogs" class="hover:text-white">Blogs</a>
         <a href="/about" class="hover:text-white">Company</a>

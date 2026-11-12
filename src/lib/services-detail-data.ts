@@ -105,7 +105,7 @@ export async function fetchServiceDetailData(slug: string): Promise<ServiceDetai
 function fallbackDetail(slug: string, fallbackTitle: string, fallbackDescription: string): ServiceDetailData {
   return {
     slug,
-    metaTitle: `${fallbackTitle} Services Dubai, UAE | Desert Whales Technologies`,
+    metaTitle: `${fallbackTitle} Services Dubai | DW Tech`,
     metaDescription: fallbackDescription || `${fallbackTitle} solutions engineered in Dubai, UAE by Desert Whales Technologies for ambitious enterprises.`,
     badge: "Enterprise Practice",
     heroH1: `${fallbackTitle} for modern enterprise.`,

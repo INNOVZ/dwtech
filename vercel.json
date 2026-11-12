@@ -1,0 +1,46 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/custom-software-development",
+      "destination": "/services/custom-software-development",
+      "permanent": true
+    },
+    {
+      "source": "/services/ai-automation",
+      "destination": "/services/ai-automation-solutions",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/ai-automation",
+      "destination": "/solutions/ai-agents-automation",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/whatsapp-automation",
+      "destination": "/solutions/whatsapp-business-automation",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/web-applications-development",
+      "destination": "/solutions/web-development",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/it-consulting-technology-strategy",
+      "destination": "/services/it-consulting-technology-strategy",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/it-consulting",
+      "destination": "/services/it-consulting-technology-strategy",
+      "permanent": true
+    }
+  ]
+}

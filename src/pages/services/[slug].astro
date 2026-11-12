@@ -1,37 +1,95 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import ServicesContent from '../../components/services/services-slug-content';
-import { services } from '@/lib/site-data';
-import { getServiceDetailData } from '@/lib/services-detail-data';
+import Layout from "../../layouts/Layout.astro";
+import ServicesContent from "../../components/services/services-slug-content";
+import { services, companyIdentity, siteUrl, contacts } from "@/lib/site-data";
+import { getServiceDetailData } from "@/lib/services-detail-data";
 
 export function getStaticPaths() {
-  const paths = services.map(s => ({
-    params: { slug: s.slug }
+  return services.map((s) => ({
+    params: { slug: s.slug },
   }));
-  // Also provide direct alias for ai-automation matching reference structure
-  paths.push({ params: { slug: 'ai-automation' } });
-  return paths;
 }
 
 const { slug } = Astro.params;
-const service = services.find(s => s.slug === slug || (slug === 'ai-automation' && s.slug === 'ai-automation-solutions'));
+const service = services.find((s) => s.slug === slug);
 
-const fallbackTitle = service ? service.title : 'Enterprise Technology';
-const fallbackDescription = service ? service.description : '';
-const detail = getServiceDetailData(slug || '', fallbackTitle, fallbackDescription);
+const fallbackTitle = service ? service.title : "Enterprise Technology";
+const fallbackDescription = service ? service.description : "";
+const detail = getServiceDetailData(
+  slug || "",
+  fallbackTitle,
+  fallbackDescription
+);
 
 const pageTitle = detail.metaTitle;
 const pageDescription = detail.metaDescription;
+
+// Structured Data: Service + FAQPage
+const serviceSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${siteUrl}/services/${slug}`,
+    name: detail.heroH1 || fallbackTitle,
+    serviceType: fallbackTitle,
+    description: pageDescription,
+    url: `${siteUrl}/services/${slug}`,
+    provider: {
+      "@type": ["Organization", "ProfessionalService", "LocalBusiness"],
+      name: companyIdentity.name,
+      url: siteUrl,
+      telephone: "+971528678679",
+      email: contacts.email,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Bay Square, Business Bay",
+        addressLocality: "Dubai",
+        addressRegion: "Dubai",
+        addressCountry: "AE",
+      },
+    },
+    areaServed: [
+      { "@type": "Country", name: "United Arab Emirates" },
+      { "@type": "Country", name: "Saudi Arabia" },
+      { "@type": "Country", name: "Qatar" },
+      { "@type": "Country", name: "Kuwait" },
+      { "@type": "Country", name: "Bahrain" },
+      { "@type": "Country", name: "Oman" },
+      { "@type": "Place", name: "Worldwide" },
+    ],
+  },
+  ...(detail.faqs && detail.faqs.length > 0
+    ? [
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: detail.faqs.map((f) => ({
+            "@type": "Question",
+            name: f.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: f.answer,
+            },
+          })),
+        },
+      ]
+    : []),
+];
 ---
 
 <Layout
   title={pageTitle}
   description={pageDescription}
+  schema={serviceSchema}
   breadcrumbs={[
     { name: "Home", item: "/" },
     { name: "Services", item: "/services" },
     { name: fallbackTitle, item: `/services/${slug}` },
   ]}
 >
-  <ServicesContent client:load params={{ slug: slug || '' }} initialDetail={detail} />
+  <ServicesContent
+    client:load
+    params={{ slug: slug || "" }}
+    initialDetail={detail}
+  />
 </Layout>

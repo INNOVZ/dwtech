@@ -1,34 +1,36 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import ServicesContent from "../../components/services/services-slug-content";
-import { services, companyIdentity, siteUrl } from "@/lib/site-data";
+import { companyIdentity, siteUrl, contacts } from "@/lib/site-data";
 import { getServiceDetailData, servicesDetailMap } from "@/lib/services-detail-data";
 
-export function getStaticPaths() {
-  const allSlugs = Array.from(
-    new Set([
-      ...services.map((s) => s.slug),
-      ...Object.keys(servicesDetailMap),
-      "ai-automation",
-      "whatsapp-business-automation",
-      "whatsapp-automation",
-    ])
-  );
+export const distinctSolutionSlugs = [
+  "whatsapp-business-automation",
+  "ai-chatbots",
+  "generative-ai-rag-systems",
+  "ai-agents-automation",
+  "web-development",
+  "saas-product-development",
+  "mobile-app-development",
+  "erp-crm-solutions",
+  "ecommerce-marketplace-solutions",
+  "ui-ux-design",
+  "interactive-prototyping",
+  "cloud-architecture-migration",
+  "cicd-delivery-pipelines",
+  "infrastructure-as-code",
+  "system-reliability-security",
+] as const;
 
-  return allSlugs.map((slug) => ({
+export function getStaticPaths() {
+  return distinctSolutionSlugs.map((slug) => ({
     params: { slug },
   }));
 }
 
 const { slug } = Astro.params;
-const service = services.find(
-  (s) =>
-    s.slug === slug ||
-    (slug === "ai-automation" && s.slug === "ai-automation-solutions")
-);
-
-const fallbackTitle = service ? service.title : "Enterprise Solution";
-const fallbackDescription = service ? service.description : "";
+const fallbackTitle = "Enterprise Solution";
+const fallbackDescription = "Turnkey enterprise business solution engineered by Desert Whales Technologies.";
 const detail = getServiceDetailData(
   slug || "",
   fallbackTitle,
@@ -43,17 +45,22 @@ const solutionSchema = [
   {
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id": `${siteUrl}/solutions/${slug}`,
     name: detail.heroH1 || detail.metaTitle,
-    serviceType: fallbackTitle,
+    serviceType: detail.badge || fallbackTitle,
     description: pageDescription,
     url: `${siteUrl}/solutions/${slug}`,
     provider: {
       "@type": ["Organization", "ProfessionalService", "LocalBusiness"],
       name: companyIdentity.name,
       url: siteUrl,
+      telephone: "+971528678679",
+      email: contacts.email,
       address: {
         "@type": "PostalAddress",
+        streetAddress: "Bay Square, Business Bay",
         addressLocality: "Dubai",
+        addressRegion: "Dubai",
         addressCountry: "AE",
       },
     },
@@ -84,19 +91,12 @@ const solutionSchema = [
       ]
     : []),
 ];
-const canonicalUrl =
-  slug === "web-applications-development"
-    ? `${siteUrl}/solutions/web-development`
-    : slug === "it-consulting-technology-strategy"
-      ? `${siteUrl}/solutions/it-consulting`
-      : undefined;
 ---
 
 <Layout
   title={pageTitle}
   description={pageDescription}
   schema={solutionSchema}
-  canonical={canonicalUrl}
   breadcrumbs={[
     { name: "Home", item: "/" },
     { name: "Solutions", item: "/solutions" },
@@ -109,4 +109,3 @@ const canonicalUrl =
     initialDetail={detail}
   />
 </Layout>
-

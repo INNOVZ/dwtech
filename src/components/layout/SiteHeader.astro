@@ -35,7 +35,7 @@ const servicesList = [
   },
 ];
 
-// All sub-menu items organized in 4 columns for Solutions (without repeating the core 4 services)
+// Solutions megamenu organized into 4 balanced columns (all linking to /solutions/{slug} with business-friendly names)
 const solutionsColumns = [
   [
     {
@@ -43,40 +43,8 @@ const solutionsColumns = [
       href: "/solutions/web-development",
     },
     {
-      label: "E-Commerce & Marketplaces",
-      href: "/solutions/ecommerce-marketplace-solutions",
-    },
-    {
-      label: "ERP & CRM Solutions",
-      href: "/solutions/erp-crm-solutions",
-    },
-    {
-      label: "IT Consulting",
-      href: "/solutions/it-consulting",
-    },
-  ],
-  [
-    {
-      label: "Generative AI & Custom RAG System",
-      href: "/solutions/generative-ai-rag-systems",
-    },
-    {
-      label: "WhatsApp Business Automation",
-      href: "/solutions/whatsapp-business-automation",
-    },
-    {
-      label: "AI Agents & Automations",
-      href: "/solutions/ai-agents-automation",
-    },
-    {
-      label: "AI Chatbots",
-      href: "/solutions/ai-chatbots",
-    },
-  ],
-  [
-    {
-      label: "UI/UX & Design Systems",
-      href: "/solutions/ui-ux-design",
+      label: "SaaS Product Development",
+      href: "/solutions/saas-product-development",
     },
     {
       label: "Mobile App Development",
@@ -86,9 +54,37 @@ const solutionsColumns = [
       label: "Interactive Prototyping",
       href: "/solutions/interactive-prototyping",
     },
+  ],
+  [
     {
-      label: "SaaS Product Development",
-      href: "/solutions/saas-product-development",
+      label: "WhatsApp Business Automation",
+      href: "/solutions/whatsapp-business-automation",
+    },
+    {
+      label: "AI Chatbots",
+      href: "/solutions/ai-chatbots",
+    },
+    {
+      label: "Generative AI & RAG",
+      href: "/solutions/generative-ai-rag-systems",
+    },
+    {
+      label: "AI Agents & Automation",
+      href: "/solutions/ai-agents-automation",
+    },
+  ],
+  [
+    {
+      label: "ERP & CRM Solutions",
+      href: "/solutions/erp-crm-solutions",
+    },
+    {
+      label: "E-Commerce Solutions",
+      href: "/solutions/ecommerce-marketplace-solutions",
+    },
+    {
+      label: "UI/UX Design",
+      href: "/solutions/ui-ux-design",
     },
   ],
   [
@@ -101,7 +97,7 @@ const solutionsColumns = [
       href: "/solutions/cicd-delivery-pipelines",
     },
     {
-      label: "Infrastructure as Code (IaC)",
+      label: "Infrastructure as Code",
       href: "/solutions/infrastructure-as-code",
     },
     {
@@ -212,6 +208,15 @@ const isLight = theme === "light";
                   );
                 })
               }
+              <div class="mt-1 pt-1 border-t border-black/[0.08]">
+                <a
+                  href="/services"
+                  class="flex items-center justify-between rounded-xl px-3.5 py-2.5 text-[.88rem] font-semibold text-orchid hover:bg-black/[0.05] transition-colors"
+                >
+                  <span>View All Services</span>
+                  <ArrowRight className="size-3.5" />
+                </a>
+              </div>
             </div>
           </div>
         </div>

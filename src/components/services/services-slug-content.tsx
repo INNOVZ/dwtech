@@ -135,58 +135,8 @@ export default function ServicePage({ params, initialDetail }: Props) {
     );
   };
 
-  // Schema.org Structured Data: Service + FAQPage
-  const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "@id": `${siteUrl}/services/${detail.slug}`,
-    name: detail.heroH1,
-    description: detail.metaDescription,
-    provider: {
-      "@type": "ProfessionalService",
-      name: companyIdentity.name,
-      url: siteUrl,
-      telephone: cleanPhone,
-      email: contacts.email,
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: companyIdentity.headquarters.city,
-        addressCountry: companyIdentity.headquarters.countryCode,
-      },
-    },
-    areaServed: [
-      "Dubai",
-      "United Arab Emirates",
-      "Saudi Arabia",
-      "Italy",
-      "India",
-    ],
-  };
-
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: detail.faqs.map((faq) => ({
-      "@type": "Question",
-      name: faq.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: faq.answer,
-      },
-    })),
-  };
-
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-
       <main className="bg-night text-white overflow-hidden">
         {/* ── 1. Hero Section (Matches About & Portfolio UI/UX) ── */}
         <section className="relative min-h-[650px] overflow-hidden pt-[190px] pb-[100px] max-[620px]:min-h-0 max-[620px]:pt-[150px] max-[620px]:pb-[70px]">

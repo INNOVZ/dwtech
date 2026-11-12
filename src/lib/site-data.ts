@@ -1,5 +1,5 @@
 export const siteUrl = "https://www.desertwhales.tech";
-export const siteAuthor = "Jithin kaniyamparampil jacob";
+export const siteAuthor = "Jithin Kaniyamparampil Jacob";
 
 export const companyIdentity = {
   name: "Desert Whales Technologies",
@@ -9,6 +9,7 @@ export const companyIdentity = {
   description:
     "Desert Whales Technologies is a premier Dubai, UAE technology partner designing custom software, enterprise AI automation, ERP & CRM solutions, cloud architecture, and high-performance mobile apps for enterprises across the UAE, GCC, and worldwide.",
   headquarters: {
+    streetAddress: "Bay Square, Business Bay",
     city: "Dubai",
     region: "Dubai",
     country: "United Arab Emirates",
@@ -262,7 +263,7 @@ export const blogPosts: BlogPost[] = [
     tags: ["OPERATIONAL SAFETY", "EVALUATION PIPELINES"],
     publishedDate: "2026-03-15",
     readTime: "6 min read",
-    author: "Jithin kaniyamparampil jacob",
+    author: "Jithin Kaniyamparampil Jacob",
     authorRole: "Chief Innovation Officer",
     excerpt: "Why 85% of enterprise AI proofs-of-concept stall before deployment, and the architectural discipline needed to turn fragile prompts into mission-critical systems.",
     geoRegion: "Dubai, UAE · Riyadh, KSA · Europe",
@@ -274,7 +275,7 @@ export const blogPosts: BlogPost[] = [
     contentSections: [
       {
         heading: "The Architectural Chasm Between Prototype and Production",
-        body: "In the early days of generative AI adoption, the barrier to astonishment was remarkably low. A well-crafted prompt inside a chat interface could summarize complex legal filings or draft marketing strategy in seconds. But between an astonishing prototype and a resilient enterprise system lies an architectural chasm.",
+        body: "In the early days of generative AI adoption, the barrier to astonishment was remarkably low. A well-crafted prompt inside a chat interface could summarize complex legal filings or draft marketing strategy in seconds. But between an astonishing prototype and a resilient enterprise system lies an architectural chasm. Moving into production requires dedicated <a href=\"/services/ai-automation-solutions\" class=\"text-orchid underline hover:text-white\">AI & automation solutions</a> engineered with regression tests, schema enforcement, and audited tool access.",
       },
       {
         heading: "The Predictability Paradox in Enterprise Workflows",
@@ -282,7 +283,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         heading: "From Prompt Engineering to Systems Engineering",
-        body: "To cross this chasm, CIOs must pivot from prompt engineering to system engineering: establishing automated regression suites, continuous latency and cost monitoring, clear escalation thresholds, and zero-trust permission boundaries.",
+        body: "To cross this chasm, CIOs must pivot from prompt engineering to system engineering: establishing automated regression suites, continuous latency and cost monitoring, clear escalation thresholds, and zero-trust permission boundaries through disciplined <a href=\"/services/custom-software-development\" class=\"text-orchid underline hover:text-white\">custom software development</a>.",
       },
     ],
     faq: [
@@ -309,7 +310,7 @@ export const blogPosts: BlogPost[] = [
     tags: ["MULTI-AGENT ARCHITECTURE", "AUTONOMOUS SYSTEMS"],
     publishedDate: "2026-03-15",
     readTime: "5 min read",
-    author: "Jithin kaniyamparampil jacob",
+    author: "Jithin Kaniyamparampil Jacob",
     authorRole: "Chief Innovation Officer",
     excerpt: "Autonomous multi-agent architectures promise unprecedented automation, but without deterministic state machines and sandboxed tooling, they invite cascading operational risk.",
     geoRegion: "Dubai, UAE · Riyadh, KSA · Europe",
@@ -321,7 +322,7 @@ export const blogPosts: BlogPost[] = [
     contentSections: [
       {
         heading: "The Risk of Unconstrained Agency in Enterprise Systems",
-        body: "The current industry narrative around AI agents envisions autonomous entities executing end-to-end business workflows with minimal oversight. While compelling, deploying unconstrained agents with direct write access to enterprise databases or financial ledgers represents unacceptable institutional exposure.",
+        body: "The current industry narrative around AI agents envisions autonomous entities executing end-to-end business workflows with minimal oversight. While compelling, deploying unconstrained agents with direct write access to enterprise databases or financial ledgers represents unacceptable institutional exposure. When architecting <a href=\"/solutions/ai-agents-automation\" class=\"text-orchid underline hover:text-white\">autonomous AI agents</a>, engineers must implement least-privilege token boundaries and deterministic state machines.",
       },
       {
         heading: "Code-Enforced Authorization Over Prompt Constraints",
@@ -329,7 +330,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         heading: "Idempotency and Sovereign Control",
-        body: "By enforcing idempotent execution, scoped credentials, and explicit human sign-off for actions exceeding defined impact thresholds, organizations can capture the leverage of autonomous agents while maintaining sovereign control.",
+        body: "By enforcing idempotent execution, scoped credentials, and explicit human sign-off for actions exceeding defined impact thresholds, organizations can capture the leverage of autonomous agents while maintaining sovereign control. This rigorous approach aligns with our <a href=\"/solutions/system-reliability-security\" class=\"text-orchid underline hover:text-white\">system reliability and cybersecurity engineering</a> standards.",
       },
     ],
     faq: [
@@ -352,7 +353,7 @@ export const blogPosts: BlogPost[] = [
     tags: ["RAG ARCHITECTURE", "ENTERPRISE KNOWLEDGE"],
     publishedDate: "2026-03-15",
     readTime: "7 min read",
-    author: "Jithin kaniyamparampil jacob",
+    author: "Jithin Kaniyamparampil Jacob",
     authorRole: "Chief Innovation Officer",
     excerpt: "Commoditized foundation models level the algorithmic playing field. The durable enterprise moat lies in high-fidelity contextual retrieval, provenance tracking, and proprietary knowledge synthesis.",
     geoRegion: "Dubai, UAE · Riyadh, KSA · Europe",
@@ -364,7 +365,7 @@ export const blogPosts: BlogPost[] = [
     contentSections: [
       {
         heading: "The Convergence of Frontier Model Reasoning",
-        body: "As frontier foundation models converge in baseline reasoning benchmarks, enterprise differentiation shifts dramatically from the underlying model weight to the fidelity of contextual data injected into the inference window.",
+        body: "As frontier foundation models converge in baseline reasoning benchmarks, enterprise differentiation shifts dramatically from the underlying model weight to the fidelity of contextual data injected into the inference window. Purpose-built <a href=\"/solutions/generative-ai-rag-systems\" class=\"text-orchid underline hover:text-white\">generative AI and custom RAG systems</a> ensure internal corporate memory becomes an uncopyable operational advantage.",
       },
       {
         heading: "The Limitations of Naive Vector Similarity",
@@ -372,7 +373,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         heading: "Hybrid Retrieval and Provenance Synthesis",
-        body: "Advanced retrieval architectures combine semantic embeddings with BM25 lexical precision, temporal weighting, and graph-based entity relationships. This ensures that when an executive or client interacts with the system, responses are not merely plausible, but demonstrably grounded in current corporate truth.",
+        body: "Advanced retrieval architectures combine semantic embeddings with BM25 lexical precision, temporal weighting, and graph-based entity relationships. Guided by rigorous <a href=\"/services/it-consulting-technology-strategy\" class=\"text-orchid underline hover:text-white\">IT consulting & technology strategy</a>, enterprises can deploy contextual engines that are demonstrably grounded in current corporate truth and local data compliance.",
       },
     ],
     faq: [
@@ -395,8 +396,8 @@ export const blogPosts: BlogPost[] = [
     tags: ["ENTERPRISE AI", "SOVEREIGN WORKFLOWS"],
     publishedDate: "2026-03-20",
     readTime: "6 min read",
-    author: "DW Tech AI Research Group",
-    authorRole: "Enterprise AI Practice",
+    author: "Jithin Kaniyamparampil Jacob",
+    authorRole: "Chief Technology Officer & AI Practice Lead",
     excerpt: "With national strategies prioritizing AI in the UAE and Saudi Arabia, companies that embed domain-specific workflow automation and sovereign AI pipelines are outperforming peers in operational speed and customer retention.",
     geoRegion: "Dubai, UAE & Riyadh, Saudi Arabia",
     keyTakeaways: [
@@ -407,7 +408,7 @@ export const blogPosts: BlogPost[] = [
     contentSections: [
       {
         heading: "The Shift from Novelty to Enterprise ROI",
-        body: "Over the past three years, GCC enterprises experimented heavily with generic conversational models. In 2026, the focus has pivoted to operational return on investment. Organizations in Dubai and Riyadh are deploying purpose-built automations that connect ERP systems, customer communication channels, and internal documentation into unified decision pipelines.",
+        body: "Over the past three years, GCC enterprises experimented heavily with generic conversational models. In 2026, the focus has pivoted to operational return on investment. Organizations in Dubai and Riyadh are deploying purpose-built <a href=\"/services/ai-automation-solutions\" class=\"text-orchid underline hover:text-white\">AI & automation solutions</a> that connect ERP systems, customer communication channels, and internal documentation into unified decision pipelines.",
       },
       {
         heading: "Navigating Sovereign AI & Local Data Compliance",
@@ -415,7 +416,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         heading: "Where GCC Leaders Are Seeing Immediate Returns",
-        body: "The highest ROI automations in 2026 center around three areas: 1) Multilingual customer support handling Nuanced Arabic and English inquiries without escalating to humans, 2) Supply chain and customs document verification for free zone operations, and 3) Automated financial auditing for VAT and corporate tax documentation.",
+        body: "The highest ROI automations in 2026 center around three areas: 1) Multilingual customer support with official <a href=\"/solutions/whatsapp-business-automation\" class=\"text-orchid underline hover:text-white\">WhatsApp business automation</a> handling Nuanced Arabic and English inquiries without human latency, 2) Supply chain and customs document verification for free zone operations, and 3) Automated financial auditing for VAT and corporate tax documentation.",
       },
     ],
     faq: [
@@ -438,8 +439,8 @@ export const blogPosts: BlogPost[] = [
     tags: ["COMPOSABLE CORE", "CUSTOM ERP"],
     publishedDate: "2026-02-18",
     readTime: "8 min read",
-    author: "Enterprise Solutions Team",
-    authorRole: "Digital Transformation Practice",
+    author: "Jithin Kaniyamparampil Jacob",
+    authorRole: "Principal Enterprise Solutions Architect",
     excerpt: "Off-the-shelf enterprise suites promise fast deployment, yet customized operational models in trade, real estate, and healthcare often require bespoke software architectures to retain proprietary advantages.",
     geoRegion: "United Arab Emirates & GCC",
     keyTakeaways: [
@@ -450,11 +451,11 @@ export const blogPosts: BlogPost[] = [
     contentSections: [
       {
         heading: "The Real Cost of Rigid ERP Customization",
-        body: "Many growing firms in the UAE purchase monolithic ERP suites with the assumption that customization will be simple. In practice, bending a legacy ERP to fit unique commercial models incurs steep consulting hours, brittle upgrades, and bloated annual licensing. Understanding the boundary between core accounting and differentiated operations is vital.",
+        body: "Many growing firms in the UAE purchase monolithic ERP suites with the assumption that customization will be simple. In practice, bending a legacy ERP to fit unique commercial models incurs steep consulting hours, brittle upgrades, and bloated annual licensing. Implementing modern <a href=\"/services/erp-crm-solutions\" class=\"text-orchid underline hover:text-white\">ERP & CRM solutions</a> with clean API boundaries ensures accounting compliance without crippling operational agility.",
       },
       {
         heading: "The Composable Architecture Advantage",
-        body: "Rather than an all-or-nothing dichotomy, progressive technology teams build modular architectures. They maintain a compliant financial baseline while engineering custom web portals, mobile apps, and automated pipelines that directly cater to their unique competitive moats.",
+        body: "Rather than an all-or-nothing dichotomy, progressive technology teams build modular architectures. They maintain a compliant financial baseline while engineering specialized <a href=\"/services/custom-software-development\" class=\"text-orchid underline hover:text-white\">custom software development</a> for frontline web portals, mobile apps, and automated pipelines that directly cater to their unique competitive moats.",
       },
     ],
     faq: [
@@ -473,8 +474,8 @@ export const blogPosts: BlogPost[] = [
     tags: ["HEADLESS FRONTEND", "OMNICHANNEL RETAIL"],
     publishedDate: "2026-01-28",
     readTime: "5 min read",
-    author: "Digital Commerce Lab",
-    authorRole: "Commerce Engineering",
+    author: "Jithin Kaniyamparampil Jacob",
+    authorRole: "Head of Digital Commerce Engineering",
     excerpt: "Middle East consumers are mobile-first and demand immediate performance. Discover how headless e-commerce architectures unlock superior conversion rates and seamless omnichannel experiences.",
     geoRegion: "Dubai, Milan & Riyadh",
     keyTakeaways: [
@@ -485,11 +486,11 @@ export const blogPosts: BlogPost[] = [
     contentSections: [
       {
         heading: "The Mobile-First Consumer in the UAE & KSA",
-        body: "Over 85% of retail web visits in the GCC originate from mobile devices. Traditional monolithic stores frequently suffer from high bounce rates due to heavy script bundles. Headless frontends built with modern frameworks achieve instantaneous transitions, increasing conversion and retention across regional markets.",
+        body: "Over 85% of retail web visits in the GCC originate from mobile devices. Traditional monolithic stores frequently suffer from high bounce rates due to heavy script bundles. Through modern <a href=\"/services/ecommerce-marketplace-solutions\" class=\"text-orchid underline hover:text-white\">e-commerce & marketplace solutions</a>, headless frontends achieve sub-second load times, driving higher conversion across regional markets.",
       },
       {
         heading: "Localized Checkout Dynamics",
-        body: "Payment preferences in the Middle East require frictionless one-click experiences. Integrating localized Buy Now Pay Later (BNPL) providers alongside standard payment methods with instant mobile authentication is the benchmark for high-performing commerce.",
+        body: "Payment preferences in the Middle East require frictionless one-click experiences. Decoupling the frontend and deploying edge-rendered checkouts supported by automated <a href=\"/services/cloud-and-devops\" class=\"text-orchid underline hover:text-white\">cloud & DevOps infrastructure</a> ensures continuous uptime during peak Ramadan, White Friday, and regional flash sale events.",
       },
     ],
     faq: [

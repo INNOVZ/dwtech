@@ -17,9 +17,9 @@ interface Props {
 }
 
 const defaultTitle =
-  "Desert Whales Technologies | Software Development, AI & Digital Transformation Company in Dubai, UAE";
+  "Custom Software & Enterprise AI Dubai | Desert Whales Tech";
 const defaultDescription =
-  "Desert Whales Technologies is a premier Dubai-headquartered technology partner designing custom software, websites and web apps AI automation, ERP/CRM solutions, cloud architecture, and high-performance mobile apps for enterprises in UAE, GCC, and worldwide.";
+  "Desert Whales Technologies is a premier Dubai technology partner engineering custom software, enterprise AI automation, ERP/CRM solutions, cloud architecture, and mobile apps.";
 const defaultAuthor = siteAuthor;
 
 const {
@@ -34,7 +34,20 @@ const {
   headerTheme = "dark",
 } = Astro.props;
 
-const currentUrl = canonical || new URL(Astro.url.pathname, siteUrl).toString();
+const normalizeUrl = (urlStr: string) => {
+  try {
+    const u = new URL(urlStr);
+    if (u.pathname.length > 1 && u.pathname.endsWith("/")) {
+      u.pathname = u.pathname.replace(/\/+$/, "");
+    }
+    return u.toString();
+  } catch {
+    return urlStr;
+  }
+};
+
+const rawCurrentUrl = canonical || new URL(Astro.url.pathname, siteUrl).toString();
+const currentUrl = normalizeUrl(rawCurrentUrl);
 
 // WebSite Schema for Search & AI Engines
 const websiteSchema = {
@@ -109,7 +122,7 @@ const breadcrumbSchema =
           "@type": "ListItem",
           position: idx + 1,
           name: b.name,
-          item: b.item.startsWith("http") ? b.item : `${siteUrl}${b.item}`,
+          item: normalizeUrl(b.item.startsWith("http") ? b.item : `${siteUrl}${b.item}`),
         })),
       }
     : null;

@@ -24,7 +24,7 @@ import {
 } from "lucide-react";
 
 const pageTitle =
-  "Enterprise Business Solutions Dubai, UAE | Desert Whales Technologies";
+  "Enterprise AI & Business Solutions Dubai | DW Tech";
 const pageDescription =
   "Explore Desert Whales Technologies business solutions in Dubai, UAE: WhatsApp automation, enterprise ERP & CRM, AI chatbots, digital transformation, and custom platforms.";
 
@@ -45,54 +45,74 @@ const solutionsList = [
     icon: MessageSquareText,
   },
   {
-    slug: "ai-automation-solutions",
-    title: "AI Integrated Solutions & Automation",
-    badge: "Core Practice",
+    slug: "ai-chatbots",
+    title: "AI Chatbots",
+    badge: "24/7 Support",
+    category: "AI & Engagement",
+    description:
+      "Intelligent bilingual conversational AI trained on internal SOPs, product catalogs, and databases to automate customer inquiries and ticket resolution around the clock.",
+    tags: [
+      "Bilingual NLP",
+      "Zendesk & Freshdesk",
+      "Omnichannel",
+      "Zero Hallucination",
+    ],
+    icon: Bot,
+  },
+  {
+    slug: "generative-ai-rag-systems",
+    title: "Generative AI & RAG",
+    badge: "Enterprise RAG",
     category: "Enterprise AI",
     description:
-      "Autonomous AI agents, enterprise RAG systems, and intelligent workflow pipelines integrated directly into your databases, CRM, and operational backends.",
-    tags: ["Autonomous Agents", "Custom RAG", "LLM Fine-Tuning", "Workflows"],
+      "Enterprise retrieval-augmented generation systems allowing legal, finance, and operations teams to query millions of private documents with verifiable source citations.",
+    tags: [
+      "Private LLMs",
+      "Vector DBs",
+      "Source Citations",
+      "UAE Data Privacy",
+    ],
+    icon: Cpu,
+  },
+  {
+    slug: "ai-agents-automation",
+    title: "AI Agents & Automation",
+    badge: "Agentic Ops",
+    category: "Enterprise AI",
+    description:
+      "Self-governing AI agent swarms that reason across enterprise software, execute multi-step business logic, and handle complex repetitive operations without human latency.",
+    tags: [
+      "Multi-Agent Swarms",
+      "LangGraph",
+      "ERP Orchestration",
+      "Zero Latency",
+    ],
     icon: Workflow,
   },
   {
-    slug: "custom-software-development",
-    title: "Custom Software Development",
-    badge: "Bespoke Build",
+    slug: "web-development",
+    title: "Web Development",
+    badge: "Enterprise Web",
     category: "Engineering",
     description:
-      "Bespoke web platforms, SaaS products, internal operations portals, and microservices engineered from scratch with 100% source code ownership and zero licensing bloat.",
-    tags: ["Web Applications", "SaaS Portals", "API Engineering", "Full IP"],
+      "High-speed custom web applications, enterprise client portals, and cloud-native digital platforms engineered in Dubai, UAE with Next.js, React, Node.js, and 100% IP ownership.",
+    tags: [
+      "Next.js & React",
+      "Enterprise Portals",
+      "Arabic RTL / English",
+      "UAE Data Residency",
+    ],
     icon: CodeXml,
   },
   {
-    slug: "erp-crm-solutions",
-    title: "Enterprise ERP & CRM Solutions",
-    badge: "Unified Ops",
-    category: "Operations",
+    slug: "saas-product-development",
+    title: "SaaS Product Development",
+    badge: "Multi-Tenant SaaS",
+    category: "Engineering",
     description:
-      "Tailored ERP and CRM implementations designed to centralize sales, inventory, and finance with full UAE FTA VAT and e-invoicing compliance.",
-    tags: ["FTA VAT E-Invoicing", "Multi-Warehouse", "Sales CRM", "Accounting"],
-    icon: Database,
-  },
-  {
-    slug: "ecommerce-marketplace-solutions",
-    title: "E-Commerce & Marketplaces",
-    badge: "Shopify · Woo · Custom",
-    category: "Digital Retail",
-    description:
-      "High-converting e-commerce stores engineered on Shopify, WooCommerce, and bespoke custom headless platforms.",
-    tags: ["Shopify", "WooCommerce", "Custom Stores", "Apple Pay & Tabby"],
-    icon: ShoppingBag,
-  },
-  {
-    slug: "it-consulting",
-    title: "IT Consulting & Technology Strategy",
-    badge: "Advisory",
-    category: "Strategy & Governance",
-    description:
-      "Strategic IT consulting and technology advisory in Dubai, UAE. We advise enterprise leadership on software architecture, cloud FinOps, vendor audits, and legacy modernization roadmaps.",
-    tags: ["Enterprise Architecture", "Cloud FinOps", "Vendor Audits", "Fractional CTO"],
-    icon: Sparkles,
+      "Scalable multi-tenant B2B SaaS platforms engineered with recurring billing, Stripe/local gateways, and granular RBAC security from day one.",
+    tags: ["Multi-Tenant", "Stripe Billing", "RBAC Security", "Audit Logs"],
+    icon: Layers,
   },
   {
     slug: "mobile-app-development",
@@ -110,18 +130,28 @@ const solutionsList = [
     icon: Smartphone,
   },
   {
-    slug: "cloud-and-devops",
-    title: "Cloud Architecture & DevOps",
-    badge: "Infrastructure",
-    category: "Cloud",
+    slug: "erp-crm-solutions",
+    title: "ERP & CRM Solutions",
+    badge: "Unified Ops",
+    category: "Operations",
     description:
-      "Resilient cloud infrastructure on AWS, Azure, GCP, and sovereign UAE cloud providers. Infrastructure as Code (Terraform), Kubernetes clusters, and automated CI/CD.",
-    tags: ["AWS / Azure", "Terraform IaC", "Kubernetes", "CI/CD Pipelines"],
-    icon: Cloud,
+      "Tailored ERP and CRM implementations designed to centralize sales, inventory, and finance with full UAE FTA VAT and e-invoicing compliance.",
+    tags: ["FTA VAT E-Invoicing", "Multi-Warehouse", "Sales CRM", "Accounting"],
+    icon: Database,
+  },
+  {
+    slug: "ecommerce-marketplace-solutions",
+    title: "E-Commerce Solutions",
+    badge: "Digital Retail",
+    category: "Digital Retail",
+    description:
+      "High-converting e-commerce stores engineered on Shopify, WooCommerce, and bespoke custom headless platforms.",
+    tags: ["Shopify", "WooCommerce", "Custom Stores", "Apple Pay & Tabby"],
+    icon: ShoppingBag,
   },
   {
     slug: "ui-ux-design",
-    title: "UI/UX & Design Systems",
+    title: "UI/UX Design",
     badge: "Product Design",
     category: "Experience",
     description:
@@ -130,83 +160,8 @@ const solutionsList = [
     icon: Layers,
   },
   {
-    slug: "product-design-development",
-    title: "Product Design & Development",
-    badge: "Full Cycle Lab",
-    category: "Product Lab",
-    description:
-      "End-to-end product development from user research and clickable prototypes to rapid production MVP launch, beta feedback iteration, and scalable backends.",
-    tags: [
-      "MVP Sprint",
-      "Clickable Prototypes",
-      "Market Validation",
-      "Fast Track",
-    ],
-    icon: Compass,
-  },
-  {
-    slug: "ai-chatbots",
-    title: "AI Chatbots & Conversational Agents",
-    badge: "24/7 Support",
-    category: "AI & Engagement",
-    description:
-      "Intelligent bilingual conversational AI trained on internal SOPs, product catalogs, and databases to automate customer inquiries and ticket resolution around the clock.",
-    tags: [
-      "Bilingual NLP",
-      "Zendesk & Freshdesk",
-      "Omnichannel",
-      "Zero Hallucination",
-    ],
-    icon: Bot,
-  },
-  {
-    slug: "generative-ai-rag-systems",
-    title: "Generative AI & Custom RAG Systems",
-    badge: "Enterprise RAG",
-    category: "Enterprise AI",
-    description:
-      "Enterprise retrieval-augmented generation systems allowing legal, finance, and operations teams to query millions of private documents with verifiable source citations.",
-    tags: [
-      "Private LLMs",
-      "Vector DBs",
-      "Source Citations",
-      "UAE Data Privacy",
-    ],
-    icon: Cpu,
-  },
-  {
-    slug: "ai-agents-automation",
-    title: "AI Agents & Autonomous Workflow Automation",
-    badge: "Agentic Ops",
-    category: "Enterprise AI",
-    description:
-      "Self-governing AI agent swarms that reason across enterprise software, execute multi-step business logic, and handle complex repetitive operations without human latency.",
-    tags: [
-      "Multi-Agent Swarms",
-      "LangGraph",
-      "ERP Orchestration",
-      "Zero Latency",
-    ],
-    icon: Workflow,
-  },
-  {
-    slug: "web-development",
-    title: "Web Development & Web Applications",
-    badge: "Enterprise Web",
-    category: "Engineering",
-    description:
-      "High-speed custom web applications, enterprise client portals, and cloud-native digital platforms engineered in Dubai, UAE with Next.js, React, Node.js, and 100% IP ownership.",
-    tags: [
-      "Next.js & React",
-      "Enterprise Portals",
-      "Arabic RTL / English",
-      "UAE Data Residency",
-    ],
-    icon: CodeXml,
-  },
-  {
     slug: "interactive-prototyping",
-    title: "Interactive Prototyping & UX Validation",
+    title: "Interactive Prototyping",
     badge: "Rapid Validation",
     category: "Product Lab",
     description:
@@ -220,18 +175,8 @@ const solutionsList = [
     icon: Compass,
   },
   {
-    slug: "saas-product-development",
-    title: "SaaS Product Development & Architecture",
-    badge: "Multi-Tenant SaaS",
-    category: "Engineering",
-    description:
-      "Scalable multi-tenant B2B SaaS platforms engineered with recurring billing, Stripe/local gateways, and granular RBAC security from day one.",
-    tags: ["Multi-Tenant", "Stripe Billing", "RBAC Security", "Audit Logs"],
-    icon: Layers,
-  },
-  {
     slug: "cloud-architecture-migration",
-    title: "Cloud Architecture & Zero-Downtime Migration",
+    title: "Cloud Architecture & Migration",
     badge: "Cloud Migration",
     category: "Cloud",
     description:
@@ -241,7 +186,7 @@ const solutionsList = [
   },
   {
     slug: "cicd-delivery-pipelines",
-    title: "CI/CD & Automated Delivery Pipelines",
+    title: "CI/CD & Delivery Pipelines",
     badge: "DevOps Velocity",
     category: "Cloud",
     description:
@@ -256,7 +201,7 @@ const solutionsList = [
   },
   {
     slug: "infrastructure-as-code",
-    title: "Infrastructure as Code (IaC) & Terraform",
+    title: "Infrastructure as Code",
     badge: "Declarative Cloud",
     category: "Cloud",
     description:
@@ -266,7 +211,7 @@ const solutionsList = [
   },
   {
     slug: "system-reliability-security",
-    title: "System Reliability & Production Security",
+    title: "System Reliability & Security",
     badge: "SRE & Hardening",
     category: "Security & Ops",
     description:
@@ -320,7 +265,9 @@ const solutionsPageSchema = [
       url: siteUrl,
       address: {
         "@type": "PostalAddress",
+        streetAddress: "Bay Square, Business Bay",
         addressLocality: "Dubai",
+        addressRegion: "Dubai",
         addressCountry: "AE",
       },
     },

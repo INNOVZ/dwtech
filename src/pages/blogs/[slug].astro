@@ -25,7 +25,7 @@ if (!post) {
   return Astro.redirect("/blogs");
 }
 
-const pageTitle = `${post.title} | Desert Whales Technologies`;
+const pageTitle = `${post.title} | DW Tech`;
 const pageDescription = post.excerpt;
 
 // Article + FAQ Schema for AEO & Google Rich Results
@@ -49,7 +49,7 @@ const articleSchema = [
       url: siteUrl,
       logo: {
         "@type": "ImageObject",
-        url: `${siteUrl}/icon.svg`,
+        url: `${siteUrl}/icon.png`,
       },
     },
     about: {
@@ -228,9 +228,10 @@ const otherPosts = blogPosts.filter((p) => p.slug !== slug);
                   <h2 class="text-2xl lg:text-3xl font-bold text-[#05040e] tracking-tight mb-4 font-manrope">
                     {sec.heading}
                   </h2>
-                  <p class="text-base lg:text-lg leading-[1.78] text-[#4d4758] m-0 font-sans">
-                    {sec.body}
-                  </p>
+                  <p
+                    class="text-base lg:text-lg leading-[1.78] text-[#4d4758] m-0 font-sans"
+                    set:html={sec.body}
+                  />
                 </div>
               ))
             }
