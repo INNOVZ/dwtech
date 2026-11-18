@@ -19,6 +19,10 @@ export default defineConfig({
     '/solutions/web-applications-development': '/solutions/web-development',
     '/solutions/it-consulting-technology-strategy': '/services/it-consulting-technology-strategy',
     '/solutions/it-consulting': '/services/it-consulting-technology-strategy',
+    '/services/erp-crm-solutions': '/solutions/erp-crm-solutions',
+    '/services/mobile-app-development': '/solutions/mobile-app-development',
+    '/services/ecommerce-marketplace-solutions': '/solutions/ecommerce-marketplace-solutions',
+    '/services/ui-ux-design': '/solutions/ui-ux-design',
   },
 
   vite: {

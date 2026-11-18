@@ -41,6 +41,26 @@
       "source": "/solutions/it-consulting",
       "destination": "/services/it-consulting-technology-strategy",
       "permanent": true
+    },
+    {
+      "source": "/services/erp-crm-solutions",
+      "destination": "/solutions/erp-crm-solutions",
+      "permanent": true
+    },
+    {
+      "source": "/services/mobile-app-development",
+      "destination": "/solutions/mobile-app-development",
+      "permanent": true
+    },
+    {
+      "source": "/services/ecommerce-marketplace-solutions",
+      "destination": "/solutions/ecommerce-marketplace-solutions",
+      "permanent": true
+    },
+    {
+      "source": "/services/ui-ux-design",
+      "destination": "/solutions/ui-ux-design",
+      "permanent": true
     }
   ]
 }

@@ -49,23 +49,6 @@ export const services: readonly ServiceItem[] = [
     deliverables: ["Product discovery", "Solution architecture", "Full-stack engineering", "Quality assurance and release"],
   },
   {
-    slug: "erp-crm-solutions",
-    title: "ERP & CRM solutions",
-    short: "Centralize sales, operations, inventory, finance, and customer relationships in one working system.",
-    description: "We implement and tailor ERP and CRM ecosystems that improve visibility, reduce duplication, and give teams a consistent source of operational truth.",
-    category: "AI & Enterprise",
-    deliverables: ["Workflow mapping", "Platform configuration", "Data migration and integration", "Training and support"],
-  },
-  {
-    slug: "mobile-app-development",
-    title: "Mobile app development",
-    short: "High-performance mobile experiences designed for the way customers and teams work.",
-    description: "We create intuitive cross-platform and native-ready mobile products with secure integrations, reliable performance, and a clear release path.",
-    category: "Product & Mobile",
-    featured: true,
-    deliverables: ["Experience design", "Mobile engineering", "API integration", "Store release support"],
-  },
-  {
     slug: "ai-automation-solutions",
     title: "AI & automation solutions",
     short: "Practical AI, assistants, and workflow automation embedded where they create business value.",
@@ -73,22 +56,6 @@ export const services: readonly ServiceItem[] = [
     category: "AI & Enterprise",
     featured: true,
     deliverables: ["AI opportunity assessment", "Workflow automation", "Knowledge assistants and chatbots", "Monitoring and iteration"],
-  },
-  {
-    slug: "ui-ux-design",
-    title: "UI/UX design",
-    short: "Clear, inclusive product experiences grounded in user needs and business goals.",
-    description: "We turn complex requirements into coherent product flows, interface systems, and prototypes that teams can validate and engineers can build.",
-    category: "Product & Mobile",
-    deliverables: ["User and stakeholder research", "Information architecture", "Interface and design systems", "Interactive prototypes"],
-  },
-  {
-    slug: "ecommerce-marketplace-solutions",
-    title: "E-commerce & marketplace solutions",
-    short: "High-converting Shopify, WooCommerce, and custom stores with local GCC payments and ERP sync.",
-    description: "We engineer and optimize commerce platforms across Shopify, WooCommerce, and bespoke custom headless stores with seamless payment, catalog, and ERP integration.",
-    category: "AI & Enterprise",
-    deliverables: ["Shopify & Shopify Plus", "WooCommerce store development", "Bespoke custom stores", "GCC payment & ERP sync"],
   },
   {
     slug: "it-consulting-technology-strategy",
@@ -117,21 +84,39 @@ export const services: readonly ServiceItem[] = [
   },
 ] as const;
 
+export const solutionLinks = [
+  { slug: "web-development", title: "Web Development" },
+  { slug: "saas-product-development", title: "SaaS Product Development" },
+  { slug: "mobile-app-development", title: "Mobile App Development" },
+  { slug: "interactive-prototyping", title: "Interactive Prototyping" },
+  { slug: "whatsapp-business-automation", title: "WhatsApp Business Automation" },
+  { slug: "ai-chatbots", title: "AI Chatbots" },
+  { slug: "generative-ai-rag-systems", title: "Generative AI & RAG" },
+  { slug: "ai-agents-automation", title: "AI Agents & Automation" },
+  { slug: "erp-crm-solutions", title: "ERP & CRM Solutions" },
+  { slug: "ecommerce-marketplace-solutions", title: "E-Commerce Solutions" },
+  { slug: "ui-ux-design", title: "UI/UX Design" },
+  { slug: "cloud-architecture-migration", title: "Cloud Architecture & Migration" },
+  { slug: "cicd-delivery-pipelines", title: "CI/CD & Delivery Pipelines" },
+  { slug: "infrastructure-as-code", title: "Infrastructure as Code" },
+  { slug: "system-reliability-security", title: "System Reliability & Security" },
+] as const;
+
 export const serviceCategories = [
   {
     title: "Engineering & Cloud",
     description: "Custom software, distributed architecture, and cloud operations built for enterprise resilience.",
-    slugs: ["custom-software-development", "cloud-and-devops", "digital-business-transformation", "it-consulting-technology-strategy"],
+    slugs: ["custom-software-development", "cloud-and-devops"],
   },
   {
-    title: "AI & Enterprise Systems",
-    description: "Generative AI pipelines, automated workflows, and ERP/CRM systems unifying business operations.",
-    slugs: ["ai-automation-solutions", "erp-crm-solutions", "ecommerce-marketplace-solutions"],
+    title: "AI & Transformation",
+    description: "Generative AI pipelines, automated workflows, and end-to-end digital modernization.",
+    slugs: ["ai-automation-solutions", "digital-business-transformation"],
   },
   {
-    title: "Product & Mobile",
-    description: "Intuitive user experiences, native-grade mobile apps, and end-to-end digital products.",
-    slugs: ["mobile-app-development", "ui-ux-design", "product-design-development"],
+    title: "Product & Strategy",
+    description: "End-to-end product engineering and practical technology roadmaps aligned with growth.",
+    slugs: ["product-design-development", "it-consulting-technology-strategy"],
   },
 ] as const;
 
@@ -451,7 +436,7 @@ export const blogPosts: BlogPost[] = [
     contentSections: [
       {
         heading: "The Real Cost of Rigid ERP Customization",
-        body: "Many growing firms in the UAE purchase monolithic ERP suites with the assumption that customization will be simple. In practice, bending a legacy ERP to fit unique commercial models incurs steep consulting hours, brittle upgrades, and bloated annual licensing. Implementing modern <a href=\"/services/erp-crm-solutions\" class=\"text-orchid underline hover:text-white\">ERP & CRM solutions</a> with clean API boundaries ensures accounting compliance without crippling operational agility.",
+        body: "Many growing firms in the UAE purchase monolithic ERP suites with the assumption that customization will be simple. In practice, bending a legacy ERP to fit unique commercial models incurs steep consulting hours, brittle upgrades, and bloated annual licensing. Implementing modern <a href=\"/solutions/erp-crm-solutions\" class=\"text-orchid underline hover:text-white\">ERP & CRM solutions</a> with clean API boundaries ensures accounting compliance without crippling operational agility.",
       },
       {
         heading: "The Composable Architecture Advantage",
@@ -486,7 +471,7 @@ export const blogPosts: BlogPost[] = [
     contentSections: [
       {
         heading: "The Mobile-First Consumer in the UAE & KSA",
-        body: "Over 85% of retail web visits in the GCC originate from mobile devices. Traditional monolithic stores frequently suffer from high bounce rates due to heavy script bundles. Through modern <a href=\"/services/ecommerce-marketplace-solutions\" class=\"text-orchid underline hover:text-white\">e-commerce & marketplace solutions</a>, headless frontends achieve sub-second load times, driving higher conversion across regional markets.",
+        body: "Over 85% of retail web visits in the GCC originate from mobile devices. Traditional monolithic stores frequently suffer from high bounce rates due to heavy script bundles. Through modern <a href=\"/solutions/ecommerce-marketplace-solutions\" class=\"text-orchid underline hover:text-white\">e-commerce & marketplace solutions</a>, headless frontends achieve sub-second load times, driving higher conversion across regional markets.",
       },
       {
         heading: "Localized Checkout Dynamics",
